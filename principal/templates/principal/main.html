@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page d'acceuil</title>
+</head>
+<body>
+        {% if user.username %}
+    <div>
+        {% for i in dj %}
+            <a href="{% url 'main:change' i.id %}">{{ i.name }}</a>______--------------------______<a href="{% url 'main:delete' i.id %}">delete</a> <br>
+        {% endfor %}
+        <br>
+    </div>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_div }}
+            <button type="submit">{{ type }}</button>
+        </form>
+    <div/>
+        {% elif user %}
+    <div>
+            Members are:
+            {% for j in dj %}
+            <p>-    {{ j }} since {{ j.date_joined }} </p><br>
+            {% endfor %}
+    <div/>
+        {% endif %}
+</body>
+</html>

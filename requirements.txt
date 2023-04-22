@@ -1,0 +1,5 @@
+# venv
+django
+djongo
+pymongo
+django-react
