@@ -5,7 +5,7 @@ Page d'acceuil2.0                                                   not yet
 Inscription(user) #signup                                           not yet
 Authentication(user) #login                                         not yet
 CRUD(annotation)                                                    not yet
-Sys.Progressions[stat, timing, stars, windows.widget, windows.ring] not yet
+Sys.Progressions[stat, timing, stars, windows.widget+ring(pas nécessaire), ] not yet
 -----------------------------------------------------------------------------------------
 
 
