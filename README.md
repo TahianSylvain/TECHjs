@@ -11,5 +11,6 @@ Sys.Progressions[stat, timing, stars, windows.widget+ring(pas nécessaire), ] no
 
 --------------------------Back-----------------------------
     Authentication(user)                on-going: Andry
-    CRUD(annotation)                    done: Andry
+    404.template                        on-going: Mijoro
+    CRUD(annotation)                    done
 -----------------------------------------------------------
