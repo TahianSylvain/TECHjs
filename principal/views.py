@@ -13,17 +13,31 @@ def principal(request, annotation_id=0):
         length: float = 0
         timing: str = ''
         qs = Annotation.objects.filter(account=request.user).order_by("deadline")
-
         if request.method == 'POST':
             if annotation_id == 0:
-                form = AnnotationForm(request.POST)  # create
+                """
+                    data: dict ={'account': request.POST['bio'], ...}
+                    form=AnnotationForm(data, instance=Annotation)  # no need to use AnnotationForm(request.POST, )
+                    if form.is_valid:
+                        form.save()
+                        form.cleaned_data()
+                --------------------------------------------------------------------------------------------------------
+                    form = AnnotationForm(request.POST)  # have your input predefined inside form.py/AnnotationForm__attrs__
+                """
+                form = Annotation.objects.create(
+                    account=request.user, over=False, name=request.POST['name'],
+                    deadline=request.POST['deadline'],
+                    reminder=request.POST['reminder'], description=request.POST['description']
+                )  # create
+                form.save()
+                return HttpResponseRedirect(reverse('main:entry'))
             else:
                 nature = 'change'
                 note = Annotation.objects.get(id=annotation_id)
                 form = AnnotationForm(request.POST, instance=note)
-            if form.is_valid():
-                form.save()
-            return render(request, template_name='principal/main.html', context={"dj": qs, "form": form, "type": nature})
+                if form.is_valid():
+                    form.save()
+                return render(request, template_name='principal/main.html', context={"dj": qs, "form": form, "type": nature})
         elif request.method == 'GET':
             if annotation_id == 0:
                 form = AnnotationForm()  # create

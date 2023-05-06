@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}{% load i18n %}
     <meta charset="UTF-8">
     <title>Page d'acceuil</title>
     <style>
@@ -146,7 +147,10 @@ input[type="file"] {
         {% if user.username %}
     <div>
         {% for i in dj %}
-            <a href="{% url 'main:change' i.id %}">{{ i.name }}</a>______--------------------______<a href="{% url 'main:delete' i.id %}">delete</a> <br>
+            <div style="background-color: grey; width: 300px">
+                <a href="{% url 'main:change' i.id %}">{{ i.name }}</a>______--------------------______<a href="{% url 'main:delete' i.id %}">delete</a> <br>
+            </div>
+            <br>
         {% endfor %}
         <br>
     </div>
@@ -156,36 +160,45 @@ input[type="file"] {
                 {% csrf_token %}
             <div class="form-header">
                 <h1>New Notation for {{ user.username }}</h1>
+                {{ form.account }}
             </div>
 
             <!-- form body -->
-            <fieldset class="form-body">
-                <!-- Firstname and Lastname -->
+            <div class="form-body">
+
+                    {{form.errors}}
+                {% if form.errors %}
+                    <p>Please correct the following errors:</p>
+                    {% for field in form %}
+                        {% if field.errors %}
+                            <div>{{ field.label }}: {{ field.errors|striptags }}</div>
+                {% endif %}
+                    {% endfor %}
+                {% endif %}
                 <div class="horizontal-group">
                     <div class="form-group left">
-                        <label for="firstname" class="label-title">Title *</label>
-                        <input type="text" id="firstname" class="form-input" placeholder="enter the title's" required="required" />
+                        <label for="firstname" class="label-title">Title</label>
+                        {{ form.name }}
                     </div>
                     <div class="form-group right">
                         <label for="lastname" class="label-title">Deadline</label>
-                        <input type="date" id="lastname" class="form-input" placeholder="enter the time over" />
+                        {{ form.deadline }}
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="timing" class="label-title">Reminder</label>
-                    <input type="datetime-local" name="time" id="timing">
+                    {{ form.reminder }}
                 </div>
                 <!-- Bio -->
                 <div class="form-group">
                   <label for="choose-file" class="label-title">Bio</label>
-                  <textarea class="form-input" id="choose-file" name="bio" placeholder="describe all steps you need to achieve" rows="4" cols="50" style="height:auto"></textarea>
+                    {{ form.description }}
                 </div>
-
-            </fieldset>
+            </div>
             <!-- form footer -->
             <div class="form-footer">
                 <button type="submit">{{ type }}</button>
+                <input type="submit" value="{{ type }}">
             </div>
         </form>
     </div>

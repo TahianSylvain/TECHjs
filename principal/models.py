@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Annotation(models.Model):
-    account = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    account = models.ForeignKey(User, null=False, blank=False, on_delete=models.SET_NULL)
     name = models.CharField(max_length=45)
     description = models.TextField()
     deadline = models.DateTimeField()  # format("YYYY-MM-DD\ HH:mn:sc")
