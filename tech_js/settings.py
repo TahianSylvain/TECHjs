@@ -9,6 +9,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 with open('jsonForce.json') as secret_file:
     config = json.load(secret_file)
+    try:
+        import openai
+        openai.api_key = config['ia']
+    except ModuleNotFoundError:
+        print('Mila install openai')
     SECRET_KEY: str = config["hashed_key"]
 
 
@@ -20,6 +25,9 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'principal',
+    'django_react',
+    'corsheaders',
+    'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -29,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE = [  # here order has its importance
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -100,3 +109,18 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 # Default primary key field:  TO_RENDER_IN_MUCH_COMPLEX_WAYS_OF_CONFIGURATION
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+if not DEBUG:  # disable everyone to get the api/data
+    REST_FRAMEWORK={
+        'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRender',)
+    }
+
+CORS_ORIGIN_WHITELIST = [
+    r'http://127.0.0.1:3000',
+    r'http://192.168.43.98:3000',
+]
+CORS_ORIGIN_REGEX_WHITELIST = [
+    r'http://localhost:3000',
+    r'http://192.168.43.98:3000',
+]

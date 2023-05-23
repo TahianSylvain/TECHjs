@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - Parallax flipping calendar </title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="7NCNEhqR2/rgQg8Z7k11SFLFA70k4zo9s+biVPyxOqhoAALnupKYCHlVcb2DQtxBYuCo+hJlERb+Q2c9pvYsTA==">
+<link rel="stylesheet" media="all" href="OPmLBW_data/embed-c24dc45033a5a0e3c76b9588328759bcba403f9bfa524b08f43645.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    #result-box {
+      background: #111111;
+      color: #eeeeee;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #111111;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #eeeeee;
+      background-color: #333333;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #555555;
+      color: #eeeeee;
+      box-shadow: inset 0px 3px #797979;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #eeeeee;
+    }
+
+    .embed-nav svg {
+      stroke: #eeeeee !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="OPmLBW_data/twilight-3476125ec032fffc9adb3dec23f00153fc064bf13d518310429.css">
+</head>
+<body id="the-body" style="border: 1px solid #666666; --borderWidth: 1px;" class="codepen-embed-body static results-active">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="#html-box" role="button" aria-pressed="false">
+HTML
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="#css-box" role="button" aria-pressed="false">
+CSS
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="#js-box" role="button" aria-pressed="false">
+JS
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+<li>
+<a href="#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/andreas_pihl/pen/gmoJGE" title="Edit on CodePen">
+<div class="large-logo">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+<path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+</div>
+<div class="box-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+</div>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thin" data-header="true">
+<div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+<pre tabindex="0"><code data-lang="htmlmixed" id="actual-html-code" class=" cm-s-default"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">body</span> <span class="cm-attribute">onload</span>=<span class="cm-string">"startTime()"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"container"</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"card"</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"front"</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"contentfront"</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"month"</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">table</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span> <span class="cm-attribute">class</span>=<span class="cm-string">"orangeTr"</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>M<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>T<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>W<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>T<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>F<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>S<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>S<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span> <span class="cm-attribute">class</span>=<span class="cm-string">"whiteTr"</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>1<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>2<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>3<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>4<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>5<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>6<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span> <span class="cm-attribute">class</span>=<span class="cm-string">"whiteTr"</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>7<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>8<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>9<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>10<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>11<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>12<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>13<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span> <span class="cm-attribute">class</span>=<span class="cm-string">"whiteTr"</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>14<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>15<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>16<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>17<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>18<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>19<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>20<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span> <span class="cm-attribute">class</span>=<span class="cm-string">"whiteTr"</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>21<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>22<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>23<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>24<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>25<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>26<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>27<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span> <span class="cm-attribute">class</span>=<span class="cm-string">"whiteTr"</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>28<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>29<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>30<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>31<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">table</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"date"</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"datecont"</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"date"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"day"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"month"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">i</span> <span class="cm-attribute">class</span>=<span class="cm-string">"fa fa-pencil edit"</span> <span class="cm-attribute">aria-hidden</span>=<span class="cm-string">"true"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"back"</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"contentback"</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"backcontainer"</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tag cm-bracket">&gt;</span></code></pre>
+</div>
+<div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+<pre tabindex="0"><code data-lang="css" id="actual-css-code" class=" cm-s-default"><span class="cm-tag">body</span>{
+  <span class="cm-property">margin</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#010712</span>;
+  <span class="cm-property">background-image</span>:<span class="cm-variable cm-callee">url</span>(<span class="cm-string">https://static.pexels.com/photos/1526/dark-blur-blurred-gradient.jpg</span>);
+  <span class="cm-property">background-size</span>:<span class="cm-atom">cover</span>;
+  <span class="cm-property">background-position</span>:<span class="cm-atom">center</span>;
+  <span class="cm-property">background-repeat</span>:<span class="cm-atom">no-repeat</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">100vh</span>;
+}
+<span class="cm-qualifier">.container</span>{
+  <span class="cm-property">width</span>:<span class="cm-number">400px</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">200px</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">relative</span>;
+  <span class="cm-property">perspective</span>: <span class="cm-number">1000</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">perspective</span>: <span class="cm-number">1000</span>;
+  <span class="cm-property">left</span>:<span class="cm-variable cm-callee">calc</span>(<span class="cm-number">50%</span> - <span class="cm-number">200px</span>);
+  <span class="cm-property">top</span>:<span class="cm-variable cm-callee">calc</span>(<span class="cm-number">50vh</span> - <span class="cm-number">100px</span>);
+}
+<span class="cm-qualifier">.card</span>{
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+  <span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  <span class="cm-property">transition</span>:<span class="cm-atom">transform</span> <span class="cm-number">1s</span> <span class="cm-atom">ease</span>;
+  <span class="cm-property">cursor</span>:<span class="cm-atom">pointer</span>;
+}
+<span class="cm-qualifier">.back</span>, <span class="cm-qualifier">.front</span>{
+  <span class="cm-property">border-radius</span>:<span class="cm-number">6px</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  
+  <span class="cm-property">backface-visibility</span>:<span class="cm-atom">hidden</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">backface-visibility</span>:<span class="cm-atom">hidden</span>;
+}
+<span class="cm-qualifier">.contentfront</span>{
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">float</span>:<span class="cm-atom">left</span>;
+  <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translatez</span>(<span class="cm-number">60px</span>);
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translatez</span>(<span class="cm-number">60px</span>);
+  
+  <span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  
+  <span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  
+}
+<span class="cm-qualifier">.contentback</span>{
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">float</span>:<span class="cm-atom">left</span>;
+  <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translatez</span>(<span class="cm-number">60px</span>);
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translatez</span>(<span class="cm-number">60px</span>);
+  
+  <span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  
+  <span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  
+}
+<span class="cm-qualifier">.back</span>{
+  <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">rotateY</span>(<span class="cm-number">180deg</span>);
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#232227</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-meta">-moz-</span><span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-meta">-o-</span><span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+}
+<span class="cm-qualifier">.front</span>{
+  <span class="cm-property">text-transform</span>:<span class="cm-atom">uppercase</span>;
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#232227</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-meta">-moz-</span><span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-meta">-o-</span><span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-property">backface-visibility</span>: <span class="cm-atom">hidden</span>;
+}
+<span class="cm-qualifier">.date</span>{
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">130px</span>;
+  <span class="cm-property">float</span>:<span class="cm-atom">left</span>;
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#E76642</span>;
+  <span class="cm-property">border-radius</span>:<span class="cm-number">0</span> <span class="cm-number">6px</span> <span class="cm-number">6px</span> <span class="cm-number">0</span>;
+  <span class="cm-property">text-align</span>:<span class="cm-atom">right</span>;
+  <span class="cm-property">padding</span>:<span class="cm-number">10px</span> <span class="cm-number">30px</span>;
+  <span class="cm-property">box-sizing</span>:<span class="cm-atom">border-box</span>;
+  <span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+}
+<span class="cm-qualifier">.datecont</span>{
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translatez</span>(<span class="cm-number">60px</span>) <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">.9</span>);
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translatez</span>(<span class="cm-number">60px</span>) <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">.9</span>);
+}
+<span class="cm-builtin">#date</span>{
+  <span class="cm-property">font-size</span>:<span class="cm-number">50px</span>;
+  <span class="cm-property">color</span>:<span class="cm-atom">#ECECE7</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Montserrat'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">font-weight</span>:<span class="cm-number">500</span>;
+  <span class="cm-property">float</span>:<span class="cm-atom">right</span>;
+}
+<span class="cm-builtin">#day</span>{
+  <span class="cm-property">float</span>:<span class="cm-atom">right</span>;
+  <span class="cm-property">font-size</span>:<span class="cm-number">14px</span>;
+  <span class="cm-property">color</span>:<span class="cm-atom">#232227</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Montserrat'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">font-weight</span>:<span class="cm-number">400</span>;
+}
+<span class="cm-builtin">#month</span>{
+  <span class="cm-property">float</span>:<span class="cm-atom">right</span>;
+  <span class="cm-property">font-size</span>:<span class="cm-number">10px</span>;
+  <span class="cm-property">color</span>:<span class="cm-atom">#232227</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Montserrat'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">font-weight</span>:<span class="cm-number">200</span>;
+}
+<span class="cm-qualifier">.date</span> <span class="cm-tag">i</span>{
+  <span class="cm-property">color</span>:<span class="cm-atom">#ECECE7</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+  <span class="cm-property">bottom</span>:<span class="cm-number">10px</span>;
+  <span class="cm-property">right</span>:<span class="cm-number">0</span>;
+}
+<span class="cm-qualifier">.date</span> <span class="cm-tag">i</span>:<span class="cm-variable-3">hover</span>{
+  <span class="cm-property">color</span>:<span class="cm-atom">#232227</span>;
+  <span class="cm-property">transition</span>:<span class="cm-number">.3s</span> <span class="cm-atom">ease</span>;
+}
+<span class="cm-qualifier">.month</span>{
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">270px</span>;
+  <span class="cm-property">float</span>:<span class="cm-atom">left</span>;
+  <span class="cm-property">padding</span>:<span class="cm-number">20px</span> <span class="cm-number">30px</span>;
+  <span class="cm-property">box-sizing</span>:<span class="cm-atom">border-box</span>;
+}
+<span class="cm-qualifier">.month</span> <span class="cm-tag">table</span>{
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>;
+}
+<span class="cm-qualifier">.orangeTr</span>{
+  <span class="cm-property">color</span>:<span class="cm-atom">#E76642</span>;
+}
+<span class="cm-qualifier">.whiteTr</span>{
+  <span class="cm-property">color</span>:<span class="cm-atom">#ECECE7</span>;
+  
+}
+<span class="cm-qualifier">.whiteTr</span> <span class="cm-tag">th</span>:<span class="cm-variable-3">hover</span>{
+  <span class="cm-property">color</span>:<span class="cm-atom">#E76642</span>;
+  <span class="cm-property">transition</span>:<span class="cm-number">.3s</span> <span class="cm-atom">ease</span>;
+}
+<span class="cm-qualifier">.month</span> <span class="cm-tag">tr</span>{
+  <span class="cm-property">height</span>:<span class="cm-number">24px</span>;
+}
+<span class="cm-qualifier">.month</span> <span class="cm-tag">th</span>{
+  <span class="cm-property">width</span>:<span class="cm-number">14%</span>;
+  <span class="cm-property">font-size</span>:<span class="cm-number">10px</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Montserrat'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">font-weight</span>:<span class="cm-number">400</span>;
+}
+
+<span class="cm-qualifier">.flipped</span>{
+  <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">rotateY</span>(<span class="cm-number">-180deg</span>);
+  <span class="cm-comment">/*height:400px;</span>
+<span class="cm-comment">  width:200px;</span>
+<span class="cm-comment">  left:calc(50% - 100px);</span>
+<span class="cm-comment">  top:calc(50vh - 200px);*/</span>
+}
+<span class="cm-qualifier">.backcontainer</span>{
+  <span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  <span class="cm-property">width</span>:<span class="cm-variable cm-callee">calc</span>(<span class="cm-number">100%</span> - <span class="cm-number">60px</span>);
+  <span class="cm-property">height</span>:<span class="cm-variable cm-callee">calc</span>(<span class="cm-number">100%</span> - <span class="cm-number">40px</span>);
+  <span class="cm-property">float</span>:<span class="cm-atom">left</span>;
+  <span class="cm-property">margin-left</span>:<span class="cm-number">30px</span>;
+  <span class="cm-property">margin-top</span>:<span class="cm-number">20px</span>;
+  <span class="cm-comment">/*transform:translatez(60px) scale();*/</span>
+  
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#E76642</span>;
+  <span class="cm-property">border-radius</span>:<span class="cm-number">6px</span>;
+  <span class="cm-property">padding</span>:<span class="cm-number">10px</span> <span class="cm-number">30px</span>;
+  <span class="cm-property">box-sizing</span>:<span class="cm-atom">border-box</span>;
+  <span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">transform-style</span>:<span class="cm-atom">preserve-3d</span>;
+}</code></pre>
+</div>
+<div id="js-box" class="code-wrap code-box box " role="region" aria-label="JS">
+<pre tabindex="0"><code data-lang="javascript" id="actual-js-code" class=" cm-s-default"><span class="cm-keyword">let</span> <span class="cm-def">cardElement</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-string">".card"</span>);
+
+<span class="cm-variable">cardElement</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-variable">flip</span>);
+
+<span class="cm-keyword">function</span> <span class="cm-def">flip</span>(){
+  <span class="cm-variable">cardElement</span>.<span class="cm-property">classList</span>.<span class="cm-property">toggle</span>(<span class="cm-string">"flipped"</span>)
+}
+
+<span class="cm-keyword">function</span> <span class="cm-def">startTime</span>() {
+    <span class="cm-keyword">var</span> <span class="cm-def">weekday</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Array</span>();
+    <span class="cm-variable-2">weekday</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span>  <span class="cm-string">"Sunday"</span>;
+    <span class="cm-variable-2">weekday</span>[<span class="cm-number">1</span>] <span class="cm-operator">=</span> <span class="cm-string">"Monday"</span>;
+    <span class="cm-variable-2">weekday</span>[<span class="cm-number">2</span>] <span class="cm-operator">=</span> <span class="cm-string">"Tuesday"</span>;
+    <span class="cm-variable-2">weekday</span>[<span class="cm-number">3</span>] <span class="cm-operator">=</span> <span class="cm-string">"Wednesday"</span>;
+    <span class="cm-variable-2">weekday</span>[<span class="cm-number">4</span>] <span class="cm-operator">=</span> <span class="cm-string">"Thursday"</span>;
+    <span class="cm-variable-2">weekday</span>[<span class="cm-number">5</span>] <span class="cm-operator">=</span> <span class="cm-string">"Friday"</span>;
+    <span class="cm-variable-2">weekday</span>[<span class="cm-number">6</span>] <span class="cm-operator">=</span> <span class="cm-string">"Saturday"</span>;
+    <span class="cm-keyword">var</span> <span class="cm-def">month</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Array</span>();
+    <span class="cm-variable-2">month</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span> <span class="cm-string">"January"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">1</span>] <span class="cm-operator">=</span> <span class="cm-string">"February"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">2</span>] <span class="cm-operator">=</span> <span class="cm-string">"March"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">3</span>] <span class="cm-operator">=</span> <span class="cm-string">"April"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">4</span>] <span class="cm-operator">=</span> <span class="cm-string">"May"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">5</span>] <span class="cm-operator">=</span> <span class="cm-string">"June"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">6</span>] <span class="cm-operator">=</span> <span class="cm-string">"July"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">7</span>] <span class="cm-operator">=</span> <span class="cm-string">"August"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">8</span>] <span class="cm-operator">=</span> <span class="cm-string">"September"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">9</span>] <span class="cm-operator">=</span> <span class="cm-string">"October"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">10</span>] <span class="cm-operator">=</span> <span class="cm-string">"November"</span>;
+    <span class="cm-variable-2">month</span>[<span class="cm-number">11</span>] <span class="cm-operator">=</span> <span class="cm-string">"December"</span>;
+    <span class="cm-keyword">var</span> <span class="cm-def">today</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>();
+    <span class="cm-keyword">var</span> <span class="cm-def">h</span> <span class="cm-operator">=</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getHours</span>();
+    <span class="cm-keyword">var</span> <span class="cm-def">m</span> <span class="cm-operator">=</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getMinutes</span>();
+    <span class="cm-keyword">var</span> <span class="cm-def">s</span> <span class="cm-operator">=</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getSeconds</span>();
+    <span class="cm-keyword">var</span> <span class="cm-def">d</span> <span class="cm-operator">=</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getDate</span>();
+    <span class="cm-keyword">var</span> <span class="cm-def">y</span> <span class="cm-operator">=</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getFullYear</span>();
+    <span class="cm-keyword">var</span> <span class="cm-def">wd</span> <span class="cm-operator">=</span> <span class="cm-variable-2">weekday</span>[<span class="cm-variable-2">today</span>.<span class="cm-property">getDay</span>()];
+    <span class="cm-keyword">var</span> <span class="cm-def">mt</span> <span class="cm-operator">=</span> <span class="cm-variable-2">month</span>[<span class="cm-variable-2">today</span>.<span class="cm-property">getMonth</span>()];
+  
+    <span class="cm-variable-2">m</span> <span class="cm-operator">=</span> <span class="cm-variable">checkTime</span>(<span class="cm-variable-2">m</span>);
+    <span class="cm-variable-2">s</span> <span class="cm-operator">=</span> <span class="cm-variable">checkTime</span>(<span class="cm-variable-2">s</span>);
+                    <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">'date'</span>).<span class="cm-property">innerHTML</span> <span class="cm-operator">=</span>
+    <span class="cm-variable-2">d</span>;
+ <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">'day'</span>).<span class="cm-property">innerHTML</span> <span class="cm-operator">=</span>
+    <span class="cm-variable-2">wd</span>;
+ <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">'month'</span>).<span class="cm-property">innerHTML</span> <span class="cm-operator">=</span>
+    <span class="cm-variable-2">mt</span> <span class="cm-operator">+</span> <span class="cm-string">"/"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">y</span>;
+    
+    <span class="cm-keyword">var</span> <span class="cm-def">t</span> <span class="cm-operator">=</span> <span class="cm-variable">setTimeout</span>(<span class="cm-variable">startTime</span>, <span class="cm-number">500</span>);
+}
+<span class="cm-keyword">function</span> <span class="cm-def">checkTime</span>(<span class="cm-def">i</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span> <span class="cm-number">10</span>) {<span class="cm-variable-2">i</span> <span class="cm-operator">=</span> <span class="cm-string">"0"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">i</span>};
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">i</span>;
+}
+</code></pre>
+</div>
+<div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+<iframe allow="camera; display-capture; geolocation; microphone; web-share" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " id="result-iframe" loading="lazy" name="CodePen Preview for Parallax flipping calendar " sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" scrolling="yes" title="CodePen Preview for Parallax flipping calendar " data-src="https://cdpn.io/andreas_pihl/fullembedgrid/gmoJGE?animations=run&amp;type=embed" src="https://cdpn.io/andreas_pihl/fullembedgrid/gmoJGE?animations=run&amp;type=embed" frameborder="0">
+  </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/andreas_pihl" target="_blank" rel="noopener"><img src="gmoJGE_data/default.png" loading="lazy" alt="" class="about-image"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/andreas_pihl" target="_blank" rel="noopener">Andreas Pihl Jrgensen</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+</p>
+<p>
+<a href="https://codepen.io/andreas_pihl" target="_blank" rel="noopener" class="about-user-more">
+See more by @andreas_pihl on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<p>
+This Pen doesn't use any external CSS resources.
+</p>
+<h3>External JavaScript</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" target="_blank">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js</a>
+</li>
+</ol>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button" id="zoom-button-1">1×</button></li>
+<li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+<li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script nonce="">
+    __processedPen = {"html":"&lt;body onload=&quot;startTime()&quot;&gt;\n  &lt;div class=&quot;container&quot;&gt;\n    &lt;div class=&quot;card&quot;&gt;\n      &lt;div class=&quot;front&quot;&gt;\n        &lt;div class=&quot;contentfront&quot;&gt;\n          &lt;div class=&quot;month&quot;&gt;\n            &lt;table&gt;\n              &lt;tr class=&quot;orangeTr&quot;&gt;\n                &lt;th&gt;M&lt;/th&gt;\n                &lt;th&gt;T&lt;/th&gt;\n                &lt;th&gt;W&lt;/th&gt;\n                &lt;th&gt;T&lt;/th&gt;\n                &lt;th&gt;F&lt;/th&gt;\n                &lt;th&gt;S&lt;/th&gt;\n                &lt;th&gt;S&lt;/th&gt;\n              &lt;/tr&gt;\n              &lt;tr class=&quot;whiteTr&quot;&gt;\n                &lt;th&gt;&lt;/th&gt;\n                &lt;th&gt;1&lt;/th&gt;\n                &lt;th&gt;2&lt;/th&gt;\n                &lt;th&gt;3&lt;/th&gt;\n                &lt;th&gt;4&lt;/th&gt;\n                &lt;th&gt;5&lt;/th&gt;\n                &lt;th&gt;6&lt;/th&gt;\n              &lt;/tr&gt;\n              &lt;tr class=&quot;whiteTr&quot;&gt;\n                &lt;th&gt;7&lt;/th&gt;\n                &lt;th&gt;8&lt;/th&gt;\n                &lt;th&gt;9&lt;/th&gt;\n                &lt;th&gt;10&lt;/th&gt;\n                &lt;th&gt;11&lt;/th&gt;\n                &lt;th&gt;12&lt;/th&gt;\n                &lt;th&gt;13&lt;/th&gt;\n              &lt;/tr&gt;\n              &lt;tr class=&quot;whiteTr&quot;&gt;\n                &lt;th&gt;14&lt;/th&gt;\n                &lt;th&gt;15&lt;/th&gt;\n                &lt;th&gt;16&lt;/th&gt;\n                &lt;th&gt;17&lt;/th&gt;\n                &lt;th&gt;18&lt;/th&gt;\n                &lt;th&gt;19&lt;/th&gt;\n                &lt;th&gt;20&lt;/th&gt;\n              &lt;/tr&gt;\n              &lt;tr class=&quot;whiteTr&quot;&gt;\n                &lt;th&gt;21&lt;/th&gt;\n                &lt;th&gt;22&lt;/th&gt;\n                &lt;th&gt;23&lt;/th&gt;\n                &lt;th&gt;24&lt;/th&gt;\n                &lt;th&gt;25&lt;/th&gt;\n                &lt;th&gt;26&lt;/th&gt;\n                &lt;th&gt;27&lt;/th&gt;\n              &lt;/tr&gt;\n              &lt;tr class=&quot;whiteTr&quot;&gt;\n                &lt;th&gt;28&lt;/th&gt;\n                &lt;th&gt;29&lt;/th&gt;\n                &lt;th&gt;30&lt;/th&gt;\n                &lt;th&gt;31&lt;/th&gt;\n                &lt;th&gt;&lt;/th&gt;\n                &lt;th&gt;&lt;/th&gt;\n                &lt;th&gt;&lt;/th&gt;\n              &lt;/tr&gt;\n            &lt;/table&gt;\n          &lt;/div&gt;\n          &lt;div class=&quot;date&quot;&gt;\n            &lt;div class=&quot;datecont&quot;&gt;\n              &lt;div id=&quot;date&quot;&gt;&lt;/div&gt;\n              &lt;div id=&quot;day&quot;&gt;&lt;/div&gt;\n              &lt;div id=&quot;month&quot;&gt;&lt;/div&gt;\n              &lt;i class=&quot;fa fa-pencil edit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;\n            &lt;/div&gt;\n          &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div class=&quot;back&quot;&gt;\n        &lt;div class=&quot;contentback&quot;&gt;\n          &lt;div class=&quot;backcontainer&quot;&gt;\n          &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/body&gt;","css":"body{\n  margin:0;\n  background-color:#010712;\n  background-image:url(https://static.pexels.com/photos/1526/dark-blur-blurred-gradient.jpg);\n  background-size:cover;\n  background-position:center;\n  background-repeat:no-repeat;\n  height:100vh;\n}\n.container{\n  width:400px;\n  height:200px;\n  position:relative;\n  perspective: 1000;\n  -webkit-perspective: 1000;\n  left:calc(50% - 200px);\n  top:calc(50vh - 100px);\n}\n.card{\n  width:100%;\n  height:100%;\n  position:absolute;\n  transform-style:preserve-3d;\n  -webkit-transform-style:preserve-3d;\n  transition:transform 1s ease;\n  cursor:pointer;\n}\n.back, .front{\n  border-radius:6px;\n  position:absolute;\n  width:100%;\n  height:100%;\n  transform-style:preserve-3d;\n  -webkit-transform-style:preserve-3d;\n  \n  backface-visibility:hidden;\n  -webkit-backface-visibility:hidden;\n}\n.contentfront{\n  width:100%;\n  height:100%;\n  float:left;\n  transform:translatez(60px);\n  -webkit-transform:translatez(60px);\n  \n  backface-visibility: hidden;\n  -webkit-backface-visibility: hidden;\n  \n  transform-style:preserve-3d;\n  -webkit-transform-style:preserve-3d;\n  \n}\n.contentback{\n  width:100%;\n  height:100%;\n  float:left;\n  transform:translatez(60px);\n  -webkit-transform:translatez(60px);\n  \n  backface-visibility: hidden;\n  -webkit-backface-visibility: hidden;\n  \n  transform-style:preserve-3d;\n  -webkit-transform-style:preserve-3d;\n  \n}\n.back{\n  transform:rotateY(180deg);\n  background-color:#232227;\n  -webkit-backface-visibility: hidden;\n  -moz-backface-visibility: hidden;\n  -o-backface-visibility: hidden;\n  backface-visibility: hidden;\n}\n.front{\n  text-transform:uppercase;\n  background-color:#232227;\n  -webkit-backface-visibility: hidden;\n  -moz-backface-visibility: hidden;\n  -o-backface-visibility: hidden;\n  backface-visibility: hidden;\n}\n.date{\n  height:100%;\n  width:130px;\n  float:left;\n  background-color:#E76642;\n  border-radius:0 6px 6px 0;\n  text-align:right;\n  padding:10px 30px;\n  box-sizing:border-box;\n  transform-style:preserve-3d;\n  -webkit-transform-style:preserve-3d;\n}\n.datecont{\n  height:100%;\n  transform:translatez(60px) scale(.9);\n  -webkit-transform:translatez(60px) scale(.9);\n}\n#date{\n  font-size:50px;\n  color:#ECECE7;\n  font-family: &#39;Montserrat&#39;, sans-serif;\n  font-weight:500;\n  float:right;\n}\n#day{\n  float:right;\n  font-size:14px;\n  color:#232227;\n  font-family: &#39;Montserrat&#39;, sans-serif;\n  font-weight:400;\n}\n#month{\n  float:right;\n  font-size:10px;\n  color:#232227;\n  font-family: &#39;Montserrat&#39;, sans-serif;\n  font-weight:200;\n}\n.date i{\n  color:#ECECE7;\n  position:absolute;\n  bottom:10px;\n  right:0;\n}\n.date i:hover{\n  color:#232227;\n  transition:.3s ease;\n}\n.month{\n  height:100%;\n  width:270px;\n  float:left;\n  padding:20px 30px;\n  box-sizing:border-box;\n}\n.month table{\n  width:100%;\n}\n.orangeTr{\n  color:#E76642;\n}\n.whiteTr{\n  color:#ECECE7;\n  \n}\n.whiteTr th:hover{\n  color:#E76642;\n  transition:.3s ease;\n}\n.month tr{\n  height:24px;\n}\n.month th{\n  width:14%;\n  font-size:10px;\n  font-family: &#39;Montserrat&#39;, sans-serif;\n  font-weight:400;\n}\n\n.flipped{\n  transform:rotateY(-180deg);\n  /*height:400px;\n  width:200px;\n  left:calc(50% - 100px);\n  top:calc(50vh - 200px);*/\n}\n.backcontainer{\n  transform-style:preserve-3d;\n  width:calc(100% - 60px);\n  height:calc(100% - 40px);\n  float:left;\n  margin-left:30px;\n  margin-top:20px;\n  /*transform:translatez(60px) scale();*/\n  \n  background-color:#E76642;\n  border-radius:6px;\n  padding:10px 30px;\n  box-sizing:border-box;\n  transform-style:preserve-3d;\n  -webkit-transform-style:preserve-3d;\n}","js":"let cardElement = document.querySelector(&quot;.card&quot;);\n\ncardElement.addEventListener(&quot;click&quot;, flip);\n\nfunction flip() {\n  cardElement.classList.toggle(&quot;flipped&quot;);\n}\n\nfunction startTime() {\n  var weekday = new Array();\n  weekday[0] = &quot;Sunday&quot;;\n  weekday[1] = &quot;Monday&quot;;\n  weekday[2] = &quot;Tuesday&quot;;\n  weekday[3] = &quot;Wednesday&quot;;\n  weekday[4] = &quot;Thursday&quot;;\n  weekday[5] = &quot;Friday&quot;;\n  weekday[6] = &quot;Saturday&quot;;\n  var month = new Array();\n  month[0] = &quot;January&quot;;\n  month[1] = &quot;February&quot;;\n  month[2] = &quot;March&quot;;\n  month[3] = &quot;April&quot;;\n  month[4] = &quot;May&quot;;\n  month[5] = &quot;June&quot;;\n  month[6] = &quot;July&quot;;\n  month[7] = &quot;August&quot;;\n  month[8] = &quot;September&quot;;\n  month[9] = &quot;October&quot;;\n  month[10] = &quot;November&quot;;\n  month[11] = &quot;December&quot;;\n  var today = new Date();\n  var h = today.getHours();\n  var m = today.getMinutes();\n  var s = today.getSeconds();\n  var d = today.getDate();\n  var y = today.getFullYear();\n  var wd = weekday[today.getDay()];\n  var mt = month[today.getMonth()];\n\n  m = checkTime(m);\n  s = checkTime(s);\n  document.getElementById(&#39;date&#39;).innerHTML =\n  d;\n  document.getElementById(&#39;day&#39;).innerHTML =\n  wd;\n  document.getElementById(&#39;month&#39;).innerHTML =\n  mt + &quot;/&quot; + y;\n\n  var t = setTimeout(startTime, 500);\n}\nfunction checkTime(i) {\n  if (i &lt; 10) {i = &quot;0&quot; + i;};\n  return i;\n}"};
+    __preprocessors = {
+      "html": "none",
+      "css": "none",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+<script src="OPmLBW_data/embed-008e8e63bc8f4f7a03df3f5da5b5c4d5e25fe5a438f147d0a2325f1.js"></script>
+<script nonce="">(function(){var js = "window['__CF$cv$params']={r:'7cb37224a9729e8f',m:'9ieBdZiKy0gSq6D7VFiKIEwSAGLPkK9tqmlujzklp98-1684741592-0-AcrpkhNQisaa9UfSK2WjE0mbfZVfOHW2w2Xm759HYkea',u:'/cdn-cgi/challenge-platform/h/g'};_cpo=document.createElement('script');_cpo.nonce='mnQfwksj0yI=',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = 'mnQfwksj0yI=';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe style="position: absolute; top: 0px; left: 0px; border: medium none; visibility: hidden;" width="1" height="1"></iframe>
+
+</body></html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  <title>CodePen - #DailyCssImages – Day 9. Calendar</title>
+    <link rel="canonical" href="https://codepen.io/dark_mefody/pen/VpdrGG">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../zBgdwg_data/zBgdwg_data/normalize.min.css">
+
+  
+  
+<style>
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+body {
+  background-color: #F3F4F5;
+  background-image: radial-gradient(#F3F4F5 0, #d7dbde 100%);
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: "Pacifico", cursive;
+}
+
+.title {
+  padding: 10px 20px;
+}
+.title span {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+.half-transparent {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.year-block {
+  font-size: 5vmin;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.date-block {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.date-block__month {
+  font-size: 3vmin;
+  font-weight: bold;
+}
+.date-block__date {
+  font-size: 6vmin;
+  font-weight: bold;
+}
+.date-block__day {
+  font-size: 3vmin;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.calendar {
+  width: 100vmin;
+  height: 60vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #CA3644;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: -1vmin 1vmin 2vmin rgba(0, 0, 0, 0.5);
+}
+.calendar__days {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1vmin;
+}
+.calendar__day {
+  font-size: 1.4vmin;
+  display: inline-block;
+  width: 14.2857142857%;
+  height: 2vmin;
+}
+.calendar__month {
+  font-family: "Open Sans Condensed", sans-serif;
+  width: 20%;
+  height: 33.33333%;
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2vmin;
+  position: relative;
+}
+.calendar__month .title {
+  font-weight: bold;
+  font-size: 2vmin;
+}
+.calendar__month:nth-child(4n+1) {
+  background: #1AA1AF;
+}
+.calendar__month:nth-child(4n+2) {
+  background: #E86948;
+}
+.calendar__month:nth-child(4n+3) {
+  background: #EBC85B;
+}
+.calendar__month:nth-child(4n+4) {
+  background: #CA3644;
+}
+
+.clock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 100%;
+}
+.clock__container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+.clock__dot {
+  width: 5%;
+  height: 5%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+}
+.clock__hour {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  -webkit-animation: rotate 43200s infinite linear;
+          animation: rotate 43200s infinite linear;
+}
+.clock__hour__container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+.clock__hour::before {
+  width: 3%;
+  height: 30%;
+  top: 20%;
+  left: 50%;
+  transform: translatex(-50%);
+  background: white;
+}
+.clock__minute {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  -webkit-animation: rotate 3600s infinite linear;
+          animation: rotate 3600s infinite linear;
+}
+.clock__minute__container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+.clock__minute::before {
+  width: 2%;
+  height: 40%;
+  top: 10%;
+  left: 50%;
+  transform: translatex(-50%);
+  background: white;
+}
+.clock__second {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  -webkit-animation: rotate 60s infinite steps(60);
+          animation: rotate 60s infinite steps(60);
+}
+.clock__second__container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+.clock__second::before {
+  width: 1%;
+  height: 45%;
+  top: 5%;
+  left: 50%;
+  transform: translatex(-50%);
+  background: white;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body translate="no">
+  <div class="title"><span>Day 9. Calendar</span></div>
+<div class="calendar">
+  <div class="calendar__month calendar__empty--1"><span class="title"></span>
+    <div class="year-block hidden">2023</div>
+    <div class="clock hidden">
+      <div class="clock__hour__container" style="transform: rotateZ(319.5deg);">
+        <div class="clock__hour"></div>
+      </div>
+      <div class="clock__minute__container" style="transform: rotateZ(239.5deg);">
+        <div class="clock__minute"></div>
+      </div>
+      <div class="clock__second__container" style="transform: rotateZ(330deg);">
+        <div class="clock__second"></div>
+      </div>
+      <div class="clock__dot"></div>
+    </div>
+    <div class="date-block">
+      <div class="date-block__month">may</div>
+      <div class="date-block__date">22</div>
+      <div class="date-block__day">mon</div>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--0"><span class="title">jan</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">26</span><span class="calendar__day calendar__day__1 half-transparent">27</span><span class="calendar__day calendar__day__2 half-transparent">28</span><span class="calendar__day calendar__day__3 half-transparent">29</span><span class="calendar__day calendar__day__4 half-transparent">30</span><span class="calendar__day calendar__day__5 half-transparent bold">31</span><span class="calendar__day calendar__day__6 bold">1</span><span class="calendar__day calendar__day__7">2</span><span class="calendar__day calendar__day__8">3</span><span class="calendar__day calendar__day__9">4</span><span class="calendar__day calendar__day__10">5</span><span class="calendar__day calendar__day__11">6</span><span class="calendar__day calendar__day__12 bold">7</span><span class="calendar__day calendar__day__13 bold">8</span><span class="calendar__day calendar__day__14">9</span><span class="calendar__day calendar__day__15">10</span><span class="calendar__day calendar__day__16">11</span><span class="calendar__day calendar__day__17">12</span><span class="calendar__day calendar__day__18">13</span><span class="calendar__day calendar__day__19 bold">14</span><span class="calendar__day calendar__day__20 bold">15</span><span class="calendar__day calendar__day__21">16</span><span class="calendar__day calendar__day__22">17</span><span class="calendar__day calendar__day__23">18</span><span class="calendar__day calendar__day__24">19</span><span class="calendar__day calendar__day__25">20</span><span class="calendar__day calendar__day__26 bold">21</span><span class="calendar__day calendar__day__27 bold">22</span><span class="calendar__day calendar__day__28">23</span><span class="calendar__day calendar__day__29">24</span><span class="calendar__day calendar__day__30">25</span><span class="calendar__day calendar__day__31">26</span><span class="calendar__day calendar__day__32">27</span><span class="calendar__day calendar__day__33 bold">28</span><span class="calendar__day calendar__day__34 bold">29</span><span class="calendar__day calendar__day__35">30</span><span class="calendar__day calendar__day__36">31</span><span class="calendar__day calendar__day__37 half-transparent">1</span><span class="calendar__day calendar__day__38 half-transparent">2</span><span class="calendar__day calendar__day__39 half-transparent">3</span><span class="calendar__day calendar__day__40 half-transparent bold">4</span><span class="calendar__day calendar__day__41 half-transparent bold">5</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--1"><span class="title">feb</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">30</span><span class="calendar__day calendar__day__1 half-transparent">31</span><span class="calendar__day calendar__day__2">1</span><span class="calendar__day calendar__day__3">2</span><span class="calendar__day calendar__day__4">3</span><span class="calendar__day calendar__day__5 bold">4</span><span class="calendar__day calendar__day__6 bold">5</span><span class="calendar__day calendar__day__7">6</span><span class="calendar__day calendar__day__8">7</span><span class="calendar__day calendar__day__9">8</span><span class="calendar__day calendar__day__10">9</span><span class="calendar__day calendar__day__11">10</span><span class="calendar__day calendar__day__12 bold">11</span><span class="calendar__day calendar__day__13 bold">12</span><span class="calendar__day calendar__day__14">13</span><span class="calendar__day calendar__day__15">14</span><span class="calendar__day calendar__day__16">15</span><span class="calendar__day calendar__day__17">16</span><span class="calendar__day calendar__day__18">17</span><span class="calendar__day calendar__day__19 bold">18</span><span class="calendar__day calendar__day__20 bold">19</span><span class="calendar__day calendar__day__21">20</span><span class="calendar__day calendar__day__22">21</span><span class="calendar__day calendar__day__23">22</span><span class="calendar__day calendar__day__24">23</span><span class="calendar__day calendar__day__25">24</span><span class="calendar__day calendar__day__26 bold">25</span><span class="calendar__day calendar__day__27 bold">26</span><span class="calendar__day calendar__day__28">27</span><span class="calendar__day calendar__day__29">28</span><span class="calendar__day calendar__day__30 half-transparent">1</span><span class="calendar__day calendar__day__31 half-transparent">2</span><span class="calendar__day calendar__day__32 half-transparent">3</span><span class="calendar__day calendar__day__33 half-transparent bold">4</span><span class="calendar__day calendar__day__34 half-transparent bold">5</span><span class="calendar__day calendar__day__35 half-transparent">6</span><span class="calendar__day calendar__day__36 half-transparent">7</span><span class="calendar__day calendar__day__37 half-transparent">8</span><span class="calendar__day calendar__day__38 half-transparent">9</span><span class="calendar__day calendar__day__39 half-transparent">10</span><span class="calendar__day calendar__day__40 half-transparent bold">11</span><span class="calendar__day calendar__day__41 half-transparent bold">12</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--2"><span class="title">mar</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">27</span><span class="calendar__day calendar__day__1 half-transparent">28</span><span class="calendar__day calendar__day__2">1</span><span class="calendar__day calendar__day__3">2</span><span class="calendar__day calendar__day__4">3</span><span class="calendar__day calendar__day__5 bold">4</span><span class="calendar__day calendar__day__6 bold">5</span><span class="calendar__day calendar__day__7">6</span><span class="calendar__day calendar__day__8">7</span><span class="calendar__day calendar__day__9">8</span><span class="calendar__day calendar__day__10">9</span><span class="calendar__day calendar__day__11">10</span><span class="calendar__day calendar__day__12 bold">11</span><span class="calendar__day calendar__day__13 bold">12</span><span class="calendar__day calendar__day__14">13</span><span class="calendar__day calendar__day__15">14</span><span class="calendar__day calendar__day__16">15</span><span class="calendar__day calendar__day__17">16</span><span class="calendar__day calendar__day__18">17</span><span class="calendar__day calendar__day__19 bold">18</span><span class="calendar__day calendar__day__20 bold">19</span><span class="calendar__day calendar__day__21">20</span><span class="calendar__day calendar__day__22">21</span><span class="calendar__day calendar__day__23">22</span><span class="calendar__day calendar__day__24">23</span><span class="calendar__day calendar__day__25">24</span><span class="calendar__day calendar__day__26 bold">25</span><span class="calendar__day calendar__day__27 bold">26</span><span class="calendar__day calendar__day__28">27</span><span class="calendar__day calendar__day__29">28</span><span class="calendar__day calendar__day__30">29</span><span class="calendar__day calendar__day__31">30</span><span class="calendar__day calendar__day__32">31</span><span class="calendar__day calendar__day__33 half-transparent bold">1</span><span class="calendar__day calendar__day__34 half-transparent bold">2</span><span class="calendar__day calendar__day__35 half-transparent">3</span><span class="calendar__day calendar__day__36 half-transparent">4</span><span class="calendar__day calendar__day__37 half-transparent">5</span><span class="calendar__day calendar__day__38 half-transparent">6</span><span class="calendar__day calendar__day__39 half-transparent">7</span><span class="calendar__day calendar__day__40 half-transparent bold">8</span><span class="calendar__day calendar__day__41 half-transparent bold">9</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--3"><span class="title">apr</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">27</span><span class="calendar__day calendar__day__1 half-transparent">28</span><span class="calendar__day calendar__day__2 half-transparent">29</span><span class="calendar__day calendar__day__3 half-transparent">30</span><span class="calendar__day calendar__day__4 half-transparent">31</span><span class="calendar__day calendar__day__5 bold">1</span><span class="calendar__day calendar__day__6 bold">2</span><span class="calendar__day calendar__day__7">3</span><span class="calendar__day calendar__day__8">4</span><span class="calendar__day calendar__day__9">5</span><span class="calendar__day calendar__day__10">6</span><span class="calendar__day calendar__day__11">7</span><span class="calendar__day calendar__day__12 bold">8</span><span class="calendar__day calendar__day__13 bold">9</span><span class="calendar__day calendar__day__14">10</span><span class="calendar__day calendar__day__15">11</span><span class="calendar__day calendar__day__16">12</span><span class="calendar__day calendar__day__17">13</span><span class="calendar__day calendar__day__18">14</span><span class="calendar__day calendar__day__19 bold">15</span><span class="calendar__day calendar__day__20 bold">16</span><span class="calendar__day calendar__day__21">17</span><span class="calendar__day calendar__day__22">18</span><span class="calendar__day calendar__day__23">19</span><span class="calendar__day calendar__day__24">20</span><span class="calendar__day calendar__day__25">21</span><span class="calendar__day calendar__day__26 bold">22</span><span class="calendar__day calendar__day__27 bold">23</span><span class="calendar__day calendar__day__28">24</span><span class="calendar__day calendar__day__29">25</span><span class="calendar__day calendar__day__30">26</span><span class="calendar__day calendar__day__31">27</span><span class="calendar__day calendar__day__32">28</span><span class="calendar__day calendar__day__33 bold">29</span><span class="calendar__day calendar__day__34 bold">30</span><span class="calendar__day calendar__day__35 half-transparent">1</span><span class="calendar__day calendar__day__36 half-transparent">2</span><span class="calendar__day calendar__day__37 half-transparent">3</span><span class="calendar__day calendar__day__38 half-transparent">4</span><span class="calendar__day calendar__day__39 half-transparent">5</span><span class="calendar__day calendar__day__40 half-transparent bold">6</span><span class="calendar__day calendar__day__41 half-transparent bold">7</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--4"><span class="title">may</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">24</span><span class="calendar__day calendar__day__1 half-transparent">25</span><span class="calendar__day calendar__day__2 half-transparent">26</span><span class="calendar__day calendar__day__3 half-transparent">27</span><span class="calendar__day calendar__day__4 half-transparent">28</span><span class="calendar__day calendar__day__5 half-transparent bold">29</span><span class="calendar__day calendar__day__6 half-transparent bold">30</span><span class="calendar__day calendar__day__7">1</span><span class="calendar__day calendar__day__8">2</span><span class="calendar__day calendar__day__9">3</span><span class="calendar__day calendar__day__10">4</span><span class="calendar__day calendar__day__11">5</span><span class="calendar__day calendar__day__12 bold">6</span><span class="calendar__day calendar__day__13 bold">7</span><span class="calendar__day calendar__day__14">8</span><span class="calendar__day calendar__day__15">9</span><span class="calendar__day calendar__day__16">10</span><span class="calendar__day calendar__day__17">11</span><span class="calendar__day calendar__day__18">12</span><span class="calendar__day calendar__day__19 bold">13</span><span class="calendar__day calendar__day__20 bold">14</span><span class="calendar__day calendar__day__21">15</span><span class="calendar__day calendar__day__22">16</span><span class="calendar__day calendar__day__23">17</span><span class="calendar__day calendar__day__24">18</span><span class="calendar__day calendar__day__25">19</span><span class="calendar__day calendar__day__26 bold">20</span><span class="calendar__day calendar__day__27 bold">21</span><span class="calendar__day calendar__day__28">22</span><span class="calendar__day calendar__day__29">23</span><span class="calendar__day calendar__day__30">24</span><span class="calendar__day calendar__day__31">25</span><span class="calendar__day calendar__day__32">26</span><span class="calendar__day calendar__day__33 bold">27</span><span class="calendar__day calendar__day__34 bold">28</span><span class="calendar__day calendar__day__35">29</span><span class="calendar__day calendar__day__36">30</span><span class="calendar__day calendar__day__37">31</span><span class="calendar__day calendar__day__38 half-transparent">1</span><span class="calendar__day calendar__day__39 half-transparent">2</span><span class="calendar__day calendar__day__40 half-transparent bold">3</span><span class="calendar__day calendar__day__41 half-transparent bold">4</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--5"><span class="title">june</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">29</span><span class="calendar__day calendar__day__1 half-transparent">30</span><span class="calendar__day calendar__day__2 half-transparent">31</span><span class="calendar__day calendar__day__3">1</span><span class="calendar__day calendar__day__4">2</span><span class="calendar__day calendar__day__5 bold">3</span><span class="calendar__day calendar__day__6 bold">4</span><span class="calendar__day calendar__day__7">5</span><span class="calendar__day calendar__day__8">6</span><span class="calendar__day calendar__day__9">7</span><span class="calendar__day calendar__day__10">8</span><span class="calendar__day calendar__day__11">9</span><span class="calendar__day calendar__day__12 bold">10</span><span class="calendar__day calendar__day__13 bold">11</span><span class="calendar__day calendar__day__14">12</span><span class="calendar__day calendar__day__15">13</span><span class="calendar__day calendar__day__16">14</span><span class="calendar__day calendar__day__17">15</span><span class="calendar__day calendar__day__18">16</span><span class="calendar__day calendar__day__19 bold">17</span><span class="calendar__day calendar__day__20 bold">18</span><span class="calendar__day calendar__day__21">19</span><span class="calendar__day calendar__day__22">20</span><span class="calendar__day calendar__day__23">21</span><span class="calendar__day calendar__day__24">22</span><span class="calendar__day calendar__day__25">23</span><span class="calendar__day calendar__day__26 bold">24</span><span class="calendar__day calendar__day__27 bold">25</span><span class="calendar__day calendar__day__28">26</span><span class="calendar__day calendar__day__29">27</span><span class="calendar__day calendar__day__30">28</span><span class="calendar__day calendar__day__31">29</span><span class="calendar__day calendar__day__32">30</span><span class="calendar__day calendar__day__33 half-transparent bold">1</span><span class="calendar__day calendar__day__34 half-transparent bold">2</span><span class="calendar__day calendar__day__35 half-transparent">3</span><span class="calendar__day calendar__day__36 half-transparent">4</span><span class="calendar__day calendar__day__37 half-transparent">5</span><span class="calendar__day calendar__day__38 half-transparent">6</span><span class="calendar__day calendar__day__39 half-transparent">7</span><span class="calendar__day calendar__day__40 half-transparent bold">8</span><span class="calendar__day calendar__day__41 half-transparent bold">9</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__empty--2"><span class="title"></span>
+    <div class="year-block hidden">2023</div>
+    <div class="clock">
+      <div class="clock__hour__container" style="transform: rotateZ(319.5deg);">
+        <div class="clock__hour"></div>
+      </div>
+      <div class="clock__minute__container" style="transform: rotateZ(239.5deg);">
+        <div class="clock__minute"></div>
+      </div>
+      <div class="clock__second__container" style="transform: rotateZ(330deg);">
+        <div class="clock__second"></div>
+      </div>
+      <div class="clock__dot"></div>
+    </div>
+    <div class="date-block hidden">
+      <div class="date-block__month">may</div>
+      <div class="date-block__date">22</div>
+      <div class="date-block__day">mon</div>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--6"><span class="title">july</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">26</span><span class="calendar__day calendar__day__1 half-transparent">27</span><span class="calendar__day calendar__day__2 half-transparent">28</span><span class="calendar__day calendar__day__3 half-transparent">29</span><span class="calendar__day calendar__day__4 half-transparent">30</span><span class="calendar__day calendar__day__5 bold">1</span><span class="calendar__day calendar__day__6 bold">2</span><span class="calendar__day calendar__day__7">3</span><span class="calendar__day calendar__day__8">4</span><span class="calendar__day calendar__day__9">5</span><span class="calendar__day calendar__day__10">6</span><span class="calendar__day calendar__day__11">7</span><span class="calendar__day calendar__day__12 bold">8</span><span class="calendar__day calendar__day__13 bold">9</span><span class="calendar__day calendar__day__14">10</span><span class="calendar__day calendar__day__15">11</span><span class="calendar__day calendar__day__16">12</span><span class="calendar__day calendar__day__17">13</span><span class="calendar__day calendar__day__18">14</span><span class="calendar__day calendar__day__19 bold">15</span><span class="calendar__day calendar__day__20 bold">16</span><span class="calendar__day calendar__day__21">17</span><span class="calendar__day calendar__day__22">18</span><span class="calendar__day calendar__day__23">19</span><span class="calendar__day calendar__day__24">20</span><span class="calendar__day calendar__day__25">21</span><span class="calendar__day calendar__day__26 bold">22</span><span class="calendar__day calendar__day__27 bold">23</span><span class="calendar__day calendar__day__28">24</span><span class="calendar__day calendar__day__29">25</span><span class="calendar__day calendar__day__30">26</span><span class="calendar__day calendar__day__31">27</span><span class="calendar__day calendar__day__32">28</span><span class="calendar__day calendar__day__33 bold">29</span><span class="calendar__day calendar__day__34 bold">30</span><span class="calendar__day calendar__day__35">31</span><span class="calendar__day calendar__day__36 half-transparent">1</span><span class="calendar__day calendar__day__37 half-transparent">2</span><span class="calendar__day calendar__day__38 half-transparent">3</span><span class="calendar__day calendar__day__39 half-transparent">4</span><span class="calendar__day calendar__day__40 half-transparent bold">5</span><span class="calendar__day calendar__day__41 half-transparent bold">6</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--7"><span class="title">aug</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">31</span><span class="calendar__day calendar__day__1">1</span><span class="calendar__day calendar__day__2">2</span><span class="calendar__day calendar__day__3">3</span><span class="calendar__day calendar__day__4">4</span><span class="calendar__day calendar__day__5 bold">5</span><span class="calendar__day calendar__day__6 bold">6</span><span class="calendar__day calendar__day__7">7</span><span class="calendar__day calendar__day__8">8</span><span class="calendar__day calendar__day__9">9</span><span class="calendar__day calendar__day__10">10</span><span class="calendar__day calendar__day__11">11</span><span class="calendar__day calendar__day__12 bold">12</span><span class="calendar__day calendar__day__13 bold">13</span><span class="calendar__day calendar__day__14">14</span><span class="calendar__day calendar__day__15">15</span><span class="calendar__day calendar__day__16">16</span><span class="calendar__day calendar__day__17">17</span><span class="calendar__day calendar__day__18">18</span><span class="calendar__day calendar__day__19 bold">19</span><span class="calendar__day calendar__day__20 bold">20</span><span class="calendar__day calendar__day__21">21</span><span class="calendar__day calendar__day__22">22</span><span class="calendar__day calendar__day__23">23</span><span class="calendar__day calendar__day__24">24</span><span class="calendar__day calendar__day__25">25</span><span class="calendar__day calendar__day__26 bold">26</span><span class="calendar__day calendar__day__27 bold">27</span><span class="calendar__day calendar__day__28">28</span><span class="calendar__day calendar__day__29">29</span><span class="calendar__day calendar__day__30">30</span><span class="calendar__day calendar__day__31">31</span><span class="calendar__day calendar__day__32 half-transparent">1</span><span class="calendar__day calendar__day__33 half-transparent bold">2</span><span class="calendar__day calendar__day__34 half-transparent bold">3</span><span class="calendar__day calendar__day__35 half-transparent">4</span><span class="calendar__day calendar__day__36 half-transparent">5</span><span class="calendar__day calendar__day__37 half-transparent">6</span><span class="calendar__day calendar__day__38 half-transparent">7</span><span class="calendar__day calendar__day__39 half-transparent">8</span><span class="calendar__day calendar__day__40 half-transparent bold">9</span><span class="calendar__day calendar__day__41 half-transparent bold">10</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--8"><span class="title">sep</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">28</span><span class="calendar__day calendar__day__1 half-transparent">29</span><span class="calendar__day calendar__day__2 half-transparent">30</span><span class="calendar__day calendar__day__3 half-transparent">31</span><span class="calendar__day calendar__day__4">1</span><span class="calendar__day calendar__day__5 bold">2</span><span class="calendar__day calendar__day__6 bold">3</span><span class="calendar__day calendar__day__7">4</span><span class="calendar__day calendar__day__8">5</span><span class="calendar__day calendar__day__9">6</span><span class="calendar__day calendar__day__10">7</span><span class="calendar__day calendar__day__11">8</span><span class="calendar__day calendar__day__12 bold">9</span><span class="calendar__day calendar__day__13 bold">10</span><span class="calendar__day calendar__day__14">11</span><span class="calendar__day calendar__day__15">12</span><span class="calendar__day calendar__day__16">13</span><span class="calendar__day calendar__day__17">14</span><span class="calendar__day calendar__day__18">15</span><span class="calendar__day calendar__day__19 bold">16</span><span class="calendar__day calendar__day__20 bold">17</span><span class="calendar__day calendar__day__21">18</span><span class="calendar__day calendar__day__22">19</span><span class="calendar__day calendar__day__23">20</span><span class="calendar__day calendar__day__24">21</span><span class="calendar__day calendar__day__25">22</span><span class="calendar__day calendar__day__26 bold">23</span><span class="calendar__day calendar__day__27 bold">24</span><span class="calendar__day calendar__day__28">25</span><span class="calendar__day calendar__day__29">26</span><span class="calendar__day calendar__day__30">27</span><span class="calendar__day calendar__day__31">28</span><span class="calendar__day calendar__day__32">29</span><span class="calendar__day calendar__day__33 bold">30</span><span class="calendar__day calendar__day__34 half-transparent bold">1</span><span class="calendar__day calendar__day__35 half-transparent">2</span><span class="calendar__day calendar__day__36 half-transparent">3</span><span class="calendar__day calendar__day__37 half-transparent">4</span><span class="calendar__day calendar__day__38 half-transparent">5</span><span class="calendar__day calendar__day__39 half-transparent">6</span><span class="calendar__day calendar__day__40 half-transparent bold">7</span><span class="calendar__day calendar__day__41 half-transparent bold">8</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--9"><span class="title">oct</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">25</span><span class="calendar__day calendar__day__1 half-transparent">26</span><span class="calendar__day calendar__day__2 half-transparent">27</span><span class="calendar__day calendar__day__3 half-transparent">28</span><span class="calendar__day calendar__day__4 half-transparent">29</span><span class="calendar__day calendar__day__5 half-transparent bold">30</span><span class="calendar__day calendar__day__6 bold">1</span><span class="calendar__day calendar__day__7">2</span><span class="calendar__day calendar__day__8">3</span><span class="calendar__day calendar__day__9">4</span><span class="calendar__day calendar__day__10">5</span><span class="calendar__day calendar__day__11">6</span><span class="calendar__day calendar__day__12 bold">7</span><span class="calendar__day calendar__day__13 bold">8</span><span class="calendar__day calendar__day__14">9</span><span class="calendar__day calendar__day__15">10</span><span class="calendar__day calendar__day__16">11</span><span class="calendar__day calendar__day__17">12</span><span class="calendar__day calendar__day__18">13</span><span class="calendar__day calendar__day__19 bold">14</span><span class="calendar__day calendar__day__20 bold">15</span><span class="calendar__day calendar__day__21">16</span><span class="calendar__day calendar__day__22">17</span><span class="calendar__day calendar__day__23">18</span><span class="calendar__day calendar__day__24">19</span><span class="calendar__day calendar__day__25">20</span><span class="calendar__day calendar__day__26 bold">21</span><span class="calendar__day calendar__day__27 bold">22</span><span class="calendar__day calendar__day__28">23</span><span class="calendar__day calendar__day__29">24</span><span class="calendar__day calendar__day__30">25</span><span class="calendar__day calendar__day__31">26</span><span class="calendar__day calendar__day__32">27</span><span class="calendar__day calendar__day__33 bold">28</span><span class="calendar__day calendar__day__34 bold">29</span><span class="calendar__day calendar__day__35">30</span><span class="calendar__day calendar__day__36">31</span><span class="calendar__day calendar__day__37 half-transparent">1</span><span class="calendar__day calendar__day__38 half-transparent">2</span><span class="calendar__day calendar__day__39 half-transparent">3</span><span class="calendar__day calendar__day__40 half-transparent bold">4</span><span class="calendar__day calendar__day__41 half-transparent bold">5</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--10"><span class="title">nov</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">30</span><span class="calendar__day calendar__day__1 half-transparent">31</span><span class="calendar__day calendar__day__2">1</span><span class="calendar__day calendar__day__3">2</span><span class="calendar__day calendar__day__4">3</span><span class="calendar__day calendar__day__5 bold">4</span><span class="calendar__day calendar__day__6 bold">5</span><span class="calendar__day calendar__day__7">6</span><span class="calendar__day calendar__day__8">7</span><span class="calendar__day calendar__day__9">8</span><span class="calendar__day calendar__day__10">9</span><span class="calendar__day calendar__day__11">10</span><span class="calendar__day calendar__day__12 bold">11</span><span class="calendar__day calendar__day__13 bold">12</span><span class="calendar__day calendar__day__14">13</span><span class="calendar__day calendar__day__15">14</span><span class="calendar__day calendar__day__16">15</span><span class="calendar__day calendar__day__17">16</span><span class="calendar__day calendar__day__18">17</span><span class="calendar__day calendar__day__19 bold">18</span><span class="calendar__day calendar__day__20 bold">19</span><span class="calendar__day calendar__day__21">20</span><span class="calendar__day calendar__day__22">21</span><span class="calendar__day calendar__day__23">22</span><span class="calendar__day calendar__day__24">23</span><span class="calendar__day calendar__day__25">24</span><span class="calendar__day calendar__day__26 bold">25</span><span class="calendar__day calendar__day__27 bold">26</span><span class="calendar__day calendar__day__28">27</span><span class="calendar__day calendar__day__29">28</span><span class="calendar__day calendar__day__30">29</span><span class="calendar__day calendar__day__31">30</span><span class="calendar__day calendar__day__32 half-transparent">1</span><span class="calendar__day calendar__day__33 half-transparent bold">2</span><span class="calendar__day calendar__day__34 half-transparent bold">3</span><span class="calendar__day calendar__day__35 half-transparent">4</span><span class="calendar__day calendar__day__36 half-transparent">5</span><span class="calendar__day calendar__day__37 half-transparent">6</span><span class="calendar__day calendar__day__38 half-transparent">7</span><span class="calendar__day calendar__day__39 half-transparent">8</span><span class="calendar__day calendar__day__40 half-transparent bold">9</span><span class="calendar__day calendar__day__41 half-transparent bold">10</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__month--11"><span class="title">dec</span>
+    <div class="calendar__days"><span class="calendar__day calendar__day__0 half-transparent">27</span><span class="calendar__day calendar__day__1 half-transparent">28</span><span class="calendar__day calendar__day__2 half-transparent">29</span><span class="calendar__day calendar__day__3 half-transparent">30</span><span class="calendar__day calendar__day__4">1</span><span class="calendar__day calendar__day__5 bold">2</span><span class="calendar__day calendar__day__6 bold">3</span><span class="calendar__day calendar__day__7">4</span><span class="calendar__day calendar__day__8">5</span><span class="calendar__day calendar__day__9">6</span><span class="calendar__day calendar__day__10">7</span><span class="calendar__day calendar__day__11">8</span><span class="calendar__day calendar__day__12 bold">9</span><span class="calendar__day calendar__day__13 bold">10</span><span class="calendar__day calendar__day__14">11</span><span class="calendar__day calendar__day__15">12</span><span class="calendar__day calendar__day__16">13</span><span class="calendar__day calendar__day__17">14</span><span class="calendar__day calendar__day__18">15</span><span class="calendar__day calendar__day__19 bold">16</span><span class="calendar__day calendar__day__20 bold">17</span><span class="calendar__day calendar__day__21">18</span><span class="calendar__day calendar__day__22">19</span><span class="calendar__day calendar__day__23">20</span><span class="calendar__day calendar__day__24">21</span><span class="calendar__day calendar__day__25">22</span><span class="calendar__day calendar__day__26 bold">23</span><span class="calendar__day calendar__day__27 bold">24</span><span class="calendar__day calendar__day__28">25</span><span class="calendar__day calendar__day__29">26</span><span class="calendar__day calendar__day__30">27</span><span class="calendar__day calendar__day__31">28</span><span class="calendar__day calendar__day__32">29</span><span class="calendar__day calendar__day__33 bold">30</span><span class="calendar__day calendar__day__34 bold">31</span><span class="calendar__day calendar__day__35 half-transparent">1</span><span class="calendar__day calendar__day__36 half-transparent">2</span><span class="calendar__day calendar__day__37 half-transparent">3</span><span class="calendar__day calendar__day__38 half-transparent">4</span><span class="calendar__day calendar__day__39 half-transparent">5</span><span class="calendar__day calendar__day__40 half-transparent bold">6</span><span class="calendar__day calendar__day__41 half-transparent bold">7</span>
+    </div>
+  </div>
+  <div class="calendar__month calendar__empty--3"><span class="title"></span>
+    <div class="year-block">2023</div>
+    <div class="clock hidden">
+      <div class="clock__hour__container" style="transform: rotateZ(319.5deg);">
+        <div class="clock__hour"></div>
+      </div>
+      <div class="clock__minute__container" style="transform: rotateZ(239.5deg);">
+        <div class="clock__minute"></div>
+      </div>
+      <div class="clock__second__container" style="transform: rotateZ(330deg);">
+        <div class="clock__second"></div>
+      </div>
+      <div class="clock__dot"></div>
+    </div>
+    <div class="date-block hidden">
+      <div class="date-block__month">may</div>
+      <div class="date-block__date">22</div>
+      <div class="date-block__day">mon</div>
+    </div>
+  </div>
+</div>
+    <script src="../LZjjWV_data/LZjjWV_data/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd3025033.js"></script>
+
+  <script src="VpdrGG_data/jquery.min.js"></script>
+      <script id="rendered-js">
+$(() => {
+  const currentDate = new Date();
+  const weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  const months = ['jan', 'feb', 'mar', 'apr', 'may', 'june', 'july', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+  $('.date-block__day').text(weekDays[currentDate.getDay()]);
+  $('.date-block__date').text(currentDate.getDate());
+  $('.date-block__month').text(months[currentDate.getMonth()]);
+  $('.year-block').text(currentDate.getFullYear());
+
+  $('.calendar__empty--1 .date-block').removeClass('hidden');
+  $('.calendar__empty--2 .clock').removeClass('hidden');
+  $('.calendar__empty--3 .year-block').removeClass('hidden');
+
+  for (let i = 0; i < 12; i++) {if (window.CP.shouldStopExecution(0)) break;
+    const year = currentDate.getYear(),
+    month = i,
+    daysCount = daysInMonth(month + 1, year),
+    prevMonthDaysCount = daysInMonth(month, year),
+    firstDay = new Date(year, month, 1),
+    firstDayOfWeek = firstDay.getDay() + 1;
+    let j;
+    for (j = 0; j < firstDayOfWeek; j++) {if (window.CP.shouldStopExecution(1)) break;
+      let $e = $('.calendar__month--' + i + ' .calendar__day__' + j);
+      $e.text(prevMonthDaysCount - firstDayOfWeek + j + 1);
+      $e.addClass('half-transparent');
+      addBold($e, j);
+    }window.CP.exitedLoop(1);
+    for (; j < 42 && j < firstDayOfWeek + daysCount; j++) {if (window.CP.shouldStopExecution(2)) break;
+      let $e = $('.calendar__month--' + i + ' .calendar__day__' + j);
+      $e.text(j - firstDayOfWeek + 1);
+      addBold($e, j);
+    }window.CP.exitedLoop(2);
+    for (let k = 0; j < 42; k++, j++) {if (window.CP.shouldStopExecution(3)) break;
+      let $e = $('.calendar__month--' + i + ' .calendar__day__' + j);
+      $e.text(k + 1);
+      $e.addClass('half-transparent');
+      addBold($e, j);
+    }window.CP.exitedLoop(3);
+  }window.CP.exitedLoop(0);
+
+  initLocalClocks();
+});
+
+const daysInMonth = (m, y) => /8|3|5|10/.test(--m) ? 30 : m == 1 ? !(y % 4) && y % 100 || !(y % 400) ? 29 : 28 : 31;
+
+const addBold = ($e, i) => {
+  if (i % 7 == 5 || i % 7 == 6) {
+    $e.addClass('bold');
+  }
+};
+
+function initLocalClocks() {
+  const date = new Date();
+  const seconds = date.getSeconds();
+  const minutes = date.getMinutes();
+  const hours = date.getHours();
+
+  const hands = [
+  {
+    hand: 'clock__hour__container',
+    angle: hours * 30 + minutes / 2 },
+
+  {
+    hand: 'clock__minute__container',
+    angle: minutes * 6 + seconds / 10 },
+
+  {
+    hand: 'clock__second__container',
+    angle: seconds * 6 }];
+
+
+  hands.forEach(hand => {
+    const elements = document.querySelectorAll('.' + hand.hand);
+    Array.from(elements).forEach(element => {
+      element.style.transform = `rotateZ(${hand.angle}deg)`;
+    });
+  });
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+  <script src="../LZjjWV_data/LZjjWV_data/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf8.js"></script>
+
+
+
+</body></html>

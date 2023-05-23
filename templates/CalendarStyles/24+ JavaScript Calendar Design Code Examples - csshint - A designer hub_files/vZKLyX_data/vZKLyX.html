@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  <title>CodePen - Fluent Design: Calendar</title>
+    <link rel="canonical" href="https://codepen.io/internette/pen/vZKLyX">
+  
+  
+  
+  
+<style>
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,700");
+:root {
+  --margin-left: 0px;
+}
+
+* {
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #C4D8D5, #D3D1C5);
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 100;
+  overflow: hidden;
+}
+
+#calendar {
+  width: 30vw;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s;
+  transform-origin: center center;
+}
+#calendar #current_day {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.4rem 1.5rem;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  transition: 0.5s;
+  transform-origin: center center;
+}
+#calendar #current_day p {
+  margin: 0;
+}
+#calendar #week-container {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, white 35%, white 65%, transparent 100%);
+}
+#calendar #week {
+  transition: 0.5s;
+  padding: 1rem 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(7, 150px);
+  grid-gap: 0px;
+  grid-auto-rows: minmax(100px, auto);
+  margin-left: var(--margin-left);
+  font-size: 0.9rem;
+}
+#calendar #week input {
+  display: none;
+}
+#calendar #week input + label {
+  position: relative;
+}
+#calendar #week input + label:hover {
+  cursor: pointer;
+}
+#calendar #week input + label p {
+  transition: 0.5s;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  padding: 0 3rem 0 0;
+}
+#calendar #week input + label p .date {
+  float: right;
+  font-weight: bold;
+}
+#calendar #week input + label .images {
+  width: 52px;
+  height: 36px;
+  float: left;
+  position: relative;
+  transition: 0.5s;
+}
+#calendar #week input + label .images img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  border: 2px solid white;
+}
+#calendar #week input + label .images img:first-child {
+  z-index: 3;
+}
+#calendar #week input + label .images img:nth-child(2) {
+  z-index: 2;
+}
+#calendar #week input + label .images img:last-child {
+  z-index: 1;
+}
+#calendar #week input + label ol {
+  transition: transform 0.5s;
+  margin: 0 0 0 25px;
+  padding: 0;
+  position: relative;
+  float: left;
+}
+#calendar.active {
+  transition: 1s;
+  width: 45vw;
+  transform: perspective(600px) rotateY(-10deg) rotateX(2deg) translateX(-70%) translateY(-55%);
+  transform-origin: center center;
+}
+#calendar.active #current_day {
+  transition: 1s;
+  font-size: 2.7rem;
+  line-height: 3.4rem;
+}
+#calendar.active label {
+  transform-style: preserve-3d;
+}
+#calendar.active label p, #calendar.active label div {
+  transition: 1s;
+  font-size: 1.3rem;
+}
+#calendar.active input:checked + label {
+  padding-bottom: 2rem;
+}
+#calendar.active input:checked + label .images {
+  transition: 0.5s;
+  transform: perspective(600px) translate3d(0, 0, 100px);
+  margin-right: 10px;
+}
+#calendar.active input:checked + label .images img {
+  transition: 1s;
+}
+#calendar.active input:checked + label .images img:first-child {
+  transform: perspective(600px) translate3d(-28px, 0px, 160px);
+}
+#calendar.active input:checked + label .images img:nth-child(2) {
+  transform: perspective(600px) translate3d(-14px, 0px, 70px);
+}
+#calendar.active #week {
+  transition: 0.5s;
+  grid-template-columns: repeat(7, 200px);
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body translate="no">
+  <div id="calendar">
+  <div id="current_day">
+    <p>Monday 6.12.17</p>
+    <p><strong>Calendar</strong></p>
+  </div>
+  <div id="week-container">
+    <div id="week">           
+      <input type="radio" id="day-0" name="day">
+      <label for="day-0">
+        <p><span class="dotw">Mon</span><span class="date">01</span></p>
+        <div>
+          <div class="images"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"></div>
+          <ol>
+            <li>test</li>
+            <li>Mon</li>
+          </ol>
+        </div>
+      </label>
+      <input type="radio" id="day-1" name="day">
+      <label for="day-1">
+        <p><span class="dotw">Tues</span><span class="date">02</span></p>
+        <div>
+          <div class="images"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"></div>
+          <ol>
+            <li>test</li>
+            <li>Tues</li>
+          </ol>
+        </div>
+      </label>
+      <input type="radio" id="day-2" name="day">
+      <label for="day-2">
+        <p><span class="dotw">Wed</span><span class="date">03</span></p>
+        <div>
+          <div class="images"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"></div>
+          <ol>
+            <li>test</li>
+            <li>Wed</li>
+          </ol>
+        </div>
+      </label>
+      <input type="radio" id="day-3" name="day">
+      <label for="day-3">
+        <p><span class="dotw">Thu</span><span class="date">04</span></p>
+        <div>
+          <div class="images"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"></div>
+          <ol>
+            <li>test</li>
+            <li>Thu</li>
+          </ol>
+        </div>
+      </label>
+      <input type="radio" id="day-4" name="day">
+      <label for="day-4">
+        <p><span class="dotw">Fri</span><span class="date">05</span></p>
+        <div>
+          <div class="images"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"></div>
+          <ol>
+            <li>test</li>
+            <li>Fri</li>
+          </ol>
+        </div>
+      </label>
+      <input type="radio" id="day-5" name="day">
+      <label for="day-5">
+        <p><span class="dotw">Sat</span><span class="date">06</span></p>
+        <div>
+          <div class="images"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"></div>
+          <ol>
+            <li>test</li>
+            <li>Sat</li>
+          </ol>
+        </div>
+      </label>
+      <input type="radio" id="day-6" name="day">
+      <label for="day-6">
+        <p><span class="dotw">Sun</span><span class="date">07</span></p>
+        <div>
+          <div class="images"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"><img src="vZKLyX_data/top-10-worst-things-about-iceland-1.jpg"></div>
+          <ol>
+            <li>test</li>
+            <li>Sun</li>
+          </ol>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+    <script src="../LZjjWV_data/LZjjWV_data/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd3025033.js"></script>
+
+  
+      <script id="rendered-js">
+window.onload = function () {
+
+  var labels = document.querySelectorAll('label');
+  var checked = false;
+  var last_id = '';
+  for (var i = 0; i < labels.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+    labels[i].addEventListener('mouseup', function (e) {
+      if (last_id.length > 0) {
+
+        if (e.currentTarget.getAttribute('for') === last_id) {
+          last_id = '';
+        } else {
+          last_id = e.currentTarget.getAttribute('for');
+        }
+
+      } else {
+        last_id = e.currentTarget.getAttribute('for');
+      }
+      if (last_id.length > 0) {
+        document.getElementById('calendar').className = 'active';
+        var index = last_id.split('-')[1];
+        var elm_width = window.getComputedStyle(document.querySelector('label[for="' + last_id + '"]')).width;
+        if (last_id.match(/0/)) {
+          document.documentElement.style.setProperty('--margin-left', elm_width);
+        } else if (last_id.match(/1/)) {
+          document.documentElement.style.setProperty('--margin-left', '0px');
+        } else {
+          document.documentElement.style.setProperty('--margin-left', '-' + parseInt(elm_width) * (index - 1) + 'px');
+        }
+      } else {
+        document.getElementById('calendar').className = '';
+        document.documentElement.style.setProperty('--margin-left', '0px');
+      }
+    });
+  }window.CP.exitedLoop(0);
+};
+//# sourceURL=pen.js
+    </script>
+
+  
+  <script src="../LZjjWV_data/LZjjWV_data/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf8.js"></script>
+
+
+
+</body></html>

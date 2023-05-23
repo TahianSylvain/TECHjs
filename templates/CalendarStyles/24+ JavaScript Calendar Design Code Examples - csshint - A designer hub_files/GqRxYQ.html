@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - Calendar App</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="+FwimSimOJpx5N1Xk2v80Y6GmvZ6jZ/eZ+rP7zlRsHF8jK1siKV7aOjzo/P+ZFXYvqMxsUwLtPUqT0qGYxamlQ==">
+<link rel="stylesheet" media="all" href="OPmLBW_data/embed-c24dc45033a5a0e3c76b9588328759bcba403f9bfa524b08f43645.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    #result-box {
+      background: #111111;
+      color: #eeeeee;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #111111;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #eeeeee;
+      background-color: #333333;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #555555;
+      color: #eeeeee;
+      box-shadow: inset 0px 3px #797979;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #eeeeee;
+    }
+
+    .embed-nav svg {
+      stroke: #eeeeee !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="OPmLBW_data/twilight-3476125ec032fffc9adb3dec23f00153fc064bf13d518310429.css">
+</head>
+<body id="the-body" style="border: 1px solid #666666; --borderWidth: 1px;" class="codepen-embed-body static results-active">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="#html-box" role="button" aria-pressed="false">
+HTML
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="#css-box" role="button" aria-pressed="false">
+CSS
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="#js-box" role="button" aria-pressed="false">
+JS
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+<li>
+<a href="#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/ovdojoey/pen/GqRxYQ" title="Edit on CodePen">
+<div class="large-logo">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+<path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+</div>
+<div class="box-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+</div>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thin" data-header="true">
+<div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+<pre tabindex="0"><code data-lang="htmlmixed" id="actual-html-code" class=" cm-s-default"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"calendar"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"calendar-app"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"calendar--day-view"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"day-view"</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-view-exit"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"day-view-exit"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-atom">&amp;times;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-view-date"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"day-view-date"</span><span class="cm-tag cm-bracket">&gt;</span>MAY 29 2016<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-view-content"</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-highlight"</span><span class="cm-tag cm-bracket">&gt;</span>
+        You <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-events"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"day-events"</span><span class="cm-tag cm-bracket">&gt;</span>had no events for today<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>. <span class="cm-atom">&amp;nbsp;</span> <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">tabindex</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">onkeyup</span>=<span class="cm-string">"if(event.keyCode != 13) return; this.click();"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-events-link"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"add-event"</span> <span class="cm-attribute">data-date</span><span class="cm-tag cm-bracket">&gt;</span>Add a new event?<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-add-event"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"add-day-event-box"</span> <span class="cm-attribute">data-active</span>=<span class="cm-string">"false"</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"row"</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"half"</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">label</span> <span class="cm-attribute">class</span>=<span class="cm-string">"add-event-label"</span><span class="cm-tag cm-bracket">&gt;</span>
+               Name of event
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">type</span>=<span class="cm-string">"text"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"add-event-edit add-event-edit--long"</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">"New event"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"input-add-event-name"</span><span class="cm-tag cm-bracket">&gt;</span>
+             
+            <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"qtr"</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">label</span> <span class="cm-attribute">class</span>=<span class="cm-string">"add-event-label"</span><span class="cm-tag cm-bracket">&gt;</span>
+          Start Time
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">type</span>=<span class="cm-string">"text"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"add-event-edit"</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">"8:15"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"input-add-event-start-time"</span> <span class="cm-attribute">data-options</span>=<span class="cm-string">"1,2,3,4,5,6,7,8,9,10,11,12"</span> <span class="cm-attribute">data-format</span>=<span class="cm-string">"datetime"</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">type</span>=<span class="cm-string">"text"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"add-event-edit"</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">"am"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"input-add-event-start-ampm"</span> <span class="cm-attribute">data-options</span>=<span class="cm-string">"a,p,am,pm"</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"qtr"</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">label</span> <span class="cm-attribute">class</span>=<span class="cm-string">"add-event-label"</span><span class="cm-tag cm-bracket">&gt;</span>
+          End Time
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">type</span>=<span class="cm-string">"text"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"add-event-edit"</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">"9"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"input-add-event-end-time"</span> <span class="cm-attribute">data-options</span>=<span class="cm-string">"1,2,3,4,5,6,7,8,9,10,11,12"</span> <span class="cm-attribute">data-format</span>=<span class="cm-string">"datetime"</span><span class="cm-tag cm-bracket">&gt;</span>
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">type</span>=<span class="cm-string">"text"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"add-event-edit"</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">"am"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"input-add-event-end-ampm"</span> <span class="cm-attribute">data-options</span>=<span class="cm-string">"a,p,am,pm"</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"half"</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">a</span> <span class="cm-attribute">onkeyup</span>=<span class="cm-string">"if(event.keyCode != 13) return; this.click();"</span> <span class="cm-attribute">tabindex</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"add-event-save"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"event-btn--save event-btn"</span><span class="cm-tag cm-bracket">&gt;</span>save<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">a</span><span class="cm-tag cm-bracket">&gt;</span>
+            <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">a</span> <span class="cm-attribute">tabindex</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"add-event-cancel"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"event-btn--cancel event-btn"</span><span class="cm-tag cm-bracket">&gt;</span>cancel<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">a</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+        
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"day-events-list"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-events-list"</span><span class="cm-tag cm-bracket">&gt;</span>
+        
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"day-inspiration-quote"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"inspirational-quote"</span><span class="cm-tag cm-bracket">&gt;</span>
+        Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"calendar--view"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"calendar-view"</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__month"</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__month-last"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"calendar-month-last"</span><span class="cm-tag cm-bracket">&gt;</span>Apr<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__month-current"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"calendar-month"</span><span class="cm-tag cm-bracket">&gt;</span>May<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__month-next"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"calendar-month-next"</span><span class="cm-tag cm-bracket">&gt;</span>Jun<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__header"</span><span class="cm-tag cm-bracket">&gt;</span>Sun<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__header"</span><span class="cm-tag cm-bracket">&gt;</span>Mon<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__header"</span><span class="cm-tag cm-bracket">&gt;</span>Tue<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__header"</span><span class="cm-tag cm-bracket">&gt;</span>Wed<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__header"</span><span class="cm-tag cm-bracket">&gt;</span>Thu<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__header"</span><span class="cm-tag cm-bracket">&gt;</span>Fri<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cview__header"</span><span class="cm-tag cm-bracket">&gt;</span>Sat<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"calendar--view"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"dates"</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"footer"</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">id</span>=<span class="cm-string">"footer-date"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"footer__link"</span><span class="cm-tag cm-bracket">&gt;</span>Today is May 30<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>    
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></code></pre>
+</div>
+<div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+<pre tabindex="0"><code data-lang="css" id="actual-css-code" class=" cm-s-default"><span class="cm-tag">body</span>{
+  <span class="cm-property">margin</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'HelveticaNeue-Light'</span>, <span class="cm-variable">Helvetica</span> <span class="cm-variable">Neue</span>, <span class="cm-variable">Helvetica</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">align-items</span>:<span class="cm-atom">center</span>;
+  <span class="cm-property">height</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">height</span>: <span class="cm-number">100vh</span>;
+  <span class="cm-property">min-height</span>: <span class="cm-number">500px</span>;
+  <span class="cm-property">background</span>: <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">1</span>);
+<span class="cm-property">background</span>: <span class="cm-meta">-moz-</span><span class="cm-variable cm-callee">radial-gradient</span>(<span class="cm-atom">center</span>, <span class="cm-atom">ellipse</span> <span class="cm-atom">cover</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">91%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">100%</span>);
+<span class="cm-property">background</span>: <span class="cm-meta">-webkit-</span><span class="cm-variable cm-callee">gradient</span>(<span class="cm-variable">radial</span>, <span class="cm-atom">center</span> <span class="cm-atom">center</span>, <span class="cm-number">0px</span>, <span class="cm-atom">center</span> <span class="cm-atom">center</span>, <span class="cm-number">100%</span>, <span class="cm-variable cm-callee">color-stop</span>(<span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">1</span>)), <span class="cm-variable cm-callee">color-stop</span>(<span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">1</span>)), <span class="cm-variable cm-callee">color-stop</span>(<span class="cm-number">91%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>)), <span class="cm-variable cm-callee">color-stop</span>(<span class="cm-number">100%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>)));
+<span class="cm-property">background</span>: <span class="cm-meta">-webkit-</span><span class="cm-variable cm-callee">radial-gradient</span>(<span class="cm-atom">center</span>, <span class="cm-atom">ellipse</span> <span class="cm-atom">cover</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">91%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">100%</span>);
+<span class="cm-property">background</span>: <span class="cm-meta">-o-</span><span class="cm-variable cm-callee">radial-gradient</span>(<span class="cm-atom">center</span>, <span class="cm-atom">ellipse</span> <span class="cm-atom">cover</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">91%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">100%</span>);
+<span class="cm-property">background</span>: <span class="cm-meta">-ms-</span><span class="cm-variable cm-callee">radial-gradient</span>(<span class="cm-atom">center</span>, <span class="cm-atom">ellipse</span> <span class="cm-atom">cover</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">91%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">100%</span>);
+<span class="cm-property">background</span>: <span class="cm-variable cm-callee">radial-gradient</span>(<span class="cm-atom">ellipse</span> <span class="cm-variable">at</span> <span class="cm-atom">center</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">76</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">43</span>,<span class="cm-number">1</span>) <span class="cm-number">0%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">91%</span>, <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">23</span>,<span class="cm-number">1</span>) <span class="cm-number">100%</span>);
+}
+<span class="cm-qualifier">.calendar</span>{
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+  <span class="cm-property">margin</span>: <span class="cm-number">10px</span> <span class="cm-atom">auto</span>;
+  <span class="cm-property">background</span>: <span class="cm-atom">#04b6e2</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">60px</span> <span class="cm-number">40px</span> <span class="cm-number">80px</span> <span class="cm-number">40px</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">95%</span>;
+  <span class="cm-property">max-width</span>: <span class="cm-number">600px</span>;
+  <span class="cm-property">height</span>: <span class="cm-number">325px</span>;
+  <span class="cm-property">border-radius</span>: <span class="cm-number">5px</span>;
+  <span class="cm-property">box-shadow</span>: <span class="cm-number">0px</span> <span class="cm-number">2px</span> <span class="cm-number">6px</span> <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">2</span>,<span class="cm-number">2</span>,<span class="cm-number">2</span>,<span class="cm-number">0.2</span>);
+  <span class="cm-property">position</span>: <span class="cm-atom">relative</span>;
+}
+<span class="cm-qualifier">.calendar__title</span>{
+  <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+}
+<span class="cm-qualifier">.calendar--day-view</span>{
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">border-radius</span>: <span class="cm-number">3px</span>;
+  <span class="cm-property">top</span>: <span class="cm-number">-2.5%</span>;
+  <span class="cm-property">left</span>: <span class="cm-number">-2.5%</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">height</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">background</span>: <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">1</span>);
+ <span class="cm-property">box-shadow</span>: <span class="cm-number">3px</span> <span class="cm-number">12px</span> <span class="cm-number">5px</span> <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">2</span>,<span class="cm-number">2</span>,<span class="cm-number">2</span>,<span class="cm-number">0.16</span>);
+  <span class="cm-property">z-index</span>: <span class="cm-number">2</span>;
+  <span class="cm-property">overflow</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">0.9</span>) <span class="cm-variable cm-callee">translate</span>(<span class="cm-number">30px</span>,<span class="cm-number">30px</span>);
+  <span class="cm-property">opacity</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">visibility</span>: <span class="cm-atom">hidden</span>;
+<span class="cm-comment">/*   border-radius: 5px; */</span>
+  <span class="cm-property">display</span>: <span class="cm-atom">none</span>;
+  <span class="cm-property">align-items</span>: <span class="cm-atom">flex-start</span>;
+  <span class="cm-property">flex-wrap</span>: <span class="cm-atom">wrap</span>;
+}
+<span class="cm-qualifier">.day-view-content</span>{
+  <span class="cm-property">color</span>: <span class="cm-atom">#222</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">padding-top</span>: <span class="cm-number">55px</span>;
+}
+<span class="cm-qualifier">.day-highlight</span>, <span class="cm-qualifier">.day-add-event</span>{
+  <span class="cm-property">padding</span>: <span class="cm-number">8px</span> <span class="cm-number">10px</span>;
+  <span class="cm-property">margin</span>: <span class="cm-number">12px</span> <span class="cm-number">15px</span>;
+  <span class="cm-property">border-radius</span>: <span class="cm-number">4px</span>;
+  <span class="cm-property">background</span>: <span class="cm-atom">#e7e8e8</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#222</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">14px</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">600</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">"Avenir"</span>, <span class="cm-atom">sans-serif</span>;
+}
+<span class="cm-qualifier">.row</span>{
+  <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">flex-wrap</span>: <span class="cm-atom">wrap</span>;
+  <span class="cm-property">align-items</span>: <span class="cm-atom">center</span>;
+}
+<span class="cm-qualifier">.row</span> <span class="cm-qualifier">.qtr</span>{
+  <span class="cm-property">width</span>: <span class="cm-number">40%</span>;
+}
+<span class="cm-qualifier">.row</span> <span class="cm-qualifier">.half</span>{
+  <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+}
+<span class="cm-def">@media</span> (<span class="cm-property">min-width</span>: <span class="cm-number">800px</span>){
+  <span class="cm-qualifier">.row</span>{
+    <span class="cm-property">flex-wrap</span>: <span class="cm-atom">nowrap</span>;
+  }
+  <span class="cm-qualifier">.row</span> <span class="cm-qualifier">.half</span>{
+    <span class="cm-property">width</span>: <span class="cm-number">35%</span>;
+  }
+  <span class="cm-qualifier">.row</span> <span class="cm-qualifier">.qtr</span>{
+    <span class="cm-property">width</span>: <span class="cm-number">25%</span>;
+  }
+}
+
+<span class="cm-qualifier">.day-add-event</span>{
+  <span class="cm-property">background</span>: <span class="cm-atom">#04b6e2</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">16px</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">none</span>;
+  <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateY</span>(<span class="cm-number">-15px</span>);
+  <span class="cm-property">opacity</span>: <span class="cm-number">0</span>;
+}
+<span class="cm-qualifier">.day-add-event</span>[<span class="cm-tag">data-active</span>=<span class="cm-string">"true"</span>]{
+  <span class="cm-property">display</span>: <span class="cm-atom">block</span>;
+  <span class="cm-property">animation</span>: <span class="cm-variable">popIn</span> <span class="cm-number">250ms</span> <span class="cm-number">1</span> <span class="cm-atom">forwards</span>;
+}
+<span class="cm-qualifier">.add-event-label</span>{
+  <span class="cm-property">padding</span>: <span class="cm-number">10px</span> <span class="cm-number">0</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">18px</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Avenir'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">400</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">12px</span>;
+  <span class="cm-property">color</span>: <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">0.8</span>);
+}
+<span class="cm-qualifier">.add-event-edit</span>{
+  <span class="cm-property">display</span>: <span class="cm-atom">block</span>;
+  <span class="cm-property">margin</span>: <span class="cm-number">4px</span> <span class="cm-number">0</span>;
+  <span class="cm-property">max-width</span>: <span class="cm-number">70%</span>;
+  <span class="cm-property">border-bottom</span>: <span class="cm-number">2px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#fff</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">18px</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">800</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+}
+<span class="cm-qualifier">.add-event-edit--long</span>{
+  <span class="cm-property">max-width</span>: <span class="cm-number">90%</span>;
+}
+
+<span class="cm-tag">input</span><span class="cm-qualifier">.add-event-edit</span>{
+  <span class="cm-property">border</span>: <span class="cm-atom">none</span>;
+  <span class="cm-property">border-bottom</span>: <span class="cm-number">2px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#fff</span>;
+  <span class="cm-property">background</span>: <span class="cm-atom">transparent</span>;
+  <span class="cm-property">outline</span>: <span class="cm-atom">none</span>;
+  <span class="cm-property">font</span>: <span class="cm-atom">inherit</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">18px</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">800</span>;
+}
+<span class="cm-qualifier">.add-event-edit--error</span>, <span class="cm-tag">input</span><span class="cm-qualifier">.add-event-edit--error</span>{
+  <span class="cm-property">border-color</span>: <span class="cm-atom">#ff5151</span>;
+  <span class="cm-property">animation</span>: <span class="cm-variable">shake</span> <span class="cm-number">300ms</span> <span class="cm-number">1</span> <span class="cm-atom">forwards</span>;
+}
+<span class="cm-def">@keyframes</span> <span class="cm-variable">shake</span> {
+  <span class="cm-number">20%</span>, <span class="cm-number">60%</span>{
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">4px</span>);
+  }
+  <span class="cm-number">40%</span>, <span class="cm-number">80%</span>{
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">-4px</span>);
+  }
+}
+<span class="cm-tag">input</span><span class="cm-qualifier">.add-event-edit</span>::<span class="cm-meta">-webkit-</span><span class="cm-variable-3">input-placeholder</span> {
+   <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+}
+
+<span class="cm-tag">input</span><span class="cm-qualifier">.add-event-edit</span>:<span class="cm-meta">-moz-</span><span class="cm-variable-3">placeholder</span> { <span class="cm-comment">/* Firefox 18- */</span>
+   <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;  
+}
+
+<span class="cm-tag">input</span><span class="cm-qualifier">.add-event-edit</span>::<span class="cm-meta">-moz-</span><span class="cm-variable-3">placeholder</span> {  <span class="cm-comment">/* Firefox 19+ */</span>
+   <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;  
+}
+
+<span class="cm-tag">input</span><span class="cm-qualifier">.add-event-edit</span>:<span class="cm-meta">-ms-</span><span class="cm-variable-3">input-placeholder</span> {  
+   <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;  
+}
+<span class="cm-qualifier">.event-btn</span>{
+  <span class="cm-property">padding</span>: <span class="cm-number">3px</span> <span class="cm-number">8px</span>;
+  <span class="cm-property">border</span>: <span class="cm-number">3px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#fff</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+  <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">inline-block</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">65px</span>;
+  <span class="cm-property">margin</span>: <span class="cm-number">5px</span> <span class="cm-number">0</span>;
+  <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+}
+
+<span class="cm-qualifier">.event-btn--save</span>{
+  <span class="cm-property">border-color</span>: <span class="cm-atom">#fff</span>;
+   <span class="cm-property">background</span>: <span class="cm-atom">#74c500</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+  <span class="cm-property">border-color</span>: <span class="cm-atom">transparent</span>;
+}
+<span class="cm-qualifier">.event-btn--save</span>:<span class="cm-variable-3">hover</span>{
+  <span class="cm-property">box-shadow</span>: <span class="cm-number">0px</span> <span class="cm-number">2px</span> <span class="cm-number">4px</span> <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">2</span>,<span class="cm-number">2</span>,<span class="cm-number">2</span>,<span class="cm-number">0.2</span>);
+}
+<span class="cm-qualifier">.event-btn--cancel</span>{
+  <span class="cm-property">background</span>: <span class="cm-atom">#ff5151</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+  <span class="cm-property">border-color</span>: <span class="cm-atom">transparent</span>;
+}
+<span class="cm-qualifier">.event-btn--cancel</span>:<span class="cm-variable-3">hover</span>{
+  <span class="cm-property">box-shadow</span>: <span class="cm-number">0px</span> <span class="cm-number">2px</span> <span class="cm-number">4px</span> <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">2</span>,<span class="cm-number">2</span>,<span class="cm-number">2</span>,<span class="cm-number">0.2</span>);
+}
+<span class="cm-comment">/* .add-event-btn:hover, .add.event-btn:focus{</span>
+<span class="cm-comment">  background: #00258e;</span>
+<span class="cm-comment">  box-shadow: 0px -1px 2px rgba(3,2,2,0.2);</span>
+<span class="cm-comment">} */</span>
+<span class="cm-qualifier">.day-highlight</span> <span class="cm-qualifier">.day-events-link</span>{
+  <span class="cm-property">border-bottom</span>: <span class="cm-number">2px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#222</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+}
+<span class="cm-builtin">#add-event</span>{
+  <span class="cm-property">color</span>: <span class="cm-atom">#04b6e2</span>;
+  <span class="cm-property">border-color</span>: <span class="cm-atom">#04b6e2</span>;
+}
+<span class="cm-qualifier">.day-view-exit</span>{
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">top</span>: <span class="cm-number">24px</span>;
+  <span class="cm-property">line-height</span>: <span class="cm-number">1em</span>;
+  <span class="cm-property">left</span>: <span class="cm-number">22px</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">22px</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#252525</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Avenir'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">800</span>;
+  <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+  <span class="cm-property">opacity</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">animation</span>: <span class="cm-variable">popIn</span> <span class="cm-number">200ms</span> <span class="cm-number">1</span> <span class="cm-atom">forwards</span>;
+  <span class="cm-property">text-transform</span>: <span class="cm-atom">uppercase</span>;
+}
+<span class="cm-qualifier">.day-view-date</span>{
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">top</span>: <span class="cm-number">19px</span>;
+  <span class="cm-property">right</span>: <span class="cm-number">22px</span>;
+  <span class="cm-property">text-align</span>: <span class="cm-atom">right</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">22px</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Avenir'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">800</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#393939</span>;
+  <span class="cm-property">border-bottom</span>: <span class="cm-number">2px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#222</span>;
+  <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+}
+<span class="cm-qualifier">.day-inspiration-quote</span>{
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+<span class="cm-comment">/*   top: 90px; */</span>
+  <span class="cm-property">margin-top</span>: <span class="cm-number">-40px</span>;
+  <span class="cm-property">left</span>: <span class="cm-number">10%</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">80%</span>;
+  <span class="cm-property">height</span>: <span class="cm-variable cm-callee">calc</span>(<span class="cm-number">100%</span> - <span class="cm-number">110px</span>);
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">flex-wrap</span>: <span class="cm-atom">nowrap</span>;
+  <span class="cm-property">align-items</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">32px</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">800</span>;
+  <span class="cm-property">letter-spacing</span>: <span class="cm-number">-1px</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#ddd</span>;
+  <span class="cm-property">line-height</span>: <span class="cm-number">1.1em</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Avenir'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">z-index</span>: <span class="cm-number">-1</span>;
+}
+<span class="cm-qualifier">.day-event-list-ul</span>{
+  <span class="cm-property">list-style</span>: <span class="cm-atom">none</span>;
+  <span class="cm-property">margin</span>: <span class="cm-atom">auto</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">95%</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">max-height</span>: <span class="cm-number">300px</span>;
+  <span class="cm-property">overflow</span>: <span class="cm-atom">auto</span>;
+}
+<span class="cm-qualifier">.day-event-list-ul</span> <span class="cm-tag">li</span> {
+  <span class="cm-property">padding</span>: <span class="cm-number">10px</span>;
+  <span class="cm-property">margin</span>: <span class="cm-number">10px</span> <span class="cm-number">0</span>;
+<span class="cm-comment">/*   background: #04b6e2; */</span>
+<span class="cm-comment">/*   box-shadow: 0px 1px 1px  rgba(2,2,2,0.5); */</span>
+  <span class="cm-property">position</span>: <span class="cm-atom">relative</span>;
+}
+<span class="cm-qualifier">.event-dates</span> <span class="cm-tag">small</span>{
+  <span class="cm-property">font-size</span>: <span class="cm-number">0.65em</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#444</span>;
+}
+<span class="cm-qualifier">.event-dates</span>{
+  <span class="cm-property">font-weight</span>: <span class="cm-number">800</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Avenir'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#04b6e2</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">18px</span>;
+  <span class="cm-property">text-transform</span>: <span class="cm-atom">lowercase</span>;
+<span class="cm-comment">/*   position: relative; */</span>
+}
+<span class="cm-qualifier">.event-delete</span>{
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">right</span>: <span class="cm-number">10px</span>;
+  <span class="cm-property">top</span>: <span class="cm-number">0px</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">12px</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#f25656</span>;
+  <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+}
+<span class="cm-qualifier">.event-name</span>{
+  <span class="cm-property">font-size</span>: <span class="cm-number">19px</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Avenir'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#222</span>;
+  <span class="cm-property">padding</span>:<span class="cm-number">10px</span>;
+  <span class="cm-property">background</span>: <span class="cm-atom">#f7f7f7</span>;
+  <span class="cm-property">margin</span>: <span class="cm-number">2px</span> <span class="cm-number">0</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">block</span>;
+  <span class="cm-property">text-transform</span>: <span class="cm-atom">initial</span>;
+}
+<span class="cm-qualifier">.calendar--day-view-active</span>{
+  <span class="cm-property">animation</span>: <span class="cm-variable">popIn</span> <span class="cm-number">200ms</span> <span class="cm-number">1</span> <span class="cm-atom">forwards</span>;
+  <span class="cm-property">visibility</span>: <span class="cm-atom">visible</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">transition</span>: <span class="cm-variable">visibility</span> <span class="cm-number">0ms</span>;
+
+}
+<span class="cm-qualifier">.calendar--view</span>{
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">flex-wrap</span>: <span class="cm-atom">wrap</span>;
+  <span class="cm-property">align-content</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">justify-content</span>: <span class="cm-atom">flex-start</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+}
+<span class="cm-qualifier">.cview__month</span>{
+  <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">800</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">22px</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Avenir'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">padding-bottom</span>: <span class="cm-number">20px</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#222</span>;
+  <span class="cm-property">text-transform</span>: <span class="cm-atom">uppercase</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">flex-wrap</span>: <span class="cm-atom">nowrap</span>;
+  <span class="cm-property">align-items</span>: <span class="cm-atom">baseline</span>;
+  <span class="cm-property">justify-content</span>: <span class="cm-atom">space-around</span>;
+}
+<span class="cm-qualifier">.cview__month-last</span>,<span class="cm-qualifier">.cview__month-next</span>,<span class="cm-qualifier">.cview__month-current</span>{
+  <span class="cm-property">width</span>: <span class="cm-number">33.33333%</span>;
+  <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">16px</span>;
+  <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#222</span>;
+}
+<span class="cm-qualifier">.cview__month-last</span>:<span class="cm-variable-3">hover</span>,<span class="cm-qualifier">.cview__month-next</span>:<span class="cm-variable-3">hover</span>{
+  <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+}
+
+<span class="cm-qualifier">.cview__month-current</span>{
+  <span class="cm-property">font-size</span>: <span class="cm-number">22px</span>;
+  <span class="cm-property">cursor</span>: <span class="cm-atom">default</span>;
+  <span class="cm-property">animation</span>: <span class="cm-variable">popIn</span> <span class="cm-number">200ms</span> <span class="cm-number">1</span> <span class="cm-atom">forwards</span>;
+  <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateY</span>(<span class="cm-number">20px</span>);
+  <span class="cm-property">opacity</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">position</span>: <span class="cm-atom">relative</span>;
+}
+<span class="cm-qualifier">.cview__month-reset</span>{
+  <span class="cm-property">animation</span>: <span class="cm-atom">none</span>;
+}
+<span class="cm-qualifier">.cview__month-activate</span>{
+  <span class="cm-property">animation</span>: <span class="cm-variable">popIn</span> <span class="cm-number">100ms</span> <span class="cm-number">1</span> <span class="cm-atom">forwards</span>;
+}
+<span class="cm-qualifier">.cview--spacer</span>, <span class="cm-qualifier">.cview__header</span>, <span class="cm-qualifier">.cview--date</span>{
+  <span class="cm-property">width</span>: <span class="cm-number">14.28571428571429%</span>;
+  <span class="cm-property">max-width</span>: <span class="cm-number">14.28571428571429%</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">10px</span>;
+  <span class="cm-property">box-sizing</span>: <span class="cm-atom">border-box</span>;
+  <span class="cm-property">position</span>: <span class="cm-atom">relative</span>;
+  <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">overflow</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-property">text-overflow</span>: <span class="cm-atom">clip</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">14px</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">900</span>;
+}
+<span class="cm-qualifier">.cview--date</span>{
+  <span class="cm-property">font-size</span>: <span class="cm-number">16px</span>;
+  <span class="cm-property">font-weight</span>: <span class="cm-number">400</span>;
+  <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+}
+<span class="cm-qualifier">.has-events</span>::<span class="cm-variable-3">after</span>{
+  <span class="cm-property">border-radius</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">animation</span>: <span class="cm-variable">popIn</span> <span class="cm-number">200ms</span> <span class="cm-number">1</span> <span class="cm-atom">forwards</span>;
+  <span class="cm-property">background</span>: <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">0.95</span>);
+  <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">0</span>);
+  <span class="cm-property">content</span>: <span class="cm-string">''</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">block</span>;
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">8px</span>;
+  <span class="cm-property">height</span>: <span class="cm-number">8px</span>;
+  <span class="cm-property">top</span>: <span class="cm-number">8px</span>;
+  <span class="cm-property">left</span>: <span class="cm-number">12px</span>;
+  
+}
+<span class="cm-qualifier">.cview--date</span>:<span class="cm-variable-3">hover</span>::<span class="cm-variable-3">before</span>{
+  <span class="cm-property">background</span>: <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">0.2</span>);
+}
+<span class="cm-qualifier">.cview--date</span><span class="cm-qualifier">.today</span>{
+  <span class="cm-property">color</span>: <span class="cm-atom">#111</span>;  
+}
+<span class="cm-qualifier">.cview--date</span><span class="cm-qualifier">.today</span>::<span class="cm-variable-3">before</span>{
+  <span class="cm-property">animation</span>: <span class="cm-variable">popIn</span> <span class="cm-number">200ms</span> <span class="cm-number">1</span> <span class="cm-atom">forwards</span>;
+  <span class="cm-property">background</span>: <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">255</span>,<span class="cm-number">0.2</span>);
+  <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">0</span>);
+}
+<span class="cm-def">@keyframes</span> <span class="cm-variable">popIn</span>{
+
+  <span class="cm-number">100%</span>{
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">1</span>);
+    <span class="cm-property">opacity</span>: <span class="cm-number">1</span>;
+  }
+}
+<span class="cm-qualifier">.cview--date</span>::<span class="cm-variable-3">before</span>{
+  <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">height</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">top</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">left</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">content</span>: <span class="cm-string">''</span>;
+  <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">0.8</span>);
+  <span class="cm-property">z-index</span>: <span class="cm-number">0</span>;
+}
+<span class="cm-qualifier">.footer</span>{
+  <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+  <span class="cm-property">bottom</span>: <span class="cm-number">50px</span>;
+  <span class="cm-property">left</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">font-size</span>: <span class="cm-number">14px</span>;
+  <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+}
+<span class="cm-qualifier">.footer__link</span>{
+  <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">2px</span> <span class="cm-number">5px</span>;
+  <span class="cm-property">border-bottom</span>: <span class="cm-number">1px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#fff</span>;
+}
+</code></pre>
+</div>
+<div id="js-box" class="code-wrap code-box box " role="region" aria-label="JS">
+<pre tabindex="0"><code data-lang="javascript" id="actual-js-code" class=" cm-s-default"><span class="cm-keyword">function</span> <span class="cm-def">CalendarApp</span>(<span class="cm-def">date</span>) {
+  
+  <span class="cm-keyword">if</span> (<span class="cm-operator">!</span>(<span class="cm-variable-2">date</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable">Date</span>)) {
+    <span class="cm-variable-2">date</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>();
+  }
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">days</span> <span class="cm-operator">=</span> [<span class="cm-string">'Sunday'</span>, <span class="cm-string">'Monday'</span>, <span class="cm-string">'Tuesday'</span>, <span class="cm-string">'Wednesday'</span>, <span class="cm-string">'Thursday'</span>, <span class="cm-string">'Friday'</span>, <span class="cm-string">'Saturday'</span>];
+  <span class="cm-keyword">this</span>.<span class="cm-property">months</span> <span class="cm-operator">=</span> [<span class="cm-string">'Jan'</span>, <span class="cm-string">'Feb'</span>, <span class="cm-string">'Mar'</span>, <span class="cm-string">'Apr'</span>, <span class="cm-string">'May'</span>, <span class="cm-string">'Jun'</span>, <span class="cm-string">'Jul'</span>, <span class="cm-string">'Aug'</span>, <span class="cm-string">'Sep'</span>, <span class="cm-string">'Oct'</span>, <span class="cm-string">'Nov'</span>, <span class="cm-string">'Dec'</span>];
+  <span class="cm-keyword">this</span>.<span class="cm-property">quotes</span> <span class="cm-operator">=</span> [<span class="cm-string">'Whatever the mind of man can conceive and believe, it can achieve. –Napoleon Hill'</span>, <span class="cm-string">'Strive not to be a success, but rather to be of value. –Albert Einstein'</span>, <span class="cm-string">'Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.  –Robert Frost'</span>, <span class="cm-string">'I attribute my success to this: I never gave or took any excuse. –Florence Nightingale'</span>, <span class="cm-string">'You miss 100% of the shots you don’t take. –Wayne Gretzky'</span>, <span class="cm-string">'The most difficult thing is the decision to act, the rest is merely tenacity. –Amelia Earhart'</span>, <span class="cm-string">'Every strike brings me closer to the next home run. –Babe Ruth'</span>, <span class="cm-string">'Definiteness of purpose is the starting point of all achievement. –W. Clement Stone'</span>, <span class="cm-string">'Life isn’t about getting and having, it’s about giving and being. –Kevin Kruse'</span>, <span class="cm-string">'Life is what happens to you while you’re busy making other plans. –John Lennon'</span>, <span class="cm-string">'We become what we think about. –Earl Nightingale'</span>, <span class="cm-string">'Life is 10% what happens to me and 90% of how I react to it. –Charles Swindoll'</span>, <span class="cm-string">'The most common way people give up their power is by thinking they don’t have any. –Alice Walker'</span>, <span class="cm-string">'The mind is everything. What you think you become.  –Buddha'</span>, <span class="cm-string">'Winning isn’t everything, but wanting to win is. –Vince Lombardi'</span>, <span class="cm-string">'Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso'</span>, <span class="cm-string">' You can never cross the ocean until you have the courage to lose sight of the shore. –Christopher Columbus'</span>, <span class="cm-string">'I’ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel. –Maya Angelou'</span>, <span class="cm-string">'Either you run the day, or the day runs you. –Jim Rohn'</span>, <span class="cm-string">'Whether you think you can or you think you can’t, you’re right. –Henry Ford'</span>, <span class="cm-string">'The two most important days in your life are the day you are born and the day you find out why. –Mark Twain'</span>, <span class="cm-string">'Whatever you can do, or dream you can, begin it.  Boldness has genius, power and magic in it. –Johann Wolfgang von Goethe'</span>, <span class="cm-string">'The best revenge is massive success. –Frank Sinatra'</span>, <span class="cm-string">'People often say that motivation doesn’t last. Well, neither does bathing.  That’s why we recommend it daily. –Zig Ziglar'</span>, <span class="cm-string">'Life shrinks or expands in proportion to one’s courage. –Anais Nin'</span>, <span class="cm-string">'If you hear a voice within you say “you cannot paint,” then by all means paint and that voice will be silenced. –Vincent Van Gogh'</span>, <span class="cm-string">'There is only one way to avoid criticism: do nothing, say nothing, and be nothing. –Aristotle'</span>, <span class="cm-string">'Ask and it will be given to you; search, and you will find; knock and the door will be opened for you. –Jesus'</span>, <span class="cm-string">'The only person you are destined to become is the person you decide to be. –Ralph Waldo Emerson'</span>, <span class="cm-string">'Go confidently in the direction of your dreams.  Live the life you have imagined. –Henry David Thoreau'</span>,  <span class="cm-string">'Few things can help an individual more than to place responsibility on him, and to let him know that you trust him.  –Booker T. Washington'</span>];
+  <span class="cm-keyword">this</span>.<span class="cm-property">apts</span> <span class="cm-operator">=</span> [
+    {
+      <span class="cm-property">name</span>: <span class="cm-string">'Finish this web app'</span>,
+      <span class="cm-property">endTime</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2016</span>, <span class="cm-number">4</span>, <span class="cm-number">30</span>, <span class="cm-number">23</span>),
+      <span class="cm-property">startTime</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2016</span>, <span class="cm-number">4</span>, <span class="cm-number">30</span>, <span class="cm-number">21</span>),
+      <span class="cm-property">day</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2016</span>, <span class="cm-number">4</span>, <span class="cm-number">30</span>).<span class="cm-property">toString</span>()
+    },
+     {
+      <span class="cm-property">name</span>: <span class="cm-string">'My Birthday!'</span>,
+      <span class="cm-property">endTime</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2016</span>, <span class="cm-number">4</span>, <span class="cm-number">1</span>, <span class="cm-number">23</span>, <span class="cm-number">59</span>),
+      <span class="cm-property">startTime</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2016</span>, <span class="cm-number">4</span>, <span class="cm-number">1</span>, <span class="cm-number">0</span>),
+      <span class="cm-property">day</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2016</span>, <span class="cm-number">4</span>, <span class="cm-number">1</span>).<span class="cm-property">toString</span>()
+    },
+    
+  ];
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">aptDates</span> <span class="cm-operator">=</span> [<span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2016</span>, <span class="cm-number">4</span>, <span class="cm-number">30</span>).<span class="cm-property">toString</span>(),<span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-number">2016</span>, <span class="cm-number">4</span>, <span class="cm-number">1</span>).<span class="cm-property">toString</span>()];
+  <span class="cm-keyword">this</span>.<span class="cm-property">eles</span> <span class="cm-operator">=</span> {
+  };
+  <span class="cm-keyword">this</span>.<span class="cm-property">calDaySelected</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendar</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"calendar-app"</span>);
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarView</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"dates"</span>);
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthDiv</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"calendar-month"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthLastDiv</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"calendar-month-last"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthNextDiv</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"calendar-month-next"</span>);
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayInspirationalQuote</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"inspirational-quote"</span>);
+   
+  <span class="cm-keyword">this</span>.<span class="cm-property">todayIsSpan</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"footer-date"</span>);
+  <span class="cm-comment">// this.eventsCountSpan = document.getElementById("footer-events");</span>
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewEle</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"day-view"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewExitEle</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"day-view-exit"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewDateEle</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"day-view-date"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">addDayEventEle</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"add-event"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventsEle</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"day-events"</span>);
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span> <span class="cm-operator">=</span> {
+    <span class="cm-property">cancelBtn</span>: <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"add-event-cancel"</span>),
+    <span class="cm-property">addBtn</span>: <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"add-event-save"</span>),
+    <span class="cm-property">nameEvent</span>:  <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"input-add-event-name"</span>),
+    <span class="cm-property">startTime</span>:  <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"input-add-event-start-time"</span>),
+    <span class="cm-property">endTime</span>:  <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"input-add-event-end-time"</span>),
+    <span class="cm-property">startAMPM</span>:  <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"input-add-event-start-ampm"</span>),
+    <span class="cm-property">endAMPM</span>:  <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"input-add-event-end-ampm"</span>)
+  };
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventsList</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"day-events-list"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventBoxEle</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">"add-day-event-box"</span>);
+  
+  <span class="cm-comment">/* Start the app */</span>
+  <span class="cm-keyword">this</span>.<span class="cm-property">showView</span>(<span class="cm-variable-2">date</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">addEventListeners</span>();
+  <span class="cm-keyword">this</span>.<span class="cm-property">todayIsSpan</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-string">"Today is "</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">months</span>[<span class="cm-variable-2">date</span>.<span class="cm-property">getMonth</span>()] <span class="cm-operator">+</span> <span class="cm-string">" "</span> <span class="cm-operator">+</span> <span class="cm-variable-2">date</span>.<span class="cm-property">getDate</span>();  
+}
+
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">addEventListeners</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(){
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendar</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">mainCalendarClickClose</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">todayIsSpan</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">showView</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthLastDiv</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">showNewMonth</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthNextDiv</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">showNewMonth</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewExitEle</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">closeDayWindow</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewDateEle</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">showNewMonth</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">addDayEventEle</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">addNewEventBox</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">cancelBtn</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">closeNewEventBox</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">cancelBtn</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"keyup"</span>, <span class="cm-keyword">this</span>.<span class="cm-property">closeNewEventBox</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startTime</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"keyup"</span>,<span class="cm-keyword">this</span>.<span class="cm-property">inputChangeLimiter</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startAMPM</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"keyup"</span>,<span class="cm-keyword">this</span>.<span class="cm-property">inputChangeLimiter</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endTime</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"keyup"</span>,<span class="cm-keyword">this</span>.<span class="cm-property">inputChangeLimiter</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endAMPM</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"keyup"</span>,<span class="cm-keyword">this</span>.<span class="cm-property">inputChangeLimiter</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">addBtn</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>,<span class="cm-keyword">this</span>.<span class="cm-property">saveAddNewEvent</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>));
+
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">showView</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">date</span>){
+  <span class="cm-keyword">if</span> ( <span class="cm-operator">!</span><span class="cm-variable-2">date</span> <span class="cm-operator">||</span> (<span class="cm-operator">!</span>(<span class="cm-variable-2">date</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable">Date</span>)) ) <span class="cm-variable-2">date</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">now</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">date</span>),
+      <span class="cm-def">y</span> <span class="cm-operator">=</span> <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>(),
+      <span class="cm-def">m</span> <span class="cm-operator">=</span> <span class="cm-variable-2">now</span>.<span class="cm-property">getMonth</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">today</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>();
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">lastDayOfM</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">y</span>, <span class="cm-variable-2">m</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, <span class="cm-number">0</span>).<span class="cm-property">getDate</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">startingD</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">y</span>, <span class="cm-variable-2">m</span>, <span class="cm-number">1</span>).<span class="cm-property">getDay</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">lastM</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">y</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getMonth</span>()<span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">1</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">nextM</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">y</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getMonth</span>()<span class="cm-operator">+</span><span class="cm-number">1</span>, <span class="cm-number">1</span>);
+ 
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthDiv</span>.<span class="cm-property">classList</span>.<span class="cm-property">remove</span>(<span class="cm-string">"cview__month-activate"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthDiv</span>.<span class="cm-property">classList</span>.<span class="cm-property">add</span>(<span class="cm-string">"cview__month-reset"</span>);
+  
+  <span class="cm-keyword">while</span>(<span class="cm-keyword">this</span>.<span class="cm-property">calendarView</span>.<span class="cm-property">firstChild</span>) {
+    <span class="cm-keyword">this</span>.<span class="cm-property">calendarView</span>.<span class="cm-property">removeChild</span>(<span class="cm-keyword">this</span>.<span class="cm-property">calendarView</span>.<span class="cm-property">firstChild</span>);
+  }
+  
+  <span class="cm-comment">// build up spacers</span>
+  <span class="cm-keyword">for</span> ( <span class="cm-keyword">var</span> <span class="cm-def">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">x</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">startingD</span>; <span class="cm-variable-2">x</span><span class="cm-operator">++</span> ) {
+    <span class="cm-keyword">var</span> <span class="cm-def">spacer</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createElement</span>(<span class="cm-string">"div"</span>);
+    <span class="cm-variable-2">spacer</span>.<span class="cm-property">className</span> <span class="cm-operator">=</span> <span class="cm-string">"cview--spacer"</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">calendarView</span>.<span class="cm-property">appendChild</span>(<span class="cm-variable-2">spacer</span>);
+  }
+  
+  <span class="cm-keyword">for</span> ( <span class="cm-keyword">var</span> <span class="cm-def">z</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable-2">z</span> <span class="cm-operator">&lt;=</span> <span class="cm-variable-2">lastDayOfM</span>; <span class="cm-variable-2">z</span><span class="cm-operator">++</span> ) {
+   
+    <span class="cm-keyword">var</span> <span class="cm-def">_date</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">y</span>, <span class="cm-variable-2">m</span> ,<span class="cm-variable-2">z</span>);
+    <span class="cm-keyword">var</span> <span class="cm-def">day</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createElement</span>(<span class="cm-string">"div"</span>);
+    <span class="cm-variable-2">day</span>.<span class="cm-property">className</span> <span class="cm-operator">=</span> <span class="cm-string">"cview--date"</span>;
+    <span class="cm-variable-2">day</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-variable-2">z</span>;
+    <span class="cm-variable-2">day</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-date"</span>, <span class="cm-variable-2">_date</span>);
+    <span class="cm-variable-2">day</span>.<span class="cm-property">onclick</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">showDay</span>.<span class="cm-property">bind</span>(<span class="cm-keyword">this</span>);
+    
+    <span class="cm-comment">// check if todays date</span>
+    <span class="cm-keyword">if</span> ( <span class="cm-variable-2">z</span> <span class="cm-operator">==</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getDate</span>() <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">y</span> <span class="cm-operator">==</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getFullYear</span>() <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">m</span> <span class="cm-operator">==</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getMonth</span>() ) {
+      <span class="cm-variable-2">day</span>.<span class="cm-property">classList</span>.<span class="cm-property">add</span>(<span class="cm-string">"today"</span>);
+    }
+    
+     <span class="cm-comment">// check if has events to show</span>
+    <span class="cm-keyword">if</span> ( <span class="cm-keyword">this</span>.<span class="cm-property">aptDates</span>.<span class="cm-property">indexOf</span>(<span class="cm-variable-2">_date</span>.<span class="cm-property">toString</span>()) <span class="cm-operator">!==</span> <span class="cm-operator">-</span><span class="cm-number">1</span> ) {
+      <span class="cm-variable-2">day</span>.<span class="cm-property">classList</span>.<span class="cm-property">add</span>(<span class="cm-string">"has-events"</span>);
+    }
+    
+    <span class="cm-keyword">this</span>.<span class="cm-property">calendarView</span>.<span class="cm-property">appendChild</span>(<span class="cm-variable-2">day</span>);
+  }
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">_that</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>;
+  <span class="cm-variable">setTimeout</span>(<span class="cm-keyword">function</span>(){
+    <span class="cm-variable-2">_that</span>.<span class="cm-property">calendarMonthDiv</span>.<span class="cm-property">classList</span>.<span class="cm-property">add</span>(<span class="cm-string">"cview__month-activate"</span>);
+  }, <span class="cm-number">50</span>);
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthDiv</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">months</span>[<span class="cm-variable-2">now</span>.<span class="cm-property">getMonth</span>()] <span class="cm-operator">+</span> <span class="cm-string">" "</span> <span class="cm-operator">+</span> <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>();
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthDiv</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-date"</span>, <span class="cm-variable-2">now</span>);
+
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthLastDiv</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-string">"← "</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">months</span>[<span class="cm-variable-2">lastM</span>.<span class="cm-property">getMonth</span>()];
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthLastDiv</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-date"</span>, <span class="cm-variable-2">lastM</span>);
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthNextDiv</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">months</span>[<span class="cm-variable-2">nextM</span>.<span class="cm-property">getMonth</span>()] <span class="cm-operator">+</span> <span class="cm-string">" →"</span>;
+  <span class="cm-keyword">this</span>.<span class="cm-property">calendarMonthNextDiv</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-date"</span>, <span class="cm-variable-2">nextM</span>);
+  
+}
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">showDay</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">e</span>, <span class="cm-def">dayEle</span>) {
+  <span class="cm-variable-2">e</span>.<span class="cm-property">stopPropagation</span>();
+  <span class="cm-keyword">if</span> ( <span class="cm-operator">!</span><span class="cm-variable-2">dayEle</span> ) {
+    <span class="cm-variable-2">dayEle</span> <span class="cm-operator">=</span> <span class="cm-variable-2">e</span>.<span class="cm-property">currentTarget</span>;
+  }
+  <span class="cm-keyword">var</span> <span class="cm-def">dayDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">dayEle</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">'data-date'</span>));
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">calDaySelected</span> <span class="cm-operator">=</span> <span class="cm-variable-2">dayEle</span>;
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">openDayWindow</span>(<span class="cm-variable-2">dayDate</span>);
+  
+
+  
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">openDayWindow</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">date</span>){
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">now</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">day</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">date</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewDateEle</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">days</span>[<span class="cm-variable-2">day</span>.<span class="cm-property">getDay</span>()] <span class="cm-operator">+</span> <span class="cm-string">", "</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">months</span>[<span class="cm-variable-2">day</span>.<span class="cm-property">getMonth</span>()] <span class="cm-operator">+</span> <span class="cm-string">" "</span> <span class="cm-operator">+</span> <span class="cm-variable-2">day</span>.<span class="cm-property">getDate</span>() <span class="cm-operator">+</span> <span class="cm-string">", "</span> <span class="cm-operator">+</span> <span class="cm-variable-2">day</span>.<span class="cm-property">getFullYear</span>();
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewDateEle</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">'data-date'</span>, <span class="cm-variable-2">day</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewEle</span>.<span class="cm-property">classList</span>.<span class="cm-property">add</span>(<span class="cm-string">"calendar--day-view-active"</span>);
+  
+  <span class="cm-comment">/* Contextual lang changes based on tense. Also show btn for scheduling future events */</span>
+  <span class="cm-keyword">var</span> <span class="cm-def">_dayTopbarText</span> <span class="cm-operator">=</span> <span class="cm-string">''</span>;
+  <span class="cm-keyword">if</span> ( <span class="cm-variable-2">day</span> <span class="cm-operator">&lt;</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>(), <span class="cm-variable-2">now</span>.<span class="cm-property">getMonth</span>(), <span class="cm-variable-2">now</span>.<span class="cm-property">getDate</span>())) {
+    <span class="cm-variable-2">_dayTopbarText</span> <span class="cm-operator">=</span> <span class="cm-string">"had "</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">addDayEventEle</span>.<span class="cm-property">style</span>.<span class="cm-property">display</span> <span class="cm-operator">=</span> <span class="cm-string">"none"</span>;
+  } <span class="cm-keyword">else</span> {
+     <span class="cm-variable-2">_dayTopbarText</span> <span class="cm-operator">=</span> <span class="cm-string">"have "</span>;
+     <span class="cm-keyword">this</span>.<span class="cm-property">addDayEventEle</span>.<span class="cm-property">style</span>.<span class="cm-property">display</span> <span class="cm-operator">=</span> <span class="cm-string">"inline"</span>;
+  }
+  <span class="cm-keyword">this</span>.<span class="cm-property">addDayEventEle</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-date"</span>, <span class="cm-variable-2">day</span>);
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">eventsToday</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">showEventsByDay</span>(<span class="cm-variable-2">day</span>);
+  <span class="cm-keyword">if</span> ( <span class="cm-operator">!</span><span class="cm-variable-2">eventsToday</span> ) {
+    <span class="cm-variable-2">_dayTopbarText</span> <span class="cm-operator">+=</span> <span class="cm-string">"no "</span>;
+    <span class="cm-keyword">var</span> <span class="cm-def">_rand</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">round</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> ((<span class="cm-keyword">this</span>.<span class="cm-property">quotes</span>.<span class="cm-property">length</span> <span class="cm-operator">-</span> <span class="cm-number">1</span> ) <span class="cm-operator">-</span> <span class="cm-number">0</span>) <span class="cm-operator">+</span> <span class="cm-number">0</span>);
+    <span class="cm-keyword">this</span>.<span class="cm-property">dayInspirationalQuote</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">quotes</span>[<span class="cm-variable-2">_rand</span>];
+  } <span class="cm-keyword">else</span> {
+    <span class="cm-variable-2">_dayTopbarText</span> <span class="cm-operator">+=</span> <span class="cm-variable-2">eventsToday</span>.<span class="cm-property">length</span> <span class="cm-operator">+</span> <span class="cm-string">" "</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">dayInspirationalQuote</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;
+  }
+  <span class="cm-comment">//this.dayEventsList.innerHTML = this.showEventsCreateHTMLView(eventsToday);</span>
+  <span class="cm-keyword">while</span>(<span class="cm-keyword">this</span>.<span class="cm-property">dayEventsList</span>.<span class="cm-property">firstChild</span>) {
+    <span class="cm-keyword">this</span>.<span class="cm-property">dayEventsList</span>.<span class="cm-property">removeChild</span>(<span class="cm-keyword">this</span>.<span class="cm-property">dayEventsList</span>.<span class="cm-property">firstChild</span>);
+  }
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventsList</span>.<span class="cm-property">appendChild</span>(<span class="cm-keyword">this</span>.<span class="cm-property">showEventsCreateElesView</span>(<span class="cm-variable-2">eventsToday</span>));
+  
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventsEle</span>.<span class="cm-property">textContent</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_dayTopbarText</span> <span class="cm-operator">+</span> <span class="cm-string">"events on "</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">months</span>[<span class="cm-variable-2">day</span>.<span class="cm-property">getMonth</span>()] <span class="cm-operator">+</span> <span class="cm-string">" "</span> <span class="cm-operator">+</span> <span class="cm-variable-2">day</span>.<span class="cm-property">getDate</span>() <span class="cm-operator">+</span> <span class="cm-string">", "</span> <span class="cm-operator">+</span> <span class="cm-variable-2">day</span>.<span class="cm-property">getFullYear</span>();
+  
+  
+};
+
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">showEventsCreateElesView</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">events</span>) {
+  <span class="cm-keyword">var</span> <span class="cm-def">ul</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createElement</span>(<span class="cm-string">"ul"</span>);
+  <span class="cm-variable-2">ul</span>.<span class="cm-property">className</span> <span class="cm-operator">=</span> <span class="cm-string">'day-event-list-ul'</span>;
+  <span class="cm-variable-2">events</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">sortEventsByTime</span>(<span class="cm-variable-2">events</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">_this</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>;
+  <span class="cm-variable-2">events</span>.<span class="cm-property">forEach</span>(<span class="cm-keyword">function</span>(<span class="cm-def">event</span>){
+    <span class="cm-keyword">var</span> <span class="cm-def">_start</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">event</span>.<span class="cm-property">startTime</span>);
+    <span class="cm-keyword">var</span> <span class="cm-def">_end</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">event</span>.<span class="cm-property">endTime</span>);
+    <span class="cm-keyword">var</span> <span class="cm-def">idx</span> <span class="cm-operator">=</span> <span class="cm-variable-2">event</span>.<span class="cm-property">index</span>;
+    <span class="cm-keyword">var</span> <span class="cm-def">li</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createElement</span>(<span class="cm-string">"li"</span>);
+    <span class="cm-variable-2">li</span>.<span class="cm-property">className</span> <span class="cm-operator">=</span> <span class="cm-string">"event-dates"</span>;
+    <span class="cm-comment">// li.innerHtml</span>
+    <span class="cm-keyword">var</span> <span class="cm-def">html</span> <span class="cm-operator">=</span> <span class="cm-string">"&lt;span class='start-time'&gt;"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_start</span>.<span class="cm-property">toLocaleTimeString</span>(<span class="cm-variable">navigator</span>.<span class="cm-property">language</span>,{<span class="cm-property">hour</span>: <span class="cm-string">'2-digit'</span>, <span class="cm-property">minute</span>:<span class="cm-string">'2-digit'</span>}) <span class="cm-operator">+</span> <span class="cm-string">"&lt;/span&gt; &lt;small&gt;through&lt;/small&gt; "</span>;
+    <span class="cm-variable-2">html</span> <span class="cm-operator">+=</span> <span class="cm-string">"&lt;span class='end-time'&gt;"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_end</span>.<span class="cm-property">toLocaleTimeString</span>(<span class="cm-variable">navigator</span>.<span class="cm-property">language</span>,{<span class="cm-property">hour</span>: <span class="cm-string">'2-digit'</span>, <span class="cm-property">minute</span>:<span class="cm-string">'2-digit'</span>}) <span class="cm-operator">+</span> ( (<span class="cm-variable-2">_end</span>.<span class="cm-property">getDate</span>() <span class="cm-operator">!=</span> <span class="cm-variable-2">_start</span>.<span class="cm-property">getDate</span>()) <span class="cm-operator">?</span> <span class="cm-string">' &lt;small&gt;on '</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_end</span>.<span class="cm-property">toLocaleDateString</span>() <span class="cm-operator">+</span> <span class="cm-string">"&lt;/small&gt;"</span> : <span class="cm-string">''</span>) <span class="cm-operator">+</span><span class="cm-string">"&lt;/span&gt;"</span>;
+    
+
+    <span class="cm-variable-2">html</span> <span class="cm-operator">+=</span> <span class="cm-string">"&lt;span class='event-name'&gt;"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">event</span>.<span class="cm-property">name</span> <span class="cm-operator">+</span> <span class="cm-string">"&lt;/span&gt;"</span>;
+    
+    <span class="cm-keyword">var</span> <span class="cm-def">div</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createElement</span>(<span class="cm-string">"div"</span>);
+    <span class="cm-variable-2">div</span>.<span class="cm-property">className</span> <span class="cm-operator">=</span> <span class="cm-string">"event-dates"</span>;
+    <span class="cm-variable-2">div</span>.<span class="cm-property">innerHTML</span> <span class="cm-operator">=</span> <span class="cm-variable-2">html</span>;
+    
+    <span class="cm-keyword">var</span> <span class="cm-def">deleteBtn</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createElement</span>(<span class="cm-string">"span"</span>);
+    <span class="cm-keyword">var</span> <span class="cm-def">deleteText</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createTextNode</span>(<span class="cm-string">"delete"</span>);
+    <span class="cm-variable-2">deleteBtn</span>.<span class="cm-property">className</span> <span class="cm-operator">=</span> <span class="cm-string">"event-delete"</span>;
+    <span class="cm-variable-2">deleteBtn</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-idx"</span>, <span class="cm-variable-2">idx</span>);
+    <span class="cm-variable-2">deleteBtn</span>.<span class="cm-property">appendChild</span>(<span class="cm-variable-2">deleteText</span>);
+    <span class="cm-variable-2">deleteBtn</span>.<span class="cm-property">onclick</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_this</span>.<span class="cm-property">deleteEvent</span>.<span class="cm-property">bind</span>(<span class="cm-variable-2">_this</span>);
+    
+    <span class="cm-variable-2">div</span>.<span class="cm-property">appendChild</span>(<span class="cm-variable-2">deleteBtn</span>);
+    
+    <span class="cm-variable-2">li</span>.<span class="cm-property">appendChild</span>(<span class="cm-variable-2">div</span>);
+    <span class="cm-variable-2">ul</span>.<span class="cm-property">appendChild</span>(<span class="cm-variable-2">li</span>);
+  });
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">ul</span>;
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">deleteEvent</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">e</span>) {
+  <span class="cm-keyword">var</span> <span class="cm-def">deleted</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">apts</span>.<span class="cm-property">splice</span>(<span class="cm-variable-2">e</span>.<span class="cm-property">currentTarget</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"data-idx"</span>),<span class="cm-number">1</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">deletedDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">deleted</span>[<span class="cm-number">0</span>].<span class="cm-property">day</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">anyDatesLeft</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">showEventsByDay</span>(<span class="cm-variable-2">deletedDate</span>);
+  <span class="cm-keyword">if</span> ( <span class="cm-variable-2">anyDatesLeft</span> <span class="cm-operator">===</span> <span class="cm-atom">false</span> ) {
+    <span class="cm-comment">// safe to remove from array</span>
+    <span class="cm-keyword">var</span> <span class="cm-def">idx</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">aptDates</span>.<span class="cm-property">indexOf</span>(<span class="cm-variable-2">deletedDate</span>.<span class="cm-property">toString</span>());
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">idx</span> <span class="cm-operator">&gt;=</span> <span class="cm-number">0</span>) {
+       <span class="cm-keyword">this</span>.<span class="cm-property">aptDates</span>.<span class="cm-property">splice</span>(<span class="cm-variable-2">idx</span>,<span class="cm-number">1</span>);
+      <span class="cm-comment">// remove dot from calendar view</span>
+      <span class="cm-keyword">var</span> <span class="cm-def">ele</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-string">'.cview--date[data-date="'</span><span class="cm-operator">+</span> <span class="cm-variable-2">deletedDate</span>.<span class="cm-property">toString</span>() <span class="cm-operator">+</span><span class="cm-string">'"]'</span>);
+      <span class="cm-keyword">if</span> ( <span class="cm-variable-2">ele</span> ) {
+        <span class="cm-variable-2">ele</span>.<span class="cm-property">classList</span>.<span class="cm-property">remove</span>(<span class="cm-string">"has-events"</span>);
+      }
+    }
+  }
+  <span class="cm-keyword">this</span>.<span class="cm-property">openDayWindow</span>(<span class="cm-variable-2">deletedDate</span>);;
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">sortEventsByTime</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">events</span>) {
+  <span class="cm-keyword">if</span> (<span class="cm-operator">!</span><span class="cm-variable-2">events</span>) <span class="cm-keyword">return</span> [];
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">events</span>.<span class="cm-property">sort</span>(<span class="cm-keyword">function</span> <span class="cm-def">compare</span>(<span class="cm-def">a</span>, <span class="cm-def">b</span>) {
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">a</span>.<span class="cm-property">startTime</span>) <span class="cm-operator">&lt;</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">b</span>.<span class="cm-property">startTime</span>)) {
+      <span class="cm-keyword">return</span> <span class="cm-operator">-</span><span class="cm-number">1</span>;
+    }
+    <span class="cm-keyword">if</span> (<span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">a</span>.<span class="cm-property">startTime</span>) <span class="cm-operator">&gt;</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">b</span>.<span class="cm-property">startTime</span>)) {
+      <span class="cm-keyword">return</span> <span class="cm-number">1</span>;
+    }
+    <span class="cm-comment">// a must be equal to b</span>
+    <span class="cm-keyword">return</span> <span class="cm-number">0</span>;
+  });
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">showEventsByDay</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">day</span>) {
+  <span class="cm-keyword">var</span> <span class="cm-def">_events</span> <span class="cm-operator">=</span> [];
+  <span class="cm-keyword">this</span>.<span class="cm-property">apts</span>.<span class="cm-property">forEach</span>(<span class="cm-keyword">function</span>(<span class="cm-def">apt</span>, <span class="cm-def">idx</span>){
+    <span class="cm-keyword">if</span> ( <span class="cm-variable-2">day</span>.<span class="cm-property">toString</span>() <span class="cm-operator">==</span> <span class="cm-variable-2">apt</span>.<span class="cm-property">day</span>.<span class="cm-property">toString</span>() ) {
+      <span class="cm-variable-2">apt</span>.<span class="cm-property">index</span> <span class="cm-operator">=</span> <span class="cm-variable-2">idx</span>;
+      <span class="cm-variable-2">_events</span>.<span class="cm-property">push</span>(<span class="cm-variable-2">apt</span>);
+    }
+  });
+  <span class="cm-keyword">return</span> (<span class="cm-variable-2">_events</span>.<span class="cm-property">length</span>) <span class="cm-operator">?</span> <span class="cm-variable-2">_events</span> : <span class="cm-atom">false</span>;
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">closeDayWindow</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(){
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewEle</span>.<span class="cm-property">classList</span>.<span class="cm-property">remove</span>(<span class="cm-string">"calendar--day-view-active"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">closeNewEventBox</span>();
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">mainCalendarClickClose</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">e</span>){
+  <span class="cm-keyword">if</span> ( <span class="cm-variable-2">e</span>.<span class="cm-property">currentTarget</span> <span class="cm-operator">!=</span> <span class="cm-variable-2">e</span>.<span class="cm-property">target</span> ) {
+    <span class="cm-keyword">return</span>;
+  }
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayViewEle</span>.<span class="cm-property">classList</span>.<span class="cm-property">remove</span>(<span class="cm-string">"calendar--day-view-active"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">closeNewEventBox</span>();
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">addNewEventBox</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">e</span>){
+  <span class="cm-keyword">var</span> <span class="cm-def">target</span> <span class="cm-operator">=</span> <span class="cm-variable-2">e</span>.<span class="cm-property">currentTarget</span>;
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventBoxEle</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-active"</span>, <span class="cm-string">"true"</span>); 
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventBoxEle</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-date"</span>, <span class="cm-variable-2">target</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"data-date"</span>));
+  
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">closeNewEventBox</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">e</span>){
+  
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">e</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">e</span>.<span class="cm-property">keyCode</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">e</span>.<span class="cm-property">keyCode</span> <span class="cm-operator">!=</span> <span class="cm-number">13</span>) <span class="cm-keyword">return</span> <span class="cm-atom">false</span>;
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventBoxEle</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"data-active"</span>, <span class="cm-string">"false"</span>);
+  <span class="cm-comment">// reset values</span>
+  <span class="cm-keyword">this</span>.<span class="cm-property">resetAddEventBox</span>();
+  
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">saveAddNewEvent</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>() {
+  <span class="cm-keyword">var</span> <span class="cm-def">saveErrors</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">validateAddEventInput</span>();
+  <span class="cm-keyword">if</span> ( <span class="cm-operator">!</span><span class="cm-variable-2">saveErrors</span> ) {
+    <span class="cm-keyword">this</span>.<span class="cm-property">addEvent</span>();
+  }
+};
+
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">addEvent</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>() {
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">name</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">nameEvent</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">dayOfDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventBoxEle</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"data-date"</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">dateObjectDay</span> <span class="cm-operator">=</span>  <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">dayOfDate</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">cleanDates</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">cleanEventTimeStampDates</span>();
+  
+  <span class="cm-keyword">this</span>.<span class="cm-property">apts</span>.<span class="cm-property">push</span>({
+    <span class="cm-property">name</span>: <span class="cm-variable-2">name</span>,
+    <span class="cm-property">day</span>: <span class="cm-variable-2">dateObjectDay</span>,
+    <span class="cm-property">startTime</span>: <span class="cm-variable-2">cleanDates</span>[<span class="cm-number">0</span>],
+    <span class="cm-property">endTime</span>: <span class="cm-variable-2">cleanDates</span>[<span class="cm-number">1</span>]
+  });
+  <span class="cm-keyword">this</span>.<span class="cm-property">closeNewEventBox</span>();
+  <span class="cm-keyword">this</span>.<span class="cm-property">openDayWindow</span>(<span class="cm-variable-2">dayOfDate</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">calDaySelected</span>.<span class="cm-property">classList</span>.<span class="cm-property">add</span>(<span class="cm-string">"has-events"</span>);
+  <span class="cm-comment">// add to dates</span>
+  <span class="cm-keyword">if</span> ( <span class="cm-keyword">this</span>.<span class="cm-property">aptDates</span>.<span class="cm-property">indexOf</span>(<span class="cm-variable-2">dateObjectDay</span>.<span class="cm-property">toString</span>()) <span class="cm-operator">===</span> <span class="cm-operator">-</span><span class="cm-number">1</span> ) {
+    <span class="cm-keyword">this</span>.<span class="cm-property">aptDates</span>.<span class="cm-property">push</span>(<span class="cm-variable-2">dateObjectDay</span>.<span class="cm-property">toString</span>());
+  }
+  
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">convertTo23HourTime</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">stringOfTime</span>, <span class="cm-def">AMPM</span>) {
+  <span class="cm-comment">// convert to 0 - 23 hour time</span>
+  <span class="cm-keyword">var</span> <span class="cm-def">mins</span> <span class="cm-operator">=</span> <span class="cm-variable-2">stringOfTime</span>.<span class="cm-property">split</span>(<span class="cm-string">":"</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">hours</span> <span class="cm-operator">=</span> <span class="cm-variable-2">stringOfTime</span>.<span class="cm-property">trim</span>();
+  <span class="cm-keyword">if</span> ( <span class="cm-variable-2">mins</span>[<span class="cm-number">1</span>] <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">mins</span>[<span class="cm-number">1</span>].<span class="cm-property">trim</span>() ) {
+    <span class="cm-variable-2">hours</span> <span class="cm-operator">=</span> <span class="cm-variable">parseInt</span>(<span class="cm-variable-2">mins</span>[<span class="cm-number">0</span>].<span class="cm-property">trim</span>());
+    <span class="cm-variable-2">mins</span> <span class="cm-operator">=</span> <span class="cm-variable">parseInt</span>(<span class="cm-variable-2">mins</span>[<span class="cm-number">1</span>].<span class="cm-property">trim</span>());
+  } <span class="cm-keyword">else</span> {
+    <span class="cm-variable-2">hours</span> <span class="cm-operator">=</span> <span class="cm-variable">parseInt</span>(<span class="cm-variable-2">hours</span>);
+    <span class="cm-variable-2">mins</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;
+  }
+  <span class="cm-variable-2">hours</span> <span class="cm-operator">=</span> ( <span class="cm-variable-2">AMPM</span> <span class="cm-operator">==</span> <span class="cm-string">'am'</span> ) <span class="cm-operator">?</span> ( (<span class="cm-variable-2">hours</span> <span class="cm-operator">==</span> <span class="cm-number">12</span>) <span class="cm-operator">?</span> <span class="cm-number">0</span> : <span class="cm-variable-2">hours</span> ) : (<span class="cm-variable-2">hours</span> <span class="cm-operator">&lt;=</span> <span class="cm-number">11</span>) <span class="cm-operator">?</span> <span class="cm-variable">parseInt</span>(<span class="cm-variable-2">hours</span>) <span class="cm-operator">+</span> <span class="cm-number">12</span> : <span class="cm-variable-2">hours</span>;
+  <span class="cm-keyword">return</span> [<span class="cm-variable-2">hours</span>, <span class="cm-variable-2">mins</span>];
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">cleanEventTimeStampDates</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>() {
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">startTime</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startTime</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>() <span class="cm-operator">||</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startTime</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"placeholder"</span>) <span class="cm-operator">||</span> <span class="cm-string">'8'</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">startAMPM</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startAMPM</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>() <span class="cm-operator">||</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startAMPM</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"placeholder"</span>) <span class="cm-operator">||</span> <span class="cm-string">'am'</span>;
+  <span class="cm-variable-2">startAMPM</span> <span class="cm-operator">=</span> (<span class="cm-variable-2">startAMPM</span> <span class="cm-operator">==</span> <span class="cm-string">'a'</span>) <span class="cm-operator">?</span> <span class="cm-variable-2">startAMPM</span> <span class="cm-operator">+</span> <span class="cm-string">'m'</span> : <span class="cm-variable-2">startAMPM</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">endTime</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endTime</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>() <span class="cm-operator">||</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endTime</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"placeholder"</span>) <span class="cm-operator">||</span> <span class="cm-string">'9'</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">endAMPM</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endAMPM</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>() <span class="cm-operator">||</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endAMPM</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"placeholder"</span>) <span class="cm-operator">||</span> <span class="cm-string">'pm'</span>;
+  <span class="cm-variable-2">endAMPM</span> <span class="cm-operator">=</span> (<span class="cm-variable-2">endAMPM</span> <span class="cm-operator">==</span> <span class="cm-string">'p'</span>) <span class="cm-operator">?</span> <span class="cm-variable-2">endAMPM</span> <span class="cm-operator">+</span> <span class="cm-string">'m'</span> : <span class="cm-variable-2">endAMPM</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">date</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventBoxEle</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"data-date"</span>);
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">startingTimeStamps</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">convertTo23HourTime</span>(<span class="cm-variable-2">startTime</span>, <span class="cm-variable-2">startAMPM</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">endingTimeStamps</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">convertTo23HourTime</span>(<span class="cm-variable-2">endTime</span>, <span class="cm-variable-2">endAMPM</span>);
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">dateOfEvent</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">date</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">startDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">dateOfEvent</span>.<span class="cm-property">getFullYear</span>(), <span class="cm-variable-2">dateOfEvent</span>.<span class="cm-property">getMonth</span>(), <span class="cm-variable-2">dateOfEvent</span>.<span class="cm-property">getDate</span>(), <span class="cm-variable-2">startingTimeStamps</span>[<span class="cm-number">0</span>], <span class="cm-variable-2">startingTimeStamps</span>[<span class="cm-number">1</span>]);
+  <span class="cm-keyword">var</span> <span class="cm-def">endDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">dateOfEvent</span>.<span class="cm-property">getFullYear</span>(), <span class="cm-variable-2">dateOfEvent</span>.<span class="cm-property">getMonth</span>(), <span class="cm-variable-2">dateOfEvent</span>.<span class="cm-property">getDate</span>(), <span class="cm-variable-2">endingTimeStamps</span>[<span class="cm-number">0</span>], <span class="cm-variable-2">endingTimeStamps</span>[<span class="cm-number">1</span>]);
+  
+  <span class="cm-comment">// if end date is less than start date - set end date back another day</span>
+  <span class="cm-keyword">if</span> ( <span class="cm-variable-2">startDate</span> <span class="cm-operator">&gt;</span> <span class="cm-variable-2">endDate</span> ) <span class="cm-variable-2">endDate</span>.<span class="cm-property">setDate</span>(<span class="cm-variable-2">endDate</span>.<span class="cm-property">getDate</span>() <span class="cm-operator">+</span> <span class="cm-number">1</span>);
+  
+  <span class="cm-keyword">return</span> [<span class="cm-variable-2">startDate</span>, <span class="cm-variable-2">endDate</span>];
+  
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">validateAddEventInput</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>() {
+
+  <span class="cm-keyword">var</span> <span class="cm-def">_errors</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">name</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">nameEvent</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">startTime</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startTime</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">startAMPM</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startAMPM</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">endTime</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endTime</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">endAMPM</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endAMPM</span>.<span class="cm-property">value</span>.<span class="cm-property">trim</span>();
+  
+  <span class="cm-keyword">if</span> (<span class="cm-operator">!</span><span class="cm-variable-2">name</span> <span class="cm-operator">||</span> <span class="cm-variable-2">name</span> <span class="cm-operator">==</span> <span class="cm-atom">null</span>) {
+    <span class="cm-variable-2">_errors</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">nameEvent</span>.<span class="cm-property">classList</span>.<span class="cm-property">add</span>(<span class="cm-string">"add-event-edit--error"</span>);
+    <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">nameEvent</span>.<span class="cm-property">focus</span>();
+  } <span class="cm-keyword">else</span> {
+     <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">nameEvent</span>.<span class="cm-property">classList</span>.<span class="cm-property">remove</span>(<span class="cm-string">"add-event-edit--error"</span>);
+  }
+  
+<span class="cm-comment">//   if (!startTime || startTime == null) {</span>
+<span class="cm-comment">//     _errors = true;</span>
+<span class="cm-comment">//     this.dayEventAddForm.startTime.classList.add("add-event-edit--error");</span>
+<span class="cm-comment">//   } else {</span>
+<span class="cm-comment">//      this.dayEventAddForm.startTime.classList.remove("add-event-edit--error");</span>
+<span class="cm-comment">//   }</span>
+  
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">_errors</span>;
+  
+  
+};
+<span class="cm-keyword">var</span> <span class="cm-def">timeOut</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;
+<span class="cm-keyword">var</span> <span class="cm-def">activeEle</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">inputChangeLimiter</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">ele</span>) {
+  
+  <span class="cm-keyword">if</span> ( <span class="cm-variable-2">ele</span>.<span class="cm-property">currentTarget</span> ) {
+    <span class="cm-variable-2">ele</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ele</span>.<span class="cm-property">currentTarget</span>;
+  }
+  <span class="cm-keyword">if</span> (<span class="cm-variable">timeOut</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">ele</span> <span class="cm-operator">==</span> <span class="cm-variable">activeEle</span>){
+    <span class="cm-variable">clearTimeout</span>(<span class="cm-variable">timeOut</span>);
+  }
+  
+  <span class="cm-keyword">var</span> <span class="cm-def">limiter</span> <span class="cm-operator">=</span> <span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">textOptionLimiter</span>;
+
+  <span class="cm-keyword">var</span> <span class="cm-def">_options</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ele</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"data-options"</span>).<span class="cm-property">split</span>(<span class="cm-string">","</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">_format</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ele</span>.<span class="cm-property">getAttribute</span>(<span class="cm-string">"data-format"</span>) <span class="cm-operator">||</span> <span class="cm-string">'text'</span>;
+  <span class="cm-variable">timeOut</span> <span class="cm-operator">=</span> <span class="cm-variable">setTimeout</span>(<span class="cm-keyword">function</span>(){
+    <span class="cm-variable-2">ele</span>.<span class="cm-property">value</span> <span class="cm-operator">=</span> <span class="cm-variable-2">limiter</span>(<span class="cm-variable-2">_options</span>, <span class="cm-variable-2">ele</span>.<span class="cm-property">value</span>, <span class="cm-variable-2">_format</span>);
+  }, <span class="cm-number">600</span>);
+  <span class="cm-variable">activeEle</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ele</span>;
+  
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">textOptionLimiter</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">options</span>, <span class="cm-def">input</span>, <span class="cm-def">format</span>){
+  <span class="cm-keyword">if</span> ( <span class="cm-operator">!</span><span class="cm-variable-2">input</span> ) <span class="cm-keyword">return</span> <span class="cm-string">''</span>;
+  
+  <span class="cm-keyword">if</span> ( <span class="cm-variable-2">input</span>.<span class="cm-property">indexOf</span>(<span class="cm-string">":"</span>) <span class="cm-operator">!==</span> <span class="cm-operator">-</span><span class="cm-number">1</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">format</span> <span class="cm-operator">==</span> <span class="cm-string">'datetime'</span> ) {
+ 
+    <span class="cm-keyword">var</span> <span class="cm-def">_splitTime</span> <span class="cm-operator">=</span> <span class="cm-variable-2">input</span>.<span class="cm-property">split</span>(<span class="cm-string">':'</span>, <span class="cm-number">2</span>);
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">_splitTime</span>.<span class="cm-property">length</span> <span class="cm-operator">==</span> <span class="cm-number">2</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-operator">!</span><span class="cm-variable-2">_splitTime</span>[<span class="cm-number">1</span>].<span class="cm-property">trim</span>()) <span class="cm-keyword">return</span> <span class="cm-variable-2">input</span>;
+    <span class="cm-keyword">var</span> <span class="cm-def">_trailingTime</span> <span class="cm-operator">=</span> <span class="cm-variable">parseInt</span>(<span class="cm-variable-2">_splitTime</span>[<span class="cm-number">1</span>]);
+    <span class="cm-comment">/* Probably could be coded better -- a block to clean up trailing data */</span>
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">options</span>.<span class="cm-property">indexOf</span>(<span class="cm-variable-2">_splitTime</span>[<span class="cm-number">0</span>]) <span class="cm-operator">===</span> <span class="cm-operator">-</span><span class="cm-number">1</span>) {
+      <span class="cm-keyword">return</span> <span class="cm-variable-2">options</span>[<span class="cm-number">0</span>];
+    }
+    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">_splitTime</span>[<span class="cm-number">1</span>] <span class="cm-operator">==</span> <span class="cm-string">"0"</span> ) {
+      <span class="cm-keyword">return</span> <span class="cm-variable-2">input</span>;
+    }
+    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">_splitTime</span>[<span class="cm-number">1</span>] <span class="cm-operator">==</span> <span class="cm-string">"00"</span> ) {
+      <span class="cm-keyword">return</span> <span class="cm-variable-2">_splitTime</span>[<span class="cm-number">0</span>] <span class="cm-operator">+</span>  <span class="cm-string">":00"</span>;
+    }
+    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">_trailingTime</span> <span class="cm-operator">&lt;</span> <span class="cm-number">10</span> ) {
+      <span class="cm-keyword">return</span> <span class="cm-variable-2">_splitTime</span>[<span class="cm-number">0</span>] <span class="cm-operator">+</span> <span class="cm-string">":"</span> <span class="cm-operator">+</span> <span class="cm-string">"0"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_trailingTime</span>;
+    }
+    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> ( <span class="cm-operator">!</span><span class="cm-variable">Number</span>.<span class="cm-property">isInteger</span>(<span class="cm-variable-2">_trailingTime</span>) <span class="cm-operator">||</span> <span class="cm-variable-2">_trailingTime</span> <span class="cm-operator">&lt;</span> <span class="cm-number">0</span> <span class="cm-operator">||</span> <span class="cm-variable-2">_trailingTime</span> <span class="cm-operator">&gt;</span> <span class="cm-number">59</span> )  {
+      <span class="cm-keyword">return</span> <span class="cm-variable-2">_splitTime</span>[<span class="cm-number">0</span>];
+    } 
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">_splitTime</span>[<span class="cm-number">0</span>] <span class="cm-operator">+</span> <span class="cm-string">":"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_trailingTime</span>;
+  }
+  <span class="cm-keyword">if</span> ((<span class="cm-variable-2">input</span>.<span class="cm-property">toString</span>().<span class="cm-property">length</span> <span class="cm-operator">&gt;=</span> <span class="cm-number">3</span>) ) {
+    <span class="cm-keyword">var</span> <span class="cm-def">pad</span> <span class="cm-operator">=</span> (<span class="cm-variable-2">input</span>.<span class="cm-property">toString</span>().<span class="cm-property">length</span> <span class="cm-operator">-</span> <span class="cm-number">4</span>) <span class="cm-operator">*</span> <span class="cm-operator">-</span><span class="cm-number">1</span>;
+    <span class="cm-keyword">var</span> <span class="cm-def">_hour</span>, <span class="cm-def">_min</span>;
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">pad</span> <span class="cm-operator">==</span> <span class="cm-number">1</span>) {
+      <span class="cm-variable-2">_hour</span> <span class="cm-operator">=</span> <span class="cm-variable-2">input</span>[<span class="cm-number">0</span>];
+      <span class="cm-variable-2">_min</span> <span class="cm-operator">=</span> <span class="cm-variable-2">input</span>[<span class="cm-number">1</span>] <span class="cm-operator">+</span> <span class="cm-variable-2">input</span>[<span class="cm-number">2</span>];
+    } <span class="cm-keyword">else</span> {
+      <span class="cm-variable-2">_hour</span> <span class="cm-operator">=</span> <span class="cm-variable-2">input</span>[<span class="cm-number">0</span>] <span class="cm-operator">+</span> <span class="cm-variable-2">input</span>[<span class="cm-number">1</span>];
+      <span class="cm-variable-2">_min</span> <span class="cm-operator">=</span> <span class="cm-variable-2">input</span>[<span class="cm-number">2</span>] <span class="cm-operator">+</span> <span class="cm-variable-2">input</span>[<span class="cm-number">3</span>];
+    }
+    
+    <span class="cm-variable-2">_hour</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">max</span>(<span class="cm-number">1</span>,<span class="cm-variable">Math</span>.<span class="cm-property">min</span>(<span class="cm-number">12</span>,(<span class="cm-variable-2">_hour</span>)));
+    <span class="cm-variable-2">_min</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">min</span>(<span class="cm-number">59</span>,(<span class="cm-variable-2">_min</span>));
+    <span class="cm-keyword">if</span> ( <span class="cm-variable-2">_min</span> <span class="cm-operator">&lt;</span> <span class="cm-number">10</span> ) { 
+      <span class="cm-variable-2">_min</span> <span class="cm-operator">=</span> <span class="cm-string">"0"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_min</span>;
+    }
+    <span class="cm-variable-2">_min</span> <span class="cm-operator">=</span> (<span class="cm-variable">isNaN</span>(<span class="cm-variable-2">_min</span>)) <span class="cm-operator">?</span> <span class="cm-string">'00'</span> : <span class="cm-variable-2">_min</span>;
+    <span class="cm-variable-2">_hour</span> <span class="cm-operator">=</span> (<span class="cm-variable">isNaN</span>(<span class="cm-variable-2">_hour</span>)) <span class="cm-operator">?</span> <span class="cm-string">'9'</span> : <span class="cm-variable-2">_hour</span> ;
+
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">_hour</span> <span class="cm-operator">+</span> <span class="cm-string">":"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_min</span>;
+    
+  }
+
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">options</span>.<span class="cm-property">indexOf</span>(<span class="cm-variable-2">input</span>) <span class="cm-operator">===</span> <span class="cm-operator">-</span><span class="cm-number">1</span>) {
+    <span class="cm-keyword">return</span> <span class="cm-variable-2">options</span>[<span class="cm-number">0</span>];
+  }
+  
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">input</span>;
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">resetAddEventBox</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(){
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">nameEvent</span>.<span class="cm-property">value</span> <span class="cm-operator">=</span> <span class="cm-string">''</span>;
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">nameEvent</span>.<span class="cm-property">classList</span>.<span class="cm-property">remove</span>(<span class="cm-string">"add-event-edit--error"</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endTime</span>.<span class="cm-property">value</span> <span class="cm-operator">=</span> <span class="cm-string">''</span>;
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startTime</span>.<span class="cm-property">value</span> <span class="cm-operator">=</span> <span class="cm-string">''</span>;
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">endAMPM</span>.<span class="cm-property">value</span> <span class="cm-operator">=</span> <span class="cm-string">''</span>;
+  <span class="cm-keyword">this</span>.<span class="cm-property">dayEventAddForm</span>.<span class="cm-property">startAMPM</span>.<span class="cm-property">value</span> <span class="cm-operator">=</span> <span class="cm-string">''</span>;
+};
+<span class="cm-variable">CalendarApp</span>.<span class="cm-property">prototype</span>.<span class="cm-property">showNewMonth</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">e</span>){
+  <span class="cm-keyword">var</span> <span class="cm-def">date</span> <span class="cm-operator">=</span> <span class="cm-variable-2">e</span>.<span class="cm-property">currentTarget</span>.<span class="cm-property">dataset</span>.<span class="cm-property">date</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">newMonthDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">date</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">showView</span>(<span class="cm-variable-2">newMonthDate</span>);
+  <span class="cm-keyword">this</span>.<span class="cm-property">closeDayWindow</span>();
+  <span class="cm-keyword">return</span> <span class="cm-atom">true</span>;
+};
+
+<span class="cm-keyword">var</span> <span class="cm-def">calendar</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">CalendarApp</span>();
+<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">calendar</span>);
+
+</code></pre>
+</div>
+<div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+<iframe allow="camera; display-capture; geolocation; microphone; web-share" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " id="result-iframe" loading="lazy" name="CodePen Preview for Calendar App" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" scrolling="yes" title="CodePen Preview for Calendar App" data-src="https://cdpn.io/ovdojoey/fullembedgrid/GqRxYQ?animations=run&amp;type=embed" src="GqRxYQ_data/GqRxYQ.html" frameborder="0">
+  </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/ovdojoey" target="_blank" rel="noopener"><img src="OPmLBW_data/user-default-avatar.jpg" loading="lazy" alt="" class="about-image"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/ovdojoey" target="_blank" rel="noopener">Joey Lea</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+</p>
+<p>
+<a href="https://codepen.io/ovdojoey" target="_blank" rel="noopener" class="about-user-more">
+See more by @ovdojoey on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<p>
+This Pen doesn't use any external CSS resources.
+</p>
+<h3>External JavaScript</h3>
+<p>
+This Pen doesn't use any external JavaScript resources.
+</p>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button" id="zoom-button-1">1×</button></li>
+<li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+<li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script nonce="">
+    __processedPen = {"html":"&lt;div class=&quot;calendar&quot; id=&quot;calendar-app&quot;&gt;\n  &lt;div class=&quot;calendar--day-view&quot; id=&quot;day-view&quot;&gt;\n    &lt;span class=&quot;day-view-exit&quot; id=&quot;day-view-exit&quot;&gt;&amp;times;&lt;/span&gt;\n    &lt;span class=&quot;day-view-date&quot; id=&quot;day-view-date&quot;&gt;MAY 29 2016&lt;/span&gt;\n    &lt;div class=&quot;day-view-content&quot;&gt;\n      &lt;div class=&quot;day-highlight&quot;&gt;\n        You &lt;span class=&quot;day-events&quot; id=&quot;day-events&quot;&gt;had no events for today&lt;/span&gt;. &amp;nbsp; &lt;span tabindex=&quot;0&quot; onkeyup=&quot;if(event.keyCode != 13) return; this.click();&quot; class=&quot;day-events-link&quot; id=&quot;add-event&quot; data-date&gt;Add a new event?&lt;/span&gt;\n      &lt;/div&gt;\n      &lt;div class=&quot;day-add-event&quot; id=&quot;add-day-event-box&quot; data-active=&quot;false&quot;&gt;\n        &lt;div class=&quot;row&quot;&gt;\n          &lt;div class=&quot;half&quot;&gt;\n            &lt;label class=&quot;add-event-label&quot;&gt;\n               Name of event\n              &lt;input type=&quot;text&quot; class=&quot;add-event-edit add-event-edit--long&quot; placeholder=&quot;New event&quot; id=&quot;input-add-event-name&quot;&gt;\n             \n            &lt;/label&gt;\n          &lt;/div&gt;\n          &lt;div class=&quot;qtr&quot;&gt;\n            &lt;label class=&quot;add-event-label&quot;&gt;\n          Start Time\n              &lt;input type=&quot;text&quot; class=&quot;add-event-edit&quot; placeholder=&quot;8:15&quot; id=&quot;input-add-event-start-time&quot; data-options=&quot;1,2,3,4,5,6,7,8,9,10,11,12&quot; data-format=&quot;datetime&quot;&gt;\n              &lt;input type=&quot;text&quot; class=&quot;add-event-edit&quot; placeholder=&quot;am&quot; id=&quot;input-add-event-start-ampm&quot; data-options=&quot;a,p,am,pm&quot;&gt;\n            &lt;/label&gt;\n          &lt;/div&gt;\n          &lt;div class=&quot;qtr&quot;&gt;\n            &lt;label class=&quot;add-event-label&quot;&gt;\n          End Time\n              &lt;input type=&quot;text&quot; class=&quot;add-event-edit&quot; placeholder=&quot;9&quot; id=&quot;input-add-event-end-time&quot; data-options=&quot;1,2,3,4,5,6,7,8,9,10,11,12&quot; data-format=&quot;datetime&quot;&gt;\n              &lt;input type=&quot;text&quot; class=&quot;add-event-edit&quot; placeholder=&quot;am&quot; id=&quot;input-add-event-end-ampm&quot; data-options=&quot;a,p,am,pm&quot;&gt;\n            &lt;/label&gt;\n          &lt;/div&gt;\n          &lt;div class=&quot;half&quot;&gt;\n            &lt;a onkeyup=&quot;if(event.keyCode != 13) return; this.click();&quot; tabindex=&quot;0&quot; id=&quot;add-event-save&quot; class=&quot;event-btn--save event-btn&quot;&gt;save&lt;/a&gt;\n            &lt;a tabindex=&quot;0&quot; id=&quot;add-event-cancel&quot; class=&quot;event-btn--cancel event-btn&quot;&gt;cancel&lt;/a&gt;\n          &lt;/div&gt;\n        &lt;/div&gt;\n        \n      &lt;/div&gt;\n      &lt;div id=&quot;day-events-list&quot; class=&quot;day-events-list&quot;&gt;\n        \n      &lt;/div&gt;\n      &lt;div class=&quot;day-inspiration-quote&quot; id=&quot;inspirational-quote&quot;&gt;\n        Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso\n      &lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=&quot;calendar--view&quot; id=&quot;calendar-view&quot;&gt;\n    &lt;div class=&quot;cview__month&quot;&gt;\n      &lt;span class=&quot;cview__month-last&quot; id=&quot;calendar-month-last&quot;&gt;Apr&lt;/span&gt;\n      &lt;span class=&quot;cview__month-current&quot; id=&quot;calendar-month&quot;&gt;May&lt;/span&gt;\n      &lt;span class=&quot;cview__month-next&quot; id=&quot;calendar-month-next&quot;&gt;Jun&lt;/span&gt;\n    &lt;/div&gt;\n    &lt;div class=&quot;cview__header&quot;&gt;Sun&lt;/div&gt;\n    &lt;div class=&quot;cview__header&quot;&gt;Mon&lt;/div&gt;\n    &lt;div class=&quot;cview__header&quot;&gt;Tue&lt;/div&gt;\n    &lt;div class=&quot;cview__header&quot;&gt;Wed&lt;/div&gt;\n    &lt;div class=&quot;cview__header&quot;&gt;Thu&lt;/div&gt;\n    &lt;div class=&quot;cview__header&quot;&gt;Fri&lt;/div&gt;\n    &lt;div class=&quot;cview__header&quot;&gt;Sat&lt;/div&gt;\n    &lt;div class=&quot;calendar--view&quot; id=&quot;dates&quot;&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=&quot;footer&quot;&gt;\n    &lt;span&gt;&lt;span id=&quot;footer-date&quot; class=&quot;footer__link&quot;&gt;Today is May 30&lt;/span&gt;&lt;/span&gt;    \n  &lt;/div&gt;\n&lt;/div&gt;","css":"body{\n  margin: 0;\n  padding: 0;\n  font-family: &#39;HelveticaNeue-Light&#39;, Helvetica Neue, Helvetica;\n  display: flex;\n  align-items:center;\n  height: 100%;\n  height: 100vh;\n  min-height: 500px;\n  background: rgba(76,76,76,1);\nbackground: -moz-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(43,43,43,1) 0%, rgba(23,23,23,1) 91%, rgba(23,23,23,1) 100%);\nbackground: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(76,76,76,1)), color-stop(0%, rgba(43,43,43,1)), color-stop(91%, rgba(23,23,23,1)), color-stop(100%, rgba(23,23,23,1)));\nbackground: -webkit-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(43,43,43,1) 0%, rgba(23,23,23,1) 91%, rgba(23,23,23,1) 100%);\nbackground: -o-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(43,43,43,1) 0%, rgba(23,23,23,1) 91%, rgba(23,23,23,1) 100%);\nbackground: -ms-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(43,43,43,1) 0%, rgba(23,23,23,1) 91%, rgba(23,23,23,1) 100%);\nbackground: radial-gradient(ellipse at center, rgba(76,76,76,1) 0%, rgba(43,43,43,1) 0%, rgba(23,23,23,1) 91%, rgba(23,23,23,1) 100%);\n}\n.calendar{\n  color: #fff;\n  margin: 10px auto;\n  background: #04b6e2;\n  padding: 60px 40px 80px 40px;\n  width: 95%;\n  max-width: 600px;\n  height: 325px;\n  border-radius: 5px;\n  box-shadow: 0px 2px 6px rgba(2,2,2,0.2);\n  position: relative;\n}\n.calendar__title{\n  text-align: center;\n}\n.calendar--day-view{\n  position: absolute;\n  border-radius: 3px;\n  top: -2.5%;\n  left: -2.5%;\n  width: 100%;\n  height: 100%;\n  background: rgba(255,255,255,1);\n box-shadow: 3px 12px 5px rgba(2,2,2,0.16);\n  z-index: 2;\n  overflow: hidden;\n  transform: scale(0.9) translate(30px,30px);\n  opacity: 0;\n  visibility: hidden;\n/*   border-radius: 5px; */\n  display: none;\n  align-items: flex-start;\n  flex-wrap: wrap;\n}\n.day-view-content{\n  color: #222;\n  width: 100%;\n  padding-top: 55px;\n}\n.day-highlight, .day-add-event{\n  padding: 8px 10px;\n  margin: 12px 15px;\n  border-radius: 4px;\n  background: #e7e8e8;\n  color: #222;\n  font-size: 14px;\n  font-weight: 600;\n  font-family: &quot;Avenir&quot;, sans-serif;\n}\n.row{\n  width: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n}\n.row .qtr{\n  width: 40%;\n}\n.row .half{\n  width: 100%;\n}\n@media (min-width: 800px){\n  .row{\n    flex-wrap: nowrap;\n  }\n  .row .half{\n    width: 35%;\n  }\n  .row .qtr{\n    width: 25%;\n  }\n}\n\n.day-add-event{\n  background: #04b6e2;\n  color: #fff;\n  padding: 16px;\n  display: none;\n  transform: translateY(-15px);\n  opacity: 0;\n}\n.day-add-event[data-active=&quot;true&quot;]{\n  display: block;\n  animation: popIn 250ms 1 forwards;\n}\n.add-event-label{\n  padding: 10px 0;\n  font-size: 18px;\n  font-family: &#39;Avenir&#39;, sans-serif;\n  color: #fff;\n  font-weight: 400;\n  font-size: 12px;\n  color: rgba(255,255,255,0.8);\n}\n.add-event-edit{\n  display: block;\n  margin: 4px 0;\n  max-width: 70%;\n  border-bottom: 2px solid #fff;\n  font-size: 18px;\n  font-weight: 800;\n  color: #fff;\n}\n.add-event-edit--long{\n  max-width: 90%;\n}\n\ninput.add-event-edit{\n  border: none;\n  border-bottom: 2px solid #fff;\n  background: transparent;\n  outline: none;\n  font: inherit;\n  color: #fff;\n  font-size: 18px;\n  font-weight: 800;\n}\n.add-event-edit--error, input.add-event-edit--error{\n  border-color: #ff5151;\n  animation: shake 300ms 1 forwards;\n}\n@keyframes shake {\n  20%, 60%{\n    transform: translateX(4px);\n  }\n  40%, 80%{\n    transform: translateX(-4px);\n  }\n}\ninput.add-event-edit::-webkit-input-placeholder {\n   color: #fff;\n}\n\ninput.add-event-edit:-moz-placeholder { /* Firefox 18- */\n   color: #fff;  \n}\n\ninput.add-event-edit::-moz-placeholder {  /* Firefox 19+ */\n   color: #fff;  \n}\n\ninput.add-event-edit:-ms-input-placeholder {  \n   color: #fff;  \n}\n.event-btn{\n  padding: 3px 8px;\n  border: 3px solid #fff;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  width: 65px;\n  margin: 5px 0;\n  text-align: center;\n}\n\n.event-btn--save{\n  border-color: #fff;\n   background: #74c500;\n  color: #fff;\n  border-color: transparent;\n}\n.event-btn--save:hover{\n  box-shadow: 0px 2px 4px rgba(2,2,2,0.2);\n}\n.event-btn--cancel{\n  background: #ff5151;\n  color: #fff;\n  border-color: transparent;\n}\n.event-btn--cancel:hover{\n  box-shadow: 0px 2px 4px rgba(2,2,2,0.2);\n}\n/* .add-event-btn:hover, .add.event-btn:focus{\n  background: #00258e;\n  box-shadow: 0px -1px 2px rgba(3,2,2,0.2);\n} */\n.day-highlight .day-events-link{\n  border-bottom: 2px solid #222;\n  padding: 0;\n  cursor: pointer;\n}\n#add-event{\n  color: #04b6e2;\n  border-color: #04b6e2;\n}\n.day-view-exit{\n  position: absolute;\n  top: 24px;\n  line-height: 1em;\n  left: 22px;\n  font-size: 22px;\n  color: #252525;\n  font-family: &#39;Avenir&#39;, sans-serif;\n  font-weight: 800;\n  cursor: pointer;\n  opacity: 0;\n  animation: popIn 200ms 1 forwards;\n  text-transform: uppercase;\n}\n.day-view-date{\n  position: absolute;\n  top: 19px;\n  right: 22px;\n  text-align: right;\n  font-size: 22px;\n  font-family: &#39;Avenir&#39;, sans-serif;\n  font-weight: 800;\n  color: #393939;\n  border-bottom: 2px solid #222;\n  cursor: pointer;\n}\n.day-inspiration-quote{\n  position: absolute;\n/*   top: 90px; */\n  margin-top: -40px;\n  left: 10%;\n  width: 80%;\n  height: calc(100% - 110px);\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  font-size: 32px;\n  font-weight: 800;\n  letter-spacing: -1px;\n  color: #ddd;\n  line-height: 1.1em;\n  font-family: &#39;Avenir&#39;, sans-serif;\n  z-index: -1;\n}\n.day-event-list-ul{\n  list-style: none;\n  margin: auto;\n  width: 95%;\n  padding: 0;\n  max-height: 300px;\n  overflow: auto;\n}\n.day-event-list-ul li {\n  padding: 10px;\n  margin: 10px 0;\n/*   background: #04b6e2; */\n/*   box-shadow: 0px 1px 1px  rgba(2,2,2,0.5); */\n  position: relative;\n}\n.event-dates small{\n  font-size: 0.65em;\n  color: #444;\n}\n.event-dates{\n  font-weight: 800;\n  font-family: &#39;Avenir&#39;, sans-serif;\n  color: #04b6e2;\n  font-size: 18px;\n  text-transform: lowercase;\n/*   position: relative; */\n}\n.event-delete{\n  position: absolute;\n  right: 10px;\n  top: 0px;\n  font-size: 12px;\n  color: #f25656;\n  cursor: pointer;\n}\n.event-name{\n  font-size: 19px;\n  font-family: &#39;Avenir&#39;, sans-serif;\n  color: #222;\n  padding:10px;\n  background: #f7f7f7;\n  margin: 2px 0;\n  display: block;\n  text-transform: initial;\n}\n.calendar--day-view-active{\n  animation: popIn 200ms 1 forwards;\n  visibility: visible;\n  display: flex;\n  transition: visibility 0ms;\n\n}\n.calendar--view{\n  display: flex;\n  flex-wrap: wrap;\n  align-content: center;\n  justify-content: flex-start;\n  width: 100%;\n}\n.cview__month{\n  width: 100%;\n  text-align: center;\n  font-weight: 800;\n  font-size: 22px;\n  font-family: &#39;Avenir&#39;, sans-serif;\n  padding-bottom: 20px;\n  color: #222;\n  text-transform: uppercase;\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  justify-content: space-around;\n}\n.cview__month-last,.cview__month-next,.cview__month-current{\n  width: 33.33333%;\n  text-align: center;\n  font-size: 16px;\n  cursor: pointer;\n  color: #222;\n}\n.cview__month-last:hover,.cview__month-next:hover{\n  color: #fff;\n}\n\n.cview__month-current{\n  font-size: 22px;\n  cursor: default;\n  animation: popIn 200ms 1 forwards;\n  transform: translateY(20px);\n  opacity: 0;\n  position: relative;\n}\n.cview__month-reset{\n  animation: none;\n}\n.cview__month-activate{\n  animation: popIn 100ms 1 forwards;\n}\n.cview--spacer, .cview__header, .cview--date{\n  width: 14.28571428571429%;\n  max-width: 14.28571428571429%;\n  padding: 10px;\n  box-sizing: border-box;\n  position: relative;\n  text-align: center;\n  overflow: hidden;\n  text-overflow: clip;\n  font-size: 14px;\n  font-weight: 900;\n}\n.cview--date{\n  font-size: 16px;\n  font-weight: 400;\n  cursor: pointer;\n}\n.has-events::after{\n  border-radius:100%;\n  animation: popIn 200ms 1 forwards;\n  background: rgba(255,255,255,0.95);\n  transform: scale(0);\n  content: &#39;&#39;;\n  display: block;\n  position: absolute;\n  width: 8px;\n  height: 8px;\n  top: 8px;\n  left: 12px;\n  \n}\n.cview--date:hover::before{\n  background: rgba(255,255,255,0.2);\n}\n.cview--date.today{\n  color: #111;  \n}\n.cview--date.today::before{\n  animation: popIn 200ms 1 forwards;\n  background: rgba(255,255,255,0.2);\n  transform: scale(0);\n}\n@keyframes popIn{\n\n  100%{\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n.cview--date::before{\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  content: &#39;&#39;;\n  transform: scale(0.8);\n  z-index: 0;\n}\n.footer{\n  width: 100%;\n  bottom: 50px;\n  left: 0;\n  position: absolute;\n  font-size: 14px;\n  text-align: center;\n}\n.footer__link{\n  cursor: pointer;\n  padding: 2px 5px;\n  border-bottom: 1px solid #fff;\n}","js":"function CalendarApp(date) {\n\n  if (!(date instanceof Date)) {\n    date = new Date();\n  }\n\n  this.days = [&#39;Sunday&#39;, &#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Saturday&#39;];\n  this.months = [&#39;Jan&#39;, &#39;Feb&#39;, &#39;Mar&#39;, &#39;Apr&#39;, &#39;May&#39;, &#39;Jun&#39;, &#39;Jul&#39;, &#39;Aug&#39;, &#39;Sep&#39;, &#39;Oct&#39;, &#39;Nov&#39;, &#39;Dec&#39;];\n  this.quotes = [&#39;Whatever the mind of man can conceive and believe, it can achieve. –Napoleon Hill&#39;, &#39;Strive not to be a success, but rather to be of value. –Albert Einstein&#39;, &#39;Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.  –Robert Frost&#39;, &#39;I attribute my success to this: I never gave or took any excuse. –Florence Nightingale&#39;, &#39;You miss 100% of the shots you don’t take. –Wayne Gretzky&#39;, &#39;The most difficult thing is the decision to act, the rest is merely tenacity. –Amelia Earhart&#39;, &#39;Every strike brings me closer to the next home run. –Babe Ruth&#39;, &#39;Definiteness of purpose is the starting point of all achievement. –W. Clement Stone&#39;, &#39;Life isn’t about getting and having, it’s about giving and being. –Kevin Kruse&#39;, &#39;Life is what happens to you while you’re busy making other plans. –John Lennon&#39;, &#39;We become what we think about. –Earl Nightingale&#39;, &#39;Life is 10% what happens to me and 90% of how I react to it. –Charles Swindoll&#39;, &#39;The most common way people give up their power is by thinking they don’t have any. –Alice Walker&#39;, &#39;The mind is everything. What you think you become.  –Buddha&#39;, &#39;Winning isn’t everything, but wanting to win is. –Vince Lombardi&#39;, &#39;Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso&#39;, &#39; You can never cross the ocean until you have the courage to lose sight of the shore. –Christopher Columbus&#39;, &#39;I’ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel. –Maya Angelou&#39;, &#39;Either you run the day, or the day runs you. –Jim Rohn&#39;, &#39;Whether you think you can or you think you can’t, you’re right. –Henry Ford&#39;, &#39;The two most important days in your life are the day you are born and the day you find out why. –Mark Twain&#39;, &#39;Whatever you can do, or dream you can, begin it.  Boldness has genius, power and magic in it. –Johann Wolfgang von Goethe&#39;, &#39;The best revenge is massive success. –Frank Sinatra&#39;, &#39;People often say that motivation doesn’t last. Well, neither does bathing.  That’s why we recommend it daily. –Zig Ziglar&#39;, &#39;Life shrinks or expands in proportion to one’s courage. –Anais Nin&#39;, &#39;If you hear a voice within you say “you cannot paint,” then by all means paint and that voice will be silenced. –Vincent Van Gogh&#39;, &#39;There is only one way to avoid criticism: do nothing, say nothing, and be nothing. –Aristotle&#39;, &#39;Ask and it will be given to you; search, and you will find; knock and the door will be opened for you. –Jesus&#39;, &#39;The only person you are destined to become is the person you decide to be. –Ralph Waldo Emerson&#39;, &#39;Go confidently in the direction of your dreams.  Live the life you have imagined. –Henry David Thoreau&#39;, &#39;Few things can help an individual more than to place responsibility on him, and to let him know that you trust him.  –Booker T. Washington&#39;];\n  this.apts = [\n  {\n    name: &#39;Finish this web app&#39;,\n    endTime: new Date(2016, 4, 30, 23),\n    startTime: new Date(2016, 4, 30, 21),\n    day: new Date(2016, 4, 30).toString() },\n\n  {\n    name: &#39;My Birthday!&#39;,\n    endTime: new Date(2016, 4, 1, 23, 59),\n    startTime: new Date(2016, 4, 1, 0),\n    day: new Date(2016, 4, 1).toString() }];\n\n\n\n\n  this.aptDates = [new Date(2016, 4, 30).toString(), new Date(2016, 4, 1).toString()];\n  this.eles = {};\n\n  this.calDaySelected = null;\n\n  this.calendar = document.getElementById(&quot;calendar-app&quot;);\n\n  this.calendarView = document.getElementById(&quot;dates&quot;);\n\n  this.calendarMonthDiv = document.getElementById(&quot;calendar-month&quot;);\n  this.calendarMonthLastDiv = document.getElementById(&quot;calendar-month-last&quot;);\n  this.calendarMonthNextDiv = document.getElementById(&quot;calendar-month-next&quot;);\n\n  this.dayInspirationalQuote = document.getElementById(&quot;inspirational-quote&quot;);\n\n  this.todayIsSpan = document.getElementById(&quot;footer-date&quot;);\n  // this.eventsCountSpan = document.getElementById(&quot;footer-events&quot;);\n  this.dayViewEle = document.getElementById(&quot;day-view&quot;);\n  this.dayViewExitEle = document.getElementById(&quot;day-view-exit&quot;);\n  this.dayViewDateEle = document.getElementById(&quot;day-view-date&quot;);\n  this.addDayEventEle = document.getElementById(&quot;add-event&quot;);\n  this.dayEventsEle = document.getElementById(&quot;day-events&quot;);\n\n  this.dayEventAddForm = {\n    cancelBtn: document.getElementById(&quot;add-event-cancel&quot;),\n    addBtn: document.getElementById(&quot;add-event-save&quot;),\n    nameEvent: document.getElementById(&quot;input-add-event-name&quot;),\n    startTime: document.getElementById(&quot;input-add-event-start-time&quot;),\n    endTime: document.getElementById(&quot;input-add-event-end-time&quot;),\n    startAMPM: document.getElementById(&quot;input-add-event-start-ampm&quot;),\n    endAMPM: document.getElementById(&quot;input-add-event-end-ampm&quot;) };\n\n  this.dayEventsList = document.getElementById(&quot;day-events-list&quot;);\n  this.dayEventBoxEle = document.getElementById(&quot;add-day-event-box&quot;);\n\n  /* Start the app */\n  this.showView(date);\n  this.addEventListeners();\n  this.todayIsSpan.textContent = &quot;Today is &quot; + this.months[date.getMonth()] + &quot; &quot; + date.getDate();\n}\n\nCalendarApp.prototype.addEventListeners = function () {\n\n  this.calendar.addEventListener(&quot;click&quot;, this.mainCalendarClickClose.bind(this));\n  this.todayIsSpan.addEventListener(&quot;click&quot;, this.showView.bind(this));\n  this.calendarMonthLastDiv.addEventListener(&quot;click&quot;, this.showNewMonth.bind(this));\n  this.calendarMonthNextDiv.addEventListener(&quot;click&quot;, this.showNewMonth.bind(this));\n  this.dayViewExitEle.addEventListener(&quot;click&quot;, this.closeDayWindow.bind(this));\n  this.dayViewDateEle.addEventListener(&quot;click&quot;, this.showNewMonth.bind(this));\n  this.addDayEventEle.addEventListener(&quot;click&quot;, this.addNewEventBox.bind(this));\n  this.dayEventAddForm.cancelBtn.addEventListener(&quot;click&quot;, this.closeNewEventBox.bind(this));\n  this.dayEventAddForm.cancelBtn.addEventListener(&quot;keyup&quot;, this.closeNewEventBox.bind(this));\n\n  this.dayEventAddForm.startTime.addEventListener(&quot;keyup&quot;, this.inputChangeLimiter.bind(this));\n  this.dayEventAddForm.startAMPM.addEventListener(&quot;keyup&quot;, this.inputChangeLimiter.bind(this));\n  this.dayEventAddForm.endTime.addEventListener(&quot;keyup&quot;, this.inputChangeLimiter.bind(this));\n  this.dayEventAddForm.endAMPM.addEventListener(&quot;keyup&quot;, this.inputChangeLimiter.bind(this));\n  this.dayEventAddForm.addBtn.addEventListener(&quot;click&quot;, this.saveAddNewEvent.bind(this));\n\n};\nCalendarApp.prototype.showView = function (date) {\n  if (!date || !(date instanceof Date)) date = new Date();\n  var now = new Date(date),\n  y = now.getFullYear(),\n  m = now.getMonth();\n  var today = new Date();\n\n  var lastDayOfM = new Date(y, m + 1, 0).getDate();\n  var startingD = new Date(y, m, 1).getDay();\n  var lastM = new Date(y, now.getMonth() - 1, 1);\n  var nextM = new Date(y, now.getMonth() + 1, 1);\n\n  this.calendarMonthDiv.classList.remove(&quot;cview__month-activate&quot;);\n  this.calendarMonthDiv.classList.add(&quot;cview__month-reset&quot;);\n\n  while (this.calendarView.firstChild) {if (window.CP.shouldStopExecution(0)) break;\n    this.calendarView.removeChild(this.calendarView.firstChild);\n  }\n\n  // build up spacers\n  window.CP.exitedLoop(0);for (var x = 0; x &lt; startingD; x++) {if (window.CP.shouldStopExecution(1)) break;\n    var spacer = document.createElement(&quot;div&quot;);\n    spacer.className = &quot;cview--spacer&quot;;\n    this.calendarView.appendChild(spacer);\n  }window.CP.exitedLoop(1);\n\n  for (var z = 1; z &lt;= lastDayOfM; z++) {if (window.CP.shouldStopExecution(2)) break;\n\n    var _date = new Date(y, m, z);\n    var day = document.createElement(&quot;div&quot;);\n    day.className = &quot;cview--date&quot;;\n    day.textContent = z;\n    day.setAttribute(&quot;data-date&quot;, _date);\n    day.onclick = this.showDay.bind(this);\n\n    // check if todays date\n    if (z == today.getDate() &amp;&amp; y == today.getFullYear() &amp;&amp; m == today.getMonth()) {\n      day.classList.add(&quot;today&quot;);\n    }\n\n    // check if has events to show\n    if (this.aptDates.indexOf(_date.toString()) !== -1) {\n      day.classList.add(&quot;has-events&quot;);\n    }\n\n    this.calendarView.appendChild(day);\n  }window.CP.exitedLoop(2);\n\n  var _that = this;\n  setTimeout(function () {\n    _that.calendarMonthDiv.classList.add(&quot;cview__month-activate&quot;);\n  }, 50);\n\n  this.calendarMonthDiv.textContent = this.months[now.getMonth()] + &quot; &quot; + now.getFullYear();\n  this.calendarMonthDiv.setAttribute(&quot;data-date&quot;, now);\n\n\n  this.calendarMonthLastDiv.textContent = &quot;← &quot; + this.months[lastM.getMonth()];\n  this.calendarMonthLastDiv.setAttribute(&quot;data-date&quot;, lastM);\n\n  this.calendarMonthNextDiv.textContent = this.months[nextM.getMonth()] + &quot; →&quot;;\n  this.calendarMonthNextDiv.setAttribute(&quot;data-date&quot;, nextM);\n\n};\nCalendarApp.prototype.showDay = function (e, dayEle) {\n  e.stopPropagation();\n  if (!dayEle) {\n    dayEle = e.currentTarget;\n  }\n  var dayDate = new Date(dayEle.getAttribute(&#39;data-date&#39;));\n\n  this.calDaySelected = dayEle;\n\n  this.openDayWindow(dayDate);\n\n\n\n};\nCalendarApp.prototype.openDayWindow = function (date) {\n\n  var now = new Date();\n  var day = new Date(date);\n  this.dayViewDateEle.textContent = this.days[day.getDay()] + &quot;, &quot; + this.months[day.getMonth()] + &quot; &quot; + day.getDate() + &quot;, &quot; + day.getFullYear();\n  this.dayViewDateEle.setAttribute(&#39;data-date&#39;, day);\n  this.dayViewEle.classList.add(&quot;calendar--day-view-active&quot;);\n\n  /* Contextual lang changes based on tense. Also show btn for scheduling future events */\n  var _dayTopbarText = &#39;&#39;;\n  if (day &lt; new Date(now.getFullYear(), now.getMonth(), now.getDate())) {\n    _dayTopbarText = &quot;had &quot;;\n    this.addDayEventEle.style.display = &quot;none&quot;;\n  } else {\n    _dayTopbarText = &quot;have &quot;;\n    this.addDayEventEle.style.display = &quot;inline&quot;;\n  }\n  this.addDayEventEle.setAttribute(&quot;data-date&quot;, day);\n\n  var eventsToday = this.showEventsByDay(day);\n  if (!eventsToday) {\n    _dayTopbarText += &quot;no &quot;;\n    var _rand = Math.round(Math.random() * (this.quotes.length - 1 - 0) + 0);\n    this.dayInspirationalQuote.textContent = this.quotes[_rand];\n  } else {\n    _dayTopbarText += eventsToday.length + &quot; &quot;;\n    this.dayInspirationalQuote.textContent = null;\n  }\n  //this.dayEventsList.innerHTML = this.showEventsCreateHTMLView(eventsToday);\n  while (this.dayEventsList.firstChild) {if (window.CP.shouldStopExecution(3)) break;\n    this.dayEventsList.removeChild(this.dayEventsList.firstChild);\n  }window.CP.exitedLoop(3);\n\n  this.dayEventsList.appendChild(this.showEventsCreateElesView(eventsToday));\n\n\n  this.dayEventsEle.textContent = _dayTopbarText + &quot;events on &quot; + this.months[day.getMonth()] + &quot; &quot; + day.getDate() + &quot;, &quot; + day.getFullYear();\n\n\n};\n\nCalendarApp.prototype.showEventsCreateElesView = function (events) {\n  var ul = document.createElement(&quot;ul&quot;);\n  ul.className = &#39;day-event-list-ul&#39;;\n  events = this.sortEventsByTime(events);\n  var _this = this;\n  events.forEach(function (event) {\n    var _start = new Date(event.startTime);\n    var _end = new Date(event.endTime);\n    var idx = event.index;\n    var li = document.createElement(&quot;li&quot;);\n    li.className = &quot;event-dates&quot;;\n    // li.innerHtml\n    var html = &quot;&lt;span class=&#39;start-time&#39;&gt;&quot; + _start.toLocaleTimeString(navigator.language, { hour: &#39;2-digit&#39;, minute: &#39;2-digit&#39; }) + &quot;&lt;/span&gt; &lt;small&gt;through&lt;/small&gt; &quot;;\n    html += &quot;&lt;span class=&#39;end-time&#39;&gt;&quot; + _end.toLocaleTimeString(navigator.language, { hour: &#39;2-digit&#39;, minute: &#39;2-digit&#39; }) + (_end.getDate() != _start.getDate() ? &#39; &lt;small&gt;on &#39; + _end.toLocaleDateString() + &quot;&lt;/small&gt;&quot; : &#39;&#39;) + &quot;&lt;/span&gt;&quot;;\n\n\n    html += &quot;&lt;span class=&#39;event-name&#39;&gt;&quot; + event.name + &quot;&lt;/span&gt;&quot;;\n\n    var div = document.createElement(&quot;div&quot;);\n    div.className = &quot;event-dates&quot;;\n    div.innerHTML = html;\n\n    var deleteBtn = document.createElement(&quot;span&quot;);\n    var deleteText = document.createTextNode(&quot;delete&quot;);\n    deleteBtn.className = &quot;event-delete&quot;;\n    deleteBtn.setAttribute(&quot;data-idx&quot;, idx);\n    deleteBtn.appendChild(deleteText);\n    deleteBtn.onclick = _this.deleteEvent.bind(_this);\n\n    div.appendChild(deleteBtn);\n\n    li.appendChild(div);\n    ul.appendChild(li);\n  });\n  return ul;\n};\nCalendarApp.prototype.deleteEvent = function (e) {\n  var deleted = this.apts.splice(e.currentTarget.getAttribute(&quot;data-idx&quot;), 1);\n  var deletedDate = new Date(deleted[0].day);\n  var anyDatesLeft = this.showEventsByDay(deletedDate);\n  if (anyDatesLeft === false) {\n    // safe to remove from array\n    var idx = this.aptDates.indexOf(deletedDate.toString());\n    if (idx &gt;= 0) {\n      this.aptDates.splice(idx, 1);\n      // remove dot from calendar view\n      var ele = document.querySelector(&#39;.cview--date[data-date=&quot;&#39; + deletedDate.toString() + &#39;&quot;]&#39;);\n      if (ele) {\n        ele.classList.remove(&quot;has-events&quot;);\n      }\n    }\n  }\n  this.openDayWindow(deletedDate);;\n};\nCalendarApp.prototype.sortEventsByTime = function (events) {\n  if (!events) return [];\n  return events.sort(function compare(a, b) {\n    if (new Date(a.startTime) &lt; new Date(b.startTime)) {\n      return -1;\n    }\n    if (new Date(a.startTime) &gt; new Date(b.startTime)) {\n      return 1;\n    }\n    // a must be equal to b\n    return 0;\n  });\n};\nCalendarApp.prototype.showEventsByDay = function (day) {\n  var _events = [];\n  this.apts.forEach(function (apt, idx) {\n    if (day.toString() == apt.day.toString()) {\n      apt.index = idx;\n      _events.push(apt);\n    }\n  });\n  return _events.length ? _events : false;\n};\nCalendarApp.prototype.closeDayWindow = function () {\n  this.dayViewEle.classList.remove(&quot;calendar--day-view-active&quot;);\n  this.closeNewEventBox();\n};\nCalendarApp.prototype.mainCalendarClickClose = function (e) {\n  if (e.currentTarget != e.target) {\n    return;\n  }\n\n  this.dayViewEle.classList.remove(&quot;calendar--day-view-active&quot;);\n  this.closeNewEventBox();\n};\nCalendarApp.prototype.addNewEventBox = function (e) {\n  var target = e.currentTarget;\n  this.dayEventBoxEle.setAttribute(&quot;data-active&quot;, &quot;true&quot;);\n  this.dayEventBoxEle.setAttribute(&quot;data-date&quot;, target.getAttribute(&quot;data-date&quot;));\n\n};\nCalendarApp.prototype.closeNewEventBox = function (e) {\n\n  if (e &amp;&amp; e.keyCode &amp;&amp; e.keyCode != 13) return false;\n\n  this.dayEventBoxEle.setAttribute(&quot;data-active&quot;, &quot;false&quot;);\n  // reset values\n  this.resetAddEventBox();\n\n};\nCalendarApp.prototype.saveAddNewEvent = function () {\n  var saveErrors = this.validateAddEventInput();\n  if (!saveErrors) {\n    this.addEvent();\n  }\n};\n\nCalendarApp.prototype.addEvent = function () {\n\n  var name = this.dayEventAddForm.nameEvent.value.trim();\n  var dayOfDate = this.dayEventBoxEle.getAttribute(&quot;data-date&quot;);\n  var dateObjectDay = new Date(dayOfDate);\n  var cleanDates = this.cleanEventTimeStampDates();\n\n  this.apts.push({\n    name: name,\n    day: dateObjectDay,\n    startTime: cleanDates[0],\n    endTime: cleanDates[1] });\n\n  this.closeNewEventBox();\n  this.openDayWindow(dayOfDate);\n  this.calDaySelected.classList.add(&quot;has-events&quot;);\n  // add to dates\n  if (this.aptDates.indexOf(dateObjectDay.toString()) === -1) {\n    this.aptDates.push(dateObjectDay.toString());\n  }\n\n};\nCalendarApp.prototype.convertTo23HourTime = function (stringOfTime, AMPM) {\n  // convert to 0 - 23 hour time\n  var mins = stringOfTime.split(&quot;:&quot;);\n  var hours = stringOfTime.trim();\n  if (mins[1] &amp;&amp; mins[1].trim()) {\n    hours = parseInt(mins[0].trim());\n    mins = parseInt(mins[1].trim());\n  } else {\n    hours = parseInt(hours);\n    mins = 0;\n  }\n  hours = AMPM == &#39;am&#39; ? hours == 12 ? 0 : hours : hours &lt;= 11 ? parseInt(hours) + 12 : hours;\n  return [hours, mins];\n};\nCalendarApp.prototype.cleanEventTimeStampDates = function () {\n\n  var startTime = this.dayEventAddForm.startTime.value.trim() || this.dayEventAddForm.startTime.getAttribute(&quot;placeholder&quot;) || &#39;8&#39;;\n  var startAMPM = this.dayEventAddForm.startAMPM.value.trim() || this.dayEventAddForm.startAMPM.getAttribute(&quot;placeholder&quot;) || &#39;am&#39;;\n  startAMPM = startAMPM == &#39;a&#39; ? startAMPM + &#39;m&#39; : startAMPM;\n  var endTime = this.dayEventAddForm.endTime.value.trim() || this.dayEventAddForm.endTime.getAttribute(&quot;placeholder&quot;) || &#39;9&#39;;\n  var endAMPM = this.dayEventAddForm.endAMPM.value.trim() || this.dayEventAddForm.endAMPM.getAttribute(&quot;placeholder&quot;) || &#39;pm&#39;;\n  endAMPM = endAMPM == &#39;p&#39; ? endAMPM + &#39;m&#39; : endAMPM;\n  var date = this.dayEventBoxEle.getAttribute(&quot;data-date&quot;);\n\n  var startingTimeStamps = this.convertTo23HourTime(startTime, startAMPM);\n  var endingTimeStamps = this.convertTo23HourTime(endTime, endAMPM);\n\n  var dateOfEvent = new Date(date);\n  var startDate = new Date(dateOfEvent.getFullYear(), dateOfEvent.getMonth(), dateOfEvent.getDate(), startingTimeStamps[0], startingTimeStamps[1]);\n  var endDate = new Date(dateOfEvent.getFullYear(), dateOfEvent.getMonth(), dateOfEvent.getDate(), endingTimeStamps[0], endingTimeStamps[1]);\n\n  // if end date is less than start date - set end date back another day\n  if (startDate &gt; endDate) endDate.setDate(endDate.getDate() + 1);\n\n  return [startDate, endDate];\n\n};\nCalendarApp.prototype.validateAddEventInput = function () {\n\n  var _errors = false;\n  var name = this.dayEventAddForm.nameEvent.value.trim();\n  var startTime = this.dayEventAddForm.startTime.value.trim();\n  var startAMPM = this.dayEventAddForm.startAMPM.value.trim();\n  var endTime = this.dayEventAddForm.endTime.value.trim();\n  var endAMPM = this.dayEventAddForm.endAMPM.value.trim();\n\n  if (!name || name == null) {\n    _errors = true;\n    this.dayEventAddForm.nameEvent.classList.add(&quot;add-event-edit--error&quot;);\n    this.dayEventAddForm.nameEvent.focus();\n  } else {\n    this.dayEventAddForm.nameEvent.classList.remove(&quot;add-event-edit--error&quot;);\n  }\n\n  //   if (!startTime || startTime == null) {\n  //     _errors = true;\n  //     this.dayEventAddForm.startTime.classList.add(&quot;add-event-edit--error&quot;);\n  //   } else {\n  //      this.dayEventAddForm.startTime.classList.remove(&quot;add-event-edit--error&quot;);\n  //   }\n\n  return _errors;\n\n\n};\nvar timeOut = null;\nvar activeEle = null;\nCalendarApp.prototype.inputChangeLimiter = function (ele) {\n\n  if (ele.currentTarget) {\n    ele = ele.currentTarget;\n  }\n  if (timeOut &amp;&amp; ele == activeEle) {\n    clearTimeout(timeOut);\n  }\n\n  var limiter = CalendarApp.prototype.textOptionLimiter;\n\n  var _options = ele.getAttribute(&quot;data-options&quot;).split(&quot;,&quot;);\n  var _format = ele.getAttribute(&quot;data-format&quot;) || &#39;text&#39;;\n  timeOut = setTimeout(function () {\n    ele.value = limiter(_options, ele.value, _format);\n  }, 600);\n  activeEle = ele;\n\n};\nCalendarApp.prototype.textOptionLimiter = function (options, input, format) {\n  if (!input) return &#39;&#39;;\n\n  if (input.indexOf(&quot;:&quot;) !== -1 &amp;&amp; format == &#39;datetime&#39;) {\n\n    var _splitTime = input.split(&#39;:&#39;, 2);\n    if (_splitTime.length == 2 &amp;&amp; !_splitTime[1].trim()) return input;\n    var _trailingTime = parseInt(_splitTime[1]);\n    /* Probably could be coded better -- a block to clean up trailing data */\n    if (options.indexOf(_splitTime[0]) === -1) {\n      return options[0];\n    } else\n    if (_splitTime[1] == &quot;0&quot;) {\n      return input;\n    } else\n    if (_splitTime[1] == &quot;00&quot;) {\n      return _splitTime[0] + &quot;:00&quot;;\n    } else\n    if (_trailingTime &lt; 10) {\n      return _splitTime[0] + &quot;:&quot; + &quot;0&quot; + _trailingTime;\n    } else\n    if (!Number.isInteger(_trailingTime) || _trailingTime &lt; 0 || _trailingTime &gt; 59) {\n      return _splitTime[0];\n    }\n    return _splitTime[0] + &quot;:&quot; + _trailingTime;\n  }\n  if (input.toString().length &gt;= 3) {\n    var pad = (input.toString().length - 4) * -1;\n    var _hour, _min;\n    if (pad == 1) {\n      _hour = input[0];\n      _min = input[1] + input[2];\n    } else {\n      _hour = input[0] + input[1];\n      _min = input[2] + input[3];\n    }\n\n    _hour = Math.max(1, Math.min(12, _hour));\n    _min = Math.min(59, _min);\n    if (_min &lt; 10) {\n      _min = &quot;0&quot; + _min;\n    }\n    _min = isNaN(_min) ? &#39;00&#39; : _min;\n    _hour = isNaN(_hour) ? &#39;9&#39; : _hour;\n\n    return _hour + &quot;:&quot; + _min;\n\n  }\n\n  if (options.indexOf(input) === -1) {\n    return options[0];\n  }\n\n  return input;\n};\nCalendarApp.prototype.resetAddEventBox = function () {\n  this.dayEventAddForm.nameEvent.value = &#39;&#39;;\n  this.dayEventAddForm.nameEvent.classList.remove(&quot;add-event-edit--error&quot;);\n  this.dayEventAddForm.endTime.value = &#39;&#39;;\n  this.dayEventAddForm.startTime.value = &#39;&#39;;\n  this.dayEventAddForm.endAMPM.value = &#39;&#39;;\n  this.dayEventAddForm.startAMPM.value = &#39;&#39;;\n};\nCalendarApp.prototype.showNewMonth = function (e) {\n  var date = e.currentTarget.dataset.date;\n  var newMonthDate = new Date(date);\n  this.showView(newMonthDate);\n  this.closeDayWindow();\n  return true;\n};\n\nvar calendar = new CalendarApp();\nconsole.log(calendar);"};
+    __preprocessors = {
+      "html": "none",
+      "css": "none",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+<script src="OPmLBW_data/embed-008e8e63bc8f4f7a03df3f5da5b5c4d5e25fe5a438f147d0a2325f1.js"></script>
+<script nonce="">(function(){var js = "window['__CF$cv$params']={r:'7cb3722b7e489e8f',m:'AZatuXwrvX9eXlWYLZun2fA9yATV557NGaj7t7D86Cs-1684741593-0-Ac6fGdPt0QCroe822yPrlzwDywCH71BiPzVizkmnW4xg',u:'/cdn-cgi/challenge-platform/h/g'};_cpo=document.createElement('script');_cpo.nonce='1bpoWDVETKs=',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '1bpoWDVETKs=';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe style="position: absolute; top: 0px; left: 0px; border: medium none; visibility: hidden;" width="1" height="1"></iframe>
+
+</body></html>

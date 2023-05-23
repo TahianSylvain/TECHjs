@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - React date range picker</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="nRKn3j30CDuZeVMJ0Thecp8W83TWsIX1/2XBqk1fKskZwigrnfdLyQBuLa28N/d7rzNYM+A2rt6ywETDFxg8LQ==">
+<link rel="stylesheet" media="all" href="OPmLBW_data/embed-c24dc45033a5a0e3c76b9588328759bcba403f9bfa524b08f43645.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    #result-box {
+      background: #111111;
+      color: #eeeeee;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #111111;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #eeeeee;
+      background-color: #333333;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #555555;
+      color: #eeeeee;
+      box-shadow: inset 0px 3px #797979;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #eeeeee;
+    }
+
+    .embed-nav svg {
+      stroke: #eeeeee !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="OPmLBW_data/twilight-3476125ec032fffc9adb3dec23f00153fc064bf13d518310429.css">
+</head>
+<body id="the-body" style="border: 1px solid #666666; --borderWidth: 1px;" class="codepen-embed-body results-active split-output static">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="#html-box" role="button" aria-pressed="true" class="active">
+Pug
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="#css-box" role="button" aria-pressed="false" class="">
+SCSS
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="#js-box" role="button" aria-pressed="false" class="">
+Babel
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+<li>
+<a href="#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/RobVermeer/pen/zBgdwg" title="Edit on CodePen">
+<div class="large-logo">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+<path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+</div>
+<div class="box-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+</div>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thin" data-header="true">
+<div id="html-box" class="code-wrap code-box box active" role="region" aria-label="HTML">
+<pre tabindex="0"><code data-lang="pug" id="actual-html-code" class=" cm-s-default"><span class="cm-builtin">#calendar</span></code></pre>
+ <a href="#0" id="view-html-compiled-button" class="action-button bottom right view-compiled-button" data-type="html">
+View Compiled
+</a>
+</div>
+<div id="css-box" class="code-wrap code-box box" role="region" aria-label="CSS">
+<pre tabindex="0"><code data-lang="text/x-scss" id="actual-css-code" class=" cm-s-default"><span class="cm-variable-2">$primary</span>: <span class="cm-atom">#b670f4</span>;
+<span class="cm-variable-2">$radius</span>: <span class="cm-number">12px</span>;
+
+<span class="cm-tag">body</span> {
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Roboto'</span>, <span class="cm-atom">sans-serif</span>;
+  <span class="cm-property">background-color</span>: <span class="cm-atom">#f8f7fa</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#333</span>;
+}
+
+<span class="cm-qualifier">.calendar</span> {
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">top</span>: <span class="cm-number">50%</span>;
+  <span class="cm-property">left</span>: <span class="cm-number">50%</span>;
+  <span class="cm-property">margin-top</span>: <span class="cm-number">-225px</span>;
+  <span class="cm-property">margin-left</span>: <span class="cm-number">-195px</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">360px</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">15px</span>;
+  <span class="cm-property">box-shadow</span>: <span class="cm-number">1px</span> <span class="cm-number">1px</span> <span class="cm-number">20px</span> <span class="cm-number">0</span> <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0.4</span>);
+  <span class="cm-property">border-radius</span>: <span class="cm-variable-2">$radius</span>;
+  <span class="cm-property">overflow</span>: <span class="cm-atom">hidden</span>;
+
+  &amp;<span class="cm-variable-2">--nav</span> {
+    <span class="cm-property">margin</span>: <span class="cm-number">-15px</span> <span class="cm-number">-15px</span> <span class="cm-number">15px</span>;
+    <span class="cm-property">padding</span>: <span class="cm-number">0</span> <span class="cm-number">15px</span>;
+    <span class="cm-property">background-color</span>: <span class="cm-variable-2">$primary</span>;
+    <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+    <span class="cm-property">height</span>: <span class="cm-number">70px</span>;
+    <span class="cm-property">position</span>: <span class="cm-atom">relative</span>;
+
+    <span class="cm-tag">a</span> {
+      <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+      <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+      <span class="cm-property">left</span>: <span class="cm-number">10px</span>;
+      <span class="cm-property">font-size</span>: <span class="cm-number">32px</span>;
+      <span class="cm-property">line-height</span>: <span class="cm-number">1</span>;
+      <span class="cm-property">top</span>: <span class="cm-number">16px</span>;
+      <span class="cm-property">width</span>: <span class="cm-number">30px</span>;
+      <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+      <span class="cm-property">display</span>: <span class="cm-atom">inline-block</span>;
+      <span class="cm-property">color</span>: <span class="cm-variable cm-callee">transparentize</span>(<span class="cm-atom">#fff</span>, <span class="cm-number">0.6</span>);
+      <span class="cm-property">user-select</span>: <span class="cm-atom">none</span>;
+
+      &amp;:<span class="cm-variable-3">hover</span> {
+        <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+      }
+
+      &amp;:<span class="cm-variable-3">last-child</span> {
+        <span class="cm-property">left</span>: <span class="cm-atom">auto</span>;
+        <span class="cm-property">right</span>: <span class="cm-number">10px</span>;
+      }
+    }
+
+    <span class="cm-tag">h1</span> {
+      <span class="cm-property">margin</span>: <span class="cm-number">0</span>;
+      <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+      <span class="cm-property">left</span>: <span class="cm-number">40px</span>;
+      <span class="cm-property">right</span>: <span class="cm-number">40px</span>;
+      <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+      <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+      <span class="cm-property">font-weight</span>: <span class="cm-number">400</span>;
+      <span class="cm-property">font-size</span>: <span class="cm-number">30px</span>;
+      <span class="cm-property">line-height</span>: <span class="cm-number">66px</span>;
+      <span class="cm-property">user-select</span>: <span class="cm-atom">none</span>;
+    }
+
+    <span class="cm-tag">small</span> {
+      <span class="cm-property">font-weight</span>: <span class="cm-number">300</span>;
+      <span class="cm-property">font-size</span>: <span class="cm-number">60%</span>;
+    }
+  }
+
+  &amp;<span class="cm-variable-2">--days</span> {
+    <span class="cm-property">font-size</span>: <span class="cm-number">0</span>;
+    
+    <span class="cm-tag">span</span> {
+      <span class="cm-property">width</span>: <span class="cm-number">14.28571%</span>;
+      <span class="cm-property">display</span>: <span class="cm-atom">inline-block</span>;
+      <span class="cm-property">text-align</span>: <span class="cm-atom">center</span>;
+      <span class="cm-property">user-select</span>: <span class="cm-atom">none</span>;
+      <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+      <span class="cm-property">margin</span>: <span class="cm-number">8px</span> <span class="cm-number">0</span>;
+      <span class="cm-property">line-height</span>: <span class="cm-number">34px</span>;
+      <span class="cm-property">position</span>: <span class="cm-atom">relative</span>;
+      <span class="cm-property">font-size</span>: <span class="cm-number">16px</span>;
+
+      &amp;<span class="cm-qualifier">.label</span> {
+        <span class="cm-property">text-transform</span>: <span class="cm-atom">uppercase</span>;
+        <span class="cm-property">font-weight</span>: <span class="cm-number">700</span>;
+        <span class="cm-property">color</span>: <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0.3</span>);
+        <span class="cm-property">font-size</span>: <span class="cm-number">14px</span>;
+        <span class="cm-property">cursor</span>: <span class="cm-atom">initial</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.active</span> {
+        <span class="cm-property">font-weight</span>: <span class="cm-number">700</span>;
+        <span class="cm-property">background-color</span>: <span class="cm-variable cm-callee">transparentize</span>(<span class="cm-variable-2">$primary</span>, <span class="cm-number">0.95</span>);
+        <span class="cm-property">border-radius</span>: <span class="cm-variable-2">$radius</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.muted</span> {
+        <span class="cm-property">color</span>: <span class="cm-variable cm-callee">rgba</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0.3</span>);
+      }
+
+      &amp;<span class="cm-qualifier">.between</span> {
+        <span class="cm-property">border-radius</span>: <span class="cm-number">0</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.start</span>, &amp;<span class="cm-qualifier">.between</span>, &amp;<span class="cm-qualifier">.end</span> {
+        <span class="cm-property">background-color</span>: <span class="cm-atom">#b670f4</span>;
+        <span class="cm-property">color</span>: <span class="cm-atom">#fff</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.start</span> {
+        <span class="cm-property">border-radius</span>: <span class="cm-variable-2">$radius</span> <span class="cm-number">0</span> <span class="cm-number">0</span> <span class="cm-variable-2">$radius</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.end</span> {
+        <span class="cm-property">border-radius</span>: <span class="cm-number">0</span> <span class="cm-variable-2">$radius</span> <span class="cm-variable-2">$radius</span> <span class="cm-number">0</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.start</span><span class="cm-qualifier">.end</span> {
+        <span class="cm-property">border-radius</span>: <span class="cm-variable-2">$radius</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.between</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">7n</span>):<span class="cm-variable-3">after</span>, &amp;<span class="cm-qualifier">.start</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">7n</span>):<span class="cm-variable-3">after</span> {
+        <span class="cm-property">content</span>: <span class="cm-string">""</span>;
+        <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+        <span class="cm-property">top</span>: <span class="cm-number">0</span>;
+        <span class="cm-property">bottom</span>: <span class="cm-number">0</span>;
+        <span class="cm-property">left</span>: <span class="cm-number">100%</span>;
+        <span class="cm-property">background-color</span>: <span class="cm-atom">#b670f4</span>;
+        <span class="cm-property">width</span>: <span class="cm-number">20px</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.between</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">7n</span> + <span class="cm-number">1</span>):<span class="cm-variable-3">after</span>, &amp;<span class="cm-qualifier">.end</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">7n</span> + <span class="cm-number">1</span>):<span class="cm-variable-3">after</span> {
+        <span class="cm-property">content</span>: <span class="cm-string">""</span>;
+        <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+        <span class="cm-property">top</span>: <span class="cm-number">0</span>;
+        <span class="cm-property">bottom</span>: <span class="cm-number">0</span>;
+        <span class="cm-property">right</span>: <span class="cm-number">100%</span>;
+        <span class="cm-property">background-color</span>: <span class="cm-atom">#b670f4</span>;
+        <span class="cm-property">width</span>: <span class="cm-number">20px</span>;
+      }
+
+      &amp;<span class="cm-qualifier">.start</span><span class="cm-qualifier">.end</span>:<span class="cm-variable-3">after</span> {
+        <span class="cm-property">display</span>: <span class="cm-atom">none</span>;
+      }
+    }
+  }
+}
+</code></pre>
+<a href="#0" id="view-css-compiled-button" class="action-button bottom right view-compiled-button" data-type="css">
+View Compiled
+</a>
+</div>
+<div id="js-box" class="code-wrap code-box box" role="region" aria-label="JS">
+<pre tabindex="0"><code data-lang="jsx" id="actual-js-code" class=" cm-s-default"><span class="cm-string">'use strict'</span>;
+
+<span class="cm-keyword">const</span> <span class="cm-def">Heading</span> <span class="cm-operator">=</span> ({<span class="cm-def">date</span>, <span class="cm-def">changeMonth</span>, <span class="cm-def">resetDate</span>}) <span class="cm-operator">=&gt;</span> (
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">nav</span> <span class="cm-attribute">className</span>=<span class="cm-string">"calendar--nav"</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">a</span> <span class="cm-attribute">onClick</span>={() <span class="cm-operator">=&gt;</span> <span class="cm-variable">changeMonth</span>(<span class="cm-variable">date</span>.<span class="cm-property">month</span>() <span class="cm-operator">-</span> <span class="cm-number">1</span>)}<span class="cm-tag cm-bracket">&gt;</span><span class="cm-atom">&amp;#8249;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">a</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">h1</span> <span class="cm-attribute">onClick</span>={() <span class="cm-operator">=&gt;</span> <span class="cm-variable">resetDate</span>()}<span class="cm-tag cm-bracket">&gt;</span>{<span class="cm-variable">date</span>.<span class="cm-property">format</span>(<span class="cm-string">'MMMM'</span>)} <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">small</span><span class="cm-tag cm-bracket">&gt;</span>{<span class="cm-variable">date</span>.<span class="cm-property">format</span>(<span class="cm-string">'YYYY'</span>)}<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">small</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">a</span> <span class="cm-attribute">onClick</span>={() <span class="cm-operator">=&gt;</span> <span class="cm-variable">changeMonth</span>(<span class="cm-variable">date</span>.<span class="cm-property">month</span>() <span class="cm-operator">+</span> <span class="cm-number">1</span>)}<span class="cm-tag cm-bracket">&gt;</span><span class="cm-atom">&amp;#8250;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">a</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">nav</span><span class="cm-tag cm-bracket">&gt;</span>
+);
+
+<span class="cm-keyword">const</span> <span class="cm-def">Day</span> <span class="cm-operator">=</span> ({<span class="cm-def">currentDate</span>, <span class="cm-def">date</span>, <span class="cm-def">startDate</span>, <span class="cm-def">endDate</span>, <span class="cm-def">onClick</span>}) <span class="cm-operator">=&gt;</span> {
+  <span class="cm-keyword">let</span> <span class="cm-def">className</span> <span class="cm-operator">=</span> [];
+
+  <span class="cm-keyword">if</span> (<span class="cm-variable">moment</span>().<span class="cm-property">isSame</span>(<span class="cm-variable-2">date</span>, <span class="cm-string">'day'</span>)) {
+    <span class="cm-variable-2">className</span>.<span class="cm-property">push</span>(<span class="cm-string">'active'</span>);
+  }
+
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">date</span>.<span class="cm-property">isSame</span>(<span class="cm-variable-2">startDate</span>, <span class="cm-string">'day'</span>)) {
+    <span class="cm-variable-2">className</span>.<span class="cm-property">push</span>(<span class="cm-string">'start'</span>);
+  }
+
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">date</span>.<span class="cm-property">isBetween</span>(<span class="cm-variable-2">startDate</span>, <span class="cm-variable-2">endDate</span>, <span class="cm-string">'day'</span>)) {
+    <span class="cm-variable-2">className</span>.<span class="cm-property">push</span>(<span class="cm-string">'between'</span>);
+  }
+
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">date</span>.<span class="cm-property">isSame</span>(<span class="cm-variable-2">endDate</span>, <span class="cm-string">'day'</span>)) {
+    <span class="cm-variable-2">className</span>.<span class="cm-property">push</span>(<span class="cm-string">'end'</span>);
+  }
+
+  <span class="cm-keyword">if</span> (<span class="cm-operator">!</span> <span class="cm-variable-2">date</span>.<span class="cm-property">isSame</span>(<span class="cm-variable-2">currentDate</span>, <span class="cm-string">'month'</span>)) {
+    <span class="cm-variable-2">className</span>.<span class="cm-property">push</span>(<span class="cm-string">'muted'</span>);
+  }
+
+  <span class="cm-keyword">return</span> (
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">onClick</span>={() <span class="cm-operator">=&gt;</span> <span class="cm-variable">onClick</span>(<span class="cm-variable">date</span>)} <span class="cm-attribute">currentDate</span>={<span class="cm-variable">date</span>} <span class="cm-attribute">className</span>={<span class="cm-variable">className</span>.<span class="cm-property">join</span>(<span class="cm-string">' '</span>)}<span class="cm-tag cm-bracket">&gt;</span>{<span class="cm-variable">date</span>.<span class="cm-property">date</span>()}<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>
+  )
+};
+
+<span class="cm-keyword">const</span> <span class="cm-def">Days</span> <span class="cm-operator">=</span> ({<span class="cm-def">date</span>, <span class="cm-def">startDate</span>, <span class="cm-def">endDate</span>, <span class="cm-def">onClick</span>}) <span class="cm-operator">=&gt;</span> {
+  <span class="cm-keyword">const</span> <span class="cm-def">thisDate</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">date</span>);
+  <span class="cm-keyword">const</span> <span class="cm-def">daysInMonth</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">date</span>).<span class="cm-property">daysInMonth</span>();
+  <span class="cm-keyword">const</span> <span class="cm-def">firstDayDate</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">date</span>).<span class="cm-property">startOf</span>(<span class="cm-string">'month'</span>);
+  <span class="cm-keyword">const</span> <span class="cm-def">previousMonth</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">date</span>).<span class="cm-property">subtract</span>(<span class="cm-number">1</span>, <span class="cm-string">'month'</span>);
+  <span class="cm-keyword">const</span> <span class="cm-def">previousMonthDays</span> <span class="cm-operator">=</span> <span class="cm-variable-2">previousMonth</span>.<span class="cm-property">daysInMonth</span>();
+  <span class="cm-keyword">const</span> <span class="cm-def">nextsMonth</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">date</span>).<span class="cm-property">add</span>(<span class="cm-number">1</span>, <span class="cm-string">'month'</span>);
+  <span class="cm-keyword">let</span> <span class="cm-def">days</span> <span class="cm-operator">=</span> [];
+  <span class="cm-keyword">let</span> <span class="cm-def">labels</span> <span class="cm-operator">=</span> [];
+
+  <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;=</span> <span class="cm-number">7</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {
+    <span class="cm-variable-2">labels</span>.<span class="cm-property">push</span>(<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">className</span>=<span class="cm-string">"label"</span><span class="cm-tag cm-bracket">&gt;</span>{<span class="cm-variable">moment</span>().<span class="cm-property">day</span>(<span class="cm-variable">i</span>).<span class="cm-property">format</span>(<span class="cm-string">'ddd'</span>)}<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>);
+  }
+
+  <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-variable-2">firstDayDate</span>.<span class="cm-property">day</span>(); <span class="cm-variable-2">i</span> <span class="cm-operator">&gt;</span> <span class="cm-number">1</span>; <span class="cm-variable-2">i</span><span class="cm-operator">--</span>) {
+    <span class="cm-variable-2">previousMonth</span>.<span class="cm-property">date</span>(<span class="cm-variable-2">previousMonthDays</span> <span class="cm-operator">-</span> <span class="cm-variable-2">i</span> <span class="cm-operator">+</span> <span class="cm-number">2</span>);
+
+    <span class="cm-variable-2">days</span>.<span class="cm-property">push</span>(
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">Day</span> <span class="cm-attribute">key</span>={<span class="cm-variable">moment</span>(<span class="cm-variable">previousMonth</span>).<span class="cm-property">format</span>(<span class="cm-string">'DD MM YYYY'</span>)} <span class="cm-attribute">onClick</span>={(<span class="cm-variable">date</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">onClick</span>(<span class="cm-variable">date</span>)} <span class="cm-attribute">currentDate</span>={<span class="cm-variable">date</span>} <span class="cm-attribute">date</span>={<span class="cm-variable">moment</span>(<span class="cm-variable">previousMonth</span>)} <span class="cm-attribute">startDate</span>={<span class="cm-variable">startDate</span>} <span class="cm-attribute">endDate</span>={<span class="cm-variable">endDate</span>} <span class="cm-tag cm-bracket">/&gt;</span>
+    );
+  }
+
+  <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;=</span> <span class="cm-variable-2">daysInMonth</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {
+    <span class="cm-variable-2">thisDate</span>.<span class="cm-property">date</span>(<span class="cm-variable-2">i</span>);
+
+    <span class="cm-variable-2">days</span>.<span class="cm-property">push</span>(
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">Day</span> <span class="cm-attribute">key</span>={<span class="cm-variable">moment</span>(<span class="cm-variable">thisDate</span>).<span class="cm-property">format</span>(<span class="cm-string">'DD MM YYYY'</span>)} <span class="cm-attribute">onClick</span>={(<span class="cm-variable">date</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">onClick</span>(<span class="cm-variable">date</span>)} <span class="cm-attribute">currentDate</span>={<span class="cm-variable">date</span>} <span class="cm-attribute">date</span>={<span class="cm-variable">moment</span>(<span class="cm-variable">thisDate</span>)} <span class="cm-attribute">startDate</span>={<span class="cm-variable">startDate</span>} <span class="cm-attribute">endDate</span>={<span class="cm-variable">endDate</span>} <span class="cm-tag cm-bracket">/&gt;</span>
+    );
+  }
+
+  <span class="cm-keyword">const</span> <span class="cm-def">daysCount</span> <span class="cm-operator">=</span> <span class="cm-variable-2">days</span>.<span class="cm-property">length</span>;
+  <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;=</span> (<span class="cm-number">42</span> <span class="cm-operator">-</span> <span class="cm-variable-2">daysCount</span>); <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {
+    <span class="cm-variable-2">nextsMonth</span>.<span class="cm-property">date</span>(<span class="cm-variable-2">i</span>);
+    <span class="cm-variable-2">days</span>.<span class="cm-property">push</span>(
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">Day</span> <span class="cm-attribute">key</span>={<span class="cm-variable">moment</span>(<span class="cm-variable">nextsMonth</span>).<span class="cm-property">format</span>(<span class="cm-string">'DD MM YYYY'</span>)} <span class="cm-attribute">onClick</span>={(<span class="cm-variable">date</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">onClick</span>(<span class="cm-variable">date</span>)} <span class="cm-attribute">currentDate</span>={<span class="cm-variable">date</span>} <span class="cm-attribute">date</span>={<span class="cm-variable">moment</span>(<span class="cm-variable">nextsMonth</span>)} <span class="cm-attribute">startDate</span>={<span class="cm-variable">startDate</span>} <span class="cm-attribute">endDate</span>={<span class="cm-variable">endDate</span>} <span class="cm-tag cm-bracket">/&gt;</span>
+    );
+  }
+
+  <span class="cm-keyword">return</span> (
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">nav</span> <span class="cm-attribute">className</span>=<span class="cm-string">"calendar--days"</span><span class="cm-tag cm-bracket">&gt;</span>
+      {<span class="cm-variable">labels</span>.<span class="cm-property">concat</span>()}
+      {<span class="cm-variable">days</span>.<span class="cm-property">concat</span>()}
+    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">nav</span><span class="cm-tag cm-bracket">&gt;</span>
+  );
+};
+
+<span class="cm-keyword">class</span> <span class="cm-def">Calendar</span> <span class="cm-keyword">extends</span> <span class="cm-variable">React</span>.<span class="cm-property">Component</span> {
+  <span class="cm-property">constructor</span>(<span class="cm-def">props</span>) {
+    <span class="cm-keyword">super</span>(<span class="cm-variable-2">props</span>);
+
+    <span class="cm-keyword">this</span>.<span class="cm-property">state</span> <span class="cm-operator">=</span> {
+      <span class="cm-property">date</span>: <span class="cm-variable">moment</span>(),
+      <span class="cm-property">startDate</span>: <span class="cm-variable">moment</span>().<span class="cm-property">subtract</span>(<span class="cm-number">5</span>, <span class="cm-string">'day'</span>),
+      <span class="cm-property">endDate</span>: <span class="cm-variable">moment</span>().<span class="cm-property">add</span>(<span class="cm-number">3</span>, <span class="cm-string">'day'</span>)
+    };
+  }
+
+  <span class="cm-property">resetDate</span>() {
+    <span class="cm-keyword">this</span>.<span class="cm-property">setState</span>({
+      <span class="cm-property">date</span>: <span class="cm-variable">moment</span>()
+    });
+  }
+
+  <span class="cm-property">changeMonth</span>(<span class="cm-def">month</span>) {
+    <span class="cm-keyword">const</span> {<span class="cm-def">date</span>} <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">state</span>;
+
+    <span class="cm-variable-2">date</span>.<span class="cm-property">month</span>(<span class="cm-variable-2">month</span>);
+
+    <span class="cm-keyword">this</span>.<span class="cm-property">setState</span>(
+      <span class="cm-variable-2">date</span>
+    );
+  }
+
+  <span class="cm-property">changeDate</span>(<span class="cm-def">date</span>) {
+    <span class="cm-keyword">let</span> {<span class="cm-def">startDate</span>, <span class="cm-def">endDate</span>} <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">state</span>;
+
+    <span class="cm-keyword">if</span> (<span class="cm-variable-2">startDate</span> <span class="cm-operator">===</span> <span class="cm-atom">null</span> <span class="cm-operator">||</span> <span class="cm-variable-2">date</span>.<span class="cm-property">isBefore</span>(<span class="cm-variable-2">startDate</span>, <span class="cm-string">'day'</span>) <span class="cm-operator">||</span> <span class="cm-operator">!</span> <span class="cm-variable-2">startDate</span>.<span class="cm-property">isSame</span>(<span class="cm-variable-2">endDate</span>, <span class="cm-string">'day'</span>)) {
+      <span class="cm-variable-2">startDate</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">date</span>);
+      <span class="cm-variable-2">endDate</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">date</span>);
+    } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">date</span>.<span class="cm-property">isSame</span>(<span class="cm-variable-2">startDate</span>, <span class="cm-string">'day'</span>) <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">date</span>.<span class="cm-property">isSame</span>(<span class="cm-variable-2">endDate</span>, <span class="cm-string">'day'</span>)) {
+      <span class="cm-variable-2">startDate</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;
+      <span class="cm-variable-2">endDate</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;
+    } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">date</span>.<span class="cm-property">isAfter</span>(<span class="cm-variable-2">startDate</span>, <span class="cm-string">'day'</span>)) {
+      <span class="cm-variable-2">endDate</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">date</span>);
+    }
+
+    <span class="cm-keyword">this</span>.<span class="cm-property">setState</span>({
+      <span class="cm-property">startDate</span>,
+      <span class="cm-property">endDate</span>
+    });
+  }
+
+  <span class="cm-property">render</span>() {
+    <span class="cm-keyword">const</span> {<span class="cm-def">date</span>, <span class="cm-def">startDate</span>, <span class="cm-def">endDate</span>} <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">state</span>;
+
+    <span class="cm-keyword">return</span> (
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">className</span>=<span class="cm-string">"calendar"</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">Heading</span> <span class="cm-attribute">date</span>={<span class="cm-variable">date</span>} <span class="cm-attribute">changeMonth</span>={(<span class="cm-variable">month</span>) <span class="cm-operator">=&gt;</span> <span class="cm-keyword">this</span>.<span class="cm-property">changeMonth</span>(<span class="cm-variable">month</span>)} <span class="cm-attribute">resetDate</span>={() <span class="cm-operator">=&gt;</span> <span class="cm-keyword">this</span>.<span class="cm-property">resetDate</span>()} <span class="cm-tag cm-bracket">/&gt;</span>
+
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">Days</span> <span class="cm-attribute">onClick</span>={(<span class="cm-variable">date</span>) <span class="cm-operator">=&gt;</span> <span class="cm-keyword">this</span>.<span class="cm-property">changeDate</span>(<span class="cm-variable">date</span>)} <span class="cm-attribute">date</span>={<span class="cm-variable">date</span>} <span class="cm-attribute">startDate</span>={<span class="cm-variable">startDate</span>} <span class="cm-attribute">endDate</span>={<span class="cm-variable">endDate</span>} <span class="cm-tag cm-bracket">/&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    );
+  }
+}
+
+<span class="cm-variable">ReactDOM</span>.<span class="cm-property">render</span>(
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">Calendar</span> <span class="cm-tag cm-bracket">/&gt;</span>,
+  <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-string">'calendar'</span>)
+)
+</code></pre>
+<a href="#0" id="view-js-compiled-button" class="action-button bottom right view-compiled-button" data-type="js">
+View Compiled
+ </a>
+</div>
+<div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+<iframe allow="camera; display-capture; geolocation; microphone; web-share" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " id="result-iframe" loading="lazy" name="CodePen Preview for React date range picker" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" scrolling="yes" title="CodePen Preview for React date range picker" data-src="https://cdpn.io/RobVermeer/fullembedgrid/zBgdwg?animations=run&amp;type=embed" src="zBgdwg_data/zBgdwg.html" frameborder="0">
+  </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/RobVermeer" target="_blank" rel="noopener"><img src="OPmLBW_data/user-default-avatar.jpg" loading="lazy" alt="" class="about-image"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/RobVermeer" target="_blank" rel="noopener">Rob Vermeer</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+</p>
+<p>
+<a href="https://codepen.io/RobVermeer" target="_blank" rel="noopener" class="about-user-more">
+See more by @RobVermeer on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" target="_blank">https://fonts.googleapis.com/css?family=Roboto:300,400,700</a>
+</li>
+</ol>
+<h3>External JavaScript</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://npmcdn.com/react@15.3.0/dist/react.min.js" target="_blank">https://npmcdn.com/react@15.3.0/dist/react.min.js</a>
+</li>
+<li>
+<a href="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js" target="_blank">https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js</a>
+</li>
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js" target="_blank">https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js</a>
+</li>
+</ol>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button" id="zoom-button-1">1×</button></li>
+<li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+<li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script nonce="">
+    __processedPen = {"html":"&lt;div id=&quot;calendar&quot;&gt;&lt;/div&gt;","css":"body {\n  font-family: &quot;Roboto&quot;, sans-serif;\n  background-color: #f8f7fa;\n  color: #333;\n}\n\n.calendar {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-top: -225px;\n  margin-left: -195px;\n  width: 360px;\n  padding: 15px;\n  box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.4);\n  border-radius: 12px;\n  overflow: hidden;\n}\n.calendar--nav {\n  margin: -15px -15px 15px;\n  padding: 0 15px;\n  background-color: #b670f4;\n  color: #fff;\n  height: 70px;\n  position: relative;\n}\n.calendar--nav a {\n  position: absolute;\n  cursor: pointer;\n  left: 10px;\n  font-size: 32px;\n  line-height: 1;\n  top: 16px;\n  width: 30px;\n  text-align: center;\n  display: inline-block;\n  color: rgba(255, 255, 255, 0.4);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.calendar--nav a:hover {\n  color: #fff;\n}\n.calendar--nav a:last-child {\n  left: auto;\n  right: 10px;\n}\n.calendar--nav h1 {\n  margin: 0;\n  position: absolute;\n  left: 40px;\n  right: 40px;\n  text-align: center;\n  cursor: pointer;\n  font-weight: 400;\n  font-size: 30px;\n  line-height: 66px;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.calendar--nav small {\n  font-weight: 300;\n  font-size: 60%;\n}\n.calendar--days {\n  font-size: 0;\n}\n.calendar--days span {\n  width: 14.28571%;\n  display: inline-block;\n  text-align: center;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: pointer;\n  margin: 8px 0;\n  line-height: 34px;\n  position: relative;\n  font-size: 16px;\n}\n.calendar--days span.label {\n  text-transform: uppercase;\n  font-weight: 700;\n  color: rgba(0, 0, 0, 0.3);\n  font-size: 14px;\n  cursor: initial;\n}\n.calendar--days span.active {\n  font-weight: 700;\n  background-color: rgba(182, 112, 244, 0.05);\n  border-radius: 12px;\n}\n.calendar--days span.muted {\n  color: rgba(0, 0, 0, 0.3);\n}\n.calendar--days span.between {\n  border-radius: 0;\n}\n.calendar--days span.start, .calendar--days span.between, .calendar--days span.end {\n  background-color: #b670f4;\n  color: #fff;\n}\n.calendar--days span.start {\n  border-radius: 12px 0 0 12px;\n}\n.calendar--days span.end {\n  border-radius: 0 12px 12px 0;\n}\n.calendar--days span.start.end {\n  border-radius: 12px;\n}\n.calendar--days span.between:nth-child(7n):after, .calendar--days span.start:nth-child(7n):after {\n  content: &quot;&quot;;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 100%;\n  background-color: #b670f4;\n  width: 20px;\n}\n.calendar--days span.between:nth-child(7n+1):after, .calendar--days span.end:nth-child(7n+1):after {\n  content: &quot;&quot;;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  right: 100%;\n  background-color: #b670f4;\n  width: 20px;\n}\n.calendar--days span.start.end:after {\n  display: none;\n}","js":"&#39;use strict&#39;;\n\nconst Heading = ({ date, changeMonth, resetDate }) =&gt; /*#__PURE__*/\nReact.createElement(&quot;nav&quot;, { className: &quot;calendar--nav&quot; }, /*#__PURE__*/\nReact.createElement(&quot;a&quot;, { onClick: () =&gt; changeMonth(date.month() - 1) }, &quot;\\u2039&quot;), /*#__PURE__*/\nReact.createElement(&quot;h1&quot;, { onClick: () =&gt; resetDate() }, date.format(&#39;MMMM&#39;), &quot; &quot;, /*#__PURE__*/React.createElement(&quot;small&quot;, null, date.format(&#39;YYYY&#39;))), /*#__PURE__*/\nReact.createElement(&quot;a&quot;, { onClick: () =&gt; changeMonth(date.month() + 1) }, &quot;\\u203A&quot;));\n\n\n\nconst Day = ({ currentDate, date, startDate, endDate, onClick }) =&gt; {\n  let className = [];\n\n  if (moment().isSame(date, &#39;day&#39;)) {\n    className.push(&#39;active&#39;);\n  }\n\n  if (date.isSame(startDate, &#39;day&#39;)) {\n    className.push(&#39;start&#39;);\n  }\n\n  if (date.isBetween(startDate, endDate, &#39;day&#39;)) {\n    className.push(&#39;between&#39;);\n  }\n\n  if (date.isSame(endDate, &#39;day&#39;)) {\n    className.push(&#39;end&#39;);\n  }\n\n  if (!date.isSame(currentDate, &#39;month&#39;)) {\n    className.push(&#39;muted&#39;);\n  }\n\n  return /*#__PURE__*/(\n    React.createElement(&quot;span&quot;, { onClick: () =&gt; onClick(date), currentDate: date, className: className.join(&#39; &#39;) }, date.date()));\n\n};\n\nconst Days = ({ date, startDate, endDate, onClick }) =&gt; {\n  const thisDate = moment(date);\n  const daysInMonth = moment(date).daysInMonth();\n  const firstDayDate = moment(date).startOf(&#39;month&#39;);\n  const previousMonth = moment(date).subtract(1, &#39;month&#39;);\n  const previousMonthDays = previousMonth.daysInMonth();\n  const nextsMonth = moment(date).add(1, &#39;month&#39;);\n  let days = [];\n  let labels = [];\n\n  for (let i = 1; i &lt;= 7; i++) {if (window.CP.shouldStopExecution(0)) break;\n    labels.push( /*#__PURE__*/React.createElement(&quot;span&quot;, { className: &quot;label&quot; }, moment().day(i).format(&#39;ddd&#39;)));\n  }window.CP.exitedLoop(0);\n\n  for (let i = firstDayDate.day(); i &gt; 1; i--) {if (window.CP.shouldStopExecution(1)) break;\n    previousMonth.date(previousMonthDays - i + 2);\n\n    days.push( /*#__PURE__*/\n    React.createElement(Day, { key: moment(previousMonth).format(&#39;DD MM YYYY&#39;), onClick: date =&gt; onClick(date), currentDate: date, date: moment(previousMonth), startDate: startDate, endDate: endDate }));\n\n  }window.CP.exitedLoop(1);\n\n  for (let i = 1; i &lt;= daysInMonth; i++) {if (window.CP.shouldStopExecution(2)) break;\n    thisDate.date(i);\n\n    days.push( /*#__PURE__*/\n    React.createElement(Day, { key: moment(thisDate).format(&#39;DD MM YYYY&#39;), onClick: date =&gt; onClick(date), currentDate: date, date: moment(thisDate), startDate: startDate, endDate: endDate }));\n\n  }window.CP.exitedLoop(2);\n\n  const daysCount = days.length;\n  for (let i = 1; i &lt;= 42 - daysCount; i++) {if (window.CP.shouldStopExecution(3)) break;\n    nextsMonth.date(i);\n    days.push( /*#__PURE__*/\n    React.createElement(Day, { key: moment(nextsMonth).format(&#39;DD MM YYYY&#39;), onClick: date =&gt; onClick(date), currentDate: date, date: moment(nextsMonth), startDate: startDate, endDate: endDate }));\n\n  }window.CP.exitedLoop(3);\n\n  return /*#__PURE__*/(\n    React.createElement(&quot;nav&quot;, { className: &quot;calendar--days&quot; },\n    labels.concat(),\n    days.concat()));\n\n\n};\n\nclass Calendar extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      date: moment(),\n      startDate: moment().subtract(5, &#39;day&#39;),\n      endDate: moment().add(3, &#39;day&#39;) };\n\n  }\n\n  resetDate() {\n    this.setState({\n      date: moment() });\n\n  }\n\n  changeMonth(month) {\n    const { date } = this.state;\n\n    date.month(month);\n\n    this.setState(\n    date);\n\n  }\n\n  changeDate(date) {\n    let { startDate, endDate } = this.state;\n\n    if (startDate === null || date.isBefore(startDate, &#39;day&#39;) || !startDate.isSame(endDate, &#39;day&#39;)) {\n      startDate = moment(date);\n      endDate = moment(date);\n    } else if (date.isSame(startDate, &#39;day&#39;) &amp;&amp; date.isSame(endDate, &#39;day&#39;)) {\n      startDate = null;\n      endDate = null;\n    } else if (date.isAfter(startDate, &#39;day&#39;)) {\n      endDate = moment(date);\n    }\n\n    this.setState({\n      startDate,\n      endDate });\n\n  }\n\n  render() {\n    const { date, startDate, endDate } = this.state;\n\n    return /*#__PURE__*/(\n      React.createElement(&quot;div&quot;, { className: &quot;calendar&quot; }, /*#__PURE__*/\n      React.createElement(Heading, { date: date, changeMonth: month =&gt; this.changeMonth(month), resetDate: () =&gt; this.resetDate() }), /*#__PURE__*/\n\n      React.createElement(Days, { onClick: date =&gt; this.changeDate(date), date: date, startDate: startDate, endDate: endDate })));\n\n\n  }}\n\n\nReactDOM.render( /*#__PURE__*/\nReact.createElement(Calendar, null),\ndocument.getElementById(&#39;calendar&#39;));"};
+    __preprocessors = {
+      "html": "pug",
+      "css": "scss",
+      "js": "babel"
+    };
+    __preprocessorNames = {
+      "html": "Pug",
+      "css": "SCSS",
+      "js": "Babel"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+<script src="OPmLBW_data/embed-008e8e63bc8f4f7a03df3f5da5b5c4d5e25fe5a438f147d0a2325f1.js"></script>
+<script nonce="">(function(){var js = "window['__CF$cv$params']={r:'7cb372233ed59e8f',m:'WAMNChwvp1QhvFq1saRLul2Dd06m_80ZG8esBX8WVP0-1684741591-0-AZ+7+2M/oLpyQD/EA1Lml3LqeQJo6rrXLQ8G9Hc6I0l+',u:'/cdn-cgi/challenge-platform/h/g'};_cpo=document.createElement('script');_cpo.nonce='L1TrVpXSzGQ=',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = 'L1TrVpXSzGQ=';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe style="position: absolute; top: 0px; left: 0px; border: medium none; visibility: hidden;" width="1" height="1"></iframe>
+
+</body></html>

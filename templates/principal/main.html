@@ -3,6 +3,8 @@
 <head>
     {% load static %}{% load i18n %}
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static './styles/calendar.css' %}">
+    <script src="{% static './typed_scripts/calendar.js' %}" defer></script>
     <title>Page d'acceuil</title>
     <style>
         @import url('httpss://fonts.googleapis.com/css?family=Roboto');
@@ -144,8 +146,30 @@ input[type="file"] {
 </head>
 <body>
     <center>
+        <div class="wrapper">
+        <header>
+            <p class="current-date"></p>
+            <div class="icons">
+                <span id="prev" class="material-symbols-rounded">Back</span>
+                <span id="next" class="material-symbols-rounded">Next</span>
+            </div>
+        </header>
+          <div class="calendar">
+            <ul class="weeks">
+              <li>Sun</li>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+            </ul>
+            <ul class="days"></ul>
+          </div>
+        </div>
         {% if user.username %}
     <div>
+        <br>
         {% for i in dj %}
             <div style="background-color: grey; width: 300px">
                 <a href="{% url 'main:change' i.id %}">{{ i.name }}</a>______--------------------______<a href="{% url 'main:delete' i.id %}">delete</a> <br>
@@ -154,6 +178,7 @@ input[type="file"] {
         {% endfor %}
         <br>
     </div>
+    <div class="advice" style="color: white">{{ advice }}</div>
     <div>
         <form action="" enctype="application/x-www-form-urlencoded" method="post" class="signup-form">
             <!-- form header -->
@@ -197,8 +222,10 @@ input[type="file"] {
             </div>
             <!-- form footer -->
             <div class="form-footer">
+                {% if type == 'change' %}
+                    <button type="reset">Undo</button>
+                {% endif %}
                 <button type="submit">{{ type }}</button>
-                <input type="submit" value="{{ type }}">
             </div>
         </form>
     </div>
@@ -210,7 +237,9 @@ input[type="file"] {
     <div>
             Members are:
             {% for j in dj %}
-            <p>-    {{ j }} since {{ j.date_joined }} </p><br>
+                <div>
+                    <a href="{% url 'main:visiting' j.id %}">{{ j }}</a> since {{ j.date_joined }}
+                </div><br>
             {% endfor %}
     <div/>
         {% endif %}

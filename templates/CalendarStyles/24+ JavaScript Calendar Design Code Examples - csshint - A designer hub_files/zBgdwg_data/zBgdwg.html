@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  <title>CodePen - React date range picker</title>
+    <link rel="canonical" href="https://codepen.io/RobVermeer/pen/zBgdwg">
+  
+  <link rel="stylesheet" href="zBgdwg_data/normalize.min.css">
+
+  <link rel="stylesheet" href="zBgdwg_data/css">
+  
+<style>
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f7fa;
+  color: #333;
+}
+
+.calendar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -225px;
+  margin-left: -195px;
+  width: 360px;
+  padding: 15px;
+  box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.calendar--nav {
+  margin: -15px -15px 15px;
+  padding: 0 15px;
+  background-color: #b670f4;
+  color: #fff;
+  height: 70px;
+  position: relative;
+}
+.calendar--nav a {
+  position: absolute;
+  cursor: pointer;
+  left: 10px;
+  font-size: 32px;
+  line-height: 1;
+  top: 16px;
+  width: 30px;
+  text-align: center;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.calendar--nav a:hover {
+  color: #fff;
+}
+.calendar--nav a:last-child {
+  left: auto;
+  right: 10px;
+}
+.calendar--nav h1 {
+  margin: 0;
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 66px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.calendar--nav small {
+  font-weight: 300;
+  font-size: 60%;
+}
+.calendar--days {
+  font-size: 0;
+}
+.calendar--days span {
+  width: 14.28571%;
+  display: inline-block;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  margin: 8px 0;
+  line-height: 34px;
+  position: relative;
+  font-size: 16px;
+}
+.calendar--days span.label {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  cursor: initial;
+}
+.calendar--days span.active {
+  font-weight: 700;
+  background-color: rgba(182, 112, 244, 0.05);
+  border-radius: 12px;
+}
+.calendar--days span.muted {
+  color: rgba(0, 0, 0, 0.3);
+}
+.calendar--days span.between {
+  border-radius: 0;
+}
+.calendar--days span.start, .calendar--days span.between, .calendar--days span.end {
+  background-color: #b670f4;
+  color: #fff;
+}
+.calendar--days span.start {
+  border-radius: 12px 0 0 12px;
+}
+.calendar--days span.end {
+  border-radius: 0 12px 12px 0;
+}
+.calendar--days span.start.end {
+  border-radius: 12px;
+}
+.calendar--days span.between:nth-child(7n):after, .calendar--days span.start:nth-child(7n):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  background-color: #b670f4;
+  width: 20px;
+}
+.calendar--days span.between:nth-child(7n+1):after, .calendar--days span.end:nth-child(7n+1):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  background-color: #b670f4;
+  width: 20px;
+}
+.calendar--days span.start.end:after {
+  display: none;
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body translate="no">
+  <div id="calendar"><div data-reactroot="" class="calendar"><nav class="calendar--nav"><a>‹</a><h1><!-- react-text: 5 -->May<!-- /react-text --><!-- react-text: 6 --> <!-- /react-text --><small>2023</small></h1><a>›</a></nav><nav class="calendar--days"><span class="label">Mon</span><span class="label">Tue</span><span class="label">Wed</span><span class="label">Thu</span><span class="label">Fri</span><span class="label">Sat</span><span class="label">Sun</span><span class="">1</span><span class="">2</span><span class="">3</span><span class="">4</span><span class="">5</span><span class="">6</span><span class="">7</span><span class="">8</span><span class="">9</span><span class="">10</span><span class="">11</span><span class="">12</span><span class="">13</span><span class="">14</span><span class="">15</span><span class="">16</span><span class="start">17</span><span class="between">18</span><span class="between">19</span><span class="between">20</span><span class="between">21</span><span class="active between">22</span><span class="between">23</span><span class="between">24</span><span class="end">25</span><span class="">26</span><span class="">27</span><span class="">28</span><span class="">29</span><span class="">30</span><span class="">31</span><span class="muted">1</span><span class="muted">2</span><span class="muted">3</span><span class="muted">4</span><span class="muted">5</span><span class="muted">6</span><span class="muted">7</span><span class="muted">8</span><span class="muted">9</span><span class="muted">10</span><span class="muted">11</span></nav></div></div>
+    <script src="../LZjjWV_data/LZjjWV_data/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd3025033.js"></script>
+
+  <script src="../ZOVMWy_data/ZOVMWy_data/react.min.js"></script>
+<script src="../ZOVMWy_data/ZOVMWy_data/react-dom.min.js"></script>
+<script src="zBgdwg_data/moment-with-locales.min.js"></script>
+      <script id="rendered-js">
+'use strict';
+
+const Heading = ({ date, changeMonth, resetDate }) => /*#__PURE__*/
+React.createElement("nav", { className: "calendar--nav" }, /*#__PURE__*/
+React.createElement("a", { onClick: () => changeMonth(date.month() - 1) }, "\u2039"), /*#__PURE__*/
+React.createElement("h1", { onClick: () => resetDate() }, date.format('MMMM'), " ", /*#__PURE__*/React.createElement("small", null, date.format('YYYY'))), /*#__PURE__*/
+React.createElement("a", { onClick: () => changeMonth(date.month() + 1) }, "\u203A"));
+
+
+
+const Day = ({ currentDate, date, startDate, endDate, onClick }) => {
+  let className = [];
+
+  if (moment().isSame(date, 'day')) {
+    className.push('active');
+  }
+
+  if (date.isSame(startDate, 'day')) {
+    className.push('start');
+  }
+
+  if (date.isBetween(startDate, endDate, 'day')) {
+    className.push('between');
+  }
+
+  if (date.isSame(endDate, 'day')) {
+    className.push('end');
+  }
+
+  if (!date.isSame(currentDate, 'month')) {
+    className.push('muted');
+  }
+
+  return /*#__PURE__*/(
+    React.createElement("span", { onClick: () => onClick(date), currentDate: date, className: className.join(' ') }, date.date()));
+
+};
+
+const Days = ({ date, startDate, endDate, onClick }) => {
+  const thisDate = moment(date);
+  const daysInMonth = moment(date).daysInMonth();
+  const firstDayDate = moment(date).startOf('month');
+  const previousMonth = moment(date).subtract(1, 'month');
+  const previousMonthDays = previousMonth.daysInMonth();
+  const nextsMonth = moment(date).add(1, 'month');
+  let days = [];
+  let labels = [];
+
+  for (let i = 1; i <= 7; i++) {if (window.CP.shouldStopExecution(0)) break;
+    labels.push( /*#__PURE__*/React.createElement("span", { className: "label" }, moment().day(i).format('ddd')));
+  }window.CP.exitedLoop(0);
+
+  for (let i = firstDayDate.day(); i > 1; i--) {if (window.CP.shouldStopExecution(1)) break;
+    previousMonth.date(previousMonthDays - i + 2);
+
+    days.push( /*#__PURE__*/
+    React.createElement(Day, { key: moment(previousMonth).format('DD MM YYYY'), onClick: date => onClick(date), currentDate: date, date: moment(previousMonth), startDate: startDate, endDate: endDate }));
+
+  }window.CP.exitedLoop(1);
+
+  for (let i = 1; i <= daysInMonth; i++) {if (window.CP.shouldStopExecution(2)) break;
+    thisDate.date(i);
+
+    days.push( /*#__PURE__*/
+    React.createElement(Day, { key: moment(thisDate).format('DD MM YYYY'), onClick: date => onClick(date), currentDate: date, date: moment(thisDate), startDate: startDate, endDate: endDate }));
+
+  }window.CP.exitedLoop(2);
+
+  const daysCount = days.length;
+  for (let i = 1; i <= 42 - daysCount; i++) {if (window.CP.shouldStopExecution(3)) break;
+    nextsMonth.date(i);
+    days.push( /*#__PURE__*/
+    React.createElement(Day, { key: moment(nextsMonth).format('DD MM YYYY'), onClick: date => onClick(date), currentDate: date, date: moment(nextsMonth), startDate: startDate, endDate: endDate }));
+
+  }window.CP.exitedLoop(3);
+
+  return /*#__PURE__*/(
+    React.createElement("nav", { className: "calendar--days" },
+    labels.concat(),
+    days.concat()));
+
+
+};
+
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      date: moment(),
+      startDate: moment().subtract(5, 'day'),
+      endDate: moment().add(3, 'day') };
+
+  }
+
+  resetDate() {
+    this.setState({
+      date: moment() });
+
+  }
+
+  changeMonth(month) {
+    const { date } = this.state;
+
+    date.month(month);
+
+    this.setState(
+    date);
+
+  }
+
+  changeDate(date) {
+    let { startDate, endDate } = this.state;
+
+    if (startDate === null || date.isBefore(startDate, 'day') || !startDate.isSame(endDate, 'day')) {
+      startDate = moment(date);
+      endDate = moment(date);
+    } else if (date.isSame(startDate, 'day') && date.isSame(endDate, 'day')) {
+      startDate = null;
+      endDate = null;
+    } else if (date.isAfter(startDate, 'day')) {
+      endDate = moment(date);
+    }
+
+    this.setState({
+      startDate,
+      endDate });
+
+  }
+
+  render() {
+    const { date, startDate, endDate } = this.state;
+
+    return /*#__PURE__*/(
+      React.createElement("div", { className: "calendar" }, /*#__PURE__*/
+      React.createElement(Heading, { date: date, changeMonth: month => this.changeMonth(month), resetDate: () => this.resetDate() }), /*#__PURE__*/
+
+      React.createElement(Days, { onClick: date => this.changeDate(date), date: date, startDate: startDate, endDate: endDate })));
+
+
+  }}
+
+
+ReactDOM.render( /*#__PURE__*/
+React.createElement(Calendar, null),
+document.getElementById('calendar'));
+//# sourceURL=pen.js
+    </script>
+
+  
+  <script src="../LZjjWV_data/LZjjWV_data/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf8.js"></script>
+
+
+
+</body></html>

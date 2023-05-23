@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{u.username}}</title>
+</head>
+<body>
+        <h1>{{ u }}</h1>
+        <center>
+            {% for a in annotate %}
+                <div>
+                    <h3> {{ a.name }} </h3> <i>{{ a.deadline }}<i/>
+                    <p>{{ a.description }}<p/>
+
+                    {% if user.username %}   {# can like #}
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Like</button>
+                        </form>
+                                {# liked or disliked #}
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Dislike</button>
+                        </form>
+                    {# else view only #} {% endif %}
+                </div>
+                <br>
+            {% endfor %}
+        </center>
+</body>
+</html>

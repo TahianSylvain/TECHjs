@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - Calendar Javascript Library</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="9UYVy5cYBTtkHfMI/u3zfSxykQQLX+rnk6Es7XB3cnNxlpo+NxtGyf0KjayT4lp0HFc6Qz3ZwczeBKmEKjBklw==">
+<link rel="stylesheet" media="all" href="OPmLBW_data/embed-c24dc45033a5a0e3c76b9588328759bcba403f9bfa524b08f43645.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    #result-box {
+      background: #111111;
+      color: #eeeeee;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #111111;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #eeeeee;
+      background-color: #333333;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #555555;
+      color: #eeeeee;
+      box-shadow: inset 0px 3px #797979;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #eeeeee;
+    }
+
+    .embed-nav svg {
+      stroke: #eeeeee !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="OPmLBW_data/twilight-3476125ec032fffc9adb3dec23f00153fc064bf13d518310429.css">
+</head>
+<body id="the-body" style="border: 1px solid #666666; --borderWidth: 1px;" class="codepen-embed-body static results-active">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="#html-box" role="button" aria-pressed="false">
+HTML
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="#css-box" role="button" aria-pressed="false">
+CSS
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="#js-box" role="button" aria-pressed="false">
+JS
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+<li>
+<a href="#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/nizarmah/pen/LZjjWV" title="Edit on CodePen">
+<div class="large-logo">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+<path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+</div>
+<div class="box-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+</div>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thin" data-header="true">
+<div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+<pre tabindex="0"><code data-lang="htmlmixed" id="actual-html-code" class=" cm-s-default"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"calendarContainer"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"organizerContainer"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></code></pre>
+</div>
+<div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+<pre tabindex="0"><code data-lang="css" id="actual-css-code" class=" cm-s-default"><span class="cm-tag">body</span> {
+  <span class="cm-property">display</span>: <span class="cm-meta">-webkit-</span><span class="cm-variable">box</span>;
+  <span class="cm-property">display</span>: <span class="cm-meta">-webkit-</span><span class="cm-atom">flex</span>;
+  <span class="cm-property">display</span>: <span class="cm-meta">-moz-</span><span class="cm-variable">box</span>;
+  <span class="cm-property">display</span>: <span class="cm-meta">-ms-</span><span class="cm-variable">flexbox</span>;
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property cm-error">box-pack</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">justify-content</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-moz-</span><span class="cm-property cm-error">box-pack</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-ms-</span><span class="cm-property cm-error">flex-pack</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">justify-content</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property cm-error">box-align</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">align-items</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-moz-</span><span class="cm-property cm-error">box-align</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-ms-</span><span class="cm-property cm-error">flex-align</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">align-items</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-webkit-</span><span class="cm-property">align-content</span>: <span class="cm-atom">center</span>;
+  <span class="cm-meta">-ms-</span><span class="cm-property cm-error">flex-line-pack</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">align-content</span>: <span class="cm-atom">center</span>;
+}
+
+<span class="cm-builtin">#calendarContainer</span>,
+<span class="cm-builtin">#organizerContainer</span> {
+  <span class="cm-property">float</span>: <span class="cm-atom">left</span>;
+  <span class="cm-property">margin</span>: <span class="cm-number">5px</span>;
+}
+</code></pre>
+</div>
+<div id="js-box" class="code-wrap code-box box " role="region" aria-label="JS">
+<pre tabindex="0"><code data-lang="javascript" id="actual-js-code" class=" cm-s-default"><span class="cm-string">"use strict"</span>;
+
+<span class="cm-comment">// function that creates dummy data for demonstration</span>
+<span class="cm-keyword">function</span> <span class="cm-def">createDummyData</span>() {
+  <span class="cm-keyword">var</span> <span class="cm-def">date</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">data</span> <span class="cm-operator">=</span> {};
+
+  <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span> <span class="cm-number">10</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {
+    <span class="cm-variable-2">data</span>[<span class="cm-variable-2">date</span>.<span class="cm-property">getFullYear</span>() <span class="cm-operator">+</span> <span class="cm-variable-2">i</span>] <span class="cm-operator">=</span> {};
+
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">j</span> <span class="cm-operator">&lt;</span> <span class="cm-number">12</span>; <span class="cm-variable-2">j</span><span class="cm-operator">++</span>) {
+      <span class="cm-variable-2">data</span>[<span class="cm-variable-2">date</span>.<span class="cm-property">getFullYear</span>() <span class="cm-operator">+</span> <span class="cm-variable-2">i</span>][<span class="cm-variable-2">j</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>] <span class="cm-operator">=</span> {};
+
+      <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">k</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">k</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">Math</span>.<span class="cm-property">ceil</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> <span class="cm-number">10</span>); <span class="cm-variable-2">k</span><span class="cm-operator">++</span>) {
+        <span class="cm-keyword">var</span> <span class="cm-def">l</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">ceil</span>(<span class="cm-variable">Math</span>.<span class="cm-property">random</span>() <span class="cm-operator">*</span> <span class="cm-number">28</span>);
+
+        <span class="cm-keyword">try</span> {
+          <span class="cm-variable-2">data</span>[<span class="cm-variable-2">date</span>.<span class="cm-property">getFullYear</span>() <span class="cm-operator">+</span> <span class="cm-variable-2">i</span>][<span class="cm-variable-2">j</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>][<span class="cm-variable-2">l</span>].<span class="cm-property">push</span>({
+            <span class="cm-property">startTime</span>: <span class="cm-string">"10:00"</span>,
+            <span class="cm-property">endTime</span>: <span class="cm-string">"12:00"</span>,
+            <span class="cm-property">text</span>: <span class="cm-string">"Some Event Here"</span>
+          });
+        } <span class="cm-keyword">catch</span> (<span class="cm-def">e</span>) {
+          <span class="cm-variable-2">data</span>[<span class="cm-variable-2">date</span>.<span class="cm-property">getFullYear</span>() <span class="cm-operator">+</span> <span class="cm-variable-2">i</span>][<span class="cm-variable-2">j</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>][<span class="cm-variable-2">l</span>] <span class="cm-operator">=</span> [];
+          <span class="cm-variable-2">data</span>[<span class="cm-variable-2">date</span>.<span class="cm-property">getFullYear</span>() <span class="cm-operator">+</span> <span class="cm-variable-2">i</span>][<span class="cm-variable-2">j</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>][<span class="cm-variable-2">l</span>].<span class="cm-property">push</span>({
+            <span class="cm-property">startTime</span>: <span class="cm-string">"10:00"</span>,
+            <span class="cm-property">endTime</span>: <span class="cm-string">"12:00"</span>,
+            <span class="cm-property">text</span>: <span class="cm-string">"Some Event Here"</span>
+          });
+        }
+      }
+    }
+  }
+
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">data</span>;
+}
+
+<span class="cm-comment">// creating the dummy static data</span>
+<span class="cm-keyword">var</span> <span class="cm-def">data</span> <span class="cm-operator">=</span> <span class="cm-variable">createDummyData</span>();
+
+<span class="cm-comment">// initializing a new calendar object, that will use an html container to create itself</span>
+<span class="cm-keyword">var</span> <span class="cm-def">calendar</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Calendar</span>(
+  <span class="cm-string">"calendarContainer"</span>, <span class="cm-comment">// id of html container for calendar</span>
+  <span class="cm-string">"small"</span>, <span class="cm-comment">// size of calendar, can be small | medium | large</span>
+  [
+    <span class="cm-string">"Wednesday"</span>, <span class="cm-comment">// left most day of calendar labels</span>
+    <span class="cm-number">3</span> <span class="cm-comment">// maximum length of the calendar labels</span>
+  ],
+  [
+    <span class="cm-string">"#E91E63"</span>, <span class="cm-comment">// primary color</span>
+    <span class="cm-string">"#C2185B"</span>, <span class="cm-comment">// primary dark color</span>
+    <span class="cm-string">"#FFFFFF"</span>, <span class="cm-comment">// text color</span>
+    <span class="cm-string">"#F8BBD0"</span> <span class="cm-comment">// text dark color</span>
+  ]
+);
+
+<span class="cm-comment">// initializing a new organizer object, that will use an html container to create itself</span>
+<span class="cm-keyword">var</span> <span class="cm-def">organizer</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Organizer</span>(
+  <span class="cm-string">"organizerContainer"</span>, <span class="cm-comment">// id of html container for calendar</span>
+  <span class="cm-variable">calendar</span>, <span class="cm-comment">// defining the calendar that the organizer is related to</span>
+  <span class="cm-variable-2">data</span> <span class="cm-comment">// giving the organizer the static data that should be displayed</span>
+);
+</code></pre>
+</div>
+<div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+<iframe allow="camera; display-capture; geolocation; microphone; web-share" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " id="result-iframe" loading="lazy" name="CodePen Preview for Calendar Javascript Library" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" scrolling="yes" title="CodePen Preview for Calendar Javascript Library" data-src="https://cdpn.io/nizarmah/fullembedgrid/LZjjWV?animations=run&amp;type=embed" src="LZjjWV_data/LZjjWV.html" frameborder="0">
+  </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/nizarmah" target="_blank" rel="noopener"><img src="LZjjWV_data/default.png" loading="lazy" alt="" class="about-image"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/nizarmah" target="_blank" rel="noopener">Nizar</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+</p>
+<p>
+<a href="https://codepen.io/nizarmah" target="_blank" rel="noopener" class="about-user-more">
+See more by @nizarmah on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://cdn.rawgit.com/nizarmah/calendar-javascript-lib/master/calendarorganizer.min.css" target="_blank">https://cdn.rawgit.com/nizarmah/calendar-javascript-lib/master/calendarorganizer.min.css</a>
+</li>
+</ol>
+<h3>External JavaScript</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://cdn.rawgit.com/nizarmah/calendar-javascript-lib/master/calendarorganizer.min.js" target="_blank">https://cdn.rawgit.com/nizarmah/calendar-javascript-lib/master/calendarorganizer.min.js</a>
+</li>
+</ol>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button" id="zoom-button-1">1×</button></li>
+<li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+<li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script nonce="">
+    __processedPen = {"html":"&lt;div id=&quot;calendarContainer&quot;&gt;&lt;/div&gt;\n&lt;div id=&quot;organizerContainer&quot;&gt;&lt;/div&gt;","css":"body {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n  -moz-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n  -moz-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-align-content: center;\n  -ms-flex-line-pack: center;\n  align-content: center;\n}\n\n#calendarContainer,\n#organizerContainer {\n  float: left;\n  margin: 5px;\n}","js":"&quot;use strict&quot;;\n\n// function that creates dummy data for demonstration\nfunction createDummyData() {\n  var date = new Date();\n  var data = {};\n\n  for (var i = 0; i &lt; 10; i++) {if (window.CP.shouldStopExecution(0)) break;\n    data[date.getFullYear() + i] = {};\n\n    for (var j = 0; j &lt; 12; j++) {if (window.CP.shouldStopExecution(1)) break;\n      data[date.getFullYear() + i][j + 1] = {};\n\n      for (var k = 0; k &lt; Math.ceil(Math.random() * 10); k++) {if (window.CP.shouldStopExecution(2)) break;\n        var l = Math.ceil(Math.random() * 28);\n\n        try {\n          data[date.getFullYear() + i][j + 1][l].push({\n            startTime: &quot;10:00&quot;,\n            endTime: &quot;12:00&quot;,\n            text: &quot;Some Event Here&quot; });\n\n        } catch (e) {\n          data[date.getFullYear() + i][j + 1][l] = [];\n          data[date.getFullYear() + i][j + 1][l].push({\n            startTime: &quot;10:00&quot;,\n            endTime: &quot;12:00&quot;,\n            text: &quot;Some Event Here&quot; });\n\n        }\n      }window.CP.exitedLoop(2);\n    }window.CP.exitedLoop(1);\n  }window.CP.exitedLoop(0);\n\n  return data;\n}\n\n// creating the dummy static data\nvar data = createDummyData();\n\n// initializing a new calendar object, that will use an html container to create itself\nvar calendar = new Calendar(\n&quot;calendarContainer&quot;, // id of html container for calendar\n&quot;small&quot;, // size of calendar, can be small | medium | large\n[\n&quot;Wednesday&quot;, // left most day of calendar labels\n3 // maximum length of the calendar labels\n],\n[\n&quot;#E91E63&quot;, // primary color\n&quot;#C2185B&quot;, // primary dark color\n&quot;#FFFFFF&quot;, // text color\n&quot;#F8BBD0&quot; // text dark color\n]);\n\n\n// initializing a new organizer object, that will use an html container to create itself\nvar organizer = new Organizer(\n&quot;organizerContainer&quot;, // id of html container for calendar\ncalendar, // defining the calendar that the organizer is related to\ndata // giving the organizer the static data that should be displayed\n);"};
+    __preprocessors = {
+      "html": "none",
+      "css": "none",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+<script src="OPmLBW_data/embed-008e8e63bc8f4f7a03df3f5da5b5c4d5e25fe5a438f147d0a2325f1.js"></script>
+<script nonce="">(function(){var js = "window['__CF$cv$params']={r:'7cb372b03d119e8f',m:'Kny2tVBgs3Vpl2x8tN1b44SldKOWzeZYsdVE3GKUtVc-1684741614-0-AaFxtHwbxU74MG2gqxH+6sCUKkV30LgUFyYCdcD4/fHI',u:'/cdn-cgi/challenge-platform/h/g'};_cpo=document.createElement('script');_cpo.nonce='k3iML/LgeFk=',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = 'k3iML/LgeFk=';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe style="position: absolute; top: 0px; left: 0px; border: medium none; visibility: hidden;" width="1" height="1"></iframe>
+
+</body></html>

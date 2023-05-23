@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - fullCalendar with custom agenda view</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="f2jRMipQLbdO16qetl05iAPfhRjIUnYX30dvlb4lqAj7uF7HilNuRdfA1DrbUpCBM/ouX/7UXTyS4ur85GK+7A==">
+<link rel="stylesheet" media="all" href="OPmLBW_data/embed-c24dc45033a5a0e3c76b9588328759bcba403f9bfa524b08f43645.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    #result-box {
+      background: #111111;
+      color: #eeeeee;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #111111;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #eeeeee;
+      background-color: #333333;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #555555;
+      color: #eeeeee;
+      box-shadow: inset 0px 3px #797979;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #eeeeee;
+    }
+
+    .embed-nav svg {
+      stroke: #eeeeee !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="OPmLBW_data/twilight-3476125ec032fffc9adb3dec23f00153fc064bf13d518310429.css">
+</head>
+<body id="the-body" style="border: 1px solid #666666; --borderWidth: 1px;" class="codepen-embed-body static results-active">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="#html-box" role="button" aria-pressed="false">
+HTML
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="#css-box" role="button" aria-pressed="false">
+CSS
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="#js-box" role="button" aria-pressed="false">
+JS
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+<li>
+<a href="#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/lanc/pen/LYJRpa" title="Edit on CodePen">
+<div class="large-logo">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+<path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+</div>
+<div class="box-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+</div>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thin" data-header="true">
+<div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+<pre tabindex="0"><code data-lang="htmlmixed" id="actual-html-code" class=" cm-s-default"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"calendar"</span><span class="cm-tag cm-bracket">&gt;</span>
+  
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></code></pre>
+</div>
+<div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+<pre tabindex="0"><code data-lang="css" id="actual-css-code" class=" cm-s-default"><span class="cm-builtin">#calendar</span> {
+  <span class="cm-property">width</span>: <span class="cm-number">80%</span>;
+  
+}
+
+
+<span class="cm-comment">/* ------- Agenda View ------- */</span>
+<span class="cm-builtin">#agendaView</span> &gt; <span class="cm-tag">table</span>{
+    <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+    <span class="cm-property">min-height</span>: <span class="cm-number">500px</span>;
+    <span class="cm-property">background</span>: <span class="cm-atom">#FFF</span>;
+    
+}
+
+<span class="cm-builtin">#agendaView</span> <span class="cm-qualifier">.fc-agendaView-event-start</span>,
+<span class="cm-builtin">#agendaView</span> <span class="cm-qualifier">.fc-agendaView-event-end</span>{
+    <span class="cm-property">width</span>: <span class="cm-number">20%</span>;
+}
+
+<span class="cm-builtin">#agendaView</span> <span class="cm-qualifier">.fc-agendaView-event-title</span>{
+    <span class="cm-property">width</span>: <span class="cm-number">60%</span>;
+}
+<span class="cm-builtin">#agendaView</span> <span class="cm-tag">th</span>{
+    <span class="cm-property">height</span>: <span class="cm-number">30px</span>;
+    <span class="cm-property">font-size</span>: <span class="cm-number">14px</span>;
+    <span class="cm-property">vertical-align</span>: <span class="cm-atom">text-bottom</span>;
+    <span class="cm-property">font-weight</span>: <span class="cm-atom">bold</span>;
+    <span class="cm-property">padding</span>: <span class="cm-number">10px</span> <span class="cm-number">0</span> <span class="cm-number">0</span> <span class="cm-number">10px</span>;
+}
+
+<span class="cm-builtin">#agendaView</span> <span class="cm-tag">td</span>{
+    <span class="cm-property">height</span>: <span class="cm-number">30px</span>;
+    <span class="cm-property">padding</span>: <span class="cm-number">10px</span> <span class="cm-number">0</span> <span class="cm-number">0</span> <span class="cm-number">10px</span>;
+    <span class="cm-property">font-size</span>: <span class="cm-number">14px</span>;
+    <span class="cm-property">vertical-align</span>: <span class="cm-atom">text-bottom</span>;    
+}
+</code></pre>
+</div>
+<div id="js-box" class="code-wrap code-box box " role="region" aria-label="JS">
+<pre tabindex="0"><code data-lang="javascript" id="actual-js-code" class=" cm-s-default"><span class="cm-keyword">var</span> <span class="cm-def">$calendar</span> <span class="cm-operator">=</span> <span class="cm-variable">$</span>(<span class="cm-string">"#calendar"</span>);
+<span class="cm-variable">$calendar</span>.<span class="cm-property">fullCalendar</span>({
+            <span class="cm-property">header</span>: {
+                <span class="cm-property">left</span>: <span class="cm-string">' today,prev,next,  title'</span>,
+                <span class="cm-property">right</span>: <span class="cm-string">'month,agendaWeek,agendaDay '</span>
+            },
+            <span class="cm-property">weekends</span>: <span class="cm-atom">true</span>,
+            <span class="cm-property">allDaySlot</span>: <span class="cm-atom">true</span>,
+            <span class="cm-property">droppable</span>: <span class="cm-atom">true</span>, <span class="cm-comment">/* 允許拖入 */</span>
+            <span class="cm-property">eventAfterAllRender</span>:<span class="cm-keyword">function</span>(<span class="cm-def">view</span>){
+                <span class="cm-keyword">var</span> <span class="cm-def">header</span> <span class="cm-operator">=</span>  <span class="cm-variable">$calendar</span>.<span class="cm-property">find</span>(<span class="cm-string">".fc-header"</span>);
+                <span class="cm-comment">// trigger current view</span>
+                <span class="cm-variable-2">header</span>.<span class="cm-property">find</span>(<span class="cm-string">'.fc-header-right'</span>).<span class="cm-property">find</span>(<span class="cm-string">'.fc-button'</span>).<span class="cm-property">off</span>(<span class="cm-string">'mouseup'</span>).<span class="cm-property">on</span>(<span class="cm-string">'mouseup'</span>, <span class="cm-keyword">function</span>(){
+                    <span class="cm-keyword">if</span>(<span class="cm-operator">!</span><span class="cm-variable">$</span>(<span class="cm-keyword">this</span>).<span class="cm-property">hasClass</span>(<span class="cm-string">'fc-button-agendaView'</span>)){
+                        <span class="cm-variable">$calendar</span>.<span class="cm-property">data</span>(<span class="cm-string">"view"</span>, <span class="cm-string">''</span>);
+                    }
+                });
+
+                <span class="cm-comment">//用來辨別是否在agendaView，是則重繪，否則移除</span>
+                <span class="cm-keyword">if</span>( <span class="cm-variable">$calendar</span>.<span class="cm-property">data</span>(<span class="cm-string">"view"</span>) <span class="cm-operator">!=</span> <span class="cm-string">'agendaView'</span> ){
+                    <span class="cm-variable-2">header</span>.<span class="cm-property">find</span>(<span class="cm-string">".fc-button-agendaView"</span>).<span class="cm-property">removeClass</span>(<span class="cm-string">'fc-state-active active'</span>);
+                    <span class="cm-variable">$</span>(<span class="cm-string">"#agendaView"</span>).<span class="cm-property">remove</span>();
+
+                }<span class="cm-keyword">else</span>{
+                    <span class="cm-variable">renderAgendaView</span>();
+                }
+
+             
+ 
+            },
+            <span class="cm-property">eventRender</span>: <span class="cm-keyword">function</span>(<span class="cm-def">event</span>, <span class="cm-def">e</span>){
+
+                <span class="cm-variable">currentView</span> <span class="cm-operator">=</span> <span class="cm-variable">$</span>(<span class="cm-string">'#calendar'</span>).<span class="cm-property">fullCalendar</span>(<span class="cm-string">'getView'</span>).<span class="cm-property">name</span>; <span class="cm-comment">/* 用來偵測哪個view進行什麼樣的處理用 */</span>
+            },<span class="cm-property">dayClick</span>: <span class="cm-keyword">function</span>(<span class="cm-def">date</span>, <span class="cm-def">jsEvent</span>, <span class="cm-def">view</span>) { 
+              <span class="cm-comment">/* 點選日期觸發 */</span>
+
+ 
+            },
+            <span class="cm-property">eventClick</span>: <span class="cm-keyword">function</span>(<span class="cm-def">calEvent</span>, <span class="cm-def">jsEvent</span>, <span class="cm-def">view</span>) {
+                <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">"===== eventClick ====="</span>);
+                <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">calEvent</span>);
+               
+
+            }
+});
+
+    <span class="cm-keyword">var</span> <span class="cm-def">headerRight</span> <span class="cm-operator">=</span> <span class="cm-variable">$calendar</span>.<span class="cm-property">find</span>(<span class="cm-string">".fc-header"</span>).<span class="cm-property">find</span>(<span class="cm-string">".fc-header-right"</span>);
+
+    <span class="cm-keyword">var</span> <span class="cm-def">agendaBtn</span> <span class="cm-operator">=</span> <span class="cm-variable">headerRight</span>.<span class="cm-property">find</span>(<span class="cm-string">".fc-corner-right"</span>).<span class="cm-property">removeClass</span>(<span class="cm-string">'fc-corner-right'</span>)
+                    .<span class="cm-property">clone</span>().<span class="cm-property">addClass</span>(<span class="cm-string">'fc-corner-right fc-button-agendaView'</span>).<span class="cm-property">removeClass</span>(<span class="cm-string">'fc-button-agendaDay'</span>).<span class="cm-property">text</span>(<span class="cm-string">"agenda"</span>);
+
+    <span class="cm-variable">agendaBtn</span>.<span class="cm-property">on</span>(<span class="cm-string">'click'</span>, <span class="cm-keyword">function</span>(){
+      <span class="cm-variable">renderAgendaView</span>();
+    });
+
+    <span class="cm-variable">headerRight</span>.<span class="cm-property">find</span>(<span class="cm-string">".fc-header-space"</span>).<span class="cm-property">before</span>(<span class="cm-variable">agendaBtn</span>);
+       
+<span class="cm-comment">// test event data</span>
+<span class="cm-keyword">var</span> <span class="cm-def">date</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>();
+<span class="cm-keyword">var</span> <span class="cm-def">d</span> <span class="cm-operator">=</span> <span class="cm-variable">date</span>.<span class="cm-property">getDate</span>();
+<span class="cm-keyword">var</span> <span class="cm-def">m</span> <span class="cm-operator">=</span> <span class="cm-variable">date</span>.<span class="cm-property">getMonth</span>();
+<span class="cm-keyword">var</span> <span class="cm-def">y</span> <span class="cm-operator">=</span> <span class="cm-variable">date</span>.<span class="cm-property">getFullYear</span>();
+
+<span class="cm-keyword">var</span> <span class="cm-def">newEvent</span> <span class="cm-operator">=</span> {
+  <span class="cm-property">title</span>: <span class="cm-string">'NEW EVENT'</span>,
+  <span class="cm-property">start</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable">y</span>, <span class="cm-variable">m</span>, <span class="cm-variable">d</span>, <span class="cm-number">10</span>),
+  <span class="cm-property">end</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable">y</span>, <span class="cm-variable">m</span>, <span class="cm-variable">d</span>, <span class="cm-number">15</span>),
+  <span class="cm-property">editable</span>: <span class="cm-atom">true</span>
+};
+
+<span class="cm-comment">// add event to calendar</span>
+<span class="cm-keyword">var</span> <span class="cm-def">event</span> <span class="cm-operator">=</span> <span class="cm-variable">$</span>(<span class="cm-string">'#calendar'</span>).<span class="cm-property">fullCalendar</span>( <span class="cm-string">'renderEvent'</span>, <span class="cm-variable">newEvent</span> , <span class="cm-string">'stick'</span>);
+
+
+
+<span class="cm-keyword">function</span> <span class="cm-def">renderAgendaView</span>(){
+
+  <span class="cm-keyword">if</span>(<span class="cm-variable">$calendar</span>.<span class="cm-property">fullCalendar</span>(<span class="cm-string">'getView'</span>) <span class="cm-operator">!=</span> <span class="cm-string">'agendaView'</span>){
+    <span class="cm-comment">// 複製原本的month為agendaView ，這樣可解決切換為agenda View時 month 無法點之問題</span>
+    <span class="cm-variable">$calendar</span>.<span class="cm-property">fullCalendar</span>( <span class="cm-string">'changeView'</span>, <span class="cm-string">'month'</span> );
+    <span class="cm-keyword">var</span> <span class="cm-def">newView</span> <span class="cm-operator">=</span> <span class="cm-variable">$calendar</span>.<span class="cm-property">fullCalendar</span>(<span class="cm-string">'getView'</span>);
+    <span class="cm-variable-2">newView</span>.<span class="cm-property">name</span> <span class="cm-operator">=</span> <span class="cm-string">'agendaView'</span>;
+
+    <span class="cm-variable">$calendar</span>.<span class="cm-property">fullCalendar</span>( <span class="cm-string">'changeView'</span>, <span class="cm-string">'agendaView'</span> );
+  }
+
+  <span class="cm-comment">// get current events in memory</span>
+  <span class="cm-keyword">var</span> <span class="cm-def">events</span> <span class="cm-operator">=</span> <span class="cm-variable">$calendar</span>.<span class="cm-property">fullCalendar</span>( <span class="cm-string">'clientEvents'</span> );
+
+  <span class="cm-comment">// get current date</span>
+  <span class="cm-keyword">var</span> <span class="cm-def">currentDate</span> <span class="cm-operator">=</span> <span class="cm-variable">$calendar</span>.<span class="cm-property">fullCalendar</span>( <span class="cm-string">'getDate'</span> );
+
+  <span class="cm-variable">$calendar</span>.<span class="cm-property">find</span>(<span class="cm-string">".fc-header"</span>).<span class="cm-property">find</span>(<span class="cm-string">".fc-button-agendaView"</span>).<span class="cm-property">siblings</span>().<span class="cm-property">removeClass</span>(<span class="cm-string">'fc-state-active'</span>).<span class="cm-property">end</span>().<span class="cm-property">addClass</span>(<span class="cm-string">'fc-state-active'</span>);
+ 
+  <span class="cm-variable">$calendar</span>.<span class="cm-property">data</span>(<span class="cm-string">"view"</span>, <span class="cm-string">'agendaView'</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">agendaViewHtml</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">createElement</span>(<span class="cm-string">'div'</span>);
+  <span class="cm-variable-2">agendaViewHtml</span>.<span class="cm-property">setAttribute</span>(<span class="cm-string">"id"</span>, <span class="cm-string">"agendaView"</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">contents</span> <span class="cm-operator">=</span> <span class="cm-string">"&lt;table&gt;"</span> <span class="cm-operator">+</span> 
+      <span class="cm-string">"&lt;thead&gt;&lt;tr&gt;"</span> <span class="cm-operator">+</span>
+      <span class="cm-string">"&lt;th class='fc-widget-header fc-agendaView-event-start'&gt;DateStart&lt;/th&gt;"</span> <span class="cm-operator">+</span> 
+      <span class="cm-string">"&lt;th class='fc-widget-header fc-agendaView-event-end'&gt;DateEnd&lt;/th&gt;"</span> <span class="cm-operator">+</span> 
+      <span class="cm-string">"&lt;th class='fc-widget-header fc-agendaView-event-title'&gt;Event&lt;/th&gt;"</span> <span class="cm-operator">+</span>
+      <span class="cm-string">"&lt;/tr&gt;&lt;/thead&gt;"</span> <span class="cm-operator">+</span> 
+      <span class="cm-string">"&lt;tbody&gt;"</span>;
+
+  <span class="cm-keyword">for</span> (<span class="cm-variable">key</span> <span class="cm-keyword">in</span> <span class="cm-variable-2">events</span>) {
+    <span class="cm-comment">//  detect month range</span>
+    <span class="cm-keyword">var</span> <span class="cm-def">monthRange</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>().<span class="cm-property">range</span>(<span class="cm-variable">moment</span>(<span class="cm-variable-2">currentDate</span>).<span class="cm-property">startOf</span>(<span class="cm-string">'month'</span>), <span class="cm-variable">moment</span>(<span class="cm-variable-2">currentDate</span>).<span class="cm-property">endOf</span>(<span class="cm-string">'month'</span>));
+    <span class="cm-keyword">var</span> <span class="cm-def">eventStart</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">events</span>[<span class="cm-variable">key</span>].<span class="cm-property">start</span>).<span class="cm-property">format</span>(<span class="cm-string">"YYYY/MM/DD-H:mm:ss"</span>);
+    <span class="cm-keyword">var</span> <span class="cm-def">eventEnd</span> <span class="cm-operator">=</span> <span class="cm-variable">moment</span>(<span class="cm-variable-2">events</span>[<span class="cm-variable">key</span>].<span class="cm-property">end</span>).<span class="cm-property">format</span>(<span class="cm-string">"YYYY/MM/DD-H:mm:ss"</span>);
+    <span class="cm-keyword">if</span>(<span class="cm-variable-2">monthRange</span>.<span class="cm-property">contains</span>(<span class="cm-variable-2">events</span>[<span class="cm-variable">key</span>].<span class="cm-property">start</span>) <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">monthRange</span>.<span class="cm-property">contains</span>(<span class="cm-variable-2">events</span>[<span class="cm-variable">key</span>].<span class="cm-property">end</span>)){
+      <span class="cm-keyword">var</span> <span class="cm-def">eventTitle</span> <span class="cm-operator">=</span> <span class="cm-variable-2">events</span>[<span class="cm-variable">key</span>].<span class="cm-property">title</span>;
+      <span class="cm-variable-2">contents</span> <span class="cm-operator">+=</span> <span class="cm-string">'&lt;tr&gt;'</span> <span class="cm-operator">+</span> 
+        <span class="cm-string">'&lt;td class="fc-widget-content"&gt;'</span> <span class="cm-operator">+</span> <span class="cm-variable-2">eventStart</span> <span class="cm-operator">+</span> <span class="cm-string">'&lt;/td&gt;'</span> <span class="cm-operator">+</span> 
+        <span class="cm-string">'&lt;td class="fc-widget-content"&gt;'</span> <span class="cm-operator">+</span> <span class="cm-variable-2">eventEnd</span> <span class="cm-operator">+</span> <span class="cm-string">'&lt;/td&gt;'</span> <span class="cm-operator">+</span> 
+        <span class="cm-string">'&lt;td class="fc-widget-content"&gt;'</span> <span class="cm-operator">+</span> <span class="cm-variable-2">eventTitle</span> <span class="cm-operator">+</span> <span class="cm-string">'&lt;/td&gt;'</span> <span class="cm-operator">+</span> 
+        <span class="cm-string">'&lt;/tr&gt;'</span>;
+
+    }
+  }
+  <span class="cm-variable-2">contents</span> <span class="cm-operator">+=</span> <span class="cm-string">"&lt;/tbody&gt;&lt;/table&gt;"</span>;
+  <span class="cm-variable-2">agendaViewHtml</span>.<span class="cm-property">innerHTML</span> <span class="cm-operator">=</span> <span class="cm-variable-2">contents</span>;
+  <span class="cm-variable">$calendar</span>.<span class="cm-property">find</span>(<span class="cm-string">".fc-content"</span>).<span class="cm-property">html</span>(<span class="cm-variable-2">agendaViewHtml</span>);
+
+  <span class="cm-comment">// console.log(events);</span>
+}</code></pre>
+</div>
+<div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+<iframe allow="camera; display-capture; geolocation; microphone; web-share" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " id="result-iframe" loading="lazy" name="CodePen Preview for fullCalendar with custom agenda view" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" scrolling="yes" title="CodePen Preview for fullCalendar with custom agenda view" data-src="https://cdpn.io/lanc/fullembedgrid/LYJRpa?animations=run&amp;type=embed" src="LYJRpa_data/LYJRpa.html" frameborder="0">
+  </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/lanc" target="_blank" rel="noopener"><img src="LYJRpa_data/default.png" loading="lazy" alt="" class="about-image"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/lanc" target="_blank" rel="noopener">Lanc</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+</p>
+<p>
+<a href="https://codepen.io/lanc" target="_blank" rel="noopener" class="about-user-more">
+See more by @lanc on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" target="_blank">//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css</a>
+</li>
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.css" target="_blank">https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.css</a>
+</li>
+</ol>
+<h3>External JavaScript</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" target="_blank">//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js</a>
+</li>
+<li>
+<a href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js" target="_blank">//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js</a>
+</li>
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js" target="_blank">//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js</a>
+</li>
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js" target="_blank">//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js</a>
+</li>
+<li>
+<a href="https://raw.githubusercontent.com/gf3/moment-range/master/lib/moment-range.js" target="_blank">https://raw.githubusercontent.com/gf3/moment-range/master/lib/moment-range.js</a>
+</li>
+</ol>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button" id="zoom-button-1">1×</button></li>
+<li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+<li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script nonce="">
+    __processedPen = {"html":"&lt;div id=&quot;calendar&quot;&gt;\n  \n&lt;/div&gt;","css":"#calendar {\n  width: 80%;\n  \n}\n\n\n/* ------- Agenda View ------- */\n#agendaView &gt; table{\n    width: 100%;\n    min-height: 500px;\n    background: #FFF;\n    \n}\n\n#agendaView .fc-agendaView-event-start,\n#agendaView .fc-agendaView-event-end{\n    width: 20%;\n}\n\n#agendaView .fc-agendaView-event-title{\n    width: 60%;\n}\n#agendaView th{\n    height: 30px;\n    font-size: 14px;\n    vertical-align: text-bottom;\n    font-weight: bold;\n    padding: 10px 0 0 10px;\n}\n\n#agendaView td{\n    height: 30px;\n    padding: 10px 0 0 10px;\n    font-size: 14px;\n    vertical-align: text-bottom;    \n}","js":"var $calendar = $(&quot;#calendar&quot;);\n$calendar.fullCalendar({\n  header: {\n    left: &#39; today,prev,next,  title&#39;,\n    right: &#39;month,agendaWeek,agendaDay &#39; },\n\n  weekends: true,\n  allDaySlot: true,\n  droppable: true, /* 允許拖入 */\n  eventAfterAllRender: function (view) {\n    var header = $calendar.find(&quot;.fc-header&quot;);\n    // trigger current view\n    header.find(&#39;.fc-header-right&#39;).find(&#39;.fc-button&#39;).off(&#39;mouseup&#39;).on(&#39;mouseup&#39;, function () {\n      if (!$(this).hasClass(&#39;fc-button-agendaView&#39;)) {\n        $calendar.data(&quot;view&quot;, &#39;&#39;);\n      }\n    });\n\n    //用來辨別是否在agendaView，是則重繪，否則移除\n    if ($calendar.data(&quot;view&quot;) != &#39;agendaView&#39;) {\n      header.find(&quot;.fc-button-agendaView&quot;).removeClass(&#39;fc-state-active active&#39;);\n      $(&quot;#agendaView&quot;).remove();\n\n    } else {\n      renderAgendaView();\n    }\n\n\n\n  },\n  eventRender: function (event, e) {\n\n    currentView = $(&#39;#calendar&#39;).fullCalendar(&#39;getView&#39;).name; /* 用來偵測哪個view進行什麼樣的處理用 */\n  }, dayClick: function (date, jsEvent, view) {\n    /* 點選日期觸發 */\n\n\n  },\n  eventClick: function (calEvent, jsEvent, view) {\n    console.log(&quot;===== eventClick =====&quot;);\n    console.log(calEvent);\n\n\n  } });\n\n\nvar headerRight = $calendar.find(&quot;.fc-header&quot;).find(&quot;.fc-header-right&quot;);\n\nvar agendaBtn = headerRight.find(&quot;.fc-corner-right&quot;).removeClass(&#39;fc-corner-right&#39;).\nclone().addClass(&#39;fc-corner-right fc-button-agendaView&#39;).removeClass(&#39;fc-button-agendaDay&#39;).text(&quot;agenda&quot;);\n\nagendaBtn.on(&#39;click&#39;, function () {\n  renderAgendaView();\n});\n\nheaderRight.find(&quot;.fc-header-space&quot;).before(agendaBtn);\n\n// test event data\nvar date = new Date();\nvar d = date.getDate();\nvar m = date.getMonth();\nvar y = date.getFullYear();\n\nvar newEvent = {\n  title: &#39;NEW EVENT&#39;,\n  start: new Date(y, m, d, 10),\n  end: new Date(y, m, d, 15),\n  editable: true };\n\n\n// add event to calendar\nvar event = $(&#39;#calendar&#39;).fullCalendar(&#39;renderEvent&#39;, newEvent, &#39;stick&#39;);\n\n\n\nfunction renderAgendaView() {\n\n  if ($calendar.fullCalendar(&#39;getView&#39;) != &#39;agendaView&#39;) {\n    // 複製原本的month為agendaView ，這樣可解決切換為agenda View時 month 無法點之問題\n    $calendar.fullCalendar(&#39;changeView&#39;, &#39;month&#39;);\n    var newView = $calendar.fullCalendar(&#39;getView&#39;);\n    newView.name = &#39;agendaView&#39;;\n\n    $calendar.fullCalendar(&#39;changeView&#39;, &#39;agendaView&#39;);\n  }\n\n  // get current events in memory\n  var events = $calendar.fullCalendar(&#39;clientEvents&#39;);\n\n  // get current date\n  var currentDate = $calendar.fullCalendar(&#39;getDate&#39;);\n\n  $calendar.find(&quot;.fc-header&quot;).find(&quot;.fc-button-agendaView&quot;).siblings().removeClass(&#39;fc-state-active&#39;).end().addClass(&#39;fc-state-active&#39;);\n\n  $calendar.data(&quot;view&quot;, &#39;agendaView&#39;);\n  var agendaViewHtml = document.createElement(&#39;div&#39;);\n  agendaViewHtml.setAttribute(&quot;id&quot;, &quot;agendaView&quot;);\n  var contents = &quot;&lt;table&gt;&quot; +\n  &quot;&lt;thead&gt;&lt;tr&gt;&quot; +\n  &quot;&lt;th class=&#39;fc-widget-header fc-agendaView-event-start&#39;&gt;DateStart&lt;/th&gt;&quot; +\n  &quot;&lt;th class=&#39;fc-widget-header fc-agendaView-event-end&#39;&gt;DateEnd&lt;/th&gt;&quot; +\n  &quot;&lt;th class=&#39;fc-widget-header fc-agendaView-event-title&#39;&gt;Event&lt;/th&gt;&quot; +\n  &quot;&lt;/tr&gt;&lt;/thead&gt;&quot; +\n  &quot;&lt;tbody&gt;&quot;;\n\n  for (key in events) {\n    //  detect month range\n    var monthRange = moment().range(moment(currentDate).startOf(&#39;month&#39;), moment(currentDate).endOf(&#39;month&#39;));\n    var eventStart = moment(events[key].start).format(&quot;YYYY/MM/DD-H:mm:ss&quot;);\n    var eventEnd = moment(events[key].end).format(&quot;YYYY/MM/DD-H:mm:ss&quot;);\n    if (monthRange.contains(events[key].start) &amp;&amp; monthRange.contains(events[key].end)) {\n      var eventTitle = events[key].title;\n      contents += &#39;&lt;tr&gt;&#39; +\n      &#39;&lt;td class=&quot;fc-widget-content&quot;&gt;&#39; + eventStart + &#39;&lt;/td&gt;&#39; +\n      &#39;&lt;td class=&quot;fc-widget-content&quot;&gt;&#39; + eventEnd + &#39;&lt;/td&gt;&#39; +\n      &#39;&lt;td class=&quot;fc-widget-content&quot;&gt;&#39; + eventTitle + &#39;&lt;/td&gt;&#39; +\n      &#39;&lt;/tr&gt;&#39;;\n\n    }\n  }\n  contents += &quot;&lt;/tbody&gt;&lt;/table&gt;&quot;;\n  agendaViewHtml.innerHTML = contents;\n  $calendar.find(&quot;.fc-content&quot;).html(agendaViewHtml);\n\n  // console.log(events);\n}"};
+    __preprocessors = {
+      "html": "none",
+      "css": "none",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+<script src="OPmLBW_data/embed-008e8e63bc8f4f7a03df3f5da5b5c4d5e25fe5a438f147d0a2325f1.js"></script>
+<script nonce="">(function(){var js = "window['__CF$cv$params']={r:'7cb372a2ad4b9e8f',m:'FjXZcwDNc_I5Jd_5.i7Zc_SWXORPC5D_vP2wJszqfMY-1684741612-0-Aca/C6H+Ualw3udAvRpYGx4qrZ//cHNqZd7BRQqqNEr6',u:'/cdn-cgi/challenge-platform/h/g'};_cpo=document.createElement('script');_cpo.nonce='5bkQcz93wB0=',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '5bkQcz93wB0=';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe style="position: absolute; top: 0px; left: 0px; border: medium none; visibility: hidden;" width="1" height="1"></iframe>
+
+</body></html>

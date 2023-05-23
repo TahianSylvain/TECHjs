@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - It's A Calendar Sort Of Thing</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="MihUNAVx+zDzn4DB4FDtFGSfuaGqJ7x0nywURGdFuJO2+NvBpXK4wmqI/mWNX0QdVLoS5pyhl1/SiZEtPQKudw==">
+<link rel="stylesheet" media="all" href="OPmLBW_data/embed-c24dc45033a5a0e3c76b9588328759bcba403f9bfa524b08f43645.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    #result-box {
+      background: #111111;
+      color: #eeeeee;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #111111;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #eeeeee;
+      background-color: #333333;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #555555;
+      color: #eeeeee;
+      box-shadow: inset 0px 3px #797979;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #eeeeee;
+    }
+
+    .embed-nav svg {
+      stroke: #eeeeee !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="OPmLBW_data/twilight-3476125ec032fffc9adb3dec23f00153fc064bf13d518310429.css">
+</head>
+<body id="the-body" style="border: 1px solid #666666; --borderWidth: 1px;" class="codepen-embed-body static results-active">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="#html-box" role="button" aria-pressed="false">
+Haml
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="#css-box" role="button" aria-pressed="false">
+SCSS
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="#js-box" role="button" aria-pressed="false">
+JS
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+<li>
+<a href="#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/Jackthomsonn/pen/pyjXdJ" title="Edit on CodePen">
+<div class="large-logo">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+<path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+</div>
+<div class="box-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+</div>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thin" data-header="true">
+<div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+<pre tabindex="0"><code data-lang="haml" id="actual-html-code" class=" cm-s-default"><span class="cm-tag">%html</span>{<span class="cm-string">'ng-app'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'calendarApp'</span>, <span class="cm-string">'ng-cloak'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'true'</span>}
+
+<span class="cm-operator">-</span><span class="cm-variable-2">@days</span> <span class="cm-operator">=</span> [<span class="cm-string">'Mon'</span>, <span class="cm-string">'Tue'</span>, <span class="cm-string">'Wed'</span>, <span class="cm-string">'Thu'</span>, <span class="cm-string">'Fri'</span>, <span class="cm-string">'Sat'</span>, <span class="cm-string">'Sun'</span>]
+
+<span class="cm-attribute">.calendar</span>{<span class="cm-string">'ng-controller'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'calendarController as calendar'</span>}
+  <span class="cm-attribute">.calendar_left</span>
+    <span class="cm-attribute">.header</span>
+      <span class="cm-tag">%i</span>{<span class="cm-string">'class'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'material-icons'</span>, <span class="cm-string">'ng-click'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'calendar.prev()'</span>} navigate_before
+      <span class="cm-tag">%h1</span> {{<span class="cm-variable">calendar</span><span class="cm-operator">.</span><span class="cm-property">month</span>}}
+      <span class="cm-tag">%i</span>{<span class="cm-string">'class'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'material-icons'</span>, <span class="cm-string">'ng-click'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'calendar.next()'</span>} navigate_next
+    <span class="cm-attribute">.days</span>
+      <span class="cm-operator">-</span><span class="cm-variable-2">@days</span><span class="cm-operator">.</span><span class="cm-property">each</span> <span class="cm-keyword">do</span> |<span class="cm-def">days</span>, <span class="cm-def">index</span>|
+        <span class="cm-attribute">.day_item</span> #{days}
+    <span class="cm-attribute">.dates</span>
+     
+  <span class="cm-attribute">.calendar_right</span>
+    
+    <span class="cm-attribute">.list</span>
+    
+      <span class="cm-tag">%ul</span>
+      
+        <span class="cm-tag">%li</span>{<span class="cm-string">'ng-repeat'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'events in calendar.events'</span>, <span class="cm-string">'ng-show'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'events.id === calendar.dataId'</span>, <span class="cm-string">'class'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'bounce-in'</span>}
+        
+          <span class="cm-tag">%span</span>{<span class="cm-string">'class'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'type'</span>} It's a {{ events.type }} thing -
+          
+          <span class="cm-tag">%span</span>{<span class="cm-string">'class'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'description'</span>} {{ <span class="cm-variable">events</span><span class="cm-operator">.</span><span class="cm-property">description</span> }}
+    
+    <span class="cm-tag">%form</span>{<span class="cm-string">'ng-submit'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'calendar.add()'</span>}
+      <span class="cm-tag">%input</span>{<span class="cm-string">'type'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'text'</span>, <span class="cm-string">'placeholder'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'Enter a task for this day'</span>, <span class="cm-string">'ng-model'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'calendar.description'</span>}
+        <span class="cm-tag">%select</span>{<span class="cm-string">'placeholder'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'calendar.type'</span>, <span class="cm-string">'ng-model'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'calendar.type'</span>}
+          <span class="cm-tag">%option</span>{<span class="cm-string">'value'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'Social'</span>} Social
+          <span class="cm-tag">%option</span>{<span class="cm-string">'value'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'Work'</span>} Work</code></pre>
+<a href="#0" id="view-html-compiled-button" class="action-button bottom right view-compiled-button" data-type="html">
+View Compiled
+</a>
+</div>
+<div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+<pre tabindex="0"><code data-lang="text/x-scss" id="actual-css-code" class=" cm-s-default">* {
+  <span class="cm-property">margin</span>: <span class="cm-number">0</span>; <span class="cm-property">padding</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">box-sizing</span>: <span class="cm-atom">border-box</span>;
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Montserrat'</span>, <span class="cm-atom">sans-serif</span>;
+}
+
+<span class="cm-comment">// Variables</span>
+<span class="cm-variable-2">$primary-color</span>: <span class="cm-atom">#00A8E8</span>;
+<span class="cm-variable-2">$radius</span>: <span class="cm-number">5px</span>;
+
+<span class="cm-tag">html</span>,<span class="cm-tag">body</span> {
+  <span class="cm-property">background</span>: <span class="cm-atom">#f7f8fb</span>;
+}
+
+<span class="cm-qualifier">.calendar</span> {
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">justify-content</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">align-items</span>: <span class="cm-atom">center</span>;
+  <span class="cm-property">height</span>: <span class="cm-number">100vh</span>;
+  &amp;<span class="cm-tag">_left</span> {
+    <span class="cm-property">background</span>: <span class="cm-variable-2">$primary-color</span>;
+    <span class="cm-property">width</span>: <span class="cm-number">400px</span>;
+    <span class="cm-property">height</span>: <span class="cm-number">415px</span>;
+    <span class="cm-property">border-top-left-radius</span>: <span class="cm-variable-2">$radius</span>;
+    <span class="cm-property">border-bottom-left-radius</span>: <span class="cm-variable-2">$radius</span>;
+    <span class="cm-property">padding</span>: <span class="cm-number">1.5em</span>;
+    <span class="cm-property">z-index</span>: <span class="cm-number">1</span>;
+    <span class="cm-qualifier">.header</span> {
+      <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+      <span class="cm-property">justify-content</span>: <span class="cm-atom">space-around</span>;
+      <span class="cm-property">margin-bottom</span>: <span class="cm-number">2em</span>;
+      <span class="cm-property">color</span>: <span class="cm-atom">#FFF</span>;
+      <span class="cm-property">font-size</span>: <span class="cm-number">0.7em</span>;
+      <span class="cm-tag">h1</span> {
+        <span class="cm-property">line-height</span>: <span class="cm-number">1em</span>;
+      }
+      <span class="cm-tag">i</span> {
+        <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+      }
+    }
+  }
+  &amp;<span class="cm-tag">_right</span> {
+    <span class="cm-property">background</span>: <span class="cm-variable cm-callee">darken</span>(<span class="cm-variable-2">$primary-color</span>, <span class="cm-number">5%</span>);
+    <span class="cm-property">width</span>: <span class="cm-number">350px</span>;
+    <span class="cm-property">height</span>: <span class="cm-number">415px</span>;
+    <span class="cm-property">border-top-right-radius</span>: <span class="cm-variable-2">$radius</span>;
+    <span class="cm-property">border-bottom-right-radius</span>: <span class="cm-variable-2">$radius</span>;
+    <span class="cm-property">position</span>: <span class="cm-atom">relative</span>;
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">0.95</span>) <span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">-10px</span>);
+    <span class="cm-property">z-index</span>: <span class="cm-number">0</span>;
+    <span class="cm-qualifier">.list</span> {
+      <span class="cm-property">height</span>: <span class="cm-number">351px</span>;
+      <span class="cm-property">overflow-y</span>: <span class="cm-atom">scroll</span>;
+      <span class="cm-property">padding</span>: <span class="cm-number">1em</span>;
+      <span class="cm-tag">ul</span> {
+        <span class="cm-property">padding</span>: <span class="cm-number">2.25em</span>;  
+      }
+      <span class="cm-tag">li</span> {
+        <span class="cm-property">padding</span>: <span class="cm-number">1em</span>;
+        <span class="cm-property">width</span>: <span class="cm-number">180px</span>;
+        <span class="cm-property">color</span>: <span class="cm-atom">#FFF</span>;
+        <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">-700px</span>);
+      }
+      <span class="cm-qualifier">.description</span> {
+        <span class="cm-property">font-size</span>: <span class="cm-number">12px</span>;
+      }
+    }
+    <span class="cm-tag">form</span> {
+      <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+      <span class="cm-property">bottom</span>: <span class="cm-number">0</span>;
+      <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+      <span class="cm-property">width</span>: <span class="cm-number">100%</span>;
+      <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+      <span class="cm-property">flex-flow</span>: <span class="cm-atom">row</span> <span class="cm-atom">wrap</span>;
+    }
+    <span class="cm-tag">input</span> {
+      <span class="cm-property">background</span>: <span class="cm-variable cm-callee">darken</span>(<span class="cm-variable-2">$primary-color</span>, <span class="cm-number">7%</span>);
+      <span class="cm-property">border</span>: <span class="cm-atom">none</span>;
+      <span class="cm-property">padding</span>: <span class="cm-number">1.2em</span>;
+      <span class="cm-property">flex</span>: <span class="cm-number">2</span>;
+      <span class="cm-property">outline</span>: <span class="cm-atom">none</span>;
+      <span class="cm-property">color</span>: <span class="cm-atom">#FFF</span>;
+      <span class="cm-property">border-bottom-right-radius</span>: <span class="cm-variable-2">$radius</span>;
+    }
+    <span class="cm-tag">select</span> {
+      <span class="cm-property">background</span>: <span class="cm-variable cm-callee">darken</span>(<span class="cm-variable-2">$primary-color</span>, <span class="cm-number">11%</span>);
+      <span class="cm-property">border</span>: <span class="cm-atom">none</span>;
+      <span class="cm-property">padding</span>: <span class="cm-number">1.2em</span>;
+      <span class="cm-property">outline</span>: <span class="cm-atom">none</span>;
+      <span class="cm-property">color</span>: <span class="cm-atom">#FFF</span>;
+      <span class="cm-property">border-top-left-radius</span>: <span class="cm-number">0</span>;
+      <span class="cm-property">border-top-right-radius</span>: <span class="cm-number">0</span>;
+      <span class="cm-property">border-bottom-left-radius</span>: <span class="cm-number">0</span>;
+      <span class="cm-property">border-bottom-right-radius</span>: <span class="cm-variable-2">$radius</span>;
+      <span class="cm-property">appearance</span>: <span class="cm-atom">none</span>;
+    }
+  }
+}
+
+<span class="cm-qualifier">.days</span> {
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">justify-content</span>: <span class="cm-atom">flex-start</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">400px</span>;
+  <span class="cm-qualifier">.day_item</span> {
+    <span class="cm-property">color</span>: <span class="cm-atom">#FFF</span>;
+    <span class="cm-property">width</span>: <span class="cm-number">50px</span>;
+    <span class="cm-property">text-align</span>:<span class="cm-atom">center</span>;
+    <span class="cm-property">padding-bottom</span>: <span class="cm-number">1em</span>;
+  }
+}
+
+<span class="cm-qualifier">.dates</span> {
+  <span class="cm-property">display</span>: <span class="cm-atom">flex</span>;
+  <span class="cm-property">justify-content</span>: <span class="cm-atom">flex-start</span>;
+  <span class="cm-property">flex-flow</span>: <span class="cm-atom">row</span> <span class="cm-atom">wrap</span>;
+  <span class="cm-property">width</span>: <span class="cm-number">350px</span>;
+  <span class="cm-qualifier">.date_item</span> {
+    <span class="cm-property">color</span>: <span class="cm-atom">#FFF</span>;
+    <span class="cm-property">width</span>: <span class="cm-number">50px</span>;
+    <span class="cm-property">text-align</span>:<span class="cm-atom">center</span>;
+    <span class="cm-property">height</span>: <span class="cm-number">50px</span>;
+    <span class="cm-property">padding</span>: <span class="cm-number">1em</span>;
+    <span class="cm-property">cursor</span>: <span class="cm-atom">pointer</span>;
+    <span class="cm-property">border-radius</span>: <span class="cm-number">100%</span>;
+  }
+}
+
+<span class="cm-qualifier">.present</span> {
+  <span class="cm-property">background</span>: <span class="cm-atom">#FFF</span>;
+  <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">0.7</span>);
+  <span class="cm-property">border-radius</span>: <span class="cm-number">50px</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">0.95em</span> <span class="cm-keyword">!important</span>;
+  <span class="cm-property">color</span>: <span class="cm-variable-2">$primary-color</span> <span class="cm-keyword">!important</span>;
+  <span class="cm-property">z-index</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">box-shadow</span>: <span class="cm-number">10px</span> <span class="cm-number">10px</span> <span class="cm-number">5px</span> <span class="cm-variable cm-callee">darken</span>(<span class="cm-variable-2">$primary-color</span>, <span class="cm-number">3%</span>);
+  <span class="cm-property">animation</span>: <span class="cm-variable">bounce-button-in</span> <span class="cm-number">.45s</span> <span class="cm-number">0s</span> <span class="cm-variable cm-callee">cubic-bezier</span>(<span class="cm-number">0.175</span>, <span class="cm-number">0.885</span>, <span class="cm-number">0.320</span>, <span class="cm-number">1.275</span>) <span class="cm-atom">forwards</span>;
+}
+
+<span class="cm-comment">// Browser Specific Overwrites</span>
+::<span class="cm-meta">-webkit-</span><span class="cm-variable-3">scrollbar</span> {
+  <span class="cm-property">display</span>: <span class="cm-atom">none</span>;
+}
+
+::<span class="cm-meta">-webkit-</span><span class="cm-variable-3">input-placeholder</span> {
+   <span class="cm-property">color</span>: <span class="cm-atom">#FFF</span>;
+}
+
+<span class="cm-comment">// Animations</span>
+<span class="cm-qualifier">.bounce-in</span><span class="cm-qualifier">.ng-animate</span> { 
+  <span class="cm-property">animation</span>: <span class="cm-atom">none</span> <span class="cm-number">0s</span>; 
+}
+
+<span class="cm-qualifier">.bounce-in</span> {
+  <span class="cm-property">animation</span>: <span class="cm-variable">bounce-in</span> <span class="cm-number">.9s</span> <span class="cm-number">0s</span> <span class="cm-variable cm-callee">cubic-bezier</span>(<span class="cm-number">0.175</span>, <span class="cm-number">0.885</span>, <span class="cm-number">0.320</span>, <span class="cm-number">1.275</span>) <span class="cm-atom">forwards</span>;
+}
+
+<span class="cm-def">@keyframes</span> <span class="cm-variable">bounce-in</span> {
+  <span class="cm-number">50%</span> {
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">0</span>);
+  }
+  <span class="cm-number">75%</span> {
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">7px</span>);
+  }
+  <span class="cm-number">100%</span> {
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">2px</span>);
+  }
+}
+
+<span class="cm-def">@keyframes</span> <span class="cm-variable">bounce-button-in</span> {
+  <span class="cm-number">0%</span> {
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateZ</span>(<span class="cm-number">0</span>) <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">0</span>);
+  }
+  <span class="cm-number">100%</span> {
+    <span class="cm-property">transform</span>: <span class="cm-variable cm-callee">translateZ</span>(<span class="cm-number">0</span>) <span class="cm-variable cm-callee">scale</span>(<span class="cm-number">0.7</span>);
+  }
+}</code></pre>
+<a href="#0" id="view-css-compiled-button" class="action-button bottom right view-compiled-button" data-type="css">
+View Compiled
+</a>
+</div>
+<div id="js-box" class="code-wrap code-box box " role="region" aria-label="JS">
+<pre tabindex="0"><code data-lang="javascript" id="actual-js-code" class=" cm-s-default">(<span class="cm-keyword">function</span>() {
+  <span class="cm-variable">angular</span>
+    .<span class="cm-property">module</span>(<span class="cm-string">'calendarApp'</span>, [<span class="cm-string">'ngAnimate'</span>])
+    .<span class="cm-property">controller</span>(<span class="cm-string">'calendarController'</span>, <span class="cm-variable">calendarController</span>);
+
+  <span class="cm-keyword">function</span> <span class="cm-def">calendarController</span>(<span class="cm-def">$scope</span>) {
+    <span class="cm-keyword">var</span> <span class="cm-def">vm</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>,
+      <span class="cm-def">now</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(),
+      <span class="cm-def">months</span> <span class="cm-operator">=</span> [<span class="cm-string">'January'</span>, <span class="cm-string">'February'</span>, <span class="cm-string">'March'</span>, <span class="cm-string">'April'</span>, <span class="cm-string">'May'</span>, <span class="cm-string">'June'</span>, <span class="cm-string">'July'</span>, <span class="cm-string">'August'</span>, <span class="cm-string">'September'</span>, <span class="cm-string">'October'</span>, <span class="cm-string">'November'</span>, <span class="cm-string">'December'</span>],
+      <span class="cm-def">jan</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">1</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">feb</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">2</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">mar</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">3</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">apr</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">4</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">may</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">5</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">jun</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">6</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">jul</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">7</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">aug</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">8</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">sep</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">9</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">oct</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">10</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">nov</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">11</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">dec</span> <span class="cm-operator">=</span> <span class="cm-variable">daysInMonth</span>(<span class="cm-number">12</span>, <span class="cm-variable-2">now</span>.<span class="cm-property">getFullYear</span>()),
+      <span class="cm-def">monthRef</span> <span class="cm-operator">=</span> [<span class="cm-variable-2">jan</span>, <span class="cm-variable-2">feb</span>, <span class="cm-variable-2">mar</span>, <span class="cm-variable-2">apr</span>, <span class="cm-variable-2">may</span>, <span class="cm-variable-2">jun</span>, <span class="cm-variable-2">jul</span>, <span class="cm-variable-2">aug</span>, <span class="cm-variable-2">sep</span>, <span class="cm-variable-2">oct</span>, <span class="cm-variable-2">nov</span>, <span class="cm-variable-2">dec</span>],
+      <span class="cm-def">month</span> <span class="cm-operator">=</span> <span class="cm-variable-2">now</span>.<span class="cm-property">getMonth</span>(),
+      <span class="cm-def">monthDay</span> <span class="cm-operator">=</span> <span class="cm-variable-2">monthRef</span>[<span class="cm-variable-2">now</span>.<span class="cm-property">getMonth</span>()],
+      <span class="cm-def">n</span> <span class="cm-operator">=</span> <span class="cm-variable-2">now</span>.<span class="cm-property">getDate</span>(),
+      <span class="cm-def">uidi</span>,
+      <span class="cm-def">uidm</span>,
+      <span class="cm-def">uid</span>;
+
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">id</span> <span class="cm-operator">=</span> <span class="cm-variable-2">now</span>.<span class="cm-property">getDate</span>().<span class="cm-property">toString</span>() <span class="cm-operator">+</span> <span class="cm-variable-2">now</span>.<span class="cm-property">getMonth</span>().<span class="cm-property">toString</span>();
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">dataId</span>;
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">events</span> <span class="cm-operator">=</span> [];
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">description</span>;
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">type</span> <span class="cm-operator">=</span> <span class="cm-string">'Social'</span>;
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">month</span> <span class="cm-operator">=</span> <span class="cm-variable-2">months</span>[<span class="cm-variable-2">month</span>];
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">next</span> <span class="cm-operator">=</span> <span class="cm-variable">next</span>;
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">prev</span> <span class="cm-operator">=</span> <span class="cm-variable">prev</span>;
+    <span class="cm-variable-2">vm</span>.<span class="cm-property">add</span> <span class="cm-operator">=</span> <span class="cm-variable">add</span>;
+
+    <span class="cm-comment">// Place Dates In Correct Place</span>
+    <span class="cm-keyword">function</span> <span class="cm-def">placeIt</span>() {
+      <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">0</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'200px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">1</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">"date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'0px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">2</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'150px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">3</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'300px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">4</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'400px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">5</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'200px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">6</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'300px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">7</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'100px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">8</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'250px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">9</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'350px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">10</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'150px'</span>
+        })
+      } <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">11</span>) {
+        <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">first</span>().<span class="cm-property">css</span>({
+          <span class="cm-string cm-property">'margin-left'</span>: <span class="cm-string">'250px'</span>
+        })
+      }
+    }
+
+    <span class="cm-comment">// Highlight Present Day</span>
+    <span class="cm-keyword">function</span> <span class="cm-def">presentDay</span>() {
+      <span class="cm-variable">$</span>(<span class="cm-string">".date_item"</span>).<span class="cm-property">eq</span>(<span class="cm-variable-2">n</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>).<span class="cm-property">addClass</span>(<span class="cm-string">"present"</span>);
+    }
+
+    <span class="cm-comment">// Print List Of Dates For Current Month</span>
+    <span class="cm-keyword">function</span> <span class="cm-def">showDays</span>(<span class="cm-def">days</span>) {
+      <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">days</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {
+        <span class="cm-keyword">var</span> <span class="cm-def">uidi</span> <span class="cm-operator">=</span> <span class="cm-variable-2">i</span>;
+        <span class="cm-keyword">var</span> <span class="cm-def">uidm</span> <span class="cm-operator">=</span> <span class="cm-variable-2">month</span>;
+        <span class="cm-keyword">var</span> <span class="cm-def">uid</span> <span class="cm-operator">=</span> <span class="cm-variable-2">uidi</span>.<span class="cm-property">toString</span>() <span class="cm-operator">+</span> <span class="cm-variable-2">uidm</span>.<span class="cm-property">toString</span>();
+        <span class="cm-variable">$</span>(<span class="cm-string">".dates"</span>).<span class="cm-property">append</span>(<span class="cm-string">"&lt;div class='date_item' data='"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">uid</span> <span class="cm-operator">+</span> <span class="cm-string">"'&gt;"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">i</span> <span class="cm-operator">+</span> <span class="cm-string">"&lt;/div&gt;"</span>);
+      }
+    }
+
+    <span class="cm-comment">// Get The Current Date</span>
+    <span class="cm-keyword">function</span> <span class="cm-def">daysInMonth</span>(<span class="cm-def">month</span>, <span class="cm-def">year</span>) {
+      <span class="cm-keyword">return</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">year</span>, <span class="cm-variable-2">month</span>, <span class="cm-number">0</span>).<span class="cm-property">getDate</span>() <span class="cm-operator">+</span> <span class="cm-number">1</span>;
+    }
+
+    <span class="cm-comment">// Next Month</span>
+    <span class="cm-keyword">function</span> <span class="cm-def">next</span>() {
+      <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">&lt;</span> <span class="cm-number">11</span>) {
+        <span class="cm-variable-2">month</span><span class="cm-operator">++</span>;
+        <span class="cm-variable">$</span>(<span class="cm-string">".dates"</span>).<span class="cm-property">html</span>(<span class="cm-string">''</span>);
+        <span class="cm-variable-2">vm</span>.<span class="cm-property">month</span> <span class="cm-operator">=</span> <span class="cm-variable-2">months</span>[<span class="cm-variable-2">month</span>];
+        <span class="cm-variable-2">monthDay</span> <span class="cm-operator">=</span> <span class="cm-variable-2">monthRef</span>[<span class="cm-variable-2">month</span>];
+        <span class="cm-variable-2">showDays</span>(<span class="cm-variable-2">monthDay</span>);
+        <span class="cm-variable-2">placeIt</span>();
+      }
+    }
+
+    <span class="cm-comment">// Previous Month</span>
+    <span class="cm-keyword">function</span> <span class="cm-def">prev</span>() {
+      <span class="cm-keyword">if</span> (<span class="cm-variable-2">month</span> <span class="cm-operator">===</span> <span class="cm-number">0</span>) {
+        <span class="cm-keyword">return</span> <span class="cm-atom">false</span>
+      } <span class="cm-keyword">else</span> {
+        <span class="cm-variable-2">month</span><span class="cm-operator">--</span>;
+        <span class="cm-variable">$</span>(<span class="cm-string">".dates"</span>).<span class="cm-property">html</span>(<span class="cm-string">''</span>);
+        <span class="cm-variable-2">vm</span>.<span class="cm-property">month</span> <span class="cm-operator">=</span> <span class="cm-variable-2">months</span>[<span class="cm-variable-2">month</span>];
+        <span class="cm-variable-2">monthDay</span> <span class="cm-operator">=</span> <span class="cm-variable-2">monthRef</span>[<span class="cm-variable-2">month</span>];
+        <span class="cm-variable-2">showDays</span>(<span class="cm-variable-2">monthDay</span>);
+        <span class="cm-variable-2">placeIt</span>();
+      }
+    }
+
+    <span class="cm-comment">// Add Events To Specified Date</span>
+    <span class="cm-keyword">function</span> <span class="cm-def">add</span>() {
+      <span class="cm-variable-2">vm</span>.<span class="cm-property">events</span>.<span class="cm-property">push</span>({
+        <span class="cm-property">id</span>: <span class="cm-variable-2">vm</span>.<span class="cm-property">id</span>,
+        <span class="cm-property">description</span>: <span class="cm-variable-2">vm</span>.<span class="cm-property">description</span>,
+        <span class="cm-property">type</span>: <span class="cm-variable-2">vm</span>.<span class="cm-property">type</span>
+      });
+
+      <span class="cm-variable-2">vm</span>.<span class="cm-property">description</span> <span class="cm-operator">=</span> <span class="cm-string">""</span>;
+    }
+
+    <span class="cm-comment">// Fetch Unique ID For Each Date Item</span>
+    <span class="cm-variable">$</span>(<span class="cm-string">".dates"</span>).<span class="cm-property">on</span>(<span class="cm-string">"click"</span>, <span class="cm-string">".date_item"</span>, <span class="cm-keyword">function</span>() {
+      <span class="cm-variable-2">vm</span>.<span class="cm-property">id</span> <span class="cm-operator">=</span> <span class="cm-variable">$</span>(<span class="cm-keyword">this</span>).<span class="cm-property">attr</span>(<span class="cm-string">'data'</span>);
+      <span class="cm-variable-2">vm</span>.<span class="cm-property">dataId</span> <span class="cm-operator">=</span> <span class="cm-variable">$</span>(<span class="cm-keyword">this</span>).<span class="cm-property">attr</span>(<span class="cm-string">'data'</span>);
+      <span class="cm-variable">$</span>(<span class="cm-keyword">this</span>).<span class="cm-property">addClass</span>(<span class="cm-string">"present"</span>).<span class="cm-property">siblings</span>().<span class="cm-property">removeClass</span>(<span class="cm-string">"present"</span>);
+      <span class="cm-variable-2">$scope</span>.<span class="cm-property">$apply</span>();
+    });
+
+    <span class="cm-variable-2">showDays</span>(<span class="cm-variable-2">monthDay</span>);
+
+    <span class="cm-variable-2">presentDay</span>();
+
+    <span class="cm-variable-2">placeIt</span>();
+
+  }
+
+})();</code></pre>
+</div>
+<div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+<iframe allow="camera; display-capture; geolocation; microphone; web-share" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " id="result-iframe" loading="lazy" name="CodePen Preview for It's A Calendar Sort Of Thing" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" scrolling="yes" title="CodePen Preview for It's A Calendar Sort Of Thing" data-src="https://cdpn.io/Jackthomsonn/fullembedgrid/pyjXdJ?animations=run&amp;type=embed" src="pyjXdJ_data/pyjXdJ.html" frameborder="0">
+  </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/Jackthomsonn" target="_blank" rel="noopener"><img src="pyjXdJ_data/default.png" loading="lazy" alt="" class="about-image"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/Jackthomsonn" target="_blank" rel="noopener">Jack Thomson</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+ </p>
+<p>
+<a href="https://codepen.io/Jackthomsonn" target="_blank" rel="noopener" class="about-user-more">
+See more by @Jackthomsonn on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<p>
+This Pen doesn't use any external CSS resources.
+</p>
+<h3>External JavaScript</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js" target="_blank">//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js</a>
+</li>
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" target="_blank">//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js</a>
+</li>
+<li>
+<a href="https://code.angularjs.org/1.3.14/angular-animate.js" target="_blank">//code.angularjs.org/1.3.14/angular-animate.js</a>
+</li>
+</ol>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button" id="zoom-button-1">1×</button></li>
+<li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+<li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script nonce="">
+    __processedPen = {"html":"&lt;html ng-app=&#39;calendarApp&#39; ng-cloak=&#39;true&#39;&gt;&lt;/html&gt;\n&lt;div class=&#39;calendar&#39; ng-controller=&#39;calendarController as calendar&#39;&gt;\n  &lt;div class=&#39;calendar_left&#39;&gt;\n    &lt;div class=&#39;header&#39;&gt;\n      &lt;i class=&#39;material-icons&#39; ng-click=&#39;calendar.prev()&#39;&gt;navigate_before&lt;/i&gt;\n      &lt;h1&gt;{{calendar.month}}&lt;/h1&gt;\n      &lt;i class=&#39;material-icons&#39; ng-click=&#39;calendar.next()&#39;&gt;navigate_next&lt;/i&gt;\n    &lt;/div&gt;\n    &lt;div class=&#39;days&#39;&gt;\n      &lt;div class=&#39;day_item&#39;&gt;Mon&lt;/div&gt;\n      &lt;div class=&#39;day_item&#39;&gt;Tue&lt;/div&gt;\n      &lt;div class=&#39;day_item&#39;&gt;Wed&lt;/div&gt;\n      &lt;div class=&#39;day_item&#39;&gt;Thu&lt;/div&gt;\n      &lt;div class=&#39;day_item&#39;&gt;Fri&lt;/div&gt;\n      &lt;div class=&#39;day_item&#39;&gt;Sat&lt;/div&gt;\n      &lt;div class=&#39;day_item&#39;&gt;Sun&lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=&#39;dates&#39;&gt;&lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=&#39;calendar_right&#39;&gt;\n    &lt;div class=&#39;list&#39;&gt;\n      &lt;ul&gt;\n        &lt;li class=&#39;bounce-in&#39; ng-repeat=&#39;events in calendar.events&#39; ng-show=&#39;events.id === calendar.dataId&#39;&gt;\n          &lt;span class=&#39;type&#39;&gt;It&#39;s a {{ events.type }} thing -&lt;/span&gt;\n          &lt;span class=&#39;description&#39;&gt;{{ events.description }}&lt;/span&gt;\n        &lt;/li&gt;\n      &lt;/ul&gt;\n    &lt;/div&gt;\n    &lt;form ng-submit=&#39;calendar.add()&#39;&gt;\n      &lt;input ng-model=&#39;calendar.description&#39; placeholder=&#39;Enter a task for this day&#39; type=&#39;text&#39;&gt;\n        &lt;select ng-model=&#39;calendar.type&#39; placeholder=&#39;calendar.type&#39;&gt;\n          &lt;option value=&#39;Social&#39;&gt;Social&lt;/option&gt;\n          &lt;option value=&#39;Work&#39;&gt;Work&lt;/option&gt;\n        &lt;/select&gt;\n      &lt;/input&gt;\n    &lt;/form&gt;\n  &lt;/div&gt;\n&lt;/div&gt;","css":"* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: &quot;Montserrat&quot;, sans-serif;\n}\n\nhtml, body {\n  background: #f7f8fb;\n}\n\n.calendar {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}\n.calendar_left {\n  background: #00A8E8;\n  width: 400px;\n  height: 415px;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  padding: 1.5em;\n  z-index: 1;\n}\n.calendar_left .header {\n  display: flex;\n  justify-content: space-around;\n  margin-bottom: 2em;\n  color: #FFF;\n  font-size: 0.7em;\n}\n.calendar_left .header h1 {\n  line-height: 1em;\n}\n.calendar_left .header i {\n  cursor: pointer;\n}\n.calendar_right {\n  background: #0096cf;\n  width: 350px;\n  height: 415px;\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n  position: relative;\n  transform: scale(0.95) translateX(-10px);\n  z-index: 0;\n}\n.calendar_right .list {\n  height: 351px;\n  overflow-y: scroll;\n  padding: 1em;\n}\n.calendar_right .list ul {\n  padding: 2.25em;\n}\n.calendar_right .list li {\n  padding: 1em;\n  width: 180px;\n  color: #FFF;\n  transform: translateX(-700px);\n}\n.calendar_right .list .description {\n  font-size: 12px;\n}\n.calendar_right form {\n  position: absolute;\n  bottom: 0;\n  display: flex;\n  width: 100%;\n  display: flex;\n  flex-flow: row wrap;\n}\n.calendar_right input {\n  background: #008ec4;\n  border: none;\n  padding: 1.2em;\n  flex: 2;\n  outline: none;\n  color: #FFF;\n  border-bottom-right-radius: 5px;\n}\n.calendar_right select {\n  background: #007fb0;\n  border: none;\n  padding: 1.2em;\n  outline: none;\n  color: #FFF;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 5px;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n}\n\n.days {\n  display: flex;\n  justify-content: flex-start;\n  width: 400px;\n}\n.days .day_item {\n  color: #FFF;\n  width: 50px;\n  text-align: center;\n  padding-bottom: 1em;\n}\n\n.dates {\n  display: flex;\n  justify-content: flex-start;\n  flex-flow: row wrap;\n  width: 350px;\n}\n.dates .date_item {\n  color: #FFF;\n  width: 50px;\n  text-align: center;\n  height: 50px;\n  padding: 1em;\n  cursor: pointer;\n  border-radius: 100%;\n}\n\n.present {\n  background: #FFF;\n  transform: scale(0.7);\n  border-radius: 50px;\n  padding: 0.95em !important;\n  color: #00A8E8 !important;\n  z-index: 0;\n  box-shadow: 10px 10px 5px #009dd9;\n  -webkit-animation: bounce-button-in 0.45s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;\n          animation: bounce-button-in 0.45s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;\n}\n\n::-webkit-scrollbar {\n  display: none;\n}\n\n::-webkit-input-placeholder {\n  color: #FFF;\n}\n\n.bounce-in.ng-animate {\n  -webkit-animation: none 0s;\n          animation: none 0s;\n}\n\n.bounce-in {\n  -webkit-animation: bounce-in 0.9s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;\n          animation: bounce-in 0.9s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;\n}\n\n@-webkit-keyframes bounce-in {\n  50% {\n    transform: translateX(0);\n  }\n  75% {\n    transform: translateX(7px);\n  }\n  100% {\n    transform: translateX(2px);\n  }\n}\n\n@keyframes bounce-in {\n  50% {\n    transform: translateX(0);\n  }\n  75% {\n    transform: translateX(7px);\n  }\n  100% {\n    transform: translateX(2px);\n  }\n}\n@-webkit-keyframes bounce-button-in {\n  0% {\n    transform: translateZ(0) scale(0);\n  }\n  100% {\n    transform: translateZ(0) scale(0.7);\n  }\n}\n@keyframes bounce-button-in {\n  0% {\n    transform: translateZ(0) scale(0);\n  }\n  100% {\n    transform: translateZ(0) scale(0.7);\n  }\n}","js":"(function () {\n  angular.\n  module(&#39;calendarApp&#39;, [&#39;ngAnimate&#39;]).\n  controller(&#39;calendarController&#39;, calendarController);\n\n  function calendarController($scope) {\n    var vm = this,\n    now = new Date(),\n    months = [&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#39;May&#39;, &#39;June&#39;, &#39;July&#39;, &#39;August&#39;, &#39;September&#39;, &#39;October&#39;, &#39;November&#39;, &#39;December&#39;],\n    jan = daysInMonth(1, now.getFullYear()),\n    feb = daysInMonth(2, now.getFullYear()),\n    mar = daysInMonth(3, now.getFullYear()),\n    apr = daysInMonth(4, now.getFullYear()),\n    may = daysInMonth(5, now.getFullYear()),\n    jun = daysInMonth(6, now.getFullYear()),\n    jul = daysInMonth(7, now.getFullYear()),\n    aug = daysInMonth(8, now.getFullYear()),\n    sep = daysInMonth(9, now.getFullYear()),\n    oct = daysInMonth(10, now.getFullYear()),\n    nov = daysInMonth(11, now.getFullYear()),\n    dec = daysInMonth(12, now.getFullYear()),\n    monthRef = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec],\n    month = now.getMonth(),\n    monthDay = monthRef[now.getMonth()],\n    n = now.getDate(),\n    uidi,\n    uidm,\n    uid;\n\n    vm.id = now.getDate().toString() + now.getMonth().toString();\n    vm.dataId;\n    vm.events = [];\n    vm.description;\n    vm.type = &#39;Social&#39;;\n    vm.month = months[month];\n    vm.next = next;\n    vm.prev = prev;\n    vm.add = add;\n\n    // Place Dates In Correct Place\n    function placeIt() {\n      if (month === 0) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;200px&#39; });\n\n      } else if (month === 1) {\n        $(&quot;date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;0px&#39; });\n\n      } else if (month === 2) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;150px&#39; });\n\n      } else if (month === 3) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;300px&#39; });\n\n      } else if (month === 4) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;400px&#39; });\n\n      } else if (month === 5) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;200px&#39; });\n\n      } else if (month === 6) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;300px&#39; });\n\n      } else if (month === 7) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;100px&#39; });\n\n      } else if (month === 8) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;250px&#39; });\n\n      } else if (month === 9) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;350px&#39; });\n\n      } else if (month === 10) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;150px&#39; });\n\n      } else if (month === 11) {\n        $(&quot;.date_item&quot;).first().css({\n          &#39;margin-left&#39;: &#39;250px&#39; });\n\n      }\n    }\n\n    // Highlight Present Day\n    function presentDay() {\n      $(&quot;.date_item&quot;).eq(n - 1).addClass(&quot;present&quot;);\n    }\n\n    // Print List Of Dates For Current Month\n    function showDays(days) {\n      for (var i = 1; i &lt; days; i++) {if (window.CP.shouldStopExecution(0)) break;\n        var uidi = i;\n        var uidm = month;\n        var uid = uidi.toString() + uidm.toString();\n        $(&quot;.dates&quot;).append(&quot;&lt;div class=&#39;date_item&#39; data=&#39;&quot; + uid + &quot;&#39;&gt;&quot; + i + &quot;&lt;/div&gt;&quot;);\n      }window.CP.exitedLoop(0);\n    }\n\n    // Get The Current Date\n    function daysInMonth(month, year) {\n      return new Date(year, month, 0).getDate() + 1;\n    }\n\n    // Next Month\n    function next() {\n      if (month &lt; 11) {\n        month++;\n        $(&quot;.dates&quot;).html(&#39;&#39;);\n        vm.month = months[month];\n        monthDay = monthRef[month];\n        showDays(monthDay);\n        placeIt();\n      }\n    }\n\n    // Previous Month\n    function prev() {\n      if (month === 0) {\n        return false;\n      } else {\n        month--;\n        $(&quot;.dates&quot;).html(&#39;&#39;);\n        vm.month = months[month];\n        monthDay = monthRef[month];\n        showDays(monthDay);\n        placeIt();\n      }\n    }\n\n    // Add Events To Specified Date\n    function add() {\n      vm.events.push({\n        id: vm.id,\n        description: vm.description,\n        type: vm.type });\n\n\n      vm.description = &quot;&quot;;\n    }\n\n    // Fetch Unique ID For Each Date Item\n    $(&quot;.dates&quot;).on(&quot;click&quot;, &quot;.date_item&quot;, function () {\n      vm.id = $(this).attr(&#39;data&#39;);\n      vm.dataId = $(this).attr(&#39;data&#39;);\n      $(this).addClass(&quot;present&quot;).siblings().removeClass(&quot;present&quot;);\n      $scope.$apply();\n    });\n\n    showDays(monthDay);\n\n    presentDay();\n\n    placeIt();\n\n  }\n\n})();"};
+    __preprocessors = {
+      "html": "haml",
+      "css": "scss",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "Haml",
+      "css": "SCSS",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+<script src="OPmLBW_data/embed-008e8e63bc8f4f7a03df3f5da5b5c4d5e25fe5a438f147d0a2325f1.js"></script>
+<script nonce="">(function(){var js = "window['__CF$cv$params']={r:'7cb3722b6e289e8f',m:'mWigrlQzh2cQSlEQBpCJLEEoNZDLbY_ExzvPFdzQhsc-1684741593-0-ASMmQPKxmhgom51pr7BoXSuSQ1MJ88ZqGTXYagBrwvyz',u:'/cdn-cgi/challenge-platform/h/g'};_cpo=document.createElement('script');_cpo.nonce='cBdjOmsbKZ4=',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = 'cBdjOmsbKZ4=';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe style="position: absolute; top: 0px; left: 0px; border: medium none; visibility: hidden;" width="1" height="1"></iframe>
+
+</body></html>

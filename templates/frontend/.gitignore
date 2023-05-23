@@ -1,4 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+../../jsonForce.json
+../../WORKS.md
 
 # dependencies
 /node_modules

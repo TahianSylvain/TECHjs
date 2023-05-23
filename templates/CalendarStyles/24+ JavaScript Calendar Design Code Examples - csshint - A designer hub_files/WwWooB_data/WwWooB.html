@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  <title>CodePen - Daily UI #13 | jQuery Datepicker summer vibe</title>
+    <link rel="canonical" href="https://codepen.io/havardob/pen/WwWooB">
+  
+  <link rel="stylesheet" href="WwWooB_data/reset.min.css">
+
+  <link rel="stylesheet" href="WwWooB_data/font-awesome.min.css">
+  
+<style>
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.datepicker {
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  overflow: hidden;
+}
+.datepicker .datepicker-header {
+  height: 250px;
+  background-image: url("https://cdn.dribbble.com/users/3178178/screenshots/6346366/lifeguard_on_duty.jpg");
+  background-position: center center;
+  background-size: 100%;
+}
+.datepicker .ui-datepicker-inline {
+  padding: 30px;
+}
+.datepicker .ui-datepicker-header {
+  text-align: center;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-prev,
+.datepicker .ui-datepicker-header .ui-datepicker-next {
+  display: inline;
+  float: left;
+  cursor: pointer;
+  font-size: 1.4em;
+  padding: 0 10px;
+  margin-top: -10px;
+  color: #CCC;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-next {
+  float: right;
+}
+.datepicker .ui-datepicker-calendar {
+  width: 100%;
+  text-align: center;
+}
+.datepicker .ui-datepicker-calendar thead {
+  color: #CCC;
+}
+.datepicker .ui-datepicker-calendar tr th, .datepicker .ui-datepicker-calendar tr td {
+  padding-bottom: 0.5em;
+}
+.datepicker .ui-datepicker-calendar a {
+  color: #444;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.datepicker .ui-datepicker-calendar .ui-state-highlight {
+  border-color: #D24D57;
+  color: #D24D57;
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body translate="no">
+  <div class="datepicker hasDatepicker" id="dp1684741200421">
+  <div class="datepicker-header"></div>
+<div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="&lt;i class=&quot;fa fa-fw fa-angle-left&quot;&gt;&lt;/i&gt;"><span class="ui-icon ui-icon-circle-triangle-w"><i class="fa fa-fw fa-angle-left"></i></span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="&lt;i class=&quot;fa fa-fw fa-angle-right&quot;&gt;&lt;/i&gt;"><span class="ui-icon ui-icon-circle-triangle-e"><i class="fa fa-fw fa-angle-right"></i></span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">May</span>&nbsp;<span class="ui-datepicker-year">2023</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">5</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">6</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">12</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">13</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">19</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">20</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">26</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">27</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">30</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2023"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></div>
+    <script src="../LZjjWV_data/LZjjWV_data/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd3025033.js"></script>
+
+  <script src="../LYJRpa_data/LYJRpa_data/jquery.min.js"></script>
+<script src="../LYJRpa_data/LYJRpa_data/jquery-ui.min.js"></script>
+      <script id="rendered-js">
+$(document).ready(function () {
+
+  $(".datepicker").datepicker({
+    prevText: '<i class="fa fa-fw fa-angle-left"></i>',
+    nextText: '<i class="fa fa-fw fa-angle-right"></i>' });
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+  <script src="../LZjjWV_data/LZjjWV_data/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf8.js"></script>
+
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

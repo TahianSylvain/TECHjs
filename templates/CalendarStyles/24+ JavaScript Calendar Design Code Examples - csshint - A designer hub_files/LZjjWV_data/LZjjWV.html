@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  <title>CodePen - Calendar Javascript Library</title>
+    <link rel="canonical" href="https://codepen.io/nizarmah/pen/LZjjWV">
+  
+  
+  <link rel="stylesheet" href="LZjjWV_data/calendarorganizer.min.css">
+  
+<style>
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+#calendarContainer,
+#organizerContainer {
+  float: left;
+  margin: 5px;
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body translate="no">
+  <div id="calendarContainer"><style>.cjslib-day-indicator { color: #C2185B; background-color: #C2185B; } .cjslib-indicator-type-numeric { color: #FFFFFF; } .cjslib-day.cjslib-day-today > .cjslib-day-num { border-color: #C2185B !important; }</style><div class="cjslib-calendar cjslib-size-small"><div class="cjslib-year" style="background-color: rgb(194, 24, 91); color: rgb(248, 187, 208);"><div id="calendarContainer-year-back"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="#F8BBD0" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path></svg></div><span id="calendarContainer-year">2023</span><div id="calendarContainer-year-next"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="#F8BBD0" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg></div></div><div class="cjslib-month" style="background-color: rgb(233, 30, 99); color: rgb(255, 255, 255);"><div id="calendarContainer-month-back"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="#F8BBD0" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path></svg></div><span id="calendarContainer-month">May</span><div id="calendarContainer-month-next"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="#F8BBD0" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg></div></div><div class="cjslib-labels" style="background-color: rgb(194, 24, 91); color: rgb(248, 187, 208);"><span id="calendarContainer-label-1">Wed</span><span id="calendarContainer-label-2">Thu</span><span id="calendarContainer-label-3">Fri</span><span id="calendarContainer-label-4">Sat</span><span id="calendarContainer-label-5">Sun</span><span id="calendarContainer-label-6">Mon</span><span id="calendarContainer-label-7">Tue</span></div><div class="cjslib-days"><div class="cjslib-row"><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-1"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-1" id="calendarContainer-day-1"><span class="cjslib-day-num" id="calendarContainer-day-num-1">26</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-1"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-2"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-2" id="calendarContainer-day-2"><span class="cjslib-day-num" id="calendarContainer-day-num-2">27</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-2"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-3"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-3" id="calendarContainer-day-3"><span class="cjslib-day-num" id="calendarContainer-day-num-3">28</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-3"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-4"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-4" id="calendarContainer-day-4"><span class="cjslib-day-num" id="calendarContainer-day-num-4">29</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-4"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-5"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-5" id="calendarContainer-day-5"><span class="cjslib-day-num" id="calendarContainer-day-num-5">30</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-5"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-6"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-6" id="calendarContainer-day-6"><span class="cjslib-day-num" id="calendarContainer-day-num-6">1</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-6"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-7"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-7" id="calendarContainer-day-7"><span class="cjslib-day-num" id="calendarContainer-day-num-7">2</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-7"></span></label></div><div class="cjslib-row"><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-8"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-8" id="calendarContainer-day-8"><span class="cjslib-day-num" id="calendarContainer-day-num-8">3</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-8"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-9"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-9" id="calendarContainer-day-9"><span class="cjslib-day-num" id="calendarContainer-day-num-9">4</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-9"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-10"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-10" id="calendarContainer-day-10"><span class="cjslib-day-num" id="calendarContainer-day-num-10">5</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-10"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-11"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-11" id="calendarContainer-day-11"><span class="cjslib-day-num" id="calendarContainer-day-num-11">6</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-11"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-12"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-12" id="calendarContainer-day-12"><span class="cjslib-day-num" id="calendarContainer-day-num-12">7</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-12"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-13"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-13" id="calendarContainer-day-13"><span class="cjslib-day-num" id="calendarContainer-day-num-13">8</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-13"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-14"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-14" id="calendarContainer-day-14"><span class="cjslib-day-num" id="calendarContainer-day-num-14">9</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-14"></span></label></div><div class="cjslib-row"><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-15"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-15" id="calendarContainer-day-15"><span class="cjslib-day-num" id="calendarContainer-day-num-15">10</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-15"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-16"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-16" id="calendarContainer-day-16"><span class="cjslib-day-num" id="calendarContainer-day-num-16">11</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-16"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-17"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-17" id="calendarContainer-day-17"><span class="cjslib-day-num" id="calendarContainer-day-num-17">12</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-17"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-18"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-18" id="calendarContainer-day-18"><span class="cjslib-day-num" id="calendarContainer-day-num-18">13</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-18"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-19"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-19" id="calendarContainer-day-19"><span class="cjslib-day-num" id="calendarContainer-day-num-19">14</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-19"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-20"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-20" id="calendarContainer-day-20"><span class="cjslib-day-num" id="calendarContainer-day-num-20">15</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-20"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-21"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-21" id="calendarContainer-day-21"><span class="cjslib-day-num" id="calendarContainer-day-num-21">16</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-21"></span></label></div><div class="cjslib-row"><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-22"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-22" id="calendarContainer-day-22"><span class="cjslib-day-num" id="calendarContainer-day-num-22">17</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-22">1</span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-23"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-23" id="calendarContainer-day-23"><span class="cjslib-day-num" id="calendarContainer-day-num-23">18</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-23"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-24"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-24" id="calendarContainer-day-24"><span class="cjslib-day-num" id="calendarContainer-day-num-24">19</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-24"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-25"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-25" id="calendarContainer-day-25"><span class="cjslib-day-num" id="calendarContainer-day-num-25">20</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-25"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-26"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-26" id="calendarContainer-day-26"><span class="cjslib-day-num" id="calendarContainer-day-num-26">21</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-26">1</span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-27" checked="checked"><label class="calendarContainer cjslib-day cjslib-day-listed cjslib-day-today" for="calendarContainer-day-radio-27" id="calendarContainer-day-27"><span class="cjslib-day-num" id="calendarContainer-day-num-27">22</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-27"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-28"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-28" id="calendarContainer-day-28"><span class="cjslib-day-num" id="calendarContainer-day-num-28">23</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-28"></span></label></div><div class="cjslib-row"><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-29"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-29" id="calendarContainer-day-29"><span class="cjslib-day-num" id="calendarContainer-day-num-29">24</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-29"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-30"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-30" id="calendarContainer-day-30"><span class="cjslib-day-num" id="calendarContainer-day-num-30">25</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-30"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-31"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-31" id="calendarContainer-day-31"><span class="cjslib-day-num" id="calendarContainer-day-num-31">26</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-31">1</span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-32"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-32" id="calendarContainer-day-32"><span class="cjslib-day-num" id="calendarContainer-day-num-32">27</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-32"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-33"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-33" id="calendarContainer-day-33"><span class="cjslib-day-num" id="calendarContainer-day-num-33">28</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-33">1</span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-34"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-34" id="calendarContainer-day-34"><span class="cjslib-day-num" id="calendarContainer-day-num-34">29</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-34"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-35"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-35" id="calendarContainer-day-35"><span class="cjslib-day-num" id="calendarContainer-day-num-35">30</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-35"></span></label></div><div class="cjslib-row"><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-36"><label class="calendarContainer cjslib-day cjslib-day-listed" for="calendarContainer-day-radio-36" id="calendarContainer-day-36"><span class="cjslib-day-num" id="calendarContainer-day-num-36">31</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-36"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-37"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-37" id="calendarContainer-day-37"><span class="cjslib-day-num" id="calendarContainer-day-num-37">1</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-37"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-38"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-38" id="calendarContainer-day-38"><span class="cjslib-day-num" id="calendarContainer-day-num-38">2</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-38"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-39"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-39" id="calendarContainer-day-39"><span class="cjslib-day-num" id="calendarContainer-day-num-39">3</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-39"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-40"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-40" id="calendarContainer-day-40"><span class="cjslib-day-num" id="calendarContainer-day-num-40">4</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-40"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-41"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-41" id="calendarContainer-day-41"><span class="cjslib-day-num" id="calendarContainer-day-num-41">5</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-41"></span></label><input class="cjslib-day-radios" type="radio" name="calendarContainer-day-radios" id="calendarContainer-day-radio-42"><label class="calendarContainer cjslib-day cjslib-day-diluted" for="calendarContainer-day-radio-42" id="calendarContainer-day-42"><span class="cjslib-day-num" id="calendarContainer-day-num-42">6</span><span class="cjslib-day-indicator cjslib-indicator-pos-bottom cjslib-indicator-type-numeric" id="calendarContainer-day-indicator-42"></span></label></div></div></div></div>
+<div id="organizerContainer"><div class="cjslib-events cjslib-size-small"><div class="cjslib-date" style="background-color: rgb(194, 24, 91); color: rgb(248, 187, 208);"><div id="organizerContainer-day-back"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="#F8BBD0" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path></svg></div><span id="organizerContainer-date">May 22, 2023</span><div id="organizerContainer-day-next"><svg style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="#F8BBD0" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg></div></div><div class="cjslib-rows" id="organizerContainer-list-container"><ol class="cjslib-list" id="organizerContainer-list"><div class="cjslib-list-placeholder"><li class="cjslib-list-placeholder" style="text-align: center; padding: 20px 0px;">No events on this day</li></div></ol><ol class="cjslib-list" id="organizerContainer-history"></ol></div></div></div>
+    <script src="LZjjWV_data/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd3025033.js"></script>
+
+  <script src="LZjjWV_data/calendarorganizer.min.js"></script>
+      <script id="rendered-js">
+"use strict";
+
+// function that creates dummy data for demonstration
+function createDummyData() {
+  var date = new Date();
+  var data = {};
+
+  for (var i = 0; i < 10; i++) {if (window.CP.shouldStopExecution(0)) break;
+    data[date.getFullYear() + i] = {};
+
+    for (var j = 0; j < 12; j++) {if (window.CP.shouldStopExecution(1)) break;
+      data[date.getFullYear() + i][j + 1] = {};
+
+      for (var k = 0; k < Math.ceil(Math.random() * 10); k++) {if (window.CP.shouldStopExecution(2)) break;
+        var l = Math.ceil(Math.random() * 28);
+
+        try {
+          data[date.getFullYear() + i][j + 1][l].push({
+            startTime: "10:00",
+            endTime: "12:00",
+            text: "Some Event Here" });
+
+        } catch (e) {
+          data[date.getFullYear() + i][j + 1][l] = [];
+          data[date.getFullYear() + i][j + 1][l].push({
+            startTime: "10:00",
+            endTime: "12:00",
+            text: "Some Event Here" });
+
+        }
+      }window.CP.exitedLoop(2);
+    }window.CP.exitedLoop(1);
+  }window.CP.exitedLoop(0);
+
+  return data;
+}
+
+// creating the dummy static data
+var data = createDummyData();
+
+// initializing a new calendar object, that will use an html container to create itself
+var calendar = new Calendar(
+"calendarContainer", // id of html container for calendar
+"small", // size of calendar, can be small | medium | large
+[
+"Wednesday", // left most day of calendar labels
+3 // maximum length of the calendar labels
+],
+[
+"#E91E63", // primary color
+"#C2185B", // primary dark color
+"#FFFFFF", // text color
+"#F8BBD0" // text dark color
+]);
+
+
+// initializing a new organizer object, that will use an html container to create itself
+var organizer = new Organizer(
+"organizerContainer", // id of html container for calendar
+calendar, // defining the calendar that the organizer is related to
+data // giving the organizer the static data that should be displayed
+);
+//# sourceURL=pen.js
+    </script>
+
+  
+  <script src="LZjjWV_data/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf8.js"></script>
+
+
+
+</body></html>

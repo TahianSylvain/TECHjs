@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.partitioning{
+  background: #000;
+}
+
+.Widget__Basis{
+  background: #fff;
+  display: flex;
+  margin: auto;
+  padding: initial;
+  max-width: fit-content;
+}

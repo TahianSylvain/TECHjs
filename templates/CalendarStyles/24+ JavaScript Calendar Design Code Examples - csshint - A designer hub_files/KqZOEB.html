@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - Duotone calendar </title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="zQ8wOIPXfVSxdCVWnWJOXEWcRyQ8Au7khhuyOfx7oztJ37/NI9Q+pihjW/LwbedVdbnsYwqExc/LvjdQpjy13w==">
+<link rel="stylesheet" media="all" href="OPmLBW_data/embed-c24dc45033a5a0e3c76b9588328759bcba403f9bfa524b08f43645.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    #result-box {
+      background: #111111;
+      color: #eeeeee;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #111111;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #eeeeee;
+      background-color: #333333;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #555555;
+      color: #eeeeee;
+      box-shadow: inset 0px 3px #797979;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #eeeeee;
+    }
+
+    .embed-nav svg {
+      stroke: #eeeeee !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="OPmLBW_data/twilight-3476125ec032fffc9adb3dec23f00153fc064bf13d518310429.css">
+</head>
+<body id="the-body" style="border: 1px solid #666666; --borderWidth: 1px;" class="codepen-embed-body results-active split-output static">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="#html-box" role="button" aria-pressed="false">
+HTML
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="#css-box" role="button" aria-pressed="false">
+Stylus
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="#js-box" role="button" aria-pressed="true" class="active">
+JS
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+<li>
+<a href="#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/yumeeeei/pen/KqZOEB" title="Edit on CodePen">
+<div class="large-logo">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+<path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+</div>
+<div class="box-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+</div>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thin" data-header="true">
+<div id="html-box" class="code-wrap code-box box" role="region" aria-label="HTML">
+<pre tabindex="0"><code data-lang="htmlmixed" id="actual-html-code" class=" cm-s-default"><span class="cm-comment">&lt;!-- Credit ---&gt;</span>
+<span class="cm-comment">&lt;!-- how to calculate feColorMatrix - http://bit.ly/2t4ZuoC ---&gt;</span>
+<span class="cm-comment">&lt;!-- photo credit - https://flic.kr/p/pG4piA ---&gt;</span>
+<span class="cm-comment">&lt;!-- RGB color parser - http://mementoo.info/archives/594 ---&gt;</span>
+
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">svg</span> <span class="cm-attribute">style</span>=<span class="cm-string">"visibility:hidden;"</span> <span class="cm-attribute">width</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"0"</span><span class="cm-tag cm-bracket">&gt;</span> 
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">filter</span> <span class="cm-attribute">id</span>=<span class="cm-string">"duotone"</span> <span class="cm-attribute">color-interpolation-filters</span>=<span class="cm-string">"sRGB"</span><span class="cm-tag cm-bracket">&gt;</span>         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">feColorMatrix</span> <span class="cm-attribute">type</span>=<span class="cm-string">"matrix"</span> <span class="cm-attribute">values</span>=<span class="cm-string">"0.7 0 0 0 0.3 0.6 0 0 0 0.2 0.3 0 0 0 0.6 0 0 0 1 0"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">feColorMatrix</span><span class="cm-tag cm-bracket">&gt;</span> 
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">filter</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">svg</span><span class="cm-tag cm-bracket">&gt;</span>
+
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"flex-contatiner"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"calendar-container"</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"image-container"</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"image"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"calendar"</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">h2</span> <span class="cm-attribute">class</span>=<span class="cm-string">"month-title"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"js-month"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">h2</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">table</span> <span class="cm-attribute">class</span>=<span class="cm-string">"calendar-table"</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">thead</span><span class="cm-tag cm-bracket">&gt;</span>
+          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>日<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>月<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>火<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>水<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>木<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>金<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>土<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">thead</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tbody</span> <span class="cm-attribute">id</span>=<span class="cm-string">"js-calendar-body"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tbody</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">table</span><span class="cm-tag cm-bracket">&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></code></pre>
+</div>
+<div id="css-box" class="code-wrap code-box box" role="region" aria-label="CSS">
+<pre tabindex="0"><code data-lang="text/x-styl" id="actual-css-code" class=" cm-s-default"><span class="cm-def">@import</span> <span class="cm-atom">url</span>(<span class="cm-string">'https://fonts.googleapis.com/css?family=Josefin+Sans:600'</span>)
+  
+<span class="cm-comment">// -------- Mixins --------// </span>
+<span class="cm-keyword">size</span>(<span class="cm-variable-2">w</span><span class="cm-operator">=</span><span class="cm-number">10</span><span class="cm-number">0%</span>,<span class="cm-variable-2">h</span><span class="cm-operator">=</span><span class="cm-number">10</span><span class="cm-number">0%</span>)
+  <span class="cm-property">width</span> <span class="cm-variable-2">w</span>
+  <span class="cm-property">height</span> <span class="cm-variable-2">h</span>
+  
+<span class="cm-comment">// -------- variables --------//    </span>
+<span class="cm-variable-2">$color-1</span> <span class="cm-operator">=</span> <span class="cm-keyword">rgb</span>(<span class="cm-number">25</span><span class="cm-number">4</span>, <span class="cm-number">20</span><span class="cm-number">5</span>, <span class="cm-number">21</span><span class="cm-number">1</span>)
+<span class="cm-variable-2">$color-2</span> <span class="cm-operator">=</span> <span class="cm-keyword">rgb</span>(<span class="cm-number">80</span>, <span class="cm-number">50</span>, <span class="cm-number">13</span><span class="cm-number">0</span>)
+
+<span class="cm-comment">// -------- Basic Styles --------// </span>
+<span class="cm-tag">html</span>
+<span class="cm-tag">body</span>
+  <span class="cm-keyword">size</span>()
+
+<span class="cm-tag">body</span>
+  <span class="cm-property">background-image</span> <span class="cm-keyword">linear-gradient</span>( <span class="cm-number">45deg</span>, <span class="cm-variable-2">$color-1</span>, <span class="cm-variable-2">$color-2</span>)
+  <span class="cm-property">overflow</span> <span class="cm-atom">hidden</span>
+
+<span class="cm-tag">*</span>
+  <span class="cm-property">box-sizing</span> <span class="cm-atom">border-box</span>
+
+<span class="cm-qualifier">.flex-contatiner</span>
+  <span class="cm-keyword">size</span>()
+  <span class="cm-property">display</span> <span class="cm-atom">flex</span>
+  <span class="cm-property">justify-content</span> <span class="cm-atom">center</span>
+  <span class="cm-property">align-items</span> <span class="cm-atom">center</span>
+  <span class="cm-property">overflow</span> <span class="cm-atom">hidden</span>
+
+<span class="cm-comment">// -------- Styles --------//</span>
+
+<span class="cm-qualifier">.calendar-container</span>
+  <span class="cm-property">position</span> <span class="cm-atom">relative</span>
+  <span class="cm-keyword">size</span>(<span class="cm-number">36</span><span class="cm-number">0px</span>,<span class="cm-number">36</span><span class="cm-number">0px</span>)
+  <span class="cm-property">box-shadow</span>  <span class="cm-number">0</span> <span class="cm-number">27px</span> <span class="cm-number">24px</span> <span class="cm-number">0</span> <span class="cm-keyword">rgba</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0.2</span>), <span class="cm-number">0</span> <span class="cm-number">40px</span> <span class="cm-number">77px</span> <span class="cm-number">0</span> <span class="cm-keyword">rgba</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0.2</span><span class="cm-number">2</span>)
+  <span class="cm-property">overflow</span> <span class="cm-atom">visible</span>
+
+<span class="cm-qualifier">.image-container</span>
+  <span class="cm-property">position</span> <span class="cm-atom">absolute</span>
+  <span class="cm-property">top</span> <span class="cm-number">0</span>
+  <span class="cm-property">right</span> <span class="cm-number">0</span>
+  <span class="cm-property">bottom</span> <span class="cm-number">0</span>
+  <span class="cm-property">left</span> <span class="cm-number">0</span>
+  <span class="cm-property">background-color</span> <span class="cm-variable-2">$color-2</span>
+  
+<span class="cm-qualifier">.image</span>
+  <span class="cm-keyword">size</span>()
+  <span class="cm-property">background-image</span> <span class="cm-atom">url</span>(<span class="cm-string">'https://c1.staticflickr.com/4/3952/15549529232_83f16d2aa2_z.jpg'</span>)
+  <span class="cm-property">background-repeat</span> <span class="cm-atom">no-repeat</span>
+  <span class="cm-property">background-size</span> <span class="cm-atom">cover</span>
+  <span class="cm-property">background-position</span> <span class="cm-atom">center</span> <span class="cm-atom">center</span>
+  <span class="cm-property">filter</span> <span class="cm-atom">url</span>(<span class="cm-string">#duotone</span>)
+
+<span class="cm-qualifier">.calendar</span>
+  <span class="cm-property">position</span> <span class="cm-atom">absolute</span>
+  <span class="cm-property">width</span> <span class="cm-number">10</span><span class="cm-number">0%</span>
+  <span class="cm-property">height</span> <span class="cm-number">10</span><span class="cm-number">0%</span>
+  <span class="cm-property">margin-top</span> <span class="cm-number">10%</span>
+  <span class="cm-property">margin-left</span> <span class="cm-number">10%</span>
+  <span class="cm-property">padding-top</span> <span class="cm-number">15%</span>
+  <span class="cm-property">border</span> <span class="cm-number">10px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#fff</span>
+  <span class="cm-property">font-family</span> <span class="cm-string">'Josefin Sans'</span>, <span class="cm-atom">sans-serif</span>
+  <span class="cm-qualifier">.month-title</span>
+    <span class="cm-property">position</span> <span class="cm-atom">absolute</span>
+    <span class="cm-property">top</span> <span class="cm-number">-0.4em</span>
+    <span class="cm-property">left</span> <span class="cm-number">-0.3em</span>
+    <span class="cm-property">margin</span> <span class="cm-number">0</span>
+    <span class="cm-property">font-size</span> <span class="cm-number">40</span><span class="cm-number">0px</span>
+    <span class="cm-property">line-height</span> <span class="cm-number">1</span>
+    <span class="cm-property">letter-spacing</span> <span class="cm-number">0</span>
+    <span class="cm-property">color</span> <span class="cm-atom">#fff</span>
+    <span class="cm-property">opacity</span> <span class="cm-number">.1</span><span class="cm-number">5</span>
+  <span class="cm-qualifier">.calendar-table</span>
+    <span class="cm-property">position</span> <span class="cm-atom">absolute</span>
+    <span class="cm-property">width</span> <span class="cm-number">10</span><span class="cm-number">0%</span>
+    <span class="cm-property">height</span> <span class="cm-number">85%</span>
+    <span class="cm-property">border-collapse</span> <span class="cm-atom">collapse</span>
+    <span class="cm-property">color</span> <span class="cm-atom">#fff</span>
+    <span class="cm-tag">th</span>, <span class="cm-tag">td</span>
+      <span class="cm-property">text-align</span> <span class="cm-atom">center</span>
+      <span class="cm-property">font-size</span> <span class="cm-number">16px</span>
+    <span class="cm-tag">td</span>
+      <span class="cm-property">cursor</span> <span class="cm-atom">pointer</span>
+      <span class="cm-property">transition</span> <span class="cm-atom">opacity</span> <span class="cm-number">.3s</span> <span class="cm-atom">ease</span>
+      <span class="cm-variable-3">&amp;</span>:<span class="cm-variable-3">not</span>(<span class="cm-qualifier">.is-today</span>)
+        <span class="cm-property">opacity</span> <span class="cm-number">.5</span>
+      <span class="cm-variable-3">&amp;</span>:<span class="cm-variable-3">hover</span>
+        <span class="cm-property">opacity</span> <span class="cm-number">1</span>
+  <span class="cm-qualifier">.is-today</span>
+    <span class="cm-property">opacity</span> <span class="cm-number">1</span>
+    <span class="cm-property">background-color</span> <span class="cm-atom">#fff</span>
+    <span class="cm-property">color</span> <span class="cm-variable-2">$color-2</span>
+</code></pre>
+<a href="#0" id="view-css-compiled-button" class="action-button bottom right view-compiled-button" data-type="css">
+View Compiled
+</a>
+</div>
+<div id="js-box" class="code-wrap code-box box active" role="region" aria-label="JS">
+<pre tabindex="0"><code data-lang="javascript" id="actual-js-code" class=" cm-s-default"><span class="cm-comment">/* calendar built with the tutorial from https://liginc.co.jp/355474 */</span>
+
+
+<span class="cm-keyword">var</span> <span class="cm-def">$window</span> <span class="cm-operator">=</span> <span class="cm-variable">$</span>(<span class="cm-variable">window</span>);
+<span class="cm-keyword">var</span> <span class="cm-def">$month</span> <span class="cm-operator">=</span> <span class="cm-variable">$</span>(<span class="cm-string">'#js-month'</span>);
+<span class="cm-keyword">var</span> <span class="cm-def">$tbody</span> <span class="cm-operator">=</span> <span class="cm-variable">$</span>(<span class="cm-string">'#js-calendar-body'</span>);
+
+<span class="cm-keyword">var</span> <span class="cm-def">today</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>();
+<span class="cm-keyword">var</span> <span class="cm-def">currentYear</span> <span class="cm-operator">=</span> <span class="cm-variable">today</span>.<span class="cm-property">getFullYear</span>(),
+    <span class="cm-def">currentMonth</span> <span class="cm-operator">=</span> <span class="cm-variable">today</span>.<span class="cm-property">getMonth</span>();
+
+<span class="cm-variable">$window</span>.<span class="cm-property">on</span>(<span class="cm-string">'load'</span>,<span class="cm-keyword">function</span>(){
+  <span class="cm-variable">calendarHeading</span>(<span class="cm-variable">currentYear</span>, <span class="cm-variable">currentMonth</span>);
+  <span class="cm-variable">calendarBody</span>(<span class="cm-variable">currentYear</span>, <span class="cm-variable">currentMonth</span>, <span class="cm-variable">today</span>);
+});
+
+<span class="cm-keyword">function</span> <span class="cm-def">calendarBody</span>(<span class="cm-def">year</span>, <span class="cm-def">month</span>, <span class="cm-def">today</span>){
+  <span class="cm-keyword">var</span> <span class="cm-def">todayYMFlag</span> <span class="cm-operator">=</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getFullYear</span>() <span class="cm-operator">===</span> <span class="cm-variable-2">year</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getMonth</span>() <span class="cm-operator">===</span> <span class="cm-variable-2">month</span> <span class="cm-operator">?</span> <span class="cm-atom">true</span> : <span class="cm-atom">false</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">startDate</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">year</span>, <span class="cm-variable-2">month</span>, <span class="cm-number">1</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">endDate</span>  <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-variable-2">year</span>, <span class="cm-variable-2">month</span> <span class="cm-operator">+</span> <span class="cm-number">1</span> , <span class="cm-number">0</span>);
+  <span class="cm-keyword">var</span> <span class="cm-def">startDay</span> <span class="cm-operator">=</span> <span class="cm-variable-2">startDate</span>.<span class="cm-property">getDay</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">endDay</span> <span class="cm-operator">=</span> <span class="cm-variable-2">endDate</span>.<span class="cm-property">getDate</span>();
+  <span class="cm-keyword">var</span> <span class="cm-def">textSkip</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">textDate</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">tableTd</span> <span class="cm-operator">=</span><span class="cm-string">''</span>;
+  <span class="cm-keyword">var</span> <span class="cm-def">tableBody</span> <span class="cm-operator">=</span><span class="cm-string">''</span>;
+  
+  <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">row</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">row</span> <span class="cm-operator">&lt;</span> <span class="cm-number">6</span>; <span class="cm-variable-2">row</span><span class="cm-operator">++</span>){
+    <span class="cm-keyword">var</span> <span class="cm-def">tr</span> <span class="cm-operator">=</span> <span class="cm-string">'&lt;tr&gt;'</span>;
+    
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">col</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">col</span> <span class="cm-operator">&lt;</span> <span class="cm-number">7</span>; <span class="cm-variable-2">col</span><span class="cm-operator">++</span>) {
+      <span class="cm-keyword">if</span> (<span class="cm-variable-2">row</span> <span class="cm-operator">===</span> <span class="cm-number">0</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">startDay</span> <span class="cm-operator">===</span> <span class="cm-variable-2">col</span>){
+        <span class="cm-variable-2">textSkip</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>;
+      }
+      <span class="cm-keyword">if</span> (<span class="cm-variable-2">textDate</span> <span class="cm-operator">&gt;</span> <span class="cm-variable-2">endDay</span>) {
+        <span class="cm-variable-2">textSkip</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
+      }
+      <span class="cm-keyword">var</span> <span class="cm-def">addClass</span> <span class="cm-operator">=</span> <span class="cm-variable-2">todayYMFlag</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">textDate</span> <span class="cm-operator">===</span> <span class="cm-variable-2">today</span>.<span class="cm-property">getDate</span>() <span class="cm-operator">&amp;&amp;</span> <span class="cm-operator">!</span><span class="cm-variable-2">textSkip</span> <span class="cm-operator">?</span> <span class="cm-string">'is-today'</span> : <span class="cm-string">''</span>;
+      <span class="cm-keyword">var</span> <span class="cm-def">textTd</span> <span class="cm-operator">=</span> <span class="cm-variable-2">textSkip</span> <span class="cm-operator">?</span> <span class="cm-string">'&amp;nbsp;'</span> : <span class="cm-variable-2">textDate</span><span class="cm-operator">++</span>;
+      <span class="cm-keyword">var</span> <span class="cm-def">td</span> <span class="cm-operator">=</span> <span class="cm-string">'&lt;td class="'</span><span class="cm-operator">+</span><span class="cm-variable-2">addClass</span><span class="cm-operator">+</span><span class="cm-string">'"&gt;'</span><span class="cm-operator">+</span><span class="cm-variable-2">textTd</span><span class="cm-operator">+</span><span class="cm-string">'&lt;/td&gt;'</span>;
+      <span class="cm-variable-2">tr</span> <span class="cm-operator">+=</span> <span class="cm-variable-2">td</span>;
+    }
+    <span class="cm-variable-2">tr</span> <span class="cm-operator">+=</span> <span class="cm-string">'&lt;/tr&gt;'</span>;
+    <span class="cm-variable-2">tableBody</span> <span class="cm-operator">+=</span> <span class="cm-variable-2">tr</span>;
+  }
+  <span class="cm-variable">$tbody</span>.<span class="cm-property">html</span>(<span class="cm-variable-2">tableBody</span>);
+}
+
+<span class="cm-keyword">function</span> <span class="cm-def">calendarHeading</span>(<span class="cm-def">year</span>, <span class="cm-def">month</span>){
+  <span class="cm-variable">$month</span>.<span class="cm-property">text</span>(<span class="cm-variable-2">month</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>);
+}</code></pre>
+</div>
+<div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+<iframe allow="camera; display-capture; geolocation; microphone; web-share" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " id="result-iframe" loading="lazy" name="CodePen Preview for Duotone calendar " sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" scrolling="yes" title="CodePen Preview for Duotone calendar " data-src="https://cdpn.io/yumeeeei/fullembedgrid/KqZOEB?animations=run&amp;type=embed" src="https://cdpn.io/yumeeeei/fullembedgrid/KqZOEB?animations=run&amp;type=embed" frameborder="0">
+  </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/yumeeeei" target="_blank" rel="noopener"><img src="KqZOEB_data/default.png" loading="lazy" alt="" class="about-image"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/yumeeeei" target="_blank" rel="noopener">yumeeeei</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+</p>
+<p>
+<a href="https://codepen.io/yumeeeei" target="_blank" rel="noopener" class="about-user-more">
+See more by @yumeeeei on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<p>
+This Pen doesn't use any external CSS resources.
+</p>
+<h3>External JavaScript</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" target="_blank">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js</a>
+</li>
+</ol>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button" id="zoom-button-1">1×</button></li>
+<li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+<li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script nonce="">
+    __processedPen = {"html":"&lt;!-- Credit ---&gt;\n&lt;!-- how to calculate feColorMatrix - http://bit.ly/2t4ZuoC ---&gt;\n&lt;!-- photo credit - https://flic.kr/p/pG4piA ---&gt;\n&lt;!-- RGB color parser - http://mementoo.info/archives/594 ---&gt;\n\n&lt;svg style=&quot;visibility:hidden;&quot; width=&quot;0&quot; height=&quot;0&quot;&gt; \n  &lt;filter id=&quot;duotone&quot; color-interpolation-filters=&quot;sRGB&quot;&gt;         &lt;feColorMatrix type=&quot;matrix&quot; values=&quot;0.7 0 0 0 0.3 0.6 0 0 0 0.2 0.3 0 0 0 0.6 0 0 0 1 0&quot;&gt;&lt;/feColorMatrix&gt; \n  &lt;/filter&gt;\n&lt;/svg&gt;\n\n&lt;div class=&quot;flex-contatiner&quot;&gt;\n\t&lt;div class=&quot;calendar-container&quot;&gt;\n\t\t&lt;div class=&quot;image-container&quot;&gt;\n\t\t\t&lt;div class=&quot;image&quot;&gt;&lt;/div&gt;\n\t\t&lt;/div&gt;\n\t\t&lt;div class=&quot;calendar&quot;&gt;\n\t\t\t&lt;h2 class=&quot;month-title&quot; id=&quot;js-month&quot;&gt;&lt;/h2&gt;\n\t\t\t&lt;table class=&quot;calendar-table&quot;&gt;\n  \t\t\t&lt;thead&gt;\n    \t\t\t&lt;tr&gt;&lt;th&gt;日&lt;/th&gt;&lt;th&gt;月&lt;/th&gt;&lt;th&gt;火&lt;/th&gt;&lt;th&gt;水&lt;/th&gt;&lt;th&gt;木&lt;/th&gt;&lt;th&gt;金&lt;/th&gt;&lt;th&gt;土&lt;/th&gt;&lt;/tr&gt;\n  \t\t\t&lt;/thead&gt;\n  \t\t\t&lt;tbody id=&quot;js-calendar-body&quot;&gt;&lt;/tbody&gt;\n\t\t\t&lt;/table&gt;\n\t\t&lt;/div&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;","css":"@import url(&quot;https://fonts.googleapis.com/css?family=Josefin+Sans:600&quot;);\nhtml,\nbody {\n  width: 100%;\n  height: 100%;\n}\nbody {\n  background-image: linear-gradient(45deg, #fecdd3, #503282);\n  overflow: hidden;\n}\n* {\n  box-sizing: border-box;\n}\n.flex-contatiner {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n}\n.calendar-container {\n  position: relative;\n  width: 360px;\n  height: 360px;\n  box-shadow: 0 27px 24px 0 rgba(0,0,0,0.2), 0 40px 77px 0 rgba(0,0,0,0.22);\n  overflow: visible;\n}\n.image-container {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #503282;\n}\n.image {\n  width: 100%;\n  height: 100%;\n  background-image: url(&quot;https://c1.staticflickr.com/4/3952/15549529232_83f16d2aa2_z.jpg&quot;);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center center;\n  filter: url(&quot;#duotone&quot;);\n}\n.calendar {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  margin-top: 10%;\n  margin-left: 10%;\n  padding-top: 15%;\n  border: 10px solid #fff;\n  font-family: &#39;Josefin Sans&#39;, sans-serif;\n}\n.calendar .month-title {\n  position: absolute;\n  top: -0.4em;\n  left: -0.3em;\n  margin: 0;\n  font-size: 400px;\n  line-height: 1;\n  letter-spacing: 0;\n  color: #fff;\n  opacity: 0.15;\n}\n.calendar .calendar-table {\n  position: absolute;\n  width: 100%;\n  height: 85%;\n  border-collapse: collapse;\n  color: #fff;\n}\n.calendar .calendar-table th,\n.calendar .calendar-table td {\n  text-align: center;\n  font-size: 16px;\n}\n.calendar .calendar-table td {\n  cursor: pointer;\n  transition: opacity 0.3s ease;\n}\n.calendar .calendar-table td:not(.is-today) {\n  opacity: 0.5;\n}\n.calendar .calendar-table td:hover {\n  opacity: 1;\n}\n.calendar .is-today {\n  opacity: 1;\n  background-color: #fff;\n  color: #503282;\n}","js":"/* calendar built with the tutorial from https://liginc.co.jp/355474 */\n\n\nvar $window = $(window);\nvar $month = $(&#39;#js-month&#39;);\nvar $tbody = $(&#39;#js-calendar-body&#39;);\n\nvar today = new Date();\nvar currentYear = today.getFullYear(),\ncurrentMonth = today.getMonth();\n\n$window.on(&#39;load&#39;, function () {\n  calendarHeading(currentYear, currentMonth);\n  calendarBody(currentYear, currentMonth, today);\n});\n\nfunction calendarBody(year, month, today) {\n  var todayYMFlag = today.getFullYear() === year &amp;&amp; today.getMonth() === month ? true : false;\n  var startDate = new Date(year, month, 1);\n  var endDate = new Date(year, month + 1, 0);\n  var startDay = startDate.getDay();\n  var endDay = endDate.getDate();\n  var textSkip = true;\n  var textDate = 1;\n  var tableTd = &#39;&#39;;\n  var tableBody = &#39;&#39;;\n\n  for (var row = 0; row &lt; 6; row++) {if (window.CP.shouldStopExecution(0)) break;\n    var tr = &#39;&lt;tr&gt;&#39;;\n\n    for (var col = 0; col &lt; 7; col++) {if (window.CP.shouldStopExecution(1)) break;\n      if (row === 0 &amp;&amp; startDay === col) {\n        textSkip = false;\n      }\n      if (textDate &gt; endDay) {\n        textSkip = true;\n      }\n      var addClass = todayYMFlag &amp;&amp; textDate === today.getDate() &amp;&amp; !textSkip ? &#39;is-today&#39; : &#39;&#39;;\n      var textTd = textSkip ? &#39;&amp;nbsp;&#39; : textDate++;\n      var td = &#39;&lt;td class=&quot;&#39; + addClass + &#39;&quot;&gt;&#39; + textTd + &#39;&lt;/td&gt;&#39;;\n      tr += td;\n    }window.CP.exitedLoop(1);\n    tr += &#39;&lt;/tr&gt;&#39;;\n    tableBody += tr;\n  }window.CP.exitedLoop(0);\n  $tbody.html(tableBody);\n}\n\nfunction calendarHeading(year, month) {\n  $month.text(month + 1);\n}"};
+    __preprocessors = {
+      "html": "none",
+      "css": "stylus",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "Stylus",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+<script src="OPmLBW_data/embed-008e8e63bc8f4f7a03df3f5da5b5c4d5e25fe5a438f147d0a2325f1.js"></script>
+<script nonce="">(function(){var js = "window['__CF$cv$params']={r:'7cb3722a7c699e8f',m:'_tBRkw2ZVAUqFOXf0Nr2H32a28ZuhV5kJ6Tpl9i.KXI-1684741593-0-AbLQFHpTlcz5ySMguZN9pi9+JYSxaBhKIc7UNicA26ur',u:'/cdn-cgi/challenge-platform/h/g'};_cpo=document.createElement('script');_cpo.nonce='lli5Ct+0FJo=',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = 'lli5Ct+0FJo=';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe style="position: absolute; top: 0px; left: 0px; border: medium none; visibility: hidden;" width="1" height="1"></iframe>
+
+</body></html>
