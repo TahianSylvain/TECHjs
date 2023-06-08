@@ -1,9 +1,10 @@
 import datetime
-# from django.utils.datetime_safe import strftime
+from asgiref.sync import sync_to_async
 
 from .models import Annotation
 from .forms import AnnotationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.views import login_required
 from django.shortcuts import HttpResponseRedirect, reverse
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 
@@ -24,6 +25,7 @@ def chatbot_response(user_input):
     return response["choices"][0]["text"]
 
 
+@sync_to_async()
 def visiting(request, user_id):
     utilisateur = get_object_or_404(User, pk=user_id)
     ses_annotations = get_list_or_404(Annotation, account=utilisateur)
@@ -35,6 +37,7 @@ def visiting(request, user_id):
     )
 
 
+@sync_to_async   # optimization performed
 def principal(request, annotation_id=0):
     if request.user.username:
         nature: str = "Add"
@@ -46,10 +49,24 @@ def principal(request, annotation_id=0):
             if annotation_id == 0:
                 desc = request.POST['description']
                 form = Annotation.objects.create(
-                    account=request.user, over=False, name=request.POST['name'],
+                    account=request.user,
+                    name=request.POST['name'],
                     deadline=request.POST['deadline'],
-                    reminder=request.POST['reminder'], description=desc
+                    reminder=request.POST['reminder'], description=desc,
+                    over=False
                 )  # create
+                deadline = datetime.datetime(year=int(request.POST['deadline'][0:3]),
+                                             month=int(request.POST['deadline'][5:7]),
+                                             day=int(request.POST['deadline'][8:10]),
+                                             hour=int(request.POST['deadline'][11:13]),
+                                             minute=int(request.POST['deadline'][14:16]),
+                                             second=10, microsecond=10)
+                if (deadline - datetime.datetime.now()).total_seconds() > 0:
+                    over = False  # temps impartie finie
+                else:
+                    over = True
+
+                form.over = over
                 form.save()
                 return HttpResponseRedirect(reverse('main:entry'))
             else:
@@ -58,7 +75,8 @@ def principal(request, annotation_id=0):
                 form = AnnotationForm(request.POST, instance=note)
                 if form.is_valid():
                     form.save()
-                return render(request, template_name='principal/main.html', context={"dj": qs, "form": form, "type": nature})
+                return render(request, template_name='principal/main.html',
+                              context={"dj": qs, "form": form, "type": nature})
         elif request.method == 'GET':
             if annotation_id == 0:
                 form = AnnotationForm()  # create
@@ -84,21 +102,17 @@ def principal(request, annotation_id=0):
                     final = datetime.datetime.now() - delta
                 # 100% === 300px === 0s  // 0% === Opx === n_seconds  |
                 length = abs(round(100 * 3 / (1+(final.total_seconds()/1000))))
-                print('now it\'s', end=f'{datetime.datetime.now()}\n')
+                '''print('now it\'s', end=f'{datetime.datetime.now()}\n')'''
                 form = AnnotationForm(instance=note)
-            return render(
-                    request,
-                    template_name='principal/main.html',
-                    context={
+            return render(request, template_name='principal/main.html', context={
                         "dj": qs,
                         "form": form,
                         "type": nature,
                         "advice": advice,
                         "length": length,
                         "timing": timing,
-                    }
-                )
-
+                       }
+                   )
     elif request.user:  # new_User_or_Anonymous
         qs = User.objects.all()  # async filter(is_active=True, good_stat)
 
@@ -107,6 +121,27 @@ def principal(request, annotation_id=0):
         return render(request, template_name='./principal/main.html', context={"dj": qs})
 
 
+@sync_to_async
+def listing_tasks_by_time(request, annotate_deadline_date):  # '%Y-%m-%d %H:%M:%S'
+    """ http://localhost:3333/journey/on2023-05-19 18:32:24/ """
+    annee = int(annotate_deadline_date[0:4])
+    mois = str(annotate_deadline_date[5:7])
+    if '-' in mois:
+        mois = int(annotate_deadline_date[5])
+    jour = str(annotate_deadline_date[7:10])
+    print(jour)
+    if '-' in jour:
+        jour.replace('-', '')
+    on_this_day = datetime.date(year=int(annee),
+                                month=int(mois),
+                                day=int(jour))
+    qs = Annotation.objects.filter(over=True)
+    right_qs = [item for item in qs if on_this_day == item.deadline.date()]
+    return render(request, './principal/main.html', context={'dj': right_qs}, status=200)
+
+
+@sync_to_async()
+# @login_required(login_url="Larry's")
 def delete(request, annotation_id):
     notif = Annotation.objects.get(id=annotation_id)
     if notif.account == request.user:  # only owner can delete his/her object

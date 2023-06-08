@@ -28,3 +28,8 @@ Hello world!
     404.template                        done: Mijoro
     CRUD(annotation)                    done
 -----------------------------------------------------------
+
+
+------------Deployment-------------
+    calendar: href day==http://localhost:3333/journey/on(...)/
+-----------------------------------

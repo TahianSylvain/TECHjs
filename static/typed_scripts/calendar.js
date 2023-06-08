@@ -11,16 +11,16 @@ var renderCalendar = function () {
     lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
     var liTag = "";
     for (var i = firstDayofMonth; i > 0; i--) { // creating li of previous month last days
-        liTag += "<li class=\"inactive\">".concat(lastDateofLastMonth - i + 1, "</li>");
+        liTag += "\n                <li class=\"inactive\">\n                        ".concat(lastDateofLastMonth - i + 1, "\n                </li>");
     }
     for (var i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
         // adding active class to li if the current day, month, and year matched
         var isToday = i === date.getDate() && currMonth === new Date().getMonth()
             && currYear === new Date().getFullYear() ? "active" : "";
-        liTag += "<li class=\"".concat(isToday, "\">").concat(i, "</li>");
+        liTag += "\n        <li class=\"".concat(isToday, "\">\n            <a style=\"none\" href=\"http://localhost:3333/journey/on").concat(currYear, "-").concat(currMonth + 1, "-").concat(i, "\">\n                ").concat(i, "\n            </a>\n        </li>");
     }
     for (var i = lastDayofMonth; i < 6; i++) { // creating li of next month first days
-        liTag += "<li class=\"inactive\">".concat(i - lastDayofMonth + 1, "</li>");
+        liTag += "\n            <li class=\"inactive\">\n                    ".concat(i - lastDayofMonth + 1, "\n            </li>");
     }
     currentDate.innerText = "".concat(months[currMonth], " ").concat(currYear); // passing current mon and yr as currentDate text
     daysTag.innerHTML = liTag;

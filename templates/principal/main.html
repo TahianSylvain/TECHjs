@@ -150,8 +150,8 @@ input[type="file"] {
         <header>
             <p class="current-date"></p>
             <div class="icons">
-                <span id="prev" class="material-symbols-rounded">Back</span>
-                <span id="next" class="material-symbols-rounded">Next</span>
+                <span id="prev" class="material-symbols-rounded"><</span>
+                <span id="next" class="material-symbols-rounded">></span>
             </div>
         </header>
           <div class="calendar">
@@ -173,6 +173,11 @@ input[type="file"] {
         {% for i in dj %}
             <div style="background-color: grey; width: 300px">
                 <a href="{% url 'main:change' i.id %}">{{ i.name }}</a>______--------------------______<a href="{% url 'main:delete' i.id %}">delete</a> <br>
+                {% if i.over %}
+                    <h1>Time Over</h1>
+                {% else %}
+                    <h1>Still on it?</h1>
+                {% endif %}
             </div>
             <br>
         {% endfor %}

@@ -11,20 +11,26 @@ class Annotation(models.Model):
     over = models.BooleanField(default=False)
     
     # viewers
-    like = models.ManyToManyField(User, related_name='fan_zone')
-    unlike = models.ManyToManyField(User, related_name='contests')
+    like = models.ManyToManyField(User, related_name='fan_zone',  blank=True, null=True)
+    unlike = models.ManyToManyField(User, related_name='contests', blank=True, null=True)
     
     objects = models.Manager()
-    
+
+    def __str__(self):
+        return f'{self.id}-----{self.name}-------{self.deadline.date()}'
+
+    @staticmethod
     def get_nb_views(self) -> int:
         likers = Liker.objects.filter(action=True)
         dislikers = DisLiker.objects.filter(action=True)
         return len(likers)+len(dislikers)
-    
+
+    @staticmethod
     def get_nb_likes(self) -> int:
         likers = Liker.objects.filter(action=False)
         return len(likers)
-    
+
+    @staticmethod
     def get_nb_unlikes(self) -> int:
         dislikers = DisLiker.objects.filter(action=True)
         return len(dislikers)
