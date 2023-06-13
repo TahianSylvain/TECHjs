@@ -1,4 +1,3 @@
-cd
-source .profile
-cd ./Desktop/TECHjs/templates/frontend/
+source ~/.profile
+cd ./templates/frontend/;
 npm start 3000

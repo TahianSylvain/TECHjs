@@ -45,6 +45,17 @@ def principal(request, annotation_id=0):
         length: float = 0
         timing: str = ''
         qs = Annotation.objects.filter(account=request.user).order_by("deadline")
+        for note in qs:
+            coming_deadline = note.deadline
+            delta = datetime.datetime(year=coming_deadline.year, month=coming_deadline.month,
+                                      day=coming_deadline.day, hour=coming_deadline.hour,
+                                      minute=coming_deadline.minute, second=coming_deadline.second, microsecond=0)
+            if (delta - datetime.datetime.now()).total_seconds() < 0 and note.over is False:
+                print(note)
+                note.over = True
+            elif (delta - datetime.datetime.now()).total_seconds() > 0 and note.over:
+                note.over = False
+            note.save()
         if request.method == 'POST':
             if annotation_id == 0:
                 desc = request.POST['description']
@@ -75,8 +86,10 @@ def principal(request, annotation_id=0):
                 form = AnnotationForm(request.POST, instance=note)
                 if form.is_valid():
                     form.save()
+                return HttpResponseRedirect(reverse('main:entry'))
+                '''
                 return render(request, template_name='principal/main.html',
-                              context={"dj": qs, "form": form, "type": nature})
+Over                               context={"dj": qs, "form": form, "type": nature})'''
         elif request.method == 'GET':
             if annotation_id == 0:
                 form = AnnotationForm()  # create

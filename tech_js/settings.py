@@ -117,10 +117,10 @@ if not DEBUG:  # disable everyone to get the api/data
     }
 
 CORS_ORIGIN_WHITELIST = [
-    r'http://127.0.0.1:3000',
+    r'http://127.0.0.1:3333',
     r'http://192.168.43.98:3000',
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
-    r'http://localhost:3000',
+    r'http://localhost:3333',
     r'http://192.168.43.98:3000',
 ]

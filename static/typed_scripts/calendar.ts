@@ -9,7 +9,7 @@ currMonth = date.getMonth();
 
 // storing full name of all months in array
 const months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"];
+            "August", "September", "October", "November", "December"];
 
 const renderCalendar = () => {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
@@ -28,7 +28,7 @@ const renderCalendar = () => {
     for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
         // adding active class to li if the current day, month, and year matched
         let isToday = i === date.getDate() && currMonth === new Date().getMonth()
-                     && currYear === new Date().getFullYear() ? "active" : "";
+                    && currYear === new Date().getFullYear() ? "active" : "";
         liTag += `
         <li class="${isToday}">
             <a style="none" href="http://localhost:3333/journey/on${currYear}\-${currMonth+1}\-${i}">
