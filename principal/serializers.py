@@ -8,11 +8,11 @@ class AnnotationSerializer(serializers.ModelSerializer):
         fields = ( 
                     'id', 'account', 'name', 'description',
                     'description', 'deadline', 'reminder', 'over',
-                    'get_nb_views', 'get_nb_likes', 'get_nb_unlikes'
+                    # 'get_nb_views', 'get_nb_likes', 'get_nb_unlikes'
                 )
 
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ('id', 'relation', 'action', 'objects')
+        fields = ('id', 'relation', 'action')

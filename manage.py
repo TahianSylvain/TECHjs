@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import os
 import sys
+import tensorflow as tf
+print(tf)
 
 def main():
     """Run administrative tasks."""

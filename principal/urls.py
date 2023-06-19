@@ -17,7 +17,7 @@ urlpatterns = [
 
     path('api/', include(router.urls)),
     path('fullstack/', _see_your_apis, name='steward'),
-    path('fullstack/<int:annotation_id>/', _see_about_this_api, name='steward'),
+    path('fullstack/<int:annotation_id>/', _see_about_this_api, name='about_steward'),
 
     path('journey/on<str:annotate_deadline_date>/', listing_tasks_by_time, name='on_this_day'),
     path('<int:annotation_id>/', principal, name='change'),

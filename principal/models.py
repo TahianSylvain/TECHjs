@@ -16,7 +16,7 @@ class Annotation(models.Model):
     
     objects = models.Manager()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.id}-----{self.name}-------{self.deadline.date()}'
 
     @staticmethod

@@ -6,7 +6,7 @@ export const Great = (props) => {  // ES6
       <>
           <div className='Widget__Basis'>
             {product.id}----{product.name}
-            <LikeBtn tweet={product}/>  <DislikeBtn tweet={product}/>
+            //<LikeBtn tweet={product}/>  <DislikeBtn tweet={product}/>
           </div>
           <br />
       </>

@@ -15,17 +15,17 @@ function App() { // ES5
       }, []
   )
 
-  const presentation = annotation.length ? <h1>Here are your tasks:</h1> : <Formular/>;
+  const presentation = annotation.length ? <Formular /> : <h1>Hummm!!! You've got no task:</h1>;
   return (  // type inference
     <div className="App">
-      { presentation }
       <div className="partitioning">
         {
           annotation.map((item, index) => {
-            return <Great product={item} key={index}/>
+            return <Great product={item} key={index} />
           })
         }
       </div>
+      { presentation }
     </div>
   );
 }

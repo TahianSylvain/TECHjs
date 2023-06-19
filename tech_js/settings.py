@@ -1,4 +1,5 @@
 import json
+import openai
 import os.path
 from pathlib import Path
 
@@ -9,12 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 with open('jsonForce.json') as secret_file:
     config = json.load(secret_file)
-    try:
-        import openai
-        openai.api_key = config['ia']
-    except ModuleNotFoundError:
-        print('Mila install openai')
-    SECRET_KEY: str = config["hashed_key"]
+    SECRET_KEY = config['hashed_key']
+    openai.api_key = config['ia']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -111,16 +108,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# Allow The Cross Origin Requests Server
 if not DEBUG:  # disable everyone to get the api/data
-    REST_FRAMEWORK={
+    REST_FRAMEWORK = {
         'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRender',)
     }
-
 CORS_ORIGIN_WHITELIST = [
-    r'http://127.0.0.1:3333',
+    r'http://127.0.0.1:3000',
     r'http://192.168.43.98:3000',
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
-    r'http://localhost:3333',
+    r'http://localhost:3000',
     r'http://192.168.43.98:3000',
 ]
