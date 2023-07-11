@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "pmneo.tsimporter",
+        "ms-vscode.vscode-typescript-next"
+    ]
+}

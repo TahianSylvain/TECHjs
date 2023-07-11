@@ -1,5 +1,5 @@
-const daysTag = document.querySelector(".days"),
-currentDate = document.querySelector(".current-date"),
+const daysTag = document.querySelector(".days") as HTMLElement,
+currentDate = document.querySelector(".current-date") as HTMLElement,
 prevNextIcon = document.querySelectorAll(".icons span");
 
 // getting new date, current year and month

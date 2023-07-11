@@ -1,6 +1,8 @@
 var daysTag = document.querySelector(".days"), currentDate = document.querySelector(".current-date"), prevNextIcon = document.querySelectorAll(".icons span");
 // getting new date, current year and month
-var date = new Date(), currYear = date.getFullYear(), currMonth = date.getMonth();
+var date = new Date(), currDay = date.getDay();
+currYear = date.getFullYear();
+currMonth = date.getMonth();
 // storing full name of all months in array
 var months = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"];
@@ -22,7 +24,7 @@ var renderCalendar = function () {
     for (var i = lastDayofMonth; i < 6; i++) { // creating li of next month first days
         liTag += "\n            <li class=\"inactive\">\n                    ".concat(i - lastDayofMonth + 1, "\n            </li>");
     }
-    currentDate.innerText = "".concat(months[currMonth], " ").concat(currYear); // passing current mon and yr as currentDate text
+    currentDate.innerText = "".concat(months[currMonth], ", ").concat(currDay, " ").concat(currYear); // passing current mon and yr as currentDate text
     daysTag.innerHTML = liTag;
 };
 renderCalendar();

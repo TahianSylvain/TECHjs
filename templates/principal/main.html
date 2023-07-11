@@ -4,10 +4,16 @@
     {% load static %}{% load i18n %}
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static './styles/calendar.css' %}">
+    <link rel="stylesheet" href="{% static './styles/principal.css' %}">
+    <script src="{% static './typed_scripts/jquery-3.6.0.min.js' %}"></script>
     <script src="{% static './typed_scripts/calendar.js' %}" defer></script>
-    <title>Page d'acceuil</title>
+    <script src="{% static './typed_scripts/principal.js' %}" defer></script>
+
+    {% block headStatic %}  {% endblock %}
+
+    <title>{% block title %}Page d'acceuil {% endblock %}</title>
     <style>
-        @import url('httpss://fonts.googleapis.com/css?family=Roboto');
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
   background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
@@ -80,32 +86,32 @@ body {
 }
 
 input[type="file"] {
- outline: none;
- cursor:pointer;
- font-size: 17px;
+  outline: none;
+  cursor:pointer;
+  font-size: 17px;
 }
 
 #range-label {
- width:15%;
- padding:5px;
- background-color: #1BBA93;
- color:white;
- border-radius: 5px;
- font-size: 17px;
- position: relative;
- top:-8px;
+  width:15%;
+  padding:5px;
+  background-color: #1BBA93;
+  color:white;
+  border-radius: 5px;
+  font-size: 17px;
+  position: relative;
+  top:-8px;
 }
 
 
 ::-webkit-input-placeholder {
- color:#d9d9d9;
+  color:#d9d9d9;
 }
 
 /*---------------------------------------*/
 /* Form Footer */
 /*---------------------------------------*/
 .form-footer {
- clear:both;
+  clear:both;
 }
 /*---------------------------------------*/
 /* Form Footer */
@@ -128,61 +134,75 @@ input[type="file"] {
 }
 
 .btn {
-   display:inline-block;
-   padding:10px 20px;
-   background-color: #1BBA93;
-   font-size:17px;
-   border:none;
-   border-radius:5px;
-   color:#bcf5e7;
-   cursor:pointer;
+  display:inline-block;
+  padding:10px 20px;
+  background-color: #1BBA93;
+  font-size:17px;
+  border:none;
+  border-radius:5px;
+  color:#bcf5e7;
+  cursor:pointer;
 }
 
 .btn:hover {
   background-color: #169c7b;
   color:white;
 }
-    </style>
+  </style>
 </head>
 <body>
     <center>
-        <div class="wrapper">
-        <header>
-            <p class="current-date"></p>
-            <div class="icons">
-                <span id="prev" class="material-symbols-rounded"><</span>
-                <span id="next" class="material-symbols-rounded">></span>
+      <div class="w-10O text-center">
+          <form id="search-form" autocomplete="off">
+              {% csrf_token %}
+              <input class="p-1 w-50 search" type="text" name="getter" placeholder="Search for some annotation..." id="search-input"><!-- type="search" -->
+          </form>
+      </div>
+      <div class="results-card not-visible" id="results-box">
+          test
+      </div>
+
+      <div class="wrapper">
+          <header>
+              <p class="current-date"></p>
+  {% block WhatTimeIsIt %}{% endblock %}
+              <div class="icons">
+                  <span id="prev" class="material-symbols-rounded"><</span>
+                  <span id="next" class="material-symbols-rounded">></span>
+              </div>
+          </header>
+            <div class="calendar">
+              <ul class="weeks">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+              </ul>
+              <ul class="days"></ul>
             </div>
-        </header>
-          <div class="calendar">
-            <ul class="weeks">
-              <li>Sun</li>
-              <li>Mon</li>
-              <li>Tue</li>
-              <li>Wed</li>
-              <li>Thu</li>
-              <li>Fri</li>
-              <li>Sat</li>
-            </ul>
-            <ul class="days"></ul>
-          </div>
-        </div>
-        {% if user.username %}
-    <div>
-        <br>
-        {% for i in dj %}
-            <div style="background-color: grey; width: 300px">
-                <a href="{% url 'main:change' i.id %}">{{ i.name }}</a>______--------------------______<a href="{% url 'main:delete' i.id %}">delete</a> <br>
-                {% if i.over %}
-                    <h1>Time Over</h1>
-                {% else %}
-                    <h1>Still on it?</h1>
-                {% endif %}
-            </div>
-            <br>
-        {% endfor %}
-        <br>
-    </div>
+      </div>
+    
+      {% if user.username %}
+      <div>
+          <br> 
+          {% for i in dj %}
+              <div style="background-color: grey; width: 300px">
+                  <a href="{% url 'main:change' i.id %}">{{ i.name }}</a>______--------------------______<a href="{% url 'main:delete' i.id %}">delete</a>
+                  <p id="invisible" class="not-visible">{{ i.deadline.date| date:"d M Y" }}</p>
+                  {% if i.over %}
+                      <h1>Time Over</h1>
+                  {% else %}
+                      <h1>Time left</h1>
+                      {% block clock %}{% endblock clock %}
+                  {% endif %}
+              </div>
+              <br>
+          {% endfor %}
+          <br>
+      </div>
     <div class="advice" style="color: white">{{ advice }}</div>
     <div>
         <form action="" enctype="application/x-www-form-urlencoded" method="post" class="signup-form">
@@ -195,7 +215,6 @@ input[type="file"] {
 
             <!-- form body -->
             <div class="form-body">
-
                     {{form.errors}}
                 {% if form.errors %}
                     <p>Please correct the following errors:</p>
@@ -235,7 +254,7 @@ input[type="file"] {
         </form>
     </div>
     <div class="container" style="width:400px; height:24px; background-color:skyblue">
-        <div class="bar" style="width:{{ length }}px; height:24px; background-color: {{ timing }}">
+        <div class="bar" style="width: {{ length }}px; height:24px; background-color: {{ timing }}">
         </div>
     </div>
         {% elif user %}

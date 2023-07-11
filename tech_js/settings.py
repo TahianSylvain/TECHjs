@@ -23,8 +23,10 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'principal',
     'django_react',
+    
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -109,12 +111,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Allow The Cross Origin Requests Server
-if not DEBUG:  # disable everyone to get the api/data
-    REST_FRAMEWORK = {
-        'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRender',)
-    }
+# if not DEBUG:  # disable everyone to get the api/data
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        # 'rest_framework.permissions.IsAuthenticated',   # DjangoModelPermissionOrAnonReadOnly'
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication'
+    ),
+    #'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JsonRender',)
+}
+
 CORS_ORIGIN_WHITELIST = [
-    r'http://127.0.0.1:3000',
+    r'http://127.0.0.1:3000',      # regular expression
     r'http://192.168.43.98:3000',
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [

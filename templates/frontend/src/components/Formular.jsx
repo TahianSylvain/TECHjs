@@ -1,4 +1,7 @@
 import React from 'react';
+import './Formular.css';
+// import { send } from 'process';
+
 
 class Formular extends React.Component {
     constructor(props) {
@@ -24,18 +27,27 @@ class Formular extends React.Component {
         e.preventDefault()
         const data = JSON.stringify(this.state);
         console.log(data);
+        
+        // Send the fucking new data
+        
+
         this.setState({
             name: '',
             deadline: '',
             reminder: '',
             description: '',
         })
+        
     }
 
     render() {
-        return <form action='' encType='text/plain' method='POST' onSubmit={this.handleSubmit}>
-            <fieldset>
-            <legend>Enter your new item</legend>
+        return <form className="signup-form" action='' encType='text/plain' method='POST' onSubmit={this.handleSubmit}>
+            <div className="form-header">
+                <h1>New Notation for "YOUR NAME"</h1>
+                Your name
+            </div>
+        
+            <div className="form-body">
                 <label htmlFor="name">Name</label>
                 <input type="text" name='name' value={this.state.name} onChange={this.handlechange}/>
 
@@ -47,8 +59,11 @@ class Formular extends React.Component {
 
                 <label htmlFor="description">Description</label>
                 <textarea name="description" id="decrire" cols="30" rows="10" value={this.state.description} onChange={this.handlechange}></textarea>
-            </fieldset>
-            <button type="submit">Send</button>
+            </div>
+            <div className="form-footer">
+                <button type="reset">Undo</button>
+                <button type="submit">Send</button>
+            </div>
         </form>
     }
 }

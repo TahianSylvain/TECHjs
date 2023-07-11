@@ -1,18 +1,42 @@
-from django.http import JsonResponse
-from rest_framework import viewsets, permissions
+from django.contrib.auth import authenticate
+from rest_framework import viewsets, permissions, generics, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from principal.serializers import UserSerializer, AnnotationSerializer, TaskSerializer
 
 from principal.models import Annotation, Task
 from django.shortcuts import get_object_or_404
-from principal.serializers import AnnotationSerializer, TaskSerializer
+
+
+class UserCreate(generics.CreateAPIView):
+    authentication_classes = ()
+    permission_classes = ()
+    serializer_class = UserSerializer
+
+
+class LoginView(APIView):
+    permission_classes = ()
+
+    def post(self, request, ):
+        username = request.data['username']
+        password = request.data['password']
+        print(username, password)
+        user = authenticate(username=username, password=password)
+        if user:
+            return Response({'token': user.auth_token.key})
+        else:
+            return Response({'error': 'Wrong Credentials'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET', 'PUT', 'POST'])  # read, update, create
 def _see_your_apis(request, *args, **kwargs):
-    qs = Annotation.objects.filter(account=request.user).order_by('-deadline')
+    # permission_classes = [permissions.IsAuthenticated]
+    # print(permission_classes)
+    print('moi')
+    qs = Annotation.objects.all().order_by('-deadline')
     serializer = AnnotationSerializer(qs, many=True)
-    print(serializer.data, *args, **kwargs)
     return Response(serializer.data, status=201)
 
 
@@ -20,7 +44,6 @@ def _see_your_apis(request, *args, **kwargs):
 def _see_about_this_api(request, annotation_id, *args, **kwargs):
     qs = get_object_or_404(Annotation, id=annotation_id, account=request.user)
     serializer = AnnotationSerializer(qs, many=False)
-    print(qs, *args, **kwargs)
     return Response(serializer.data)
 
 

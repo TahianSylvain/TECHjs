@@ -1,5 +1,6 @@
 import datetime
 from asgiref.sync import sync_to_async
+from django.http import JsonResponse
 
 from .models import Annotation
 from .forms import AnnotationForm
@@ -37,6 +38,29 @@ def visiting(request, user_id):
     )
 
 
+def search_results(request):
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': # request.is_ajax():
+        annotation = request.POST['annotation']
+        
+        qs = Annotation.objects.filter(name__icontains=annotation)
+        print(qs)
+        if (len(qs)>0) and (len(annotation)>0):
+            data = []
+            for pos in qs:
+                item = {
+                    "pk": pos.pk,
+                    "name": pos.name,
+                    "account": pos.account,
+                    # "deadline", "reminder", "description"
+                }
+                data.append(item)
+            res = data
+        else:
+            res = 'No annotation found'
+        return JsonResponse({'data': res})
+    JsonResponse({})
+
+
 @sync_to_async   # optimization performed
 def principal(request, annotation_id=0):
     if request.user.username:
@@ -48,8 +72,8 @@ def principal(request, annotation_id=0):
         for note in qs:
             coming_deadline = note.deadline
             delta = datetime.datetime(year=coming_deadline.year, month=coming_deadline.month,
-                                      day=coming_deadline.day, hour=coming_deadline.hour,
-                                      minute=coming_deadline.minute, second=coming_deadline.second, microsecond=0)
+                                        day=coming_deadline.day, hour=coming_deadline.hour,
+                                        minute=coming_deadline.minute, second=coming_deadline.second, microsecond=0)
             if (delta - datetime.datetime.now()).total_seconds() < 0 and note.over is False:
                 print(note)
                 note.over = True
@@ -67,11 +91,11 @@ def principal(request, annotation_id=0):
                     over=False
                 )  # create
                 deadline = datetime.datetime(year=int(request.POST['deadline'][0:3]),
-                                             month=int(request.POST['deadline'][5:7]),
-                                             day=int(request.POST['deadline'][8:10]),
-                                             hour=int(request.POST['deadline'][11:13]),
-                                             minute=int(request.POST['deadline'][14:16]),
-                                             second=10, microsecond=10)
+                                            month=int(request.POST['deadline'][5:7]),
+                                            day=int(request.POST['deadline'][8:10]),
+                                            hour=int(request.POST['deadline'][11:13]),
+                                            minute=int(request.POST['deadline'][14:16]),
+                                            second=10, microsecond=10)
                 if (deadline - datetime.datetime.now()).total_seconds() > 0:
                     over = False  # temps impartie finie
                 else:
@@ -105,8 +129,8 @@ Over                               context={"dj": qs, "form": form, "type": natu
                     response = 'Oh! It seems that connection has temporarily stopped!'
                 coming_deadline = note.deadline
                 delta = datetime.datetime(year=coming_deadline.year, month=coming_deadline.month,
-                                          day=coming_deadline.day, hour=coming_deadline.hour,
-                                          minute=coming_deadline.minute, second=coming_deadline.second, microsecond=0)
+                                            day=coming_deadline.day, hour=coming_deadline.hour,
+                                            minute=coming_deadline.minute, second=coming_deadline.second, microsecond=0)
                 if delta > datetime.datetime.now():
                     timing = 'blue'  # restful
                     final = delta - datetime.datetime.now()
@@ -117,15 +141,15 @@ Over                               context={"dj": qs, "form": form, "type": natu
                 length = abs(round(100 * 3 / (1+(final.total_seconds()/1000))))
                 '''print('now it\'s', end=f'{datetime.datetime.now()}\n')'''
                 form = AnnotationForm(instance=note)
-            return render(request, template_name='principal/main.html', context={
+            return render(request, template_name='principal/timer.html', context={
                         "dj": qs,
                         "form": form,
                         "type": nature,
                         "advice": advice,
                         "length": length,
                         "timing": timing,
-                       }
-                   )
+                        }
+                    )
     elif request.user:  # new_User_or_Anonymous
         qs = User.objects.all()  # async filter(is_active=True, good_stat)
 
