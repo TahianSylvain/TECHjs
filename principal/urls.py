@@ -3,7 +3,7 @@ from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 
 from .views import principal, delete, visiting,\
-    listing_tasks_by_time, search_results
+    listing_tasks_by_time, search_results, generated
 from .api_views import AnnotationViewSet, TaskViewSet, \
     _see_your_apis, _see_about_this_api, UserCreate, LoginView
 
@@ -16,6 +16,7 @@ router.register(r'annotation', AnnotationViewSet)
 app_name = 'main'
 urlpatterns = [
     path('', principal, name='entry'),
+    path('generat/', generated, name='generat'),
     path('search/', search_results, name='search'),
 
 

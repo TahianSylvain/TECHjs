@@ -22,11 +22,11 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'principal',
-    'django_react',
+    'app_users',
     
-    'corsheaders',
-    'rest_framework',
-    'rest_framework.authtoken',
+    # 'corsheaders',
+    # 'rest_framework',
+    # 'rest_framework.authtoken',
 
     'django.contrib.admin',
     'django.contrib.auth',

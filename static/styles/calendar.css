@@ -6,14 +6,30 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
+main {
   display: flex;
-  align-items: center;
-  padding: 0 10px;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
-  background: #9B59B6;
+  padding: 50px;
 }
+
+.calendar-wrapper {
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.wrapper header {
+  /* Calendar header styles */
+}
+
+.calendar {
+  /* Calendar styles */
+}
+
 .wrapper{
   width: 450px;
   background: #fff;

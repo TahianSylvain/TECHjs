@@ -3,26 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Design</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Landing Page</title>
+    {% load static %}{% load i18n %}
+    <link rel="stylesheet" href="{% static 'styles/generat.css' %}">
+    <script src="{% static 'typed_scripts/calendar.js' %}" defer></script>
+    <script src="{% static './typed_scripts/SearchBarAjax.js' %}" defer></script>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <div class="logo"><img src="" alt="Website Logo" srcset="" height=""></div>
+            <div class="logo">
+                <img src="" alt="Website Logo" srcset="" height="">
+            </div>
+            
             <div class="header-actions">
                 <div class="dark-light-toggle">
                     <input type="checkbox" id="darkModeToggle">
                     <label for="darkModeToggle"></label>
                 </div>
+                
                 <div class="search-bar">
                     <input type="text" placeholder="Search">
                     <button type="submit" id="searchButton">Search</button>
                 </div>
+                
                 <div class="user-actions">
-                    <a href="#">Login</a>
-                    <span>  </span>
-                    <a href="#">Sign Up</a>
+                    {% if request.user.username %}
+                        <a href="{% url 'account:logout' %}">Logout</a>
+                        <a href="{% url 'account:switch' %}">Switch</a>
+                    {% else %}
+                        <a href="{% url 'account:login' %}">Login</a>
+                        <span>  </span>
+                        <a href="{% url 'account:signup' %}">Sign Up</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -30,47 +43,129 @@
 
     <div class="sidebar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{% url 'main:entry' %}">Home</a></li>
+            <li>
+        <a href="https://www.figma.com/file/jLgnEkiBEheIyOvIaKygq5/My_own-and_personalised_portfolio?node-id=3%3A4&t=creaxtc4EKSFBXF0-1">
+            Author
+        </a>
+            </li>
+            <li><a href="#">About me</a></li>
+            <li><a href="#sponsorship">Services</a></li>
+            <li><a href="#sponsorship">Contact</a></li>
         </ul>
     </div>
 
     <main>
-        <div class="card blue">
-            <div class="card-header">
-                <h3>Title1  </h3><h3>  10:00:00</h3>
-            </div>
-            <div class="card-body">
-                <p>Description text 1
-                </p>
-            </div>
-        </div>
+        {% if request.user.username %}
+            {% for i in dj %}
+                {% if not i.is_even %}
+                    <div class="card blue">
+                        <div class="card-header">
+                            <h3> {{ i.name }} </h3>
+                            {% if i.over %}
+                                Over since {{ i.deadline.date| date:"d M Y" }}
+                            {% else %}
+                                {% block clock %}{% endblock clock %}
+                            {% endif %}
+                        </div>
+                        <p class="not-visible">{{ i.deadline }}</p>
+                        <div class="card-body">
+                            <p>
+                                {{ i.description }}
+                            </p>
+                        </div>
+                        ---------------------------<a style="color:white" href="{% url 'main:delete' i.id %}">delete</a>-------------------------
+                    </div>
 
-        <div class="card white">
-            <div class="card-header">
-                <div class="countdown">05:30:00</div>
-            </div>
-            <div class="card-body">
-                <h3>Title 2</h3>
-                <p>Description text 2</p>
-            </div>
+                {% else %}
+                    <div class="card white">
+                        <div class="card-header">
+                            <div class="countdown">05:30:00</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Title 2</h3>
+                            <p>Description text 2</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <div class="advice" style="color: white">{{ advice }}</div>
+        <div>
+            <form action="" enctype="application/x-www-form-urlencoded" method="post" class="signup-form">
+                <!-- form header -->
+                    {% csrf_token %}
+                <div class="form-header">
+                    <h1>New Notation for {{ user.username }}</h1>
+                    {{ form.account }}
+                </div>
+
+                <!-- form body -->
+                <div class="form-body">
+                        {{form.errors}}
+                    {% if form.errors %}
+                        <p>Please correct the following errors:</p>
+                        {% for field in form %}
+                            {% if field.errors %}
+                                <div>{{ field.label }}: {{ field.errors|striptags }}</div>
+                    {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="firstname" class="label-title">Title</label>
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group right">
+                            <label for="lastname" class="label-title">Deadline</label>
+                            {{ form.deadline }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="timing" class="label-title">Reminder</label>
+                        {{ form.reminder }}
+                    </div>
+                    <!-- Bio -->
+                    <div class="form-group">
+                        <label for="choose-file" class="label-title">Bio</label>
+                        {{ form.description }}
+                    </div>
+                </div>
+                <!-- form footer -->
+                <div class="form-footer">
+                    {% if type == 'change' %}
+                        <button type="reset">Undo</button>
+                    {% endif %}
+                    <button type="submit">{{ type }}</button>
+                </div>
+            </form>
         </div>
     </main>
 
     <footer>
-        <a href=""></a>
-        <a href="mailto:">admin</a>
-        <a href="mailto:">admin</a>
-        <a href="mailto:">admin</a>
+        <div id="sponsorship">
+            <div id="DJ" ><a href="https://Django.org/"><img src="{% static 'img/icons8-django-a-high-level-python-web-framework-that-encourages-rapid-development-48.png' %}" alt="Django" srcset=""></a></div>
+            <div id="OpenAI" ><a href="https://openai.com/"><img src="{% static 'img/' %}" alt="OpenAI" srcset=""></a></div>
+            <div id="python3" ><a href="https://python.org/"><img src="{% static 'img/icons8-python-48.png' %}" alt="Python" srcset=""></a></div>
+            <div id="CodeOSS" ><a href="https://vscode.org/"><img src="{% static 'img/' %}" alt="VSCODE" srcset=""></a></div>
+            <div id="XfceSession" ><a href="https://xubuntu.org/"><img src="{% static 'img/' %}" alt="Xubuntu" srcset=""></a></div>
+            <div id="Pycharm" ><a href="https://jetbrains.com/Pycharm/"><img src="{% static 'img/' %}" alt="JetBrains" srcset=""></a></div>
+            <div id="github" ><a href="https://github.com/TahianSylvain/TECHjs/"><img src="{% static 'img/github-9-64.jpg' %}" alt="Git" srcset=""></a></div>
+        </div>
+
+        <p>
+            If something wrong happened, Don't hesitate to <a href="mailto:ranjalahyandrytahianasylvain@gmail.com">mail me</a>
+        </p>
+        <p>
+            But if you are amazed by it! Make me a star at <a href="https://github.com/TahianSylvain/TECHjs/">my GitHub repos</a>
+        </p>
+
         <ul>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
             <li><a href="#">FAQ</a></li>
         </ul>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="{% static 'typed-scripts/generatBody.js' %} "></script>
 </body>
 </html>

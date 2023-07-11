@@ -1,6 +1,4 @@
 from django import forms
-import django.http.request
-
 from .models import Annotation
 
 
