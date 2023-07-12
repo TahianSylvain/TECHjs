@@ -1,4 +1,6 @@
-Hello world!
+Ceci est un CDC
+
+Malheureusement TECHjs==fail
 # rootadmin  3n8vC5Ue27RSqDq
 -------------------------------------done------------------------------------------------
                 CRUD(annotation)                    done: Andry
