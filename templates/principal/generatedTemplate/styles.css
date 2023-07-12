@@ -314,3 +314,68 @@ footer:not(:last-child) {
 #closeModal {
     padding: 10px 20px;
 }
+/* Default styles */
+
+/* Reset some default styles */
+
+/* Default color scheme */
+
+/* Header styles */
+
+/* Sidebar styles */
+
+/* Main styles */
+
+/* Footer styles */
+
+/* Dark mode */
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .header-container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+    }
+  
+    .header-actions {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .search-bar {
+      margin-bottom: 10px;
+    }
+  
+    .user-actions {
+      margin: 0;
+    }
+  
+    .dark-light-toggle {
+      margin-right: 0;
+    }
+  
+    .sidebar {
+      float: none;
+      width: 100%;
+      height: auto;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  
+    .form-container {
+      position: static;
+      width: 100%;
+      margin: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Adjust styles for smaller screens */
+  }
+  

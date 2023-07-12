@@ -21,6 +21,7 @@ ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
+    'axes',
     'principal',
     'app_users',
     
@@ -122,7 +123,7 @@ REST_FRAMEWORK = {
     ),
     #'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JsonRender',)
 }
-
+"""
 CORS_ORIGIN_WHITELIST = [
     r'http://127.0.0.1:3000',      # regular expression
     r'http://192.168.43.98:3000',
@@ -131,3 +132,7 @@ CORS_ORIGIN_REGEX_WHITELIST = [
     r'http://localhost:3000',
     r'http://192.168.43.98:3000',
 ]
+"""
+AXES_FAILURE_LIMIT = 3
+AXES_LOCK_OUT_AT_FAILURE = True
+# AXES_COOLOFF_TIME = timedelta(minutes=15)

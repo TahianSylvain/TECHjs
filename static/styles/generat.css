@@ -233,7 +233,7 @@ footer a:hover {
 .sidebar {
   background-color: #f1f1f1;
   width: 200px;
-  height: 100vh;
+  height: auto;
   float: left;
 }
 
@@ -313,4 +313,232 @@ footer:not(:last-child) {
 
 #closeModal {
   padding: 10px 20px;
+}
+#sponsorship {
+  display: flex;
+  overflow: hidden; /* Hide the overflow */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+#sponsorship div {
+  flex: 0 0 auto; /* Disable flex-grow and flex-shrink */
+  margin: 10px;
+}
+
+#sponsorship img {
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#sponsorship {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  justify-content: center; /* Add this line */
+  align-items: center; /* Add this line */
+}
+#sponsorship div {
+  flex: 0 0 auto;
+  margin: 0 10px; /* Add this line */
+}
+#sponsorship img {
+  width: 80px; /* Modify the width */
+  height: 80px; /* Modify the height */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.sidebar-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.sidebar ul {
+  margin-bottom: 10px;
+}
+
+.setting-item {
+  margin-top: auto;
+}
+
+.setting-item a {
+  font-weight: bold;
+  color: #000;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  position: relative;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.form-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
+  z-index: 999;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Align content at the bottom */
+  min-height: 100vh; /* Ensure the main tag covers the entire viewport */
+  padding-bottom: 20px; /* Add some bottom padding */
+  position: relative;
+}
+
+.form-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
+  z-index: 999;
+}
+.form-header {
+  background-color: #2196f3;
+  color: #fff;
+  padding: 10px;
+}
+
+.form-footer {
+  background-color: #2196f3;
+  padding: 10px;
+  text-align: center;
+}
+
+.form-footer button[type="submit"] {
+  background-color: #1a2e9c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}.form-body {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.horizontal-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-footer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.form-footer button {
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-footer button:hover {
+  background-color: #0c7cd5;
+}
+
+.form-footer button[type="reset"] {
+  background-color: #ccc;
+  color: #333;
+}
+
+.form-footer button[type="reset"]:hover {
+  background-color: #b3b3b3;
+}
+
+.scrollable-main {
+  overflow-y: auto;
+  height: calc(100vh - 100px); /* Adjust the height as needed */
+}
+.sidebat-container {
+  display: flex;
+  height: 100vh; /* Adjust if needed */
+}
+
+.sidebar {
+  width: 200px; /* Adjust if needed */
+  background-color: #f2f2f2;
+  overflow-y: auto;
+}
+
+.scrollable-main {
+  flex: 1;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* Adjust if needed */
+}
+
+.sidebar {
+  width: 200px; /* Adjust if needed */
+  background-color: #f2f2f2;
+  overflow-y: auto;
+}
+
+.scrollable-main {
+  flex: 1;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.advice {
+  width: 200px; /* Adjust if needed */
+  background-color: #f2f2f2;
+  overflow-y: auto;
 }

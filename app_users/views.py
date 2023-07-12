@@ -1,3 +1,5 @@
+from axes.decorators import axes_dispatch
+from axes.utils import reset
 from asgiref.sync import sync_to_async
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -8,6 +10,7 @@ from app_users.forms import SignUpUserForm
 
 
 # Django Axes
+@axes_dispatch
 @sync_to_async()
 def register(request):
     if request.method == 'POST':
@@ -27,6 +30,7 @@ def register(request):
 
 
 # Django Axes
+@axes_dispatch
 @sync_to_async()
 def user_login(request):
     if request.method == 'POST':

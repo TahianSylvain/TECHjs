@@ -45,3 +45,29 @@ signupButton.addEventListener('click', openModal);
 // Add click event listener to the close button
 var closeButton = document.getElementById('closeModal');
 closeButton.addEventListener('click', closeModal);
+
+const sponsorshipContainer = document.getElementById('sponsorship');
+const sponsorshipItems = sponsorshipContainer.querySelectorAll('div');
+
+let position = 0;
+const width = sponsorshipContainer.offsetWidth;
+
+function moveCarousel() {
+  position -= 1; // Adjust the value to control the speed of the carousel
+  sponsorshipContainer.style.transform = `translateX(${position}px)`;
+
+  if (position <= -width) {
+    sponsorshipContainer.appendChild(sponsorshipItems[0]);
+    sponsorshipItems[0].addEventListener('transitionend', resetPosition);
+  } else {
+    requestAnimationFrame(moveCarousel);
+  }
+}
+
+function resetPosition() {
+  sponsorshipContainer.style.transform = 'translateX(0)';
+  sponsorshipItems[0].removeEventListener('transitionend', resetPosition);
+  requestAnimationFrame(moveCarousel);
+}
+
+requestAnimationFrame(moveCarousel);
