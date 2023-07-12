@@ -2,30 +2,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{u.username}}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/generat.css' %}">
+    <title> {{ u.username }} </title>
+    <style>
+        /* Additional styles for the message container */
+          .message-container {
+            display: ;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+          }
+
+          .message-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            text-align: center;
+          }
+    </style>
 </head>
 <body>
-        <h1>{{ u }}</h1>
-        <center>
-            {% for a in annotate %}
-                <div>
-                    <h3> {{ a.name }} </h3> <i>{{ a.deadline }}<i/>
-                    <p>{{ a.description }}<p/>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="{% static 'img/icons8-todo-list-96.png' %}" alt="Website Logo" srcset="" height="">
+            </div>
 
-                    {% if user.username %}   {# can like #}
-                        <form action="" method="post">
-                            {% csrf_token %}
-                            <button type="submit">Like</button>
-                        </form>
-                                {# liked or disliked #}
-                        <form action="" method="post">
-                            {% csrf_token %}
-                            <button type="submit">Dislike</button>
-                        </form>
-                    {# else view only #} {% endif %}
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <button type="submit" id="searchButton">Search</button>
                 </div>
-                <br>
-            {% endfor %}
-        </center>
+
+                <div class="user-actions">
+                    {% if request.user.username %}
+                        <a href="{% url 'account:logout' %}">Logout</a>
+                        <a href="{% url 'account:switch' %}">Switch</a>
+                    {% else %}
+                        <a href="{% url 'account:login' %}">Login</a>
+                        <span>  </span>
+                        <a href="{% url 'account:signup' %}">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar-container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="{% url 'main:entry' %}">Home</a></li>
+                <li>
+            <a href="https://www.figma.com/file/jLgnEkiBEheIyOvIaKygq5/My_own-and_personalised_portfolio?node-id=3%3A4&t=creaxtc4EKSFBXF0-1">
+                Author
+            </a>
+                </li>
+                <li><a href="#">About me</a></li>
+                <li><a href="#sponsorship">Services</a></li>
+                <li><a href="#sponsorship">Contact</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <h1>{{ u }}</h1>
+                {% for a in annotate %}
+                    <div>
+                        <h3> {{ a.name }} </h3> <i>{{ a.deadline }}<i/>
+                        <p>{{ a.description }}<p/>
+
+                        {% if user.username %}   {# can like #}
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Like</button>
+                            </form>
+                                    {# liked or disliked #}
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Dislike</button>
+                            </form>
+                        {# else view only #} {% endif %}
+                    </div>
+                {% endfor %}
+
+        </main>
+    </div>
+
+    <footer>
+        <div id="sponsorship">
+            <div id="DJ" ><a href="https://Django.org/"><img src="{% static 'img/icons8-django-a-high-level-python-web-framework-that-encourages-rapid-development-48.png' %}" alt="Django" srcset=""></a></div>
+            <div id="OpenAI" ><a href="https://openai.com/"><img src="{% static 'img/icons8-chatgpt-96.png' %}" alt="OpenAI" srcset=""></a></div>
+            <div id="python3" ><a href="https://python.org/"><img src="{% static 'img/icons8-python-48.png' %}" alt="Python" srcset=""></a></div>
+            <div id="CodeOSS" ><a href="https://vscode.org/"><img src="{% static 'img/icons8-visual-studio-code-2019-96.png' %}" alt="VSCODE" srcset=""></a></div>
+            <div id="XfceSession" ><a href="https://xubuntu.org/"><img src="{% static 'img/icons8-ubuntu-logo-96.png' %}" alt="Xubuntu" srcset=""></a></div>
+            <div id="Pycharm" ><a href="https://jetbrains.com/Pycharm/"><img src="{% static 'img/icons8-jetbrains-logo-96.png' %}" alt="JetBrains" srcset=""></a></div>
+            <div id="github" ><a href="https://github.com/TahianSylvain/TECHjs/"><img src="{% static 'img//icons8-github-50.png' %}" alt="Git" srcset=""></a></div>
+        </div>
+
+        <p style="">
+            If something wrong happened, Don't hesitate to <a href="mailto:ranjalahyandrytahianasylvain@gmail.com">mail me</a>
+        </p>
+        <p>
+            But if you are amazed by it! Make me a star at <a href="https://github.com/TahianSylvain/TECHjs/">my GitHub repos</a>
+        </p>
+
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </footer>
 </body>
 </html>

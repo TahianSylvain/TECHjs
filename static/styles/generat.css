@@ -430,8 +430,8 @@ main {
 }
 
 .form-footer button[type="submit"] {
-  background-color: #1a2e9c;
-  color: #fff;
+  background-color: #fff;
+  color: #1a2e9c;
   border: none;
   padding: 8px 16px;
   font-size: 14px;
