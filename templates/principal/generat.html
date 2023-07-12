@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="{% static 'styles/generat.css' %}">
     <script src="{% static 'typed_scripts/calendar.js' %}" defer></script>
     <script src="{% static './typed_scripts/SearchBarAjax.js' %}" defer></script>
+    <style>
+        /* Additional styles for the message container */
+          .message-container {
+            display: ;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+          }
+
+          .message-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            text-align: center;
+          }
+    </style>
 </head>
 <body>
     <header>
@@ -17,11 +33,6 @@
             </div>
             
             <div class="header-actions">
-                <div class="dark-light-toggle">
-                    <input type="checkbox" id="darkModeToggle">
-                    <label for="darkModeToggle"></label>
-                </div>
-                
                 <div class="search-bar">
                     <input type="text" placeholder="Search">
                     <button type="submit" id="searchButton">Search</button>
@@ -93,6 +104,11 @@
                     {% endif %}
                 {% endfor %}
             {% endif %}
+            {% if not request.user.is_authenticated %}
+            <div class="message-container">
+                <p class="message-text">You have to log in or sign up first.</p>
+            </div>
+            {% else %}
             <div class="form-container">
                 <form action="" enctype="application/x-www-form-urlencoded" method="post" class="signup-form">
                     <!-- form header -->
@@ -142,6 +158,7 @@
                     </div>
                 </form>
             </div>
+            {% endif %}
         </main>
 
         

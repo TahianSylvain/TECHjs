@@ -11,7 +11,6 @@ from app_users.forms import SignUpUserForm
 
 # Django Axes
 @axes_dispatch
-@sync_to_async()
 def register(request):
     if request.method == 'POST':
         user_form = SignUpUserForm(data=request.POST)
@@ -19,6 +18,7 @@ def register(request):
             user = user_form.save()
             user.save()
             login(request, user)
+            return HttpResponseRedirect(reverse('main:entry'))
         else:
             print(user_form.errors)
     else:
@@ -29,9 +29,7 @@ def register(request):
     })
 
 
-# Django Axes
 @axes_dispatch
-@sync_to_async()
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']

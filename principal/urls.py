@@ -15,8 +15,8 @@ router.register(r'annotation', AnnotationViewSet)
 
 app_name = 'main'
 urlpatterns = [
-    path('', principal, name='entry'),
-    path('generat/', generated, name='generat'),
+    path('', generated, name='generat'),  # principal, name='entry'),
+    # path('generat/', generated, name='generat'),
     path('search/', search_results, name='search'),
 
 
