@@ -23,14 +23,6 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
 }
-
-.medium-text{
-    font-weight: normal;
-    font-size: 2rem;
-    line-height: 1;
-    margin: 1rem 2rem;
-}
-
 .big-text{
     font-weight: bold;
     font-size: 6rem;

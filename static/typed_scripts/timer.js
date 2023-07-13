@@ -1,11 +1,8 @@
-
-const newYears = document.getElementById('invisible').innerHTML //"27 July 2023"//"1 Jan 2023";
+var newYears = "1 Jan 2023";
 console.log(newYears)
-
 function countdown() {
-    const currentDate = new Date();
-    const newYearsDate = new Date(newYears, );
-
+    var currentDate = new Date();
+    var newYearsDate = new Date(newYears);
     var tseconds = (newYearsDate - currentDate) / 1000;
     var days = Math.floor(tseconds / (3600 * 24));
     var hours = Math.floor(tseconds / 3600) % 24;
@@ -21,13 +18,3 @@ var formatTime = function (time) {
 };
 countdown();
 setInterval(countdown, 1000);
-// -----------------||--------------------
-function countTime() {
-    var currentDate = new Date();
-    // document.getElementById("day").innerHTML = currentDate.getDate()
-    document.getElementById("hour").innerHTML = currentDate.getHours();
-    document.getElementById("min").innerHTML = currentDate.getMinutes();
-    document.getElementById("second").innerHTML = formatTime(currentDate.getSeconds());
-}
-countTime();
-setInterval(countTime, 1000);

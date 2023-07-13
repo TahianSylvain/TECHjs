@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     {% load static %}{% load i18n %}
-    <link rel="stylesheet" href="{% static 'styles/generat.css' %}">
+    <link rel="stylesheet" href="{% static './styles/generat.css' %}">
+
     <script src="{% static './typed_scripts/calendar.js' %}" defer></script>
     <script src="{% static './typed_scripts/SearchBarAjax.js' %}" defer></script>
+
     <style>
         /* Additional styles for the message container */
-          .message-container {
-            display: ;
+        .message-container {
+            display: flex;
             justify-content: center;
             align-items: center;
             height: 200px;
-          }
+        }
 
-          .message-text {
+        .message-text {
             font-size: 24px;
             font-weight: bold;
             color: #007bff;
             text-align: center;
-          }
+        }
     </style>
+    <script type="text/javascript" src="{% static './typed_scripts/timer.js' %}" defer></script>
+
 </head>
 <body>
     <header>
@@ -31,7 +35,22 @@
             <div class="logo">
                 <img src="{% static 'img/icons8-todo-list-96.png' %}" alt="Website Logo" srcset="" height="">
             </div>
-            
+                <div class="countdown-el days-c">
+                    <p class="big-text" id="days">0</p>
+                    <span>days</span>
+                </div>
+                <div class="countdown-el hours-c">
+                    <p class="big-text" id="hours">0</p>
+                    <span>hours</span>
+                </div>
+                <div class="countdown-el mins-c">
+                    <p class="big-text" id="mins">0</p>
+                    <span>minutes</span>
+                </div>
+                <div class="countdown-el seconds-c">
+                    <p class="big-text" id="seconds">0</p>
+                    <span>seconds</span>
+                </div>
             <div class="header-actions">
                 <div class="search-bar">
                     <input type="text" placeholder="Search">
@@ -72,6 +91,10 @@
         </div>
 
         <main>
+
+            <div class="logo">
+                    <!--  -->
+            </div>
             {% if request.user.username %}
                 {% for i in dj %}
                     {% if not i.is_even %}
@@ -192,6 +215,6 @@
             <li><a href="#">FAQ</a></li>
         </ul>
     </footer>
-    <script src="{% static 'typed-scripts/generatBody.js' %} "></script>
+    <!-- <script src="{% static './typed-scripts/generatBody.js' %} "></script> -->
 </body>
 </html>
