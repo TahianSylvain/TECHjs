@@ -12,20 +12,42 @@
     <script src="{% static './typed_scripts/SearchBarAjax.js' %}" defer></script>
 
     <style>
-        /* Additional styles for the message container */
-        .message-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
+        /* text animation */
+        .ml10 {
+            color: #007bff;
+          position: relative;
+          font-weight: 900;
+          font-size: 4em;
         }
 
-        .message-text {
-            font-size: 24px;
-            font-weight: bold;
+        .ml10 .text-wrapper {
             color: #007bff;
-            text-align: center;
+          position: relative;
+          display: inline-block;
+          padding-top: 0.2em;
+          padding-right: 0.05em;
+          padding-bottom: 0.1em;
+          overflow: hidden;
         }
+
+        .ml10 .letter {
+            color: #007bff;
+          display: inline-block;
+          line-height: 1em;
+          transform-origin: 0 0;
+        }
+
+        /* positionning arrangement */
+        .card.blue {
+          position: relative;
+          z-index: 2;
+        }
+
+        .form-container {
+          position: relative;
+          z-index: 1;
+        }
+
     </style>
     <script type="text/javascript" src="{% static './typed_scripts/timer.js' %}" defer></script>
 
@@ -36,10 +58,6 @@
             <div class="logo">
                 <img src="{% static 'img/icons8-todo-list-96.png' %}" alt="Website Logo" srcset="" height="">
             </div>
-                <div class="countdown-el days-c">
-                    <p class="big-text" id="days">0</p>
-                    <span>days</span>
-                </div>
                 <div class="countdown-el hours-c">
                     <p class="big-text" id="hours">0</p>
                     <span>hours</span>
@@ -53,11 +71,17 @@
                     <span>seconds</span>
                 </div>
             <div class="header-actions">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search">
-                    <button type="submit" id="searchButton">Search</button>
-                </div>
-                
+                <form class="search-bar" action="{% url 'main:search' %}">
+                        <input type="text" placeholder="Search" name="target">
+                        <button type="submit" id="searchButton"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/search--v1.png" alt="Search"></button>
+                </form>
+            </div>
+                <label class="toggle-switch">
+                        <input type="checkbox" onchange="toggleDarkMode()" id="darkModeToggle">
+                        <span class="toggle-slider"></span>
+                </label>
+
+
                 <div class="user-actions">
                     {% if request.user.username %}
                         <a href="{% url 'account:logout' %}">Logout</a>
@@ -65,7 +89,7 @@
                     {% else %}
                         <a href="{% url 'account:login' %}">Login</a>
                         <span>  </span>
-                        <a href="{% url 'account:signup' %}">Sign Up</a>
+                        <a href="{% url 'account:signup' %}">Sign</a>
                     {% endif %}
                 </div>
             </div>
@@ -92,104 +116,132 @@
         </div>
 
         <main>
-
-            <div class="logo">
-                    <!--  -->
-            </div>
-            {% if request.user.username %}
-                {% for i in dj %}
-                    {% if not i.is_even %}
-                        <div class="card blue">
-                            <a href="{% url 'main:change' i.id %}">
-                                <div class="card-header">
-                                    <h3> {{ i.name }} </h3>
-                                    {% if i.over %}
-                                        Over since {{ i.deadline.date| date:"d M Y" }}
-                                    {% else %}
-                                        {% block clock %}{% endblock %}
-                                    {% endif %}
-                                </div>
-                                <p class="not-visible">{{ i.deadline }}</p>
-                                <div class="card-body">
-                                    <p>
-                                        {{ i.description }}
-                                    </p>
-                                </div>
-                            </a>
-                            ---------------------------<a style="color:white" href="{% url 'main:delete' i.id %}">delete</a>-------------------------
-                        </div>
-
-                    {% else %}
-                        <div class="card white">
-                            <div class="card-header">
-                                <div class="countdown">05:30:00</div>
+                {% if res %}
+                        {% for r in res %}
+                            <div class="results-card not-visible" id="results-box">
+                                {% if r.email %}
+                                    <div class="card white">
+                                        <div class="card-header">
+                                            <div class="countdown">{% if r.is_active %} Available {% else %} Not available {% endif %}</div>
+                                        </div>
+                                        <div class="card-body">
+                                             <a href="{% url 'main:visiting' r.id %}"><h3>USER: {{ r.username }}</h3></a>
+                                            <p>{{ r.email }}</p>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="card blue">
+                                        <div class="card-header">
+                                            <a href="{% url 'main:change' r.id %}"><div class="countdown">NOTE: {{ r.name }}</div></a>
+                                        </div>
+                                        <div class="card-body"><a href=""><h3>from: {{ r.account }}</h3></a>
+                                            <p>{{ r.description }}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
                             </div>
-                            <div class="card-body">
-                                <h3>Title 2</h3>
-                                <p>Description text 2</p>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-            {% if not request.user.is_authenticated %}
-            <div class="message-container">
-                <p class="message-text">You have to log in or sign up first.</p>
-            </div>
-            {% else %}
-            <div class="form-container">
-                <form action="" enctype="application/x-www-form-urlencoded" method="post" class="signup-form">
-                    <!-- form header -->
-                        {% csrf_token %}
-                    <div class="form-header">
-                        <h1>New Notation for {{ user.username }}</h1>
-                        {{ form.account }}
-                    </div>
+                        {% endfor %}
+                {% else %}
+                        {% if request.user.username %}
+                            {% for i in dj %}
+                                {% if not i.is_even %}
+                                    <div class="card blue">
+                                        <div class="card-header">
+                                            <a href="{% url 'main:change' i.id %}">
+                                                <h3> {{ i.name }} </h3>
+                                            </a>
+                                            {% if i.over %}
+                                                Over since {{ i.deadline }}
+                                            {% else %}
+                                                {% block clock %}{% endblock %}
+                                            {% endif %}
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                {{ i.description }}
+                                            </p>
+                                        </div>
+                                    ---------------------------<a style="color:white" href="{% url 'main:delete' i.id %}">delete</a>-------------------------
+                                    </div>
 
-                    <!-- form body -->
-                    <div class="form-body">
-                            {{form.errors}}
-                        {% if form.errors %}
-                            <p>Please correct the following errors:</p>
-                            {% for field in form %}
-                                {% if field.errors %}
-                                    <div>{{ field.label }}: {{ field.errors|striptags }}</div>
-                        {% endif %}
+                                {% else %}
+                                    <div class="card white">
+                                        <div class="card-header">
+                                            <div class="countdown">05:30:00</div>
+                                        </div>
+                                        <div class="card-body">
+                                            <h3>Title 2</h3>
+                                            <p>Description text 2</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
                             {% endfor %}
                         {% endif %}
-                        <div class="horizontal-group">
-                            <div class="form-group left">
-                                <label for="firstname" class="label-title">Title</label>
-                                {{ form.name }}
-                            </div>
-                            <div class="form-group right">
-                                <label for="lastname" class="label-title">Deadline</label>
-                                {{ form.deadline }}
-                            </div>
+                        {% if not request.user.is_authenticated %}
+                                    <!--div class="message-container">
+                                        <p class="message-text"></p>
+                                    </div-->
+                                        <h1 class="ml10">
+                                          <span class="text-wrapper">
+                                            <span class="letters">You have to log in or sign up first.</span>
+                                          </span>
+                                        </h1>
+
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+                        {% else %}
+                                    <div class="form-container">
+                                        <form action="" enctype="application/x-www-form-urlencoded" method="post" class="signup-form">
+                                            <!-- form header -->
+                                                {% csrf_token %}
+                                            <div class="form-header">
+                                                <h1>New Notation for {{ user.username }}</h1>
+                                                {{ form.account }}
+                                            </div>
+
+                                            <!-- form body -->
+                                            <div class="form-body">                            {{form.errors}}
+                                    {% if form.errors %}
+                                        <p>Please correct the following errors:</p>
+                                        {% for field in form %}
+                                            {% if field.errors %}
+                                                <div>{{ field.label }}: {{ field.errors|striptags }}</div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                    <div class="horizontal-group">
+                                        <div class="form-group left">
+                                            <label for="firstname" class="label-title">Title</label>
+                                            {{ form.name }}
+                                        </div>
+                                        <div class="form-group right">
+                                            <label for="lastname" class="label-title">Deadline</label>
+                                            {{ form.deadline }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="timing" class="label-title">Reminder</label>
+                                        {{ form.reminder }}
+                                    </div>
+                                    <!-- Bio -->
+                                    <div class="form-group">
+                                        <label for="choose-file" class="label-title">Bio</label>
+                                        {{ form.description }}
+                                    </div>
+                                </div>
+                                <!-- form footer -->
+                                <div class="form-footer">
+                                    {% if type == 'change' %}
+                                        <button type="reset">Undo</button>
+                                    {% endif %}
+                                    <button type="submit">{{ type }}</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="timing" class="label-title">Reminder</label>
-                            {{ form.reminder }}
-                        </div>
-                        <!-- Bio -->
-                        <div class="form-group">
-                            <label for="choose-file" class="label-title">Bio</label>
-                            {{ form.description }}
-                        </div>
-                    </div>
-                    <!-- form footer -->
-                    <div class="form-footer">
-                        {% if type == 'change' %}
-                            <button type="reset">Undo</button>
                         {% endif %}
-                        <button type="submit">{{ type }}</button>
-                    </div>
-                </form>
-            </div>
-            {% endif %}
+                {% endif %}
         </main>
 
-        
+
     </div>
 
     <footer>
@@ -216,6 +268,24 @@
             <li><a href="#">FAQ</a></li>
         </ul>
     </footer>
-    <!-- <script src="{% static './typed-scripts/generatBody.js' %} "></script> -->
+    <script>// Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml10 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+          .add({
+            targets: '.ml10 .letter',
+            rotateY: [-90, 0],
+            duration: 1300,
+            delay: (el, i) => 45 * i
+          }).add({
+            targets: '.ml10',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+          });
+      </script>
+    <script src="{% static './typed_scripts/generatBody.js' %} "></script>
 </body>
 </html>

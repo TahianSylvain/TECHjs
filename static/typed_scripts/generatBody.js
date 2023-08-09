@@ -7,25 +7,27 @@ searchButton.addEventListener('click', function () {
     // Perform search functionality here
     console.log('Search button clicked');
 });
-darkModeToggle.addEventListener('change', function () {
-    // Toggle dark mode
-    for (var index = 0; index < array.length; index++) {
-        if (index % 2 === 1) {
-            body.classList.add('dark-mode');
-            header.classList.add('dark-mode');
-            footer.classList.add('dark-mode');
-        }
-        else {
-            body.classList.add('light-mode');
-            header.classList.add('light-mode');
-            footer.classList.add('dark-mode');
-        }
-    }
-});
+
+
+function toggleDarkMode() {
+  var body = document.querySelector('body');
+  body.classList.toggle('dark-mode');
+
+  var side = document.querySelector('div.sidebar');
+  side.classList.toggle('dark-side'); // the side bar items are now desorganized, How to arrange that?
+  if (side.classList.contains('dark-side')){
+    document.querySelector('.logo').style.backgroundColor="#333";
+    side.style.backgroundColor="#1b1a1a";
+  } else {
+    document.querySelector('.logo').style.backgroundColor="#007bff";
+    side.style.backgroundColor="#f1f1f1";
+  }
+}
 // ---------LoginSignUP-----------
 // Get the login and signup buttons
-var loginButton = document.querySelector('a[href="#login"]');
-var signupButton = document.querySelector('a[href="#signup"]');
+var loginButton = document.querySelector('a[href="https://tahiansylvain.pythonanywhere.com/auth/login/"]');
+var signupButton = document.querySelector('a[href="https://tahiansylvain.pythonanywhere.com/auth/signup/"]');
+
 // Get the overlay and modal elements
 var overlay = document.getElementById('overlay');
 var modal = document.querySelector('.modal');

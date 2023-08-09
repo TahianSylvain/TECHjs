@@ -1,9 +1,13 @@
+from rest_framework import generics
+from rest_framework.filters import SearchFilter
 from django.contrib.auth import authenticate
 from rest_framework import viewsets, permissions, generics, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from principal.models import Task, Annotation
+from django.contrib.auth.models import User
 from principal.serializers import UserSerializer, AnnotationSerializer, TaskSerializer
 
 from principal.models import Annotation, Task
@@ -14,6 +18,20 @@ class UserCreate(generics.CreateAPIView):
     authentication_classes = ()
     permission_classes = ()
     serializer_class = UserSerializer
+
+
+# views.py
+class ModelUserListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    filter_backends = [SearchFilter]
+    search_fields = '__all__'
+
+class ModelAnnotationListView(generics.ListAPIView):
+    queryset = Annotation.objects.all()
+    serializer_class = AnnotationSerializer
+    filter_backends = [SearchFilter]
+    search_fields = '__all__'
 
 
 class LoginView(APIView):

@@ -29,6 +29,7 @@ footer {
 /* Header styles */
 .header-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -103,7 +104,7 @@ footer {
 .search-bar button {
   padding: 6px 12px;
   background-color: #007bff;
-  color: #fff;
+  color: #1147e9;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
@@ -112,8 +113,9 @@ footer {
 /* Sidebar styles */
 .sidebar {
   background-color: #f1f1f1;
-  width: 200px;
+  width: 125px;
   height: 100vh;
+  color: #1147e9;
   float: left;
 }
 
@@ -130,7 +132,7 @@ footer {
   display: block;
   padding: 10px;
   text-decoration: none;
-  color: #333;
+  color: #1147e9;
 }
 
 .sidebar a:hover {
@@ -232,6 +234,8 @@ footer a:hover {
 }
 .sidebar {
   background-color: #f1f1f1;
+  color: #1147e9;
+  width: 125px;
   width: 200px;
   height: auto;
   float: left;
@@ -240,23 +244,24 @@ footer a:hover {
 .sidebar ul {
   list-style-type: none;
   padding: 0;
+  color: #1147e9;
 }
 
 .sidebar li {
+  color: #1147e9;
   margin-bottom: 10px;
 }
 
 .sidebar a {
   display: block;
   padding: 10px;
-  text-decoration: none;
-  color: #333;
+  color: #1147e9;
   transition: background-color 0.3s ease-in-out; /* Added transition */
 }
 
 .sidebar a:hover {
   background-color: #007bff; /* Added background color on hover */
-  color: #fff; /* Added text color on hover */
+  color: #1147e9;
 }
 footer {
   background-color: #007bff;
@@ -356,10 +361,15 @@ footer:not(:last-child) {
   width: 200px;
   padding: 10px;
   background-color: #f2f2f2;
+  color: #1147e9;
+}
+.dark-side{
+    background-color:#141212;
 }
 
 .sidebar ul {
   margin-bottom: 10px;
+  color: #1147e9;
 }
 
 .setting-item {
@@ -511,6 +521,7 @@ main {
 .sidebar {
   width: 200px; /* Adjust if needed */
   background-color: #f2f2f2;
+  color: #1147e9;
   overflow-y: auto;
 }
 
@@ -526,9 +537,10 @@ main {
 }
 
 .sidebar {
-  width: 200px; /* Adjust if needed */
+  min-width: 115px; /* Adjust if needed */
   background-color: #f2f2f2;
   overflow-y: auto;
+  color: #1147e9;
 }
 
 .scrollable-main {
@@ -570,5 +582,15 @@ main {
   .card {
     width: 100%; /* Make cards full width on smaller screens */
   }
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.light-mode {
+  background-color: #f1f1f1;
+  color: #333;
 }
 

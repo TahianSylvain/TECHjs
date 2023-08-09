@@ -1,13 +1,15 @@
 import datetime
 from asgiref.sync import sync_to_async
-from django.http import JsonResponse
+#from django.http import JsonResponse
 
 from .models import Annotation
 from .forms import AnnotationForm
+
+from app_users.forms import SignUpUserForm
 from django.contrib.auth.models import User
 from django.contrib.auth.views import login_required
 from django.shortcuts import HttpResponseRedirect, reverse
-from django.shortcuts import render, get_object_or_404, get_list_or_404
+from django.shortcuts import render  # , get_object_or_404, get_list_or_404
 
 import openai
 from openai.error import APIConnectionError
@@ -30,42 +32,38 @@ def chatbot_response(user_input):
 
 @sync_to_async()
 def visiting(request, user_id):
-    """ u = User.objects.all()"""
-    utilisateur = get_object_or_404(User, pk=user_id)
-
-    # print(utilisateur.id)
-    ses_annotations = get_list_or_404(Annotation, account=utilisateur)
+    u = User.objects.get(id=user_id)
+    if request.method == 'POST':
+        user_form = SignUpUserForm(data=request.POST, instance=u)
+        if user_form.is_valid():
+            user = user_form.save()
+            user.save()
+            login(request, user)
+            return HttpResponseRedirect(reverse('main:entry'))
+        else:
+            print(user_form.errors)
+    else:
+        user_form = SignUpUserForm(instance=u)
     return render(
-        request,
-        template_name='principal/userProfile.html',
-        context={'u': utilisateur, 'annotate': ses_annotations},
-        status=200
-    )
+                request, 'app_users/sign_up.html',
+                context={'user_form': user_form, 'action': "Change"}
+            )
 
 
 @sync_to_async()
-@login_required(login_url='account:login')
 def search_results(request):
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest': # request.is_ajax():
-        annotation = request.POST['annotation']
-        
-        qs = Annotation.objects.filter(name__icontains=annotation)
-        print(qs)
-        if (len(qs)>0) and (len(annotation)>0):
-            data = []
-            for pos in qs:
-                item = {
-                    "pk": pos.pk,
-                    "name": pos.name,
-                    "account": pos.account,
-                    # "deadline", "reminder", "description"
-                }
-                data.append(item)
-            res = data
-        else:
-            res = 'No annotation found'
-        return JsonResponse({'data': res})
-    JsonResponse({})
+    results = []
+    target = request.GET['target']
+    for a in Annotation.objects.filter(name__icontains=target):
+        results.append(a)
+    for u in User.objects.filter(email__icontains=target):
+        results.append(u)
+    for u in User.objects.filter(username__icontains=target):
+        results.append(u)
+    if len(results) and len(target):
+        return render(request, 'principal/generat.html', {'res': results})
+    return render(request, 'principal/generat.html')
+
 
 
 @sync_to_async()

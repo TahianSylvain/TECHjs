@@ -3,7 +3,7 @@ from rest_framework import routers
 # from rest_framework.authtoken.views import obtain_auth_token
 
 from .views import delete, search_results, generated, visiting  # listing_tasks_by_time, principal
-from .api_views import AnnotationViewSet, TaskViewSet
+from .api_views import AnnotationViewSet, TaskViewSet, ModelAnnotationListView, ModelUserListView
 # _see_your_apis, _see_about_this_api, UserCreate, LoginView
 
 
@@ -16,6 +16,8 @@ app_name = 'main'
 urlpatterns = [
     path('', generated, name='entry'),
     path('search/', search_results, name='search'),
+    #path('search/user/', ModelUserListView.as_view(), name='model-user-list'),
+    #path('search/note/', ModelAnnotationListView.as_view(), name='model-annotation-list'),
     path('<int:annotation_id>/', generated, name='change'),
 
     # path('api/', include(router.urls)),

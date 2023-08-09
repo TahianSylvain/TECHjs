@@ -23,12 +23,11 @@ class UserSerializer(serializers.ModelSerializer):
 class AnnotationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Annotation
-        fields = ( 
+        fields = (
                     'id', 'account', 'name', 'description',
                     'description', 'deadline', 'reminder', 'over',
                     # 'get_nb_views', 'get_nb_likes', 'get_nb_unlikes'
                 )
-
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
